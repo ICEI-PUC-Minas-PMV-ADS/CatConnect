@@ -21,7 +21,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* <a href="https://github.com/sabrinagomessilva">**Soraia Lúcia da Silva** </a>
+* <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS">**Soraia Lúcia da Silva** </a>
 
 ## Instruções de utilização
 
