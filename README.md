@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/> ONG S.O.S Gatinhos do Parque 
 
 `CURSO`
 
@@ -6,9 +6,18 @@
 
 `SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+_Trata-se de um sistema para registro de dados dos gatinhos adotados ou à espera de adoção da  <a href="https://sosgatinhosdoparque.com.br/site/">**ONG SOS Gatinhos do Parque** </a>. O sitema fornecerá um meio seguro e eficaz para registro de informações importantes de cada animal e possibilitará a consulta rápida das informações dos gatinhos adotados e seus respectivos adotantes._ 
 
-## Integrantes
+
+
+<div align="center" dir="auto"> 
+<img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/mini092.gif" alt="">Saiba mais sobre esta importante organização visitando o site <a href="https://sosgatinhosdoparque.com.br/site/">aqui.</a>
+
+
+ </div>
+
+
+## <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/>Integrantes
 
 * <a href="https://github.com/allana-tb" target="_blank"> **Allana Tavares Bastos**</a>
 * <a href="https://github.com/Edu-DevBr" target="_blank"> **Eduardo Lordeiro Alves**</a>
@@ -22,6 +31,10 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 ## Orientador
 
 * <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS">**Soraia Lúcia da Silva** </a>
+
+## <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/> Parceiro
+
+<img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/mini092.gif" alt=""> <a href="https://sosgatinhosdoparque.com.br/site/">**ONG SOS Gatinhos do Parque** </a>
 
 ## Instruções de utilização
 
@@ -41,6 +54,6 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 <li><a href="src/README.md"> Código Fonte</a></li>
 
-# Apresentação
+# <img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/minibrilho.gif" alt="">Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
