@@ -1,6 +1,11 @@
-# <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/> ONG S.O.S Gatinhos do Parque 
+![White and Aqua Dogs Pet   Animals YouTube Video Outro](https://github.com/ICEI-PUC-Minas-PMV-ADS/Grupo4Turma-2/assets/78277341/80394c2f-0c0a-4040-9bcb-ccf8b41c9d31)
+
+# <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/>
+
+
 
 `CURSO`
+
 
 `DISCIPLINA`
 
