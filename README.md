@@ -4,12 +4,11 @@
 
 
 
-`CURSO`
+`Tecnólogo em Análise e Desenvolvimento de Sistemas`
 
+`PROJETO: Desenvolvimento de um Sistema Sociotécnico Inovador`
 
-`DISCIPLINA`
-
-`SEMESTRE`
+`SEMESTRE 02/2023`
 
 _Trata-se de um sistema para registro de dados dos gatinhos adotados ou à espera de adoção da  <a href="https://sosgatinhosdoparque.com.br/site/">**ONG SOS Gatinhos do Parque** </a>. O sitema fornecerá um meio seguro e eficaz para registro de informações importantes de cada animal e possibilitará a consulta rápida das informações dos gatinhos adotados e seus respectivos adotantes._ 
 
