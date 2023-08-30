@@ -93,15 +93,13 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 > - [Astah](https://astah.net/)
 > - [Diagrams](https://app.diagrams.net/)
 
-## Modelo ER (Projeto Conceitual)
+## Modelo de Dados
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
+O Modelo de dados escolhido foi o NoSQL do tipo documento. Esse modelo foi definido pensando no grande volume de dados demandados pela aplicação. Segue abaixo a representação do Modelo:
 
-Sugestão de ferramentas para geração deste artefato: LucidChart e Draw.io.
+![MD SOS Gatinhos do Parque](https://github.com/ICEI-PUC-Minas-PMV-ADS/Grupo4Turma-2/assets/91228798/616e0b07-8c28-4170-834f-400c7316e717)
 
-A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+Também pode ser acessado clicando <a href="https://lucid.app/lucidchart/81243027-bc05-48b8-bc63-2d3e55851eec/edit?viewport_loc=191%2C-182%2C1623%2C865%2C0_0&invitationId=inv_23f15e69-f1ff-408f-b004-d341a9c271b5">aqui</a>.
 
 ## Projeto da Base de Dados
 
