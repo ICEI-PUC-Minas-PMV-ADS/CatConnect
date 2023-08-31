@@ -91,19 +91,7 @@ Desta feita, o grupo representa abaixo o diagrama de caso de uso para o sistema 
 Figura 4 - Diagrama de Casos de Uso
 ![Diagrama de Casos de Usos da Aplicação](img/casos-de-uso-sosgp.png)
 
-
-Diagrama de Casos de Usos da Aplicação
-
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+Fonte: Elaborado pelos autores
 
 ## Modelo de Dados
 
