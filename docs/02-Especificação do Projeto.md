@@ -82,6 +82,18 @@ Neste documento, apresentamos as restrições que guiarão o processo de desenvo
 
 ## Diagrama de Casos de Uso
 
+O diagrama de caso de uso, comumente oriundo da especificação dos requisitos funcionais do sistema, descreve as principais funcionalidades do sistema que será projetado pelo grupo e sua interação com os possíveis usuários (DevMedia, 2022). Segundo Ivar Jacobson, podemos dizer que um caso de uso é um "documento narrativo que descreve a sequência de eventos de um ator que usa um sistema para completar um processo" (Wikipédia, 2020).
+
+Graficamente é representado com elementos como os atores, os casos de uso e seus relacionamentos entre si. Seu objetivo principal é ilustrar de forma abstrata, a interação dos elementos externos com as funcionalidades do sistema, ou seja, “a finalidade de um diagrama de caso de uso é apresentar um tipo de diagrama de contexto que apresenta os elementos externos de um sistema e as maneiras segundo as quais eles as utilizam” (Wikipédia, 2020).
+
+Desta feita, o grupo representa abaixo o diagrama de caso de uso para o sistema que será projetado.
+
+Figura 4 - Diagrama de Casos de Uso
+![Diagrama de Casos de Usos da Aplicação](img/casos-de-uso-sosgp.png)
+
+
+Diagrama de Casos de Usos da Aplicação
+
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
 As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
