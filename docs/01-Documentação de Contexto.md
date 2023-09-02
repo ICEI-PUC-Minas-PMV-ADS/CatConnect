@@ -43,8 +43,26 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+Conforme dados fornecidos pela organização, o número de felinos abandonados no parque é muito alto. Atualmente, o parque possui mais de 300 gatos abandonados e este número aumenta diariamente.
 
+Todo o registro de dados desses animais é escrito à mão em cadernos e prontuários impressos. Por vezes, alguns dados são perdidos com o tempo e a busca desses dados nem sempre é eficiente ou precisa.
+
+O grande número de gatos deixados no local exige da ONG uma organização eficiente, pois, o principal objetivo é ajudar esses animais a terem uma vida digna, encaminhando-os para lugares seguros e livres de doenças.
+
+Este controle beneficia não só os animais, mas também toda a sociedade, realizando políticas públicas capazes de conter problemas sanitários e de maus tratos.
+
+O grande número de gatos abandonados no local se deve a vários fatores, não só sociais, mas também culturais. Algumas pessoas acreditam que os gatos são perigosos para as mulheres grávidas devido ao risco de toxoplasmose, ou que são transmissores de doenças virais e portadores de má sorte. Os registros de maus-tratos contra gatos são tão alarmantes que a lei  14.064/20 aumentou as penas cominadas ao crime de maus-tratos aos animais quando se tratar de cão ou gato.
+
+Assim, é evidente a relação do presente projeto e a extensão universitária, cujos propósitos estão fortalecidos pela necessidade de políticas públicas capazes de conter o abandono de animais, protegê-los dos maus-tratos e das forças da natureza, propiciando um local seguro, saúde e alimentação, até sua efetiva adoção.
+
+O controle de dados destes animais se faz necessário para policiar as condições físicas desses animais, identificando seus responsáveis através da microchipagem e de outras características especiais de cada gatinho, além de possibilitar uma visão ampla do progresso da instituição contra o combate ao abandono e maus-tratos de gatos no local.
+
+Com a implementação do nosso projeto, acreditamos que será possível:
+
+- O Registro digital de dados principais de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde etc).
+- Consulta intuitiva, precisa e exata.
+- Segurança de dados e eficácia no armazenamento de informações
+- Controle de entrada e saída dos animais e outras estatísticas necessárias
 ## Descrição do Parceiro
 
 Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
