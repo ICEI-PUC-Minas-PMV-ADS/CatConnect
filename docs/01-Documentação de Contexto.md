@@ -1,7 +1,16 @@
 # Introdução
+A  [S.O.S Gatinhos do Parque](https://sosgatinhosdoparque.com.br/site/), é uma ONG comprometida com o bem-estar dos gatos do Parque Municipal Américo René Gianetti. 
+Surgiu com a finalidade de ajudar estes felinos que são abandonados no parque: “_Há cerca de 20 anos, algumas mulheres se reuniram comprar ração e fazer a alimentação desses habitantes peludos. 
+Com o tempo, a ação do grupo se expandiu, mais pessoas se juntaram ao grupo, possibilitando uma cobertura maior do parque e auxílio em alguns casos especiais_”.*
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Com o crescimento da ONG, surgiu também a necessidade de um sistema de controle dos animais, uma vez que os registros de dados especiais (como cor, idade, sexo, peso, raça, castração e tutores) ainda é feito por escrito em cadernos ou prontuários que podem ser perdidos com o tempo. O efetivo controle dos dados de cada gatinho é muito importante para que a instituição acompanhe o desenvolvimento saudável do felino, suas necessidades especiais e correta análise de sua saúde, facilitando assim, o processo de adoção e acompanhamento por seus tutores ou pela administração.
 
+Nossa intenção é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
+
+Acreditamos ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração. 
+Esperamos assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
+
+* Fonte: https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/ 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
