@@ -51,7 +51,7 @@ O grande número de gatos deixados no local exige da ONG uma organização efici
 
 Este controle beneficia não só os animais, mas também toda a sociedade, realizando políticas públicas capazes de conter problemas sanitários e de maus tratos.
 
-O grande número de gatos abandonados no local se deve a vários fatores, não só sociais, mas também culturais. Algumas pessoas acreditam que os gatos são perigosos para as mulheres grávidas devido ao risco de toxoplasmose, ou que são transmissores de doenças virais e portadores de má sorte. Os registros de maus-tratos contra gatos são tão alarmantes que a lei  14.064/20 aumentou as penas cominadas ao crime de maus-tratos aos animais quando se tratar de cão ou gato.
+O grande número de gatos abandonados no local se deve a vários fatores, não só sociais, mas também culturais. Algumas pessoas acreditam que os gatos são perigosos para as mulheres grávidas devido ao risco de toxoplasmose, ou que são transmissores de doenças virais e portadores de má sorte. Os registros de maus-tratos contra gatos são tão alarmantes que a [Lei  14.064/20](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l14064.htm) aumentou as penas cominadas ao crime de maus-tratos aos animais quando se tratar de cão ou gato.
 
 Assim, é evidente a relação do presente projeto e a extensão universitária, cujos propósitos estão fortalecidos pela necessidade de políticas públicas capazes de conter o abandono de animais, protegê-los dos maus-tratos e das forças da natureza, propiciando um local seguro, saúde e alimentação, até sua efetiva adoção.
 
