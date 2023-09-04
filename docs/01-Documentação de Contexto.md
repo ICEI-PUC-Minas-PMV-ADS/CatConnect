@@ -12,16 +12,24 @@ Esperamos assim, construir um sistema que possa agregar as atividades da organiz
 
 * Fonte: https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/ 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+O problema que nossa aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Muitas instituições que cuidam de animais resgatados enfrentam desafios para chamar a atenção do público e para destacar seu trabalho, resultando em uma adoção menos frequente e uma capacidade limitada de encontrar lares amorosos para os animaizinhos sob seus cuidados.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+**Contexto:**
+
+**SOS Gatinhos do Parque:** A aplicação será usada por uma instituição já existente que se dedica à adoção responsável de gatos. Sua missão principal é resgatar, cuidar e encontrar lares permanentes para animais abandonados e maltratados.
+
+**Desafio de Reconhecimento e Visibilidade:** A instituição, apesar de contar com uma considerável base de seguidores em suas redes sociais, se depara com o desafio de expandir sua credibilidade e reconhecimento para além das plataformas digitais. Além disso, dada a significativa quantidade de animais sob seus cuidados, surge a necessidade premente de um controle mais eficaz do processo de adoção e da gestão dos gatos que ainda aguardam por um lar.
+
+**Tecnologias, Gestão e Presença Online:** A aplicação envolverá o desenvolvimento de uma plataforma para ajudar a instituição a melhorar sua presença online e gestão dos processos de adoção. Isso pode incluir funcionalidades como integração com redes sociais, detalhes sobre os animais disponíveis para adoção, compartilhamento de histórias de adoção bem-sucedidas e a oferta de recursos educacionais valiosos para orientar e informar os potenciais adotantes, ao mesmo tempo em que aprimora a eficiência da gestão do processo de adoção com funcionalidades para esse processo.
+
+
+> Em resumo, nossa aplicação de gestão de adoção de gatos tem como objetivo resolver o problema de visibilidade e reconhecimento de uma instituição já existente, a SOS Gatinhos do Parque, ajudando-a a encontrar lares amorosos para seus animais resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
+
+* Fonte: https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/ 
+* Alinhamento realizado com uma das responsáveis pela instituição SOS Gatinhos do Parque, Amanda, através de reunião pela plataforma Google Meet.
 
 ## Objetivos
 
@@ -34,12 +42,37 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A escolha de desenvolver uma aplicação de gestão de adoção de gatos e melhorar a credibilidade da instituição de adoção é motivada por diversas razões fundamentais:
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+1. Bem-Estar dos Gatos Abandonados:
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+    A preocupação primordial é o bem-estar dos gatos que são abandonados ou maltratados. Muitos gatos abandonados enfrentam situações de risco nas ruas e, portanto, é fundamental encontrar lares amorosos para eles.
+
+2. Causa Humanitária:
+
+    A adoção de gatos é uma causa humanitária importante. Trabalhar em prol da adoção responsável de gatos demonstra um compromisso com o cuidado e o respeito aos animais.
+
+3. Superlotação em Abrigos:
+
+    A superlotação em abrigos de animais é um problema crônico. Uma aplicação eficaz de gestão de adoção pode ajudar a reduzir essa superlotação, garantindo que mais gatos encontrem lares permanentes.
+
+4. Contribuição para uma Sociedade Melhor:
+
+    Ajudar na adoção de gatos não apenas beneficia os animais, mas também contribui para uma sociedade mais compreensiva e compassiva em relação aos animais de estimação e à adoção responsável.
+
+5. Transparência e Confiança:
+
+    Aumentar a credibilidade da instituição de adoção é fundamental para inspirar confiança nos doadores, voluntários e adotantes. Isso pode ajudar a angariar fundos para a manutenção do abrigo e fornecer recursos adequados para os gatos resgatados.
+
+6. Eficiência na Gestão:
+
+    Uma aplicação de gestão de adoção pode melhorar significativamente a eficiência na administração dos processos de adoção, simplificando a documentação, o agendamento de visitas e o acompanhamento pós-adoção.
+
+7. Uso de Dados para Tomada de Decisão:
+
+    A coleta e análise de dados estatísticos podem oferecer informações valiosas sobre o desempenho da instituição, permitindo tomar decisões informadas para aprimorar a estratégia de adoção e a gestão do abrigo.
+
+Para embasar nossa decisão, realizaremos uma reunião entre os membros do grupo, afim de analisar problemas recorrentes com intuito de resolvelos. Além disso, a afinidade com os bichanos e empatia pela causa, nos motivou a estruturar ideias para resolução do problema mencionado. Após, nos reunimos com a instituição escolhida para entender melhor as necessidades cotidianas. Essas informações nos ajudaram a entender melhor os desafios específicos da instituição e a desenvolver uma aplicação que atenda efetivamente as demandas, contribuindo para uma causa humanitária crucial e aprimorando a credibilidade da instituição de adoção.
 
 ## Relação com a Extensão Universitária
 
