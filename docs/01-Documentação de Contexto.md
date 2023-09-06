@@ -1,4 +1,5 @@
 # Introdução
+
 A  [S.O.S Gatinhos do Parque](https://sosgatinhosdoparque.com.br/site/), é uma ONG comprometida com o bem-estar dos gatos do Parque Municipal Américo René Gianetti. 
 Surgiu com a finalidade de ajudar estes felinos que são abandonados no parque: “_Há cerca de 20 anos, algumas mulheres se reuniram comprar ração e fazer a alimentação desses habitantes peludos. 
 Com o tempo, a ação do grupo se expandiu, mais pessoas se juntaram ao grupo, possibilitando uma cobertura maior do parque e auxílio em alguns casos especiais_”.*
@@ -11,6 +12,8 @@ Acreditamos ser necessário o fortalecimento de políticas públicas que envolva
 Esperamos assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
 
 * Fonte: https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/ 
+
+
 ## Problema
 
 O problema que nossa aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
@@ -25,7 +28,6 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 **Tecnologias, Gestão e Presença Online:** A aplicação envolverá o desenvolvimento de uma plataforma para ajudar a instituição a melhorar sua presença online e gestão dos processos de adoção. Isso pode incluir funcionalidades como integração com redes sociais, detalhes sobre os animais disponíveis para adoção, compartilhamento de histórias de adoção bem-sucedidas e a oferta de recursos educacionais valiosos para orientar e informar os potenciais adotantes, ao mesmo tempo em que aprimora a eficiência da gestão do processo de adoção com funcionalidades para esse processo.
 
-
 > Em resumo, nossa aplicação de gestão de adoção de gatos tem como objetivo resolver o problema de visibilidade e reconhecimento de uma instituição já existente, a SOS Gatinhos do Parque, ajudando-a a encontrar lares amorosos para seus animais resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
 
 * Fonte: https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/ 
@@ -33,12 +35,16 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Nosso projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da Organização Não Governamental (ONG) S.O.S. Gatinhos do Parque.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Como objetivos específicos, podemos citar:
+
+a) Apresentar o perfil de acesso, para melhor gestão do cadastro dos gatinhos;
+
+b) Fornecer informações principais dos gatinhos disponíveis para adoção, de forma organizada e intuitiva;
+
+c) Apresentar o perfil para gerenciamento do registro de adoção.
+
 
 ## Justificativa
 
