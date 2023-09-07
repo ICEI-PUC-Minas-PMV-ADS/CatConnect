@@ -95,10 +95,13 @@ O controle de dados destes animais se faz necessário para policiar as condiçõ
 
 Com a implementação do nosso projeto, acreditamos que será possível:
 
-a) O Registro digital de dados principais de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde etc).
-b) Consulta intuitiva, precisa e exata.
-c) Segurança de dados e eficácia no armazenamento de informações
-d) Controle de entrada e saída dos animais e outras estatísticas necessárias
+a) O Registro digital de dados principais de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde etc);
+
+b) Consulta intuitiva, precisa e exata;
+
+c) Segurança de dados e eficácia no armazenamento de informações;
+
+d) Controle de entrada e saída dos animais e outras estatísticas necessárias.
 
   
 ## 1.5 Descrição do Parceiro
