@@ -52,6 +52,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 <li><a href="docs/03-Projeto de Interface.md"> Projeto de Interface</a></li>
 <li><a href="docs/04-Testes de Software.md"> Testes de Software</a></li>
 <li><a href="docs/05-Implantação.md"> Implantação</a></li>
+<li><a href="docs/06-Referências Bibliográficas.md"> Referências Bibliográficas</a></li>
 </ol>
 
 # Código
