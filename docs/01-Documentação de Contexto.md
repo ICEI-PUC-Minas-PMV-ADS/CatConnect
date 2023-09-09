@@ -21,11 +21,11 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 ### 1.1.1 Contexto
 
-**SOS Gatinhos do Parque:** A aplicação será usada por uma instituição já existente que se dedica à adoção responsável de gatos. Sua missão principal é resgatar, cuidar e encontrar lares permanentes para animais abandonados e maltratados. (SOS Gatinhos do Parque, 2023)
+**SOS Gatinhos do Parque:** A aplicação será usada por uma instituição já existente que se dedica à adoção responsável de gatos. Sua missão principal é resgatar, cuidar e encontrar lares permanentes para animais abandonados e maltratados.
 
-**Desafio de Reconhecimento e Visibilidade:** A instituição, apesar de contar com uma considerável base de seguidores em suas redes sociais, se depara com o desafio de expandir sua credibilidade e reconhecimento para além das plataformas digitais. Além disso, dada a significativa quantidade de animais sob seus cuidados, surge a necessidade premente de um controle mais eficaz do processo de adoção e da gestão dos gatos que ainda aguardam por um lar. (SOS Gatinhos do Parque, 2023)
+**Desafio de Reconhecimento e Visibilidade:** A instituição, apesar de contar com uma considerável base de seguidores em suas redes sociais, se depara com o desafio de expandir sua credibilidade e reconhecimento para além das plataformas digitais. Além disso, dada a significativa quantidade de animais sob seus cuidados, surge a necessidade premente de um controle mais eficaz do processo de adoção e da gestão dos gatos que ainda aguardam por um lar. 
 
-**Tecnologias, Gestão e Presença Online:** A aplicação envolverá o desenvolvimento de uma plataforma para ajudar a instituição a melhorar sua presença online e gestão dos processos de adoção. Isso pode incluir funcionalidades como integração com redes sociais, detalhes sobre os animais disponíveis para adoção, compartilhamento de histórias de adoção bem-sucedidas e a oferta de recursos educacionais valiosos para orientar e informar os potenciais adotantes, ao mesmo tempo em que aprimora a eficiência da gestão do processo de adoção com funcionalidades para esse processo. (SOS Gatinhos do Parque, 2023)
+**Tecnologias, Gestão e Presença Online:** A aplicação envolverá o desenvolvimento de uma plataforma para ajudar a instituição a melhorar sua presença online e gestão dos processos de adoção. Isso pode incluir funcionalidades como integração com redes sociais, detalhes sobre os animais disponíveis para adoção, compartilhamento de histórias de adoção bem-sucedidas e a oferta de recursos educacionais valiosos para orientar e informar os potenciais adotantes, ao mesmo tempo em que aprimora a eficiência da gestão do processo de adoção com funcionalidades para esse processo. 
 
 
 ## 1.2 Objetivos
