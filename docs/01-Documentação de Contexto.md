@@ -81,11 +81,7 @@ Para embasar nossa decisão, realizaremos uma reunião entre os membros do grupo
 
 Conforme dados fornecidos pela organização, o número de felinos abandonados no parque é muito alto. Atualmente, o parque possui mais de 300 gatos abandonados e este número aumenta diariamente.
 
-Todo o registro de dados desses animais é escrito à mão em cadernos e prontuários impressos. Por vezes, alguns dados são perdidos com o tempo e a busca desses dados nem sempre é eficiente ou precisa.
-
-O grande número de gatos deixados no local exige da ONG uma organização eficiente, pois, o principal objetivo é ajudar esses animais a terem uma vida digna, encaminhando-os para lugares seguros e livres de doenças.
-
-Este controle beneficia não só os animais, mas também toda a sociedade, realizando políticas públicas capazes de conter problemas sanitários e de maus tratos.
+Todo o registro de dados desses animais é escrito à mão em cadernos e prontuários impressos. Por vezes, alguns dados são perdidos com o tempo e a busca desses dados nem sempre é eficiente ou precisa. Esse problema é agravado pelo grande número de gatos abandonados no parque, pois o principal objetivo da ONG é ajudar esses animais a terem uma vida digna, cuidando dos gatos residentes no parque e encaminhando-os para moradias próprias por meio de adoções. O registro adequado dos gatos no parque beneficia não só os animais, mas também toda a sociedade. Não somente é possível melhor dimensionar o problema da adoção com novs registros, mas também melhor quantificar problemas de saúde e ataques sofridos pelos gatos no parque.
 
 O grande número de gatos abandonados no local se deve a vários fatores, não só sociais, mas também culturais. Algumas pessoas acreditam que os gatos são perigosos para as mulheres grávidas devido ao risco de toxoplasmose, ou que são transmissores de doenças virais e portadores de má sorte. Os registros de maus-tratos contra gatos são tão alarmantes que a Lei 14.064/20 aumentou as penas cominadas ao crime de maus-tratos aos animais quando se tratar de cão ou gato.
 
@@ -95,13 +91,13 @@ O controle de dados destes animais se faz necessário para policiar as condiçõ
 
 Com a implementação do nosso projeto, acreditamos que será possível:
 
-a) O Registro digital de dados principais de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde etc);
+a) O Registro digital de dados de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde, local onde geralmente habita);
 
 b) Consulta intuitiva, precisa e exata;
 
 c) Segurança de dados e eficácia no armazenamento de informações;
 
-d) Controle de entrada e saída dos animais e outras estatísticas necessárias.
+d) Controle de entrada e saída dos animais e outras estatísticas importantes.
 
   
 ## 1.5 Descrição do Parceiro
