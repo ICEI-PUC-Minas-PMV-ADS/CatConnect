@@ -29,7 +29,6 @@ _Trata-se de um sistema para registro de dados dos gatinhos adotados ou à esper
 * <a href="https://github.com/kaiqueRoc"> **Kaique  Rocha** </a> 
 * <a href="https://github.com/Mariane03"> **Mariane Serapião** </a>
 * <a href="https://github.com/nayarakatlin"> **Nayara Katlin Oliveira da Silva** </a>
-* <a href="https://github.com/sabrinagomessilva"> **Sabrina Gomes Silva** </a>
 
 
 ## Orientador
