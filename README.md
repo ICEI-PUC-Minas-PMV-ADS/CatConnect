@@ -1,3 +1,8 @@
+![White and Aqua Dogs Pet   Animals YouTube Video Outro](https://github.com/ICEI-PUC-Minas-PMV-ADS/Grupo4Turma-2/assets/78277341/80394c2f-0c0a-4040-9bcb-ccf8b41c9d31)
+
+# <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/>
+
+
 
 `Tecnólogo em Análise e Desenvolvimento de Sistemas`
 
@@ -9,13 +14,14 @@ _Trata-se de um sistema para registro de dados dos gatinhos adotados ou à esper
 
 
 
-Saiba mais sobre esta importante organização visitando o site <a href="https://sosgatinhosdoparque.com.br/site/">aqui.</a>
+<div align="center" dir="auto"> 
+<img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/mini092.gif" alt="">Saiba mais sobre esta importante organização visitando o site <a href="https://sosgatinhosdoparque.com.br/site/">aqui.</a>
 
 
  </div>
 
 
-Integrantes
+## <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/>Integrantes
 
 * <a href="https://github.com/allana-tb" target="_blank"> **Allana Tavares Bastos**</a>
 * <a href="https://github.com/Edu-DevBr" target="_blank"> **Eduardo Lordeiro Alves**</a>
@@ -30,9 +36,9 @@ Integrantes
 
 * <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS">**Soraia Lúcia da Silva** </a>
 
-##  Parceiro
+## <img width="24" height="24" src="https://img.icons8.com/plumpy/24/kitten.png" alt="kitten"/> Parceiro
 
-<a href="https://sosgatinhosdoparque.com.br/site/">**ONG SOS Gatinhos do Parque** </a>
+<img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/mini092.gif" alt=""> <a href="https://sosgatinhosdoparque.com.br/site/">**ONG SOS Gatinhos do Parque** </a>
 
 ## Instruções de utilização
 
@@ -53,6 +59,6 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 <li><a href="src/README.md"> Código Fonte</a></li>
 
-# Apresentação
+# <img src="http://i11.photobucket.com/albums/a168/evelynregly/minigifs/minibrilho.gif" alt="">Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
