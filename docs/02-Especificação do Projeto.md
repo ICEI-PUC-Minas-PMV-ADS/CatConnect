@@ -14,10 +14,7 @@ o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a s
 
 ## 2.2 Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
-
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+![Alt text](<Project Model Canvas SOS Gatinhos do Parque.png>)
 
 
 ## 2.3 Requisitos para o Sistema de Gerenciamento de Adoção de Gatos
