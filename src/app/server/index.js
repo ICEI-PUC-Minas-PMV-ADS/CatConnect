@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
-app.listen(3000, (err) => {
+app.listen(4000, (err) => {
   if (err) {
     console.log(err);
   } else {
@@ -15,7 +15,8 @@ app.listen(3000, (err) => {
 });
 
 mongoose
-  .connect('colocar uri do banco', {
+  .connect('mongodb+srv://CatConnect:catConnect2023@bancocatconnect.qqj0z5w.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp', 
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
