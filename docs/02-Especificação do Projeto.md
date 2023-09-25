@@ -32,11 +32,12 @@ Apresentamos a seguir os requisitos funcionais que o projeto deverá atender.
 
 Quadro 1 - Requisitos Funcionais
 
-|ID    | Descrição do Requisito                  | Prioridade |
-|------|-----------------------------------------|------------|
-|RF-001| Registro de Gatos: Permitir o cadastro do chip do gato, incluindo um número único para identificação. Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. Registrar a data de entrada do gato no sistema. Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado. | ALTA | 
-|RF-002| Registro de Adoção: Registrar a data de adoção do gato. Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. Associar o gato ao adotante correspondente. Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente).  | ALTA |
-|RF-003| Edição de Informações: Possibilitar a edição de todas as informações do gato, incluindo Nome do Animal, Raça, Idade, Espécie (Canina/Felina), Cor da Pelagem, Sexo, Vacinado, Porte (indicar somente caninos), Castrado, Vermifugado nos últimos 3 meses, Observações, e Endereço onde ficará o animal. Permitir a atualização dos dados do adotante, como telefone, endereço e e-mail. | ALTA | 
+| ID     | Descrição do Requisito                                                                                                                                                                                                                                                                                                                                                                                                                              | Prioridade |
+|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| RF-001 | Registro de Gatos: Permitir o cadastro do chip do gato, incluindo um número único para identificação. Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. Registrar a data de entrada do gato no sistema. Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado.                                                                    | ALTA      | 
+| RF-002 | Registro de Adoção: Registrar a data de adoção do gato. Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. Associar o gato ao adotante correspondente. Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente). | ALTA      |
+| RF-003 | Edição de Informações: Possibilitar a edição de todas as informações do gato, incluindo Nome do Animal, Raça, Idade, Espécie (Canina/Felina), Cor da Pelagem, Sexo, Vacinado, Porte (indicar somente caninos), Castrado, Vermifugado nos últimos 3 meses, Observações, e Endereço onde ficará o animal. Permitir a atualização dos dados do adotante, como telefone, endereço e e-mail.                                                             | ALTA      | 
+| RF-004 | Relatório: Disponibilizar no dashboard um botão para emissão de relatório em Excel para auxílio e controle de adoção dos gatos.                                                                                                                                                                                                                                                                                                                     |MÉDIA      | 
 
 Fonte: Elaborado pelos autores
 
@@ -47,15 +48,15 @@ Apresentamos a seguir os requisitos não funcionais que o projeto deverá atende
 
 Quadro 2 - Requisitos Não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|-----------|
-|RNF-001| Usabilidade: A interface deve ser intuitiva e fácil de usar, permitindo que os usuários se adaptem rapidamente. A interface deve destacar à primeira vista a foto, nome, status de saúde e status de adoção do gato.	| MÉDIA | 
-|RNF-002| Performance: O sistema deve responder rapidamente durante a busca e exibição de informações dos gatos e adotantes.	|  ALTA | 
-|RNF-003| Segurança e Privacidade: As informações pessoais dos adotantes devem ser armazenadas de forma segura e confidencial. Apenas usuários autorizados devem ter acesso ao sistema.	|  ALTA | 
-|RNF-004| Escalabilidade: O sistema deve ser capaz de lidar com um grande número de registros de gatos e adotantes, considerando o volume significativo de adoções.	|  ALTA | 
-|RNF-005| Personalização: Permitir a edição e personalização dos perfis de gatos com imagens e características únicas.	|  MÉDIA | 
-|RNF-006| Disponibilidade: Garantir que o sistema esteja disponível a maior parte do tempo, uma vez que os usuários poderão acessá-lo em diferentes momentos.	 |  BAIXA | 
-|RNF-007| Atualização: Deve ser possível realizar atualizações frequentes no sistema para adicionar recursos adicionais e melhorias com base no _feedback_ dos usuários.|  MÉDIA | 
+| ID      | Descrição do Requisito  |Prioridade |
+|---------|-------------------------|-----------|
+| RNF-001 | Usabilidade: A interface deve ser intuitiva e fácil de usar, permitindo que os usuários se adaptem rapidamente. A interface deve destacar à primeira vista a foto, nome, status de saúde e status de adoção do gato.	| MÉDIA | 
+| RNF-002 | Performance: O sistema deve responder rapidamente durante a busca e exibição de informações dos gatos e adotantes.	|  ALTA | 
+| RNF-003 | Segurança e Privacidade: As informações pessoais dos adotantes devem ser armazenadas de forma segura e confidencial. Apenas usuários autorizados devem ter acesso ao sistema.	|  ALTA | 
+| RNF-004 | Escalabilidade: O sistema deve ser capaz de lidar com um grande número de registros de gatos e adotantes, considerando o volume significativo de adoções.	|  ALTA | 
+| RNF-005 | Personalização: Permitir a edição e personalização dos perfis de gatos com imagens e características únicas.	|  MÉDIA | 
+| RNF-006 | Disponibilidade: Garantir que o sistema esteja disponível a maior parte do tempo, uma vez que os usuários poderão acessá-lo em diferentes momentos.	 |  BAIXA | 
+| RNF-007 | Atualização: Deve ser possível realizar atualizações frequentes no sistema para adicionar recursos adicionais e melhorias com base no _feedback_ dos usuários.|  MÉDIA | 
 
 Fonte: Elaborado pelos autores
 
