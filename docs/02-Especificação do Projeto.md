@@ -9,7 +9,22 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## 2.1 Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+A arquitetura de solução apresenta como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação. Seguem abaixo os principais elementos relacionados a esse tópico.
+
+### 2.1.1 Diagrama de Componentes
+
+Compreendemos nessa seção os componentes que fazem parte da arquitetura da solução, consoante figura adiante.
+
+Figura 1 - Arquitetura da Solução
+
+![Arquitetura](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/89549220/fe1e3910-5109-4385-ad71-cfd3e96ca402)
+
+Fonte: Elaborado pelos Autores
+
+
+### 2.1.2 Tecnologias
+
+(escrever)
 
 
 ## 2.2 Project Model Canvas
@@ -114,7 +129,7 @@ Graficamente é representado com elementos como os atores, os casos de uso e seu
 
 Desta feita, o grupo representa abaixo o diagrama de caso de uso para o sistema que será projetado.
 
-Figura 1 - Diagrama de Casos de Uso
+Figura 2 - Diagrama de Casos de Uso
 
 ![Diagrama de Casos de Usos da Aplicação](img/casos-de-uso-sosgp.png)
 
@@ -125,7 +140,7 @@ Fonte: Elaborado pelos autores
 
 O Modelo de dados escolhido foi o NoSQL do tipo documento. Esse modelo foi definido pensando no grande volume de dados demandados pela aplicação. Segue abaixo a representação do Modelo:
 
-Figura 2 - Modelagem de Dados
+Figura 3 - Modelagem de Dados
 
 ![MD SOS Gatinhos do Parque](https://github.com/ICEI-PUC-Minas-PMV-ADS/Grupo4Turma-2/assets/91228798/616e0b07-8c28-4170-834f-400c7316e717)
 
