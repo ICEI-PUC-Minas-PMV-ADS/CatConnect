@@ -29,7 +29,11 @@ Fonte: Elaborado pelos Autores
 
 ## 2.2 Project Model Canvas
 
+Figura 2 - Project Model Canvas
+
 ![Alt text](<Project Model Canvas SOS Gatinhos do Parque.png>)
+
+Fonte: Elaborado pelos Autores
 
 
 ## 2.3 Requisitos para o Sistema de Gerenciamento de Adoção de Gatos
@@ -129,7 +133,7 @@ Graficamente é representado com elementos como os atores, os casos de uso e seu
 
 Desta feita, o grupo representa abaixo o diagrama de caso de uso para o sistema que será projetado.
 
-Figura 2 - Diagrama de Casos de Uso
+Figura 3 - Diagrama de Casos de Uso
 
 ![Diagrama de Casos de Usos da Aplicação](img/casos-de-uso-sosgp.png)
 
@@ -140,7 +144,7 @@ Fonte: Elaborado pelos autores
 
 O Modelo de dados escolhido foi o NoSQL do tipo documento. Esse modelo foi definido pensando no grande volume de dados demandados pela aplicação. Segue abaixo a representação do Modelo:
 
-Figura 3 - Modelagem de Dados
+Figura 4 - Modelagem de Dados
 
 ![MD SOS Gatinhos do Parque](https://github.com/ICEI-PUC-Minas-PMV-ADS/Grupo4Turma-2/assets/91228798/616e0b07-8c28-4170-834f-400c7316e717)
 
