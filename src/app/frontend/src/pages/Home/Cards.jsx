@@ -2,11 +2,15 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import { useModal } from "../../contexts/ModalContext";
+import AdicionarAdocaoTemplate from "../../utils/modal/ModalTemplates/AdicionarAdocao/AdicionarAdocaoTemplate";
+import ModalDeExemplo from "../../utils/modal/ModalTemplates/ModalDeExemplo/ModalExemploTemplate";
 
 export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
+  const { openModal, closeModal } = useModal();
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookies.jwt) {
@@ -35,13 +39,23 @@ export default function Cards() {
     removeCookie("jwt");
     navigate("/login");
   };
+
+  const abrirModal = () => {
+    openModal("Adicionar adoção", AdicionarAdocaoTemplate({closeModal}))
+  }
+
+  const abrirModalExemplo = () => {
+    openModal("Modal de exemplo", ModalDeExemplo({closeModal}))
+  }
+
   return (
     <>
       <div className="private">
         <h1>Home</h1>
+        <button onClick={abrirModal}>Abrir modal</button>
+        <button onClick={abrirModalExemplo}>Abrir modal de exemplo</button>
         <button onClick={logOut}>Sair</button>
       </div>
-      <ToastContainer />
     </>
   );
 }
