@@ -15,4 +15,8 @@ Lei 14.064 de 29 de setembro de 2020. **Altera a Lei nº 9.605, de 12 de feverei
 
 Lei 9.605 de 12 de fevereiro de 1998. **Dispõe sobre as sanções penais e administrativas derivadas de condutas e atividades lesivas ao meio ambiente, e dá outras providências.** Disponível em: <https://www.planalto.gov.br/ccivil_03/leis/l9605.htm>. Acessado em: 07/09/2023.
 
+Resende, Carolina. **Apresentação da Extensão Universitária** Disponível em: <https://proex.pucminas.br/apresentacao/>. Acessado em: 25/09/2023.
+
 Wikepédia. **Diagrama de caso de uso.** Junho de 2020. Disponível em: <https://pt.wikipedia.org/wiki/Diagrama_de_caso_de_uso>. Acessado em: 31/08/2023.
+
+Wikipédia. **Extensão Universitária** Janeiro de 2023. Disponível em: <https://pt.wikipedia.org/wiki/Extens%C3%A3o_universit%C3%A1ria>. Acessado em: 25/09/2023.
