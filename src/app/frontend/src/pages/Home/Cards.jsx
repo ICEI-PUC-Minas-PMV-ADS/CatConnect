@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useModal } from "../../contexts/ModalContext";
 import AdicionarAdocaoTemplate from "../../utils/modal/ModalTemplates/AdicionarAdocao/AdicionarAdocaoTemplate";
+import ModalDeExemplo from "../../utils/modal/ModalTemplates/ModalDeExemplo/ModalExemploTemplate";
 
 export default function Cards() {
   const navigate = useNavigate();
@@ -43,11 +44,16 @@ export default function Cards() {
     openModal("Adicionar adoção", AdicionarAdocaoTemplate({closeModal}))
   }
 
+  const abrirModalExemplo = () => {
+    openModal("Modal de exemplo", ModalDeExemplo({closeModal}))
+  }
+
   return (
     <>
       <div className="private">
         <h1>Home</h1>
         <button onClick={abrirModal}>Abrir modal</button>
+        <button onClick={abrirModalExemplo}>Abrir modal de exemplo</button>
         <button onClick={logOut}>Sair</button>
       </div>
     </>

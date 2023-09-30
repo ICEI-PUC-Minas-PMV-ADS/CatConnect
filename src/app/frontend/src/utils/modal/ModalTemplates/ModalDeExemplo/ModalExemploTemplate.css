@@ -1,0 +1,46 @@
+.adocao-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  
+  .adocao-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .adocao-linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .adocao-coluna {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .adocao-coluna > input {
+    width: Fill (408px);
+    height: Hug (50px);
+    padding: 10px, 20px, 10px, 20px;
+    border-radius: 8px;
+    border: 1px;
+    gap: 12px;
+  }
+  
