@@ -4,11 +4,12 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useModal } from "../../contexts/ModalContext";
+import AdicionarAdocaoTemplate from "../../utils/modal/ModalTemplates/AdicionarAdocao/AdicionarAdocaoTemplate";
 
 export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
-  const { modalState, openModal, closeModal } = useModal();
+  const { openModal, closeModal } = useModal();
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookies.jwt) {
@@ -39,8 +40,9 @@ export default function Cards() {
   };
 
   const abrirModal = () => {
-    openModal("Teste modal", <h1>THIS IS A TEST MODAL</h1>)
+    openModal("Adicionar adoção", AdicionarAdocaoTemplate({closeModal}))
   }
+
   return (
     <>
       <div className="private">

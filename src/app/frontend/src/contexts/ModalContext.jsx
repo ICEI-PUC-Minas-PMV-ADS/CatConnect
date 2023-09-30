@@ -9,7 +9,6 @@ export function ModalProvider({ children }) {
 
   // Function to open the modal
   const openModal = (title, content) => {
-    console.log("clicou pra abrir", title, content)
     setModalState({ isOpen: true, title, content });
   };
 
