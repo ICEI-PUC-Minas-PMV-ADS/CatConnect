@@ -1,10 +1,7 @@
 .container {
-  left: 40%;
-  top: 0;
+  left: calc(50% - 183px);
+  top: calc(50% - 219px);
   position: absolute;
-  padding: 1rem 3rem;
-  padding-bottom: 2rem;
-  border-radius: 0.5rem;
 }
 
 .ellipse {
