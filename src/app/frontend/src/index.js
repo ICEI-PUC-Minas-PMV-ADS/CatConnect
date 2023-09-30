@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { ToastContainer, toast } from "react-toastify";
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { ToastContainer } from "react-toastify";
+import { ModalProvider } from "./contexts/ModalContext";
+import Modal from "./utils/modal/Modal";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <ToastContainer />
+    <ModalProvider>
+      <App />
+      <ToastContainer />
+      <Modal />
+    </ModalProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
