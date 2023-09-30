@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 export default function Cards() {
   const navigate = useNavigate();
@@ -41,7 +41,6 @@ export default function Cards() {
         <h1>Home</h1>
         <button onClick={logOut}>Sair</button>
       </div>
-      <ToastContainer />
     </>
   );
 }
