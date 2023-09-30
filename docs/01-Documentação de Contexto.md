@@ -6,11 +6,11 @@ Com o tempo, a ação do grupo se expandiu, mais pessoas se juntaram ao grupo, p
 
 Com o crescimento da ONG, surgiu também a necessidade de um sistema de controle dos animais, uma vez que os registros de dados especiais (como cor, idade, sexo, peso, raça, castração e tutores) ainda é feito por escrito em cadernos ou prontuários que podem ser perdidos com o tempo. O efetivo controle dos dados de cada gatinho é muito importante para que a instituição acompanhe o desenvolvimento saudável do felino, suas necessidades especiais e correta análise de sua saúde, facilitando assim, o processo de adoção e acompanhamento por seus tutores ou pela administração.
 
-Nossa intenção é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
+A intenção do grupo é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
 
-Acreditamos ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
+Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
 
-Esperamos assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
+Espera-se assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
 
 
 ## 1.1 Problema
@@ -30,7 +30,7 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 ## 1.2 Objetivos
 
-Nosso projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da ONG S.O.S. Gatinhos do Parque. Através de reuniões de alinhamento realizadas pela plataforma do _Google Meet_, o grupo e a _stakeholder_ externa Amanda (uma das responsáveis pela ONG SOS Gatinhos do Parque), pretendemos, também, resolver o problema de visibilidade e reconhecimento da instituição, ajudando-a a encontrar lares amorosos para seus gatinhos resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
+O projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da ONG S.O.S. Gatinhos do Parque. Através de reuniões de alinhamento realizadas pela plataforma do _Google Meet_, o grupo e a _stakeholder_ externa responsável pela interação da ONG SOS Gatinhos do Parque com o grupo, pretende-se, também, resolver o problema de visibilidade e reconhecimento da instituição, ajudando-a a encontrar lares amorosos para seus gatinhos resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
 
 Como objetivos específicos, podemos citar:
 
