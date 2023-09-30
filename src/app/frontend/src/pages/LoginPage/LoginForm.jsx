@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { ToastContainer, toast } from "react-toastify";
-function Login() {
+import { toast } from "react-toastify";
+import "./Login.css";
+
+function LoginForm({ toggleRegister }) {
   const [cookies] = useCookies([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -42,9 +44,10 @@ function Login() {
   };
   return (
     <div className="container">
-
       <h2>Login</h2>
-      <p>Sistema de acompanhamento de gatos e adoções exclusivo para voluntários da SOS Gatinhos do Parque
+      <p>
+        Sistema de acompanhamento de gatos e adoções exclusivo para voluntários
+        da SOS Gatinhos do Parque
       </p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
@@ -68,10 +71,13 @@ function Login() {
           />
         </div>
         <button type="submit">Entrar</button>
+        <span>
+          Não possui um conta ?
+          <a onClick={() => toggleRegister()}> Registrar</a>
+        </span>
       </form>
-      <ToastContainer />
     </div>
   );
 }
 
-export default Login;
+export default LoginForm;
