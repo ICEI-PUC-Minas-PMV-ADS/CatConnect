@@ -1,8 +1,27 @@
+:root {
+  --main-green:#1E732C;
+  --friendly-green: #00AD5A;
+  --background: #EBDFD7;
+  --background-shadows: #FFFFFF34;
+  --modal-background:rgba(41, 45, 50, 0.9);
+  --cold-background: #F0FFF8;
+  --main-text: #292D32;
+  --lower-text: #828282;
+  --blue-text: #092C4C;
+  --eg-text: #7E92A2;
+  --button-text: #FFFFFF;
+  --exit-button: #7E92A2;
+  --main-red: #EE201C;
+  --background-red: #F48C89;
+  --main-orange: #E65F2B;
+  --background-orange: #F0AB90;
+}
+
 .modal-background {
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--modal-background);
   justify-content: center;
   align-items: center;
   font-family: Inter;
@@ -22,7 +41,8 @@
   width: 50vw;
   border-radius: 12px;
   padding: 24px 32px;
-  background-color: #ffffff;
+  background-color: var(--cold-background);
+  font-family: Inter
 }
 
 .modal-content {
@@ -41,9 +61,22 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  background-color: #7e92a2;
-  width: 17px;
-  height: 17px;
+  background-color: var(--exit-button);
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.close-button:hover{
+  background-color: #292D32;
+}
+
+::-webkit-input-placeholder{
+  color: var(--eg-text);
+}
+
+label{
+  color: var(--blue-text);
+  font-weight: 800;
 }

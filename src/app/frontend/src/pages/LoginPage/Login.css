@@ -1,3 +1,22 @@
+:root {
+  --main-green:#1E732C;
+  --friendly-green: #00AD5A;
+  --background: #EBDFD7;
+  --background-shadows: #FFFFFF34;
+  --modal-background:rgba(41, 45, 50, 0.9);
+  --cold-background: #F0FFF8;
+  --main-text: #292D32;
+  --lower-text: #828282;
+  --blue-text: #092C4C;
+  --eg-text: #7E92A2;
+  --button-text: #FFFFFF;
+  --exit-button: #7E92A2;
+  --main-red: #EE201C;
+  --background-red: #F48C89;
+  --main-orange: #E65F2B;
+  --background-orange: #F0AB90;
+}
+
 .container {
   left: calc(50% - 183px);
   top: calc(50% - 219px);
@@ -47,7 +66,7 @@ h2 {
   font-size: 64px;
   font-weight: 400;
   font-style: italic;
-  color: #1e732c;
+  color: var(--main-green);
 }
 
 form {
@@ -68,7 +87,7 @@ input {
 }
 
 button {
-  background-color: #1a932e;
+  background-color: var(--friendly-green);
   color: white;
   border: none;
   padding: 0.5rem;
@@ -86,8 +105,8 @@ span a {
 .private {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(80, 98, 255);
-  color: white;
+  background-color: var(--background);
+  color: #00AD5A;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +117,7 @@ span a {
 }
 
 .private button {
-  background-color: black;
+  background-color: var(--main-text);
   padding: 2rem 10rem;
   font-size: 4rem;
   border-radius: 2rem;
