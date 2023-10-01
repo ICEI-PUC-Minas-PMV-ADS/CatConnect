@@ -1,6 +1,3 @@
-server/node_modules/
 frontend/node_modules/
-server/package-lock.json
-server/package.json
-server/yarn.lock
-frontend/yarn.lock
+server/node_modules/
+

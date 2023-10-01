@@ -15,8 +15,7 @@ app.listen(4000, (err) => {
 });
 
 mongoose
-  .connect('mongodb+srv://CatConnect:catConnect2023@bancocatconnect.qqj0z5w.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp', 
-  {
+  .connect('mongodb+srv://CatConnect:catConnect2023@bancocatconnect.qqj0z5w.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -29,7 +28,7 @@ mongoose
 
 app.use(
   cors({
-    origin: ["http://localhost:3001"],
+    origin: ["http://localhost:3001", "http://localhost:3000"],
     methods: ["GET", "POST"],
     credentials: true,
   })

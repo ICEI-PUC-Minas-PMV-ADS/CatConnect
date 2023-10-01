@@ -6,11 +6,11 @@ Com o tempo, a ação do grupo se expandiu, mais pessoas se juntaram ao grupo, p
 
 Com o crescimento da ONG, surgiu também a necessidade de um sistema de controle dos animais, uma vez que os registros de dados especiais (como cor, idade, sexo, peso, raça, castração e tutores) ainda é feito por escrito em cadernos ou prontuários que podem ser perdidos com o tempo. O efetivo controle dos dados de cada gatinho é muito importante para que a instituição acompanhe o desenvolvimento saudável do felino, suas necessidades especiais e correta análise de sua saúde, facilitando assim, o processo de adoção e acompanhamento por seus tutores ou pela administração.
 
-Nossa intenção é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
+A intenção do grupo é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
 
-Acreditamos ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
+Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
 
-Esperamos assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
+Espera-se assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
 
 
 ## 1.1 Problema
@@ -30,7 +30,7 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 ## 1.2 Objetivos
 
-Nosso projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da ONG S.O.S. Gatinhos do Parque. Através de reuniões de alinhamento realizadas pela plataforma do _Google Meet_, o grupo e a _stakeholder_ externa Amanda (uma das responsáveis pela ONG SOS Gatinhos do Parque), pretendemos, também, resolver o problema de visibilidade e reconhecimento da instituição, ajudando-a a encontrar lares amorosos para seus gatinhos resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
+O projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da ONG S.O.S. Gatinhos do Parque. Através de reuniões de alinhamento realizadas pela plataforma do _Google Meet_, o grupo e a _stakeholder_ externa responsável pela interação da ONG SOS Gatinhos do Parque com o grupo, pretende-se, também, resolver o problema de visibilidade e reconhecimento da instituição, ajudando-a a encontrar lares amorosos para seus gatinhos resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
 
 Como objetivos específicos, podemos citar:
 
@@ -79,13 +79,19 @@ Para embasar nossa decisão, realizaremos uma reunião entre os membros do grupo
 
 ## 1.4 Relação com a Extensão Universitária
 
+A extensão universitária é o elo de ligação entre a universidade e a sociedade, e tem como obejtivo principal promover a troca de saberes científicos e espontâneos, de forma que os conhecimentos de todas as partes envolvidas se complementem, realizando assim mudanças positivas na sociedade em que vivemos, e construindo caminhos que irão contribuir no confronto de problemas e de questões sociais. (Wikipédia, 2023)
+
+Congênere Resende (2023), cita que diante da complexidade dos problemas socioambientais que fazem parte da nossa realidade atualmente, a extensão universitária parece sondar o impossível, motivo pelo qual o Projeto Pedagógico Institucional (PPI) da PUC Minas salienta a extensão universitária como parte do fazer acadêmico, “um dos lugares de exercício da função social da universidade”. A Política de Extensão Universitária designa que as atividades busquem “a construção de um projeto societário, que permita, de forma efetiva, concretizar uma pauta de inclusão social, a formação cidadã e humanista, na perspectiva de desenvolvimento integral do ser humano”.
+
+A Pró-Reitoria de Extensão (Proex) da PUC Minas possui como princípios e valores, a igualdade, a liberdade, a autonomia, a pluraridade, a solidariedade e a justiça.(PUC Minas, 2023) Articulado a isto, o curso de Tecnólogo em Análise e Desenvolvimento de Sistemas da Universidade articula ações pedagógicas, de caráter teórico e prático, planejadas e executadas de modo sistemático, de forma a garantir que sejam cumpridos todos os critérios almejados para os alunos do Eixo 5. Uma forma diferenciada de colocar em prática todo o conhecimento aprendido durante o curso e, interagir com a sociedade, fazendo realmente a diferença na história do parceiro que abraçou a ideia.
+
+Assim, é evidente a relação do presente projeto e a extensão universitária, cujos propósitos estão fortalecidos pela necessidade de políticas públicas capazes de conter o abandono de animais, protegê-los dos maus-tratos e das forças da natureza, propiciando um local seguro, saúde e alimentação, até sua efetiva adoção.
+
 Conforme dados fornecidos pela organização, o número de felinos abandonados no parque é muito alto. Atualmente, o parque possui mais de 300 gatos abandonados e este número aumenta diariamente.
 
 Todo o registro de dados desses animais é escrito à mão em cadernos e prontuários impressos. Por vezes, alguns dados são perdidos com o tempo e a busca desses dados nem sempre é eficiente ou precisa. Esse problema é agravado pelo grande número de gatos abandonados no parque, pois o principal objetivo da ONG é ajudar esses animais a terem uma vida digna, cuidando dos gatos residentes no parque e encaminhando-os para moradias próprias por meio de adoções. O registro adequado dos gatos no parque beneficia não só os animais, mas também toda a sociedade. Não somente é possível melhor dimensionar o problema da adoção com novs registros, mas também melhor quantificar problemas de saúde e ataques sofridos pelos gatos no parque.
 
 O grande número de gatos abandonados no local se deve a vários fatores, não só sociais, mas também culturais. Algumas pessoas acreditam que os gatos são perigosos para as mulheres grávidas devido ao risco de toxoplasmose, ou que são transmissores de doenças virais e portadores de má sorte. Os registros de maus-tratos contra gatos são tão alarmantes que a Lei 14.064/20 aumentou as penas cominadas ao crime de maus-tratos aos animais quando se tratar de cão ou gato.
-
-Assim, é evidente a relação do presente projeto e a extensão universitária, cujos propósitos estão fortalecidos pela necessidade de políticas públicas capazes de conter o abandono de animais, protegê-los dos maus-tratos e das forças da natureza, propiciando um local seguro, saúde e alimentação, até sua efetiva adoção.
 
 O controle de dados destes animais se faz necessário para policiar as condições físicas desses animais, identificando seus responsáveis através da microchipagem e de outras características especiais de cada gatinho, além de possibilitar uma visão ampla do progresso da instituição contra o combate ao abandono e maus-tratos de gatos no local.
 
