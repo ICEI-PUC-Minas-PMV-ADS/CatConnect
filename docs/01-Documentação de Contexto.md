@@ -43,38 +43,30 @@ c) Apresentar o perfil para gerenciamento do registro de adoção.
 
 ## 1.3 Justificativa
 
-A escolha de desenvolver uma aplicação de gestão de adoção de gatos e melhorar a credibilidade da instituição de adoção é motivada por diversas razões fundamentais:
+A importância da criação do software para gestão de adoção de gatos pela ONG S.O.S. Gatinhos do Parque é inegável e fundamentada em diversas razões cruciais:
 
-I) Bem-Estar dos Gatos Abandonados:
+I) **Bem-Estar dos Gatos Abandonados:**
+A motivação central reside no bem-estar dos gatos abandonados e maltratados. Estes animais enfrentam perigos e dificuldades nas ruas, tornando essencial encontrar lares amorosos para eles, proporcionando segurança e cuidados adequados.
 
-A preocupação primordial é o bem-estar dos gatos que são abandonados ou maltratados. Muitos gatos abandonados enfrentam situações de risco nas ruas e, portanto, é fundamental encontrar lares amorosos para eles.
+II) **Causa Humanitária:**
+A adoção de gatos representa uma causa humanitária de extrema relevância. Ao promover a adoção responsável, a instituição demonstra seu compromisso com o cuidado e respeito pelos animais, promovendo valores de compaixão e empatia na sociedade.
 
-II) Causa Humanitária:
+III) **Redução da Superlotação em Abrigos:**
+A superlotação em abrigos é um problema persistente. A aplicação de gestão de adoção contribuirá para reduzir essa superlotação, permitindo que mais gatos encontrem lares permanentes, aliviando a pressão sobre os abrigos e melhorando as condições de vida dos animais.
 
-A adoção de gatos é uma causa humanitária importante. Trabalhar em prol da adoção responsável de gatos demonstra um compromisso com o cuidado e o respeito aos animais.
+IV) **Contribuição para uma Sociedade Mais Compassiva:**
+Facilitar a adoção de gatos não apenas beneficia os animais, mas também contribui para uma sociedade mais compassiva e compreensiva em relação aos animais de estimação e à adoção responsável. A conscientização gerada pela iniciativa pode promover uma mudança cultural positiva em relação aos direitos dos animais.
 
-III) Superlotação em Abrigos:
+V) **Transparência e Confiança na Instituição:**
+Aumentar a credibilidade da instituição de adoção é essencial para inspirar confiança nos doadores, voluntários e adotantes. A transparência fornecida pelo sistema de gestão de adoção cria uma base sólida de confiança, incentivando o apoio contínuo e a participação ativa na causa.
 
-A superlotação em abrigos de animais é um problema crônico. Uma aplicação eficaz de gestão de adoção pode ajudar a reduzir essa superlotação, garantindo que mais gatos encontrem lares permanentes.
+VI) **Eficiência na Gestão e Atendimento:**
+A aplicação proporcionará uma gestão mais eficiente dos processos de adoção, simplificando a documentação, agendamentos de visitas e acompanhamento pós-adoção. Isso não apenas economiza tempo, mas também melhora a experiência tanto para a instituição quanto para os adotantes, fortalecendo os laços entre eles e os gatos adotados.
 
-IV) Contribuição para uma Sociedade Melhor:
+VII) **Utilização de Dados para Tomada de Decisão:**
+A coleta e análise de dados estatísticos oferecem insights valiosos sobre o desempenho da instituição. Informações precisas e atualizadas permitem decisões informadas, ajudando a aprimorar estratégias de adoção e gestão, além de possibilitar um melhor entendimento do alcance e eficácia das iniciativas adotadas pela ONG.
 
-Ajudar na adoção de gatos não apenas beneficia os animais, mas também contribui para uma sociedade mais compreensiva e compassiva em relação aos animais de estimação e à adoção responsável.
-
-V). Transparência e Confiança:
-
-Aumentar a credibilidade da instituição de adoção é fundamental para inspirar confiança nos doadores, voluntários e adotantes. Isso pode ajudar a angariar fundos para a manutenção do abrigo e fornecer recursos adequados para os gatos resgatados.
-
-VI) Eficiência na Gestão:
-
-Uma aplicação de gestão de adoção pode melhorar significativamente a eficiência na administração dos processos de adoção, simplificando a documentação, o agendamento de visitas e o acompanhamento pós-adoção.
-
-VII) Uso de Dados para Tomada de Decisão:
-
-A coleta e análise de dados estatísticos podem oferecer informações valiosas sobre o desempenho da instituição, permitindo tomar decisões informadas para aprimorar a estratégia de adoção e a gestão do abrigo.
-
-
-Para embasar nossa decisão, realizaremos uma reunião entre os membros do grupo, afim de analisar problemas recorrentes com intuito de resolvelos. Além disso, a afinidade com os bichanos e empatia pela causa, nos motivou a estruturar ideias para resolução do problema mencionado. Após, nos reunimos com a instituição escolhida para entender melhor as necessidades cotidianas. Essas informações nos ajudaram a entender melhor os desafios específicos da instituição e a desenvolver uma aplicação que atenda efetivamente as demandas, contribuindo para uma causa humanitária crucial e aprimorando a credibilidade da instituição de adoção.
+A necessidade de um sistema digitalizado se torna evidente ao considerar o grande número de gatos abandonados no Parque Municipal Américo René Gianetti. A aplicação proporcionará uma solução tangível para um problema complexo, melhorando a qualidade de vida dos gatos e promovendo uma mudança positiva na sociedadee também a transparência e eficiência proporcionadas pela aplicação não apenas ajudam a angariar fundos essenciais para a manutenção do abrigo, mas também garantem recursos adequados para os gatos resgatados. consolidando assim a missão humanitária da ONG S.O.S. Gatinhos do Parque.
 
 
 ## 1.4 Relação com a Extensão Universitária
