@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useModal } from "../../contexts/ModalContext";
 import AdicionarAdocaoTemplate from "../../utils/modal/ModalTemplates/AdicionarAdocao/AdicionarAdocaoTemplate";
 import ModalDeExemplo from "../../utils/modal/ModalTemplates/ModalDeExemplo/ModalExemploTemplate";
+import { Link } from 'react-router-dom';
 
 export default function Cards() {
   const navigate = useNavigate();
@@ -54,6 +55,9 @@ export default function Cards() {
         <h1>Home</h1>
         <button onClick={abrirModal}>Abrir modal</button>
         <button onClick={abrirModalExemplo}>Abrir modal de exemplo</button>
+        <button>
+          <Link to="./Gatinhos">Página dos Gatinhos</Link>
+      </button>
         <button onClick={logOut}>Sair</button>
       </div>
     </>

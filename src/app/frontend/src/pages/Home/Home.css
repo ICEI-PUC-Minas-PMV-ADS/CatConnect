@@ -1,0 +1,18 @@
+:root {
+    --main-green:#1E732C;
+    --friendly-green: #00AD5A;
+    --background: #EBDFD7;
+    --background-shadows: #FFFFFF34;
+    --modal-background:rgba(41, 45, 50, 0.9);
+    --cold-background: #F0FFF8;
+    --main-text: #292D32;
+    --lower-text: #828282;
+    --blue-text: #092C4C;
+    --eg-text: #7E92A2;
+    --button-text: #FFFFFF;
+    --exit-button: #7E92A2;
+    --main-red: #EE201C;
+    --background-red: #F48C89;
+    --main-orange: #E65F2B;
+    --background-orange: #F0AB90;
+  }

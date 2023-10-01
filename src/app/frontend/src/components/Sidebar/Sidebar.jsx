@@ -46,7 +46,7 @@ function Sidebar() {
 
                     <li>
                         < VscBriefcase/>
-                        <a href="/registros">Registros</a>
+                        <a href="/gatinhos">Gatinhos</a>
                     </li>
                     <li>
                         < BsListCheck />
