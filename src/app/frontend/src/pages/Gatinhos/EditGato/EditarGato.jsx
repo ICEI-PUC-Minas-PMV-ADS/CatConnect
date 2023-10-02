@@ -1,7 +1,7 @@
 import React from "react";
-import "./AdicionarGato.css";
+import "./EditarGato.css";
 
-function AddGato({ closeModal }) { //Qualquer hook a ser usado, terá error (ver no console), caso ocorra, enviar o hook via props
+function EditGato({ closeModal }) { //Qualquer hook a ser usado, terá error (ver no console), caso ocorra, enviar o hook via props
   const handleSubmit = async () => {
     console.log("Gato adicionado com sucesso!");
     closeModal();
@@ -42,4 +42,4 @@ function AddGato({ closeModal }) { //Qualquer hook a ser usado, terá error (ver
   );
 }
 
-export default AddGato;
+export default EditGato;
