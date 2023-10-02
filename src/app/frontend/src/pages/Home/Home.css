@@ -1,18 +1,39 @@
 :root {
-    --main-green:#1E732C;
-    --friendly-green: #00AD5A;
-    --background: #EBDFD7;
-    --background-shadows: #FFFFFF34;
-    --modal-background:rgba(41, 45, 50, 0.9);
-    --cold-background: #F0FFF8;
-    --main-text: #292D32;
-    --lower-text: #828282;
-    --blue-text: #092C4C;
-    --eg-text: #7E92A2;
-    --button-text: #FFFFFF;
-    --exit-button: #7E92A2;
-    --main-red: #EE201C;
-    --background-red: #F48C89;
-    --main-orange: #E65F2B;
-    --background-orange: #F0AB90;
-  }
+  --main-green: #1e732c;
+  --friendly-green: #00ad5a;
+  --background: #ebdfd7;
+  --background-shadows: #ffffff34;
+  --modal-background: rgba(41, 45, 50, 0.9);
+  --cold-background: #f0fff8;
+  --main-text: #292d32;
+  --lower-text: #828282;
+  --blue-text: #092c4c;
+  --eg-text: #7e92a2;
+  --button-text: #ffffff;
+  --exit-button: #7e92a2;
+  --main-red: #ee201c;
+  --background-red: #f48c89;
+  --main-orange: #e65f2b;
+  --background-orange: #f0ab90;
+}
+
+.home-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 260px auto;
+  grid-template-areas: "sidebar content";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  width: 100%;
+  height: 100%;
+}
+
+.private {
+  grid-area: content;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}

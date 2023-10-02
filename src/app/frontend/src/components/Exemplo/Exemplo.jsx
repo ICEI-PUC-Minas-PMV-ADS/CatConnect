@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -6,9 +6,9 @@ import { toast } from "react-toastify";
 import { useModal } from "../../contexts/ModalContext";
 import AdicionarAdocaoTemplate from "../../utils/modal/ModalTemplates/AdicionarAdocao/AdicionarAdocaoTemplate";
 import ModalDeExemplo from "../../utils/modal/ModalTemplates/ModalDeExemplo/ModalExemploTemplate";
-import { Link } from 'react-router-dom';
+import "./Exemplo.css";
 
-export default function Cards() {
+export default function Exemplo({definirComponente}) {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const { openModal, closeModal } = useModal();
@@ -27,10 +27,12 @@ export default function Cards() {
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
-        } else
+        } else {
+
           toast(`Olá ${data.user} 🦄`, {
             theme: "dark",
           });
+        }
       }
     };
     verifyUser();
@@ -42,24 +44,22 @@ export default function Cards() {
   };
 
   const abrirModal = () => {
-    openModal("Adicionar adoção", AdicionarAdocaoTemplate({closeModal}))
-  }
+    openModal("Adicionar adoção", AdicionarAdocaoTemplate({ closeModal }));
+  };
 
   const abrirModalExemplo = () => {
-    openModal("Modal de exemplo", ModalDeExemplo({closeModal}))
-  }
+    openModal("Modal de exemplo", ModalDeExemplo({ closeModal }));
+  };
 
   return (
-    <>
-      <div className="private">
+      <div className="container">
         <h1>Home</h1>
         <button onClick={abrirModal}>Abrir modal</button>
         <button onClick={abrirModalExemplo}>Abrir modal de exemplo</button>
-        <button>
-          <Link to="./Gatinhos">Página dos Gatinhos</Link>
-      </button>
+        <button onClick={() => definirComponente("Gatinhos")}>
+            Página dos Gatinhos
+        </button>
         <button onClick={logOut}>Sair</button>
       </div>
-    </>
   );
 }
