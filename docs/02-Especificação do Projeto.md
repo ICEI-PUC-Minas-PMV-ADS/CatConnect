@@ -191,4 +191,4 @@ Também pode ser acessado clicando <a href="https://lucid.app/lucidchart/8124302
 
 De acordo com DevMedia (2023), Banco de Dados Orientados a Documentos tem como característica abranger as informações cruciais em um único documento, não possuir esquemas, conter identificadores únicos universais (UUID), proporcionar a consulta de documentos através de métodos avançados de agrupamento e filtragem e também permitir redundância e inconsistência.
 
-Pelos motivos elencados acima, o grupo optou por utilizar o MongoDb, além de tornar a leitura e gravação de dados rápida e eficiente durante a análise de informações em tempo real e em diversos ambientes de desenvolvimento.
+Pelos motivos elencados acima, o grupo optou por utilizar o MongoDb, além de tornar a leitura e gravação de dados rápida e eficiente durante a análise de informações em tempo real e em diversos ambientes de desenvolvimento. (IBM, 2023)
