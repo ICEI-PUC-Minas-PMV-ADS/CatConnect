@@ -2,11 +2,12 @@ import React from "react";
 import Logo from "../../images/logo-sos-gatinhos.png";
 import "../../components/Sidebar/Sidebar.css";
 import { MdAddCircle } from "react-icons/md";
+import { MdPets } from "react-icons/md";
+import { MdVolunteerActivism } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { AiOutlineSetting, AiOutlineLeft } from "react-icons/ai";
 import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
-import { VscBriefcase } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
@@ -54,21 +55,24 @@ function Sidebar({definirComponente}) {
         <div className="contentsContainer">
           <ul>
             <li>
-              <VscBriefcase />
+              <RxDashboard />
+              <a onClick={() => definirComponente("dashboard")}>Dashboard</a>
+            </li>
+            <li>
+              <MdPets />
               <a onClick={() => definirComponente("gatinhos")}>Gatinhos</a>
+            </li>
+            <li>
+              <MdVolunteerActivism />
+              <a onClick={() => definirComponente("adotantes")}>Adotantes</a>
             </li>
             <li>
               <BsListCheck />
               <a onClick={() => definirComponente("adocoes")}>Adoções</a>
             </li>
             <li>
-              <RxDashboard />
-              <a onClick={() => definirComponente("dashboard")}>Dashboard</a>
-            </li>
-
-            <li>
               <TiGroupOutline />
-              <a onClick={() => definirComponente("users")}>Users</a>
+              <a onClick={() => definirComponente("users")}>Usuários</a>
             </li>
             <li>
               <AiOutlineSetting />

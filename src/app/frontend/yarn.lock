@@ -1308,7 +1308,7 @@
   resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.8.1.tgz"
   integrity sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==
 
-"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.11.1", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0":
+"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0", "@emotion/react@latest":
   version "11.11.1"
   resolved "https://registry.npmjs.org/@emotion/react/-/react-11.11.1.tgz"
   integrity sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==
@@ -1338,7 +1338,7 @@
   resolved "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.2.2.tgz"
   integrity sha512-0QBtGvaqtWi+nx6doRwDdBIzhNdZrXUppvTM4dtZZWEGTXL/XE/yJxLMGlDT1Gt+UHH5IX1n+jkXyytE/av7OA==
 
-"@emotion/styled@^11.11.0", "@emotion/styled@^11.3.0":
+"@emotion/styled@^11.3.0", "@emotion/styled@latest":
   version "11.11.0"
   resolved "https://registry.npmjs.org/@emotion/styled/-/styled-11.11.0.tgz"
   integrity sha512-hM5Nnvu9P3midq5aaXj4I+lnSfNi7Pmd4EWk1fOZ3pxookaQTNew6bp4JaCBYM4HVFZF9g7UjJmsUmC2JlxOng==
@@ -1763,14 +1763,14 @@
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.11.tgz"
   integrity sha512-uY8FLQURhXe3f3O4dS5OSGML9KDm9+IE226cBu78jarVIzdQGPlXwGIlSI9VJR8MvZDA6C0+6XfWDhWCHruC5Q==
 
-"@mui/icons-material@^5.14.11":
+"@mui/icons-material@latest":
   version "5.14.11"
   resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.11.tgz"
   integrity sha512-aHReLasBuS/+hhPzbZCgZ0eTcZ2QRnoC2WNK7XvdAf3l+LjC1flzjh6GWw1tZJ5NHnZ+bivdwtLFQ8XTR96JkA==
   dependencies:
     "@babel/runtime" "^7.22.15"
 
-"@mui/material@^5.0.0", "@mui/material@^5.14.11", "@mui/material@^5.4.1":
+"@mui/material@^5.0.0", "@mui/material@^5.4.1", "@mui/material@latest":
   version "5.14.11"
   resolved "https://registry.npmjs.org/@mui/material/-/material-5.14.11.tgz"
   integrity sha512-DnSdJzcR7lwG12JA5L2t8JF+RDzMygu5rCNW+logWb/KW2/TRzwLyVWO+CorHTBjBRd38DBxnwOCDiYkDd+N3A==
@@ -1836,7 +1836,7 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@mui/x-data-grid@^6.16.0":
+"@mui/x-data-grid@latest":
   version "6.16.0"
   resolved "https://registry.npmjs.org/@mui/x-data-grid/-/x-data-grid-6.16.0.tgz"
   integrity sha512-u2z889gs18GtHxUtVxxpTr9Oei1ksxjWZA214RnuMGPvVGLStS36sfqICO5GVJeLkcpJAsJSNgMfzNwc9yPm7w==
