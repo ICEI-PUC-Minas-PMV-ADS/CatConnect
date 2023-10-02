@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import Cards from "./pages/Home/Cards";
+import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NovoGato from "./pages/NovoGato/NovoGato";
 import Registros from "./pages/Registros/Registros";
@@ -16,7 +16,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/" element={<Cards />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/novoGato" element={<NovoGato />} />
         <Route exact path="/registros" element={<Registros />} />
