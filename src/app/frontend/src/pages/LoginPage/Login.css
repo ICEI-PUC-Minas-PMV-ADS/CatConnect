@@ -116,7 +116,7 @@ span a {
   gap: 1rem;
 }
 
-.private button {
+.private > button {
   background-color: var(--main-text);
   padding: 2rem 10rem;
   font-size: 4rem;
