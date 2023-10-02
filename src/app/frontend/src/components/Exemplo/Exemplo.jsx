@@ -56,7 +56,7 @@ export default function Exemplo({definirComponente}) {
         <h1>Home</h1>
         <button onClick={abrirModal}>Abrir modal</button>
         <button onClick={abrirModalExemplo}>Abrir modal de exemplo</button>
-        <button onClick={() => definirComponente("Gatinhos")}>
+        <button onClick={() => definirComponente("gatinhos")}>
             Página dos Gatinhos
         </button>
         <button onClick={logOut}>Sair</button>
