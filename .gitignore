@@ -1,0 +1,10 @@
+
+src/app/server/index.js
+
+src/app/server/node_modules
+src/app/server/package-lock.json
+src/app/server/yarn.lock
+
+src/app/frontend/node_modules
+src/app/frontend/package-lock.json
+src/app/frontend/yarn.lock

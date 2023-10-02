@@ -1,0 +1,116 @@
+:root {
+  --main-green: #1e732c;
+  --friendly-green: #00ad5a;
+  --background: #ebdfd7;
+  --background-shadows: #ffffff34;
+  --modal-background: rgba(41, 45, 50, 0.9);
+  --cold-background: #f0fff8;
+  --main-text: #292d32;
+  --lower-text: #828282;
+  --blue-text: #092c4c;
+  --eg-text: #7e92a2;
+  --button-text: #ffffff;
+  --exit-button: #7e92a2;
+  --main-red: #ee201c;
+  --background-red: #f48c89;
+  --main-orange: #e65f2b;
+  --background-orange: #f0ab90;
+}
+
+/* Sidebar container */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-green);
+  color: var(--background);
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.btnSidebar {
+  display: flex;
+  margin-top: 5rem;
+  margin: 1rem 0 0 0;
+  border-radius: 24px;
+  color: var(--friendly-green);
+  background-color: var(--background);
+  padding: 5px, 20px, 5px, 7px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  gap: 4px;
+}
+
+.btnSidebar2 {
+  display: flex;
+  margin: 2.2rem 0 0 0;
+  border-radius: 24px;
+  gap: 4px;
+  color: #da5406;
+  background-color: var(--background);
+  padding: 5px, 20px, 5px, 7px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.burgerContainer {
+  content: "";
+  background-color: #fff;
+  right: calc(-35px / 2);
+  top: calc(4rem / 1.15);
+  width: 30px;
+  height: 30px;
+  border-radius: 17px;
+  z-index: 1;
+  align-items: center;
+}
+
+.contentsContainer {
+  margin: 0.7rem 0 0;
+}
+
+ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0.6rem 0;
+  padding: 0.25rem 0;
+  border-radius: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0 1rem;
+}
