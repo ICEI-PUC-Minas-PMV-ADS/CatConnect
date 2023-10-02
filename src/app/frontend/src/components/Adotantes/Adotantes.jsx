@@ -13,27 +13,29 @@ const Adotantes = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [filterText, setFilterText] = useState("");
-  const { openModal, closeModal } = useModal();
+  const { modalState, openModal, closeModal } = useModal();
   const [newAdotante, setNewAdotante] = useState();
 
   useEffect(() => {
     // This code will run when newAdotante changes
-    if(newAdotante)
-    openModal(
-      "Editar adotante",
-      AdotantesModal({
-        handleSubmitFunction: handleEditAdotante,
-        adotante: newAdotante,
-        edit: true,
-        setAdotante: setNewAdotante,
-      })
-    );
-  }, [newAdotante]);
+    if (newAdotante && !modalState.isOpen)
+      openModal(
+        "Editar adotante",
+        AdotantesModal({
+          handleSubmitFunction: handleEditAdotante,
+          adotante: newAdotante,
+          edit: true,
+          setAdotante: setNewAdotante,
+        })
+      );
+    if (!modalState.isOpen) setNewAdotante();
+  }, [newAdotante, modalState.isOpen]);
 
   const handleAddAdotante = () => {
     //TODO: Salvar adotante no banco
     alert("Adotante salvado com sucesso!", newAdotante);
     console.log("Adotante salvado com sucesso!", newAdotante);
+    mockData.push(newAdotante);
     closeModal();
     setNewAdotante();
   };
@@ -42,6 +44,10 @@ const Adotantes = () => {
     //TODO: Editar adotante no banco
     alert("Adotante alterado com sucesso!", newAdotante);
     console.log("Adotante alterado com sucesso!", newAdotante);
+    let adotanteIndex = mockData.findIndex(
+      (adotante) => adotante.id == newAdotante.id
+    );
+    mockData[adotanteIndex] = newAdotante;
     closeModal();
     setNewAdotante();
   };
@@ -55,7 +61,12 @@ const Adotantes = () => {
   const abrirAddAdotante = () => {
     openModal(
       "Adicionar adotante",
-      AdotantesModal({ handleSubmitFunction: handleAddAdotante, edit: true, adotante: newAdotante, setAdotante: setNewAdotante })
+      AdotantesModal({
+        handleSubmitFunction: handleAddAdotante,
+        edit: true,
+        adotante: newAdotante,
+        setAdotante: setNewAdotante,
+      })
     );
   };
 
@@ -71,20 +82,7 @@ const Adotantes = () => {
       rua: `Rua do adotante ${editedRow.id}`,
     };
 
-    
     setNewAdotante({ ...editedRow });
-
-    // setNewAdotante({...editedRow})
-    
-    // openModal(
-    //   "Editar adotante",
-    //   AdotantesModal({
-    //     handleSubmitFunction: handleEditAdotante,
-    //     adotante: newAdotante,
-    //     edit: true,
-    //     setAdotante: setNewAdotante
-    //   })
-    // );
   };
 
   const openViewModal = (rowId) => {
@@ -129,7 +127,7 @@ const Adotantes = () => {
     },
   ];
 
-  const mockData = [
+  let mockData = [
     {
       id: 1,
       nome: "Adotante legal 1",
