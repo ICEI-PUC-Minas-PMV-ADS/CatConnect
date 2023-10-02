@@ -16,7 +16,7 @@
   --background-orange: #F0AB90;
 }
 
-.adocao-container {
+.gato-container {
   display: flex;
   height: 100%;
   width: 100%;
@@ -26,7 +26,7 @@
   line-height: 30px;
 }
 
-.adocao-dados {
+.gato-dados {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.adocao-linha {
+.gato-linha {
   display: flex;
   flex-direction: row;
   justify-content: stretch;
@@ -46,14 +46,14 @@
   gap: 20px;
 }
 
-.adocao-coluna {
+.gato-coluna {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
-.adocao-coluna > input {
+.gato-coluna > input {
   width: Fill (408px);
   height: Hug (50px);
   padding: 10px, 20px, 10px, 20px;
