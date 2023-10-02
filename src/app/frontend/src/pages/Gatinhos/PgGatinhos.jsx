@@ -113,7 +113,8 @@ function Gatinhos() {
       <h1>Gatinhos</h1>
       <Button
         id="ModalGatos"
-        onClick={abrirAddGato}>
+        onClick={abrirAddGato}
+        variant="contained">
           <span style={{ fontSize: "24px", color: "white" }}>+</span>
       </Button>
 

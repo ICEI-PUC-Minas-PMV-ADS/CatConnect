@@ -1,6 +1,6 @@
 import React from "react";
 import { TextField, Button, Grid, Typography, FormLabel, FormControl } from "@mui/material";
-import "./AdicionarGato.css";
+import "./EditarGato.css";
 
 function AddGato({ closeModal }) {
   const handleSubmit = (e) => {
@@ -10,7 +10,17 @@ function AddGato({ closeModal }) {
   };
 
   const gato = {
-
+    chip: "32405000",
+    idade: "10 anos",
+    nome: "Fifi",
+    cor: "Laranja",
+    local: "Coreto",
+    castracao:"Não",
+    vacina:"Não",
+    fiv: "negativo",
+    felv: "negativo",
+    pelagem: "Longa",
+    info: "Tímida"
   };
 
   return (
@@ -220,9 +230,8 @@ function AddGato({ closeModal }) {
             </FormControl>
           </Grid>
           
-          <Grid item xs={5}>
+          <Grid item xs={12}>
             <Button
-              id="salvar"
               type="submit"
               variant="contained"
               color="primary"
