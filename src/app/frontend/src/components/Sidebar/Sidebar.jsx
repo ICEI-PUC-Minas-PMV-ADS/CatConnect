@@ -23,7 +23,7 @@ function Sidebar({definirComponente}) {
             }}
           />
         </div> */}
-        <div>
+        <div className="botoes">
           <button
             className="btnSidebar"
             onClick={() => definirComponente("gatinhos")}
@@ -67,6 +67,15 @@ function Sidebar({definirComponente}) {
             </li>
           </ul>
         </div>
+          <button className="btnSair">
+          <AiOutlineLeft
+            size={23}
+            style={{
+              color: "black",
+            }}
+          />
+          Sair
+          </button>
       </div>
     </div>
   );

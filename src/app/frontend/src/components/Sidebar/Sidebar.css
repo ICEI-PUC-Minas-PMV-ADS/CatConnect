@@ -38,12 +38,19 @@
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
+  height: 100vh;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .btnSidebar {
   display: flex;
-  margin-top: 5rem;
-  margin: 1rem 0 0 0;
   border-radius: 24px;
   color: var(--friendly-green);
   background-color: var(--background);
@@ -51,14 +58,11 @@
   font-size: 15px;
   align-items: center;
   justify-content: center;
-  align-self: center;
-  justify-self: center;
   gap: 4px;
 }
 
 .btnSidebar2 {
   display: flex;
-  margin: 2.2rem 0 0 0;
   border-radius: 24px;
   gap: 4px;
   color: #da5406;
@@ -67,6 +71,15 @@
   font-size: 15px;
   align-items: center;
   justify-content: center;
+}
+
+.btnSair {
+  display: flex;
+  border-radius: 24px;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
 }
 
 .burgerContainer {
@@ -83,6 +96,7 @@
 
 .contentsContainer {
   margin: 0.7rem 0 0;
+  flex-grow: 1;
 }
 
 ul {
