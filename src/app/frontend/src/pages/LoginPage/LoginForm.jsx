@@ -71,10 +71,10 @@ function LoginForm({ toggleRegister }) {
           />
         </div>
         <button type="submit">Entrar</button>
-        <span>
-          Não possui um conta ?
-          <a onClick={() => toggleRegister()}> Registrar</a>
-        </span>
+        {/*<span>*/}
+        {/*  Não possui um conta ?*/}
+        {/*  <a onClick={() => toggleRegister()}> Registrar</a>*/}
+        {/*</span>*/}
       </form>
     </div>
   );
