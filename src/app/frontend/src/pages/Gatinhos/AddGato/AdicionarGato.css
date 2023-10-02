@@ -1,0 +1,42 @@
+:root {
+  --main-green: #1E732C;
+  --friendly-green: #00AD5A;
+  --background: #EBDFD7;
+  --background-shadows: #FFFFFF34;
+  --cold-background: #F0FFF8;
+  --main-text: #292D32;
+  --lower-text: #828282;
+  --blue-text: #092C4C;
+  --eg-text: #7E92A2;
+  --button-text: #FFFFFF;
+  --exit-button: #7E92A2;
+  --main-red: #EE201C;
+  --background-red: #F48C89;
+  --main-orange: #E65F2B;
+  --background-orange: #F0AB90;
+}
+
+#secao{
+  color: var(--blue-text);
+  font-weight: 800;
+  font-size: 24px;
+  font-family: Inter;
+}
+
+.MuiInputBase-input::placeholder {
+  color: var(--lower-text); 
+}
+
+.MuiFormControlLabel-label {
+  font-size: 16px; /* Adjust the font size as needed */
+  color: var(--blue-text); /* Change the color to your preferred color */
+}
+
+.MuiInputBase-input::-ms-value{
+  color: var(--main-text);
+}
+
+#salvar{
+  right: 20px;
+}
+
