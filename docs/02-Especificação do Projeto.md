@@ -185,3 +185,11 @@ Fonte: Elaborado pelos autores
 
 
 Também pode ser acessado clicando <a href="https://lucid.app/lucidchart/81243027-bc05-48b8-bc63-2d3e55851eec/edit?viewport_loc=191%2C-182%2C1623%2C865%2C0_0&invitationId=inv_23f15e69-f1ff-408f-b004-d341a9c271b5">aqui</a>.
+
+
+## 2.7 Projeto da Base de Dados
+
+De acordo com DevMedia (2023), Banco de Dados Orientados a Documentos tem como característica abranger as informações cruciais em um único documento, não possuir esquemas, conter identificadores únicos universais (UUID), proporcionar a consulta de documentos através de métodos avançados de agrupamento e filtragem e também permitir redundância e inconsistência.
+
+Pelos motivos elencados acima, o grupo optou por utilizar o MongoDb, além de tornar a leitura e gravação de dados rápida e eficiente durante a análise de informações em tempo real e em diversos ambientes de desenvolvimento. (IBM, 2023)
+
