@@ -8,7 +8,7 @@ import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
 import { VscBriefcase } from "react-icons/vsc";
 
-function Sidebar() {
+function Sidebar({definirComponente}) {
   return (
     <div className="sidebar">
       <div className="content">
@@ -43,24 +43,24 @@ function Sidebar() {
           <ul>
             <li>
               <VscBriefcase />
-              <a href="/gatinhos">Gatinhos</a>
+              <a onClick={() => definirComponente("gatinhos")}>Gatinhos</a>
             </li>
             <li>
               <BsListCheck />
-              <a href="/adocoes">Adoções</a>
+              <a onClick={() => definirComponente("adocoes")}>Adoções</a>
             </li>
             <li>
               <RxDashboard />
-              <a href="/dashboard">Dashboard</a>
+              <a onClick={() => definirComponente("dashboard")}>Dashboard</a>
             </li>
 
             <li>
               <TiGroupOutline />
-              <a href="/users">Users</a>
+              <a onClick={() => definirComponente("users")}>Users</a>
             </li>
             <li>
               <AiOutlineSetting />
-              <a href="/configuracoes">Configurações</a>
+              <a onClick={() => definirComponente("configuracoes")}>Configurações</a>
             </li>
           </ul>
         </div>

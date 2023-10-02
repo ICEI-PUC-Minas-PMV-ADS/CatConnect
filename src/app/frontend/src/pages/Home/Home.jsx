@@ -6,7 +6,11 @@ import { toast } from "react-toastify";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Home.css";
 import Exemplo from "../../components/Exemplo/Exemplo";
-import Gatinhos from "../Gatinhos/PgGatinhos";
+import Gatinhos from "../../components/Gatinhos/PgGatinhos";
+import Adocoes from "../../components/Adocoes/Adocoes";
+import Dashboard from "../../components/Dashboard/Dashboard";
+import Users from "../../components/Users/User";
+import Configuracoes from "../../components/Configuracoes/Configuracoes";
 
 export default function Cards() {
   const navigate = useNavigate();
@@ -18,8 +22,16 @@ export default function Cards() {
     switch (component) {
       case "Exemplo":
         return <Exemplo definirComponente={setComponent} />;
-      case "Gatinhos":
+      case "gatinhos":
         return <Gatinhos />;
+      case "adocoes":
+        return <Adocoes />;
+      case "dashboard":
+        return <Dashboard />;
+      case "users":
+        return <Users />;
+      case "configuracoes":
+        return <Configuracoes />;
     }
   };
 
@@ -50,7 +62,7 @@ export default function Cards() {
 
   return (
     <div className="home-container">
-      <Sidebar className="sidebar" />
+      <Sidebar className="sidebar" definirComponente={setComponent} />
       <div className="private">{definirComponente()}</div>
     </div>
   );
