@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -29,7 +30,7 @@ mongoose
 app.use(
   cors({
     origin: ["http://localhost:3001", "http://localhost:3000"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -37,3 +38,8 @@ app.use(cookieParser());
 
 app.use(express.json());
 app.use("/", authRoutes);
+app.use("/", userRoutes);
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Algo deu errado!");
+});

@@ -8,24 +8,30 @@ import Registros from "./pages/Registros/Registros";
 import Adocoes from "./pages/Adocoes/Adocoes";
 import Users from "./pages/Users/User";
 import Configuracoes from "./pages/Configuracoes/Configuracoes";
-import Gatinhos from "./pages/Gatinhos/PgGatinhos"
+import Gatinhos from "./pages/Gatinhos/PgGatinhos";
 import "react-toastify/dist/ReactToastify.css";
+import { useCookies } from "react-cookie"; // Import useCookies hook
+import Sidebar from "./components/Sidebar/Sidebar";
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/novoGato" element={<NovoGato />} />
-        <Route exact path="/registros" element={<Registros />} />
-        <Route exact path="/adocoes" element={<Adocoes />} />
-        <Route exact path="/users" element={<Users />} />
-        <Route exact path="/configuracoes" element={<Configuracoes />} />
+  const [cookies] = useCookies();
 
-        <Route exact path="/Gatinhos" element={<Gatinhos />} />
-      </Routes>
-    </BrowserRouter>
+  return (
+    <div className="app-container">
+      {cookies.jwt && window.location.pathname !== "/login" && <Sidebar />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/novoGato" element={<NovoGato />} />
+          <Route path="/registros" element={<Registros />} />
+          <Route path="/adocoes" element={<Adocoes />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/configuracoes" element={<Configuracoes />} />
+          <Route path="/Gatinhos" element={<Gatinhos />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
