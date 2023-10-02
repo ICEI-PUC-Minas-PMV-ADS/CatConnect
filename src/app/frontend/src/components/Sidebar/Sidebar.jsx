@@ -7,8 +7,17 @@ import { AiOutlineSetting, AiOutlineLeft } from "react-icons/ai";
 import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
 import { VscBriefcase } from "react-icons/vsc";
+import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function Sidebar({definirComponente}) {
+  const [cookies, setCookie, removeCookie] = useCookies([]);
+  const navigate = useNavigate();
+  const logOut = () => {
+    removeCookie("jwt");
+    navigate("/login");
+  };
+
   return (
     <div className="sidebar">
       <div className="content">
@@ -67,7 +76,7 @@ function Sidebar({definirComponente}) {
             </li>
           </ul>
         </div>
-          <button className="btnSair">
+          <button className="btnSair" onClick={logOut}>
           <AiOutlineLeft
             size={23}
             style={{
