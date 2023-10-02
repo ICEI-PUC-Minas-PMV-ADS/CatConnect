@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { useModal } from "../../contexts/ModalContext";
+import AddGato from "./AddGato/AdicionarGato";
 
-export default function Cards() {
+export default function Gatinhos() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
+  const { openModal, closeModal } = useModal();
   useEffect(() => {
     const verifyUser = async () => {
       if (!cookies.jwt) {
@@ -19,26 +21,25 @@ export default function Cards() {
             withCredentials: true,
           }
         );
-        if (!data.status) {
-          removeCookie("jwt");
-          navigate("/login");
-        } else
-          toast(`Olá ${data.user} 🦄`, {
-            theme: "dark",
-          });
       }
     };
     verifyUser();
   }, [cookies, navigate, removeCookie]);
-
   const logOut = () => {
     removeCookie("jwt");
     navigate("/login");
   };
+
+  const abrirAddGato = () => {
+    openModal("Adicionar gato", AddGato({closeModal}))
+  }
+
+
   return (
     <>
       <div className="private">
-        <h1>Home</h1>
+        <h1>Gatinhos</h1>
+        <button onClick={abrirAddGato}>Adicionar gato</button>
         <button onClick={logOut}>Sair</button>
       </div>
     </>
