@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import Cards from "./pages/Home/Cards";
+import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import NovoGato from "./pages/NovoGato/NovoGato";
 import Registros from "./pages/Registros/Registros";
@@ -22,7 +22,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<Cards />} />
+          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/novoGato" element={<NovoGato />} />
           <Route path="/registros" element={<Registros />} />

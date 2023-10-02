@@ -47,15 +47,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--cold-background); /* Color of the handle on hover */
 }
-
-h1{
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  font-size: 1em;
-}
-
-h2{
-  font-size: 1rem;
-}
-
