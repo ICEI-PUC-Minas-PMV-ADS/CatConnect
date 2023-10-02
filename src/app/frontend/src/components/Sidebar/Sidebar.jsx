@@ -24,7 +24,10 @@ function Sidebar({definirComponente}) {
           />
         </div> */}
         <div>
-          <button className="btnSidebar">
+          <button
+            className="btnSidebar"
+            onClick={() => definirComponente("gatinhos")}
+          >
             <MdAddCircle
               size={23}
               style={{

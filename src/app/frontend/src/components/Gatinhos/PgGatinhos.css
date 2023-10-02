@@ -34,22 +34,33 @@ h1 {
 }
 
 #ModalGatos {
-  position: absolute; /* Change to relative positioning */
-  background-color: #00AD5A;
-  margin-right: 10px; /* Add margin to the right */
-  right: 30px;
-  align-self: flex-end; /* Align to the end of the container */
-  z-index: 100;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  top: 20px; /* Add margin to the top */
+  position: absolute;
+  background-color: #00AD5A;
+  margin-right: 10px;
+  right: 30px;
+  align-self: flex-end;
+  z-index: 100;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ModalGatos > span {
+  font-size: 12px;
+  color: white;
+  line-height: 1;
 }
 
 #tableElements {
   display: flex;
   flex-direction: column; /* Change to column layout */
   width: 78%;
-  margin-left: 380px; /* Add margin to the left */
-  margin-top: 100px;
+  margin-left: 180px; /* Add margin to the left */
+  margin-top: 80px;
   background: #F0FFF880;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Inter;
