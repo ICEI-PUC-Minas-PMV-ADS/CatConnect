@@ -45,7 +45,7 @@ function LoginForm({ toggleRegister }) {
   return (
     <div className="container">
       <h2>Login</h2>
-      <p>
+      <p className="sub-text">
         Sistema de acompanhamento de gatos e adoções exclusivo para voluntários
         da SOS Gatinhos do Parque
       </p>
