@@ -65,7 +65,7 @@ export default function Cards() {
 
   return (
     <div className="home-container">
-      <Sidebar className="sidebar" definirComponente={setComponent} />
+      <Sidebar className="sidebar" definirComponente={setComponent} componenteAtivo={component} />
       <div className="private">{definirComponente()}</div>
     </div>
   );
