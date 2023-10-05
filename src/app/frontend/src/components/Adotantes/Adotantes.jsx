@@ -6,67 +6,43 @@ import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
 import { useModal } from "../../contexts/ModalContext";
-import AdotantesModal from "./AdotantesModal/AdotantesMotal";
+import AdotantesModal from "./AdotantesModal/AdotantesModal";
 import { MdVolunteerActivism } from "react-icons/md";
 
 const Adotantes = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [filterText, setFilterText] = useState("");
-  const { modalState, openModal, closeModal } = useModal();
-  const [newAdotante, setNewAdotante] = useState();
+  const { openModal, closeModal } = useModal();
 
-  useEffect(() => {
-    // This code will run when newAdotante changes
-    if (newAdotante && !modalState.isOpen)
-      openModal(
-        "Editar adotante",
-        AdotantesModal({
-          handleSubmitFunction: handleEditAdotante,
-          adotante: newAdotante,
-          edit: true,
-          setAdotante: setNewAdotante,
-        })
-      );
-    if (!modalState.isOpen) setNewAdotante();
-  }, [newAdotante, modalState.isOpen]);
-
-  const handleAddAdotante = () => {
+  const handleAddAdotante = (newAdotante) => {
     //TODO: Salvar adotante no banco
     alert("Adotante salvado com sucesso!", newAdotante);
     console.log("Adotante salvado com sucesso!", newAdotante);
     mockData.push(newAdotante);
     closeModal();
-    setNewAdotante();
   };
 
-  const handleEditAdotante = () => {
+  const handleEditAdotante = (editedAdotante) => {
     //TODO: Editar adotante no banco
-    alert("Adotante alterado com sucesso!", newAdotante);
-    console.log("Adotante alterado com sucesso!", newAdotante);
+    alert("Adotante alterado com sucesso!", editedAdotante);
+    console.log("Adotante alterado com sucesso!", editedAdotante);
     let adotanteIndex = mockData.findIndex(
-      (adotante) => adotante.id == newAdotante.id
+      (adotante) => adotante.id == editedAdotante.id
     );
-    mockData[adotanteIndex] = newAdotante;
+    mockData[adotanteIndex] = editedAdotante;
     closeModal();
-    setNewAdotante();
   };
 
   const handleViewAdotante = () => {
     closeModal();
-    setNewAdotante();
   };
 
   // Open Modal Function
   const abrirAddAdotante = () => {
     openModal(
       "Adicionar adotante",
-      AdotantesModal({
-        handleSubmitFunction: handleAddAdotante,
-        edit: true,
-        adotante: newAdotante,
-        setAdotante: setNewAdotante,
-      })
+      <AdotantesModal handleSubmitFunction={handleAddAdotante} edit={true} />
     );
   };
 
@@ -82,7 +58,14 @@ const Adotantes = () => {
       rua: `Rua do adotante ${editedRow.id}`,
     };
 
-    setNewAdotante({ ...editedRow });
+    openModal(
+      "Editar adotante",
+      <AdotantesModal
+        handleSubmitFunction={handleEditAdotante}
+        adotante={editedRow}
+        edit={true}
+      />
+    );
   };
 
   const openViewModal = (rowId) => {
@@ -98,10 +81,10 @@ const Adotantes = () => {
     console.log("editedRow", editedRow);
     openModal(
       "Visualizar adotante",
-      AdotantesModal({
-        handleSubmitFunction: handleViewAdotante,
-        adotante: editedRow,
-      })
+      <AdotantesModal
+        handleSubmitFunction={handleViewAdotante}
+        adotante={editedRow}
+      />
     );
   };
   // Columns definition, including the "editar" column with a button
@@ -324,6 +307,38 @@ const Adotantes = () => {
       id: 25,
       nome: "Adotante legal 25",
       instagram: "@adontante25",
+      telefone: "(31) 99999-9999",
+      cidade: "Belo Horizonte",
+      bairro: "Santa Tereza",
+    },
+    {
+      id: 26,
+      nome: "Adotante legal 26",
+      instagram: "@adontante26",
+      telefone: "(31) 99999-9999",
+      cidade: "Belo Horizonte",
+      bairro: "Santa Tereza",
+    },
+    {
+      id: 27,
+      nome: "Adotante legal 27",
+      instagram: "@adontante27",
+      telefone: "(31) 99999-9999",
+      cidade: "Belo Horizonte",
+      bairro: "Santa Tereza",
+    },
+    {
+      id: 28,
+      nome: "Adotante legal 28",
+      instagram: "@adontante28",
+      telefone: "(31) 99999-9999",
+      cidade: "Belo Horizonte",
+      bairro: "Santa Tereza",
+    },
+    {
+      id: 29,
+      nome: "Adotante legal 29",
+      instagram: "@adontante29",
       telefone: "(31) 99999-9999",
       cidade: "Belo Horizonte",
       bairro: "Santa Tereza",

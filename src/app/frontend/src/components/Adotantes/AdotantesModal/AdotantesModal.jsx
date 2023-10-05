@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState, memo } from "react";
 import "./AdotantesModal.css";
+import TextField from "@mui/material/TextField";
 
-function AdotantesModal({ handleSubmitFunction, adotante, edit, setAdotante }) {
+function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
+  const [adotanteEdition, setAdotanteEdition] = useState({
+    bairro: adotante ? adotante.bairro : "",
+    cep: adotante ? adotante.cep : "",
+    cidade: adotante ? adotante.cidade : "",
+    cpf: adotante ? adotante.cpf : "",
+    instagram: adotante ? adotante.instagram : "",
+    nome: adotante ? adotante.nome : "",
+    rg: adotante ? adotante.rg : "",
+    rua: adotante ? adotante.rua : "",
+    telefone: adotante ? adotante.telefone : "",
+  });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setAdotante((prevAdotante) => ({
+    setAdotanteEdition((prevAdotante) => ({
       ...prevAdotante,
       [name]: value,
     }));
   };
-  //Qualquer hook a ser usado, terá error (ver no console), caso ocorra, enviar o hook via props
+
   const handleSubmit = (e) => {
-    //TODO: Editar adotante no banco
     e.preventDefault();
-    handleSubmitFunction();
+    handleSubmitFunction(adotanteEdition);
   };
 
   return (
@@ -22,61 +33,76 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit, setAdotante }) {
         <div className="adotante-linha">
           <div className="adotante-coluna">
             <label>Nome da pessoa</label>
-            <input
+            <TextField
               type="nome"
               name="nome"
               placeholder="Digite o nome da pessoa"
-              disabled={!edit}
-              value={adotante?.nome}
+              value={adotanteEdition?.nome}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
         </div>
         <div className="adotante-linha">
           <div className="adotante-coluna">
             <label>RG</label>
-            <input
+            <TextField
               type="rg"
               placeholder="Ex: MG12123123"
               name="rg"
-              disabled={!edit}
-              value={adotante?.rg}
+              value={adotanteEdition?.rg}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
           <div className="adotante-coluna">
             <label>CPF</label>
-            <input
+            <TextField
               type="cpf"
               placeholder="Ex: 1212312312"
               name="cpf"
-              disabled={!edit}
-              value={adotante?.cpf}
+              value={adotanteEdition?.cpf}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
         </div>
         <div className="adotante-linha">
           <div className="adotante-coluna">
             <label>Telefone</label>
-            <input
+            <TextField
               type="telefone"
               placeholder="(31)912345678"
               name="telefone"
-              disabled={!edit}
-              value={adotante?.telefone}
+              value={adotanteEdition?.telefone}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
           <div className="adotante-coluna">
             <label>Instagram</label>
-            <input
+            <TextField
               type="instagram"
               placeholder="Ex: @sosgatinhosdoparque"
               name="instagram"
-              disabled={!edit}
-              value={adotante?.instagram}
+              value={adotanteEdition?.instagram}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
         </div>
@@ -88,48 +114,60 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit, setAdotante }) {
         <div className="adotante-linha">
           <div className="adotante-coluna">
             <label>Rua</label>
-            <input
+            <TextField
               type="rua"
               placeholder="Ex: Av. Afonso Pena, 1377"
               name="rua"
-              disabled={!edit}
-              value={adotante?.rua}
+              value={adotanteEdition?.rua}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
         </div>
         <div className="adotante-linha">
           <div className="adotante-coluna">
             <label>Bairro</label>
-            <input
+            <TextField
               type="bairro"
               placeholder="Ex: Centro"
               name="bairro"
-              disabled={!edit}
-              value={adotante?.bairro}
+              value={adotanteEdition?.bairro}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
           <div className="adotante-coluna">
             <label>Cidade</label>
-            <input
+            <TextField
               type="cidade"
               placeholder="Ex: Belo Horizonte"
               name="cidade"
-              disabled={!edit}
-              value={adotante?.cidade}
+              value={adotanteEdition?.cidade}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
           <div className="adotante-coluna">
             <label>CEP</label>
-            <input
+            <TextField
               type="cep"
               placeholder="Ex: 30130-000"
               name="cep"
-              disabled={!edit}
-              value={adotante?.cep}
+              value={adotanteEdition?.cep}
               onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
             />
           </div>
         </div>
@@ -141,4 +179,4 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit, setAdotante }) {
   );
 }
 
-export default AdotantesModal;
+export default memo(AdotantesModal);
