@@ -46,7 +46,8 @@
 }
 
 .modal-content {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: 2px;
 }
 
