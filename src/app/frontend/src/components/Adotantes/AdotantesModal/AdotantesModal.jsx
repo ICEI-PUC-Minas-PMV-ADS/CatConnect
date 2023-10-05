@@ -13,6 +13,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
     rg: adotante ? adotante.rg : "",
     rua: adotante ? adotante.rua : "",
     telefone: adotante ? adotante.telefone : "",
+    email: adotante ? adotante.email : "",
   });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +39,20 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               name="nome"
               placeholder="Digite o nome da pessoa"
               value={adotanteEdition?.nome}
+              onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
+            />
+          </div>
+          <div className="adotante-coluna">
+            <label>Email</label>
+            <TextField
+              type="email"
+              name="email"
+              placeholder="Digite o email da pessoa"
+              value={adotanteEdition?.email}
               onChange={handleInputChange}
               variant="standard"
               InputProps={{
@@ -81,7 +96,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             <label>Telefone</label>
             <TextField
               type="telefone"
-              placeholder="(31)912345678"
+              placeholder="Ex: (31)912345678"
               name="telefone"
               value={adotanteEdition?.telefone}
               onChange={handleInputChange}
