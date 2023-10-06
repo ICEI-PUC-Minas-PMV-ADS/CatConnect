@@ -25,7 +25,7 @@ module.exports.getAdotante = async (req, res, next) => {
 module.exports.editAdotante = async (req, res, next) => {
   const adotanteId = req.params.id;
   try {
-    const adotante = await Adotante.findByIdAndUpdate(adotanteId, req.body, { new: true });
+    const adotante = await Adotante.findByIdAndUpdate(adotanteId, req.body);
     res.status(200).json({ adotante, updated: true });
   } catch (err) {
     console.log(err);
@@ -34,7 +34,7 @@ module.exports.editAdotante = async (req, res, next) => {
 };
 
 module.exports.deleteAdotante = async (req, res, next) => {
-  const adotanteId = req.params.id;
+  const adotanteId = req.params._id;
   try {
     await Adotante.findByIdAndDelete(adotanteId);
     res.status(200).json({ message: "Adotante excluído com sucesso", deleted: true });

@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const adotanteSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: [true, "Id é obrigatório"]
-  },
   nome: {
     type: String,
     required: [true, "Nome é obrigatório"],
