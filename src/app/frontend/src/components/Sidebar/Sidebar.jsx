@@ -11,7 +11,7 @@ import { TiGroupOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-function Sidebar({definirComponente}) {
+function Sidebar({ definirComponente, componenteAtivo }) {
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const navigate = useNavigate();
   const logOut = () => {
@@ -25,14 +25,6 @@ function Sidebar({definirComponente}) {
         <div className="logoContainer">
           <img src={Logo} alt="logo" width="113px" height="113px" />
         </div>
-        {/* <div className="burgerContainer">
-          <AiOutlineLeft
-            size={23}
-            style={{
-              color: "black",
-            }}
-          />
-        </div> */}
         <div className="botoes">
           <button
             className="btnSidebar"
@@ -46,41 +38,120 @@ function Sidebar({definirComponente}) {
             />
             <span>Novo gato</span>
           </button>
-
-          <button className="btnSidebar2">
-            <RxDashboard size={19} />
-            <span>Dashboard</span>
-          </button>
         </div>
         <div className="contentsContainer">
           <ul>
             <li>
-              <RxDashboard />
-              <a onClick={() => definirComponente("dashboard")}>Dashboard</a>
+              {componenteAtivo !== "dashboard" ? (
+                <>
+                  <RxDashboard />
+                  <a onClick={() => definirComponente("dashboard")}>
+                    Dashboard
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("dashboard")}
+                >
+                  <RxDashboard size={19} />
+                  <span>Dashboard</span>
+                </button>
+              )}
             </li>
             <li>
-              <MdPets />
-              <a onClick={() => definirComponente("gatinhos")}>Gatinhos</a>
+              {componenteAtivo !== "gatinhos" ? (
+                <>
+                  <MdPets />
+                  <a onClick={() => definirComponente("gatinhos")}>
+                  Gatinhos
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("gatinhos")}
+                >
+                  <MdPets size={19} />
+                  <span>Gatinhos</span>
+                </button>
+              )}
             </li>
             <li>
-              <MdVolunteerActivism />
-              <a onClick={() => definirComponente("adotantes")}>Adotantes</a>
+              {componenteAtivo !== "adotantes" ? (
+                <>
+                  <MdVolunteerActivism />
+                  <a onClick={() => definirComponente("adotantes")}>
+                  Adotantes
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("adotantes")}
+                >
+                  <MdVolunteerActivism size={19} />
+                  <span>Adotantes</span>
+                </button>
+              )}
             </li>
             <li>
-              <BsListCheck />
-              <a onClick={() => definirComponente("adocoes")}>Adoções</a>
+              {componenteAtivo !== "adocoes" ? (
+                <>
+                  <BsListCheck />
+                  <a onClick={() => definirComponente("adocoes")}>
+                  Adoções
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("adocoes")}
+                >
+                  <BsListCheck size={19} />
+                  <span>Adoções</span>
+                </button>
+              )}
             </li>
             <li>
-              <TiGroupOutline />
-              <a onClick={() => definirComponente("users")}>Usuários</a>
+              {componenteAtivo !== "users" ? (
+                <>
+                  <TiGroupOutline />
+                  <a onClick={() => definirComponente("users")}>
+                  Usuários
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("users")}
+                >
+                  <TiGroupOutline size={19} />
+                  <span>Usuários</span>
+                </button>
+              )}
             </li>
             <li>
-              <AiOutlineSetting />
-              <a onClick={() => definirComponente("configuracoes")}>Configurações</a>
+              {componenteAtivo !== "configuracoes" ? (
+                <>
+                  <AiOutlineSetting />
+                  <a onClick={() => definirComponente("configuracoes")}>
+                  Configurações
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="btnSidebar2"
+                  onClick={() => definirComponente("configuracoes")}
+                >
+                  <AiOutlineSetting size={19} />
+                  <span>Configurações</span>
+                </button>
+              )}
             </li>
           </ul>
         </div>
-          <button className="btnSair" onClick={logOut}>
+        <button className="btnSair" onClick={logOut}>
           <AiOutlineLeft
             size={23}
             style={{
@@ -88,7 +159,7 @@ function Sidebar({definirComponente}) {
             }}
           />
           Sair
-          </button>
+        </button>
       </div>
     </div>
   );

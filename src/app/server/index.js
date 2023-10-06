@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes");
+const adotanteRoutes = require("./routes/adotanteRoutes");
 require('dotenv').config();
 
 const app = express();

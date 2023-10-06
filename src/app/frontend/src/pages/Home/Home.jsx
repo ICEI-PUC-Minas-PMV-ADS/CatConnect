@@ -19,9 +19,9 @@ export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const [component, setComponent] = useState("Exemplo");
-  const [loading, setLoading] = useState(true);
 
   const definirComponente = () => {
+    // Ao invés de colocar o componente no caminho (routes) , colocar o componente a ser renderizado aqui
     switch (component) {
       case "Exemplo":
         return <Exemplo definirComponente={setComponent} />;
@@ -53,7 +53,6 @@ export default function Cards() {
             {},
             { withCredentials: true }
         );
-
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
@@ -76,7 +75,7 @@ export default function Cards() {
     };
 
     verifyUser();
-  }, [navigate, removeCookie]);
+  }, [cookies, navigate, removeCookie]);
 
   return (
 
