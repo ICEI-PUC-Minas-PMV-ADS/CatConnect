@@ -4,8 +4,7 @@ const crypto = require("crypto");
 module.exports.createAdotante = async (req, res, next) => {
   try {
     const { nome, email, cpf, rg, telefone, instagram, rua, bairro, cidade, cep } = req.body;
-    const id = crypto.randomBytes(16).toString("hex");
-    const adotante = await Adotante.create({ id, nome, email, cpf, rg, telefone, instagram, rua, bairro, cidade, cep });
+    const adotante = await Adotante.create({ nome, email, cpf, rg, telefone, instagram, rua, bairro, cidade, cep });
     res.status(201).json({ adotante, created: true });
   } catch (err) {
     console.log(err);
