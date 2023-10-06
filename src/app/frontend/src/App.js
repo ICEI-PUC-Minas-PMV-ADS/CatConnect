@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie"; // Import useCookies hook
 import Sidebar from "./components/Sidebar/Sidebar";
 import { createTheme, ThemeProvider } from '@mui/material';
 
+
 const theme = createTheme({
   typography: {
     fontFamily: ['Inter', 'sans-serif'].join(','), // Use 'Inter' as the font family
