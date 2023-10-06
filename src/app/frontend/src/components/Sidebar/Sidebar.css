@@ -61,14 +61,24 @@
 .btnSidebar2 {
   display: flex;
   border-radius: 24px;
-  gap: 4px;
+  gap: 16px;
   color: #da5406;
   background-color: var(--background);
   padding: 5px, 20px, 5px, 7px;
   font-size: 15px;
-  align-items: center;
   justify-content: center;
-  margin: 20px 30px;
+  text-transform: none;
+  width: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0 1rem;;
 }
 
 .btnSair {
@@ -95,6 +105,7 @@
 
 .contentsContainer {
   margin: 0 30px;
+  margin-top: 30px;
   flex-grow: 1;
   overflow: auto;
 }
@@ -117,14 +128,4 @@ li {
   margin: 0.6rem 0;
   padding: 0.25rem 0;
   border-radius: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0 0 1rem;
 }
