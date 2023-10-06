@@ -3,8 +3,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Home from "./pages/Home/Home";
 import "react-toastify/dist/ReactToastify.css";
-import { useCookies } from "react-cookie"; // Import useCookies hook
-import Sidebar from "./components/Sidebar/Sidebar";
 import { createTheme, ThemeProvider } from '@mui/material';
 
 

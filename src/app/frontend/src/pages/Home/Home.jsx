@@ -46,6 +46,7 @@ export default function Cards() {
   useEffect(() => {
     const verifyUser = async () => {
       try {
+
         // Mostra o loading
         setLoading(true);
 
@@ -68,9 +69,9 @@ export default function Cards() {
         console.error("Erro durante a verificação do usuário", error);
       } finally {
         // Esconde o loading após 3 segundos
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
+        // setTimeout(() => {
+        //   setLoading(false);
+        // }, 2000);
 
       }
     };
@@ -80,14 +81,18 @@ export default function Cards() {
 
   return (
 
-      <div className="home-container">
-        {loading && <Loading />} {/* Mostra o loading enquanto loading é true */}
-        {!loading && (
+      <div className="home">
+
+        {/*{loading && <Loading />} /!* Mostra o loading enquanto loading é true *!/*/}
+        {/*{!loading && (*/}
             <>
+            <div className="home-container">
               <Sidebar className="sidebar" definirComponente={setComponent} />
               <div className="private">{definirComponente()}</div>
+            </div>
             </>
-        )}
+        {/*)}*/}
+
       </div>
   );
 }
