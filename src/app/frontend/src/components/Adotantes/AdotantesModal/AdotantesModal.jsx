@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 
 function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
   const [adotanteEdition, setAdotanteEdition] = useState({
+    _id: adotante ? adotante._id : "",
     bairro: adotante ? adotante.bairro : "",
     cep: adotante ? adotante.cep : "",
     cidade: adotante ? adotante.cidade : "",
