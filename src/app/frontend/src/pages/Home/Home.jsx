@@ -19,6 +19,7 @@ export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const [component, setComponent] = useState("Exemplo");
+  const [loading, setLoading] = useState(true);
 
   const definirComponente = () => {
     // Ao invés de colocar o componente no caminho (routes) , colocar o componente a ser renderizado aqui
