@@ -45,7 +45,7 @@ function LoginForm({ toggleRegister }) {
   return (
     <div className="container">
       <h2>Login</h2>
-      <p>
+      <p className="sub-text">
         Sistema de acompanhamento de gatos e adoções exclusivo para voluntários
         da SOS Gatinhos do Parque
       </p>
@@ -71,10 +71,10 @@ function LoginForm({ toggleRegister }) {
           />
         </div>
         <button type="submit">Entrar</button>
-        <span>
-          Não possui um conta ?
-          <a onClick={() => toggleRegister()}> Registrar</a>
-        </span>
+        {/*<span>*/}
+        {/*  Não possui um conta ?*/}
+        {/*  <a onClick={() => toggleRegister()}> Registrar</a>*/}
+        {/*</span>*/}
       </form>
     </div>
   );

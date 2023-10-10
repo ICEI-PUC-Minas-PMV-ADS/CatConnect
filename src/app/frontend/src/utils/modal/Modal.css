@@ -42,11 +42,12 @@
   border-radius: 12px;
   padding: 24px 32px;
   background-color: var(--cold-background);
-  font-family: Inter
+  font-family: Inter;
 }
 
 .modal-content {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: 2px;
 }
 
