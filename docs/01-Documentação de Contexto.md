@@ -8,14 +8,14 @@ Com o crescimento da ONG, surgiu também a necessidade de um sistema de controle
 
 A intenção do grupo é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
 
-Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
+Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece atenção e colaboração.
 
 Espera-se assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
 
 
 ## 1.1 Problema
 
-O problema que nossa aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
+O problema que a aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
 
 Muitas instituições que cuidam de animais resgatados enfrentam desafios para chamar a atenção do público e para destacar seu trabalho, resultando em uma adoção menos frequente e uma capacidade limitada de encontrar lares amorosos para os animaizinhos sob seus cuidados.
 
