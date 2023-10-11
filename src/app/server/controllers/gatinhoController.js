@@ -1,4 +1,4 @@
-const Gato = require("../model/gatinhosModel"); // Assuming "gatinhosModel" represents the Gato model
+const Gato = require("../model/gatinhosModel"); 
 
 module.exports.createGato = async (req, res, next) => {
   try {
@@ -11,7 +11,7 @@ module.exports.createGato = async (req, res, next) => {
   }
 };
 
-module.exports.getGatos = async (req, res, next) => { // Renamed to "getGatos"
+module.exports.getGatos = async (req, res, next) => { 
   try {
     const gatos = await Gato.find();
     res.status(200).json(gatos);

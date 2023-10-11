@@ -32,11 +32,17 @@
   color: var(--blue-text); /* Change the color to your preferred color */
 }
 
+
+.FormLabel{
+  color: var(--blue-text);
+}
+
 .MuiInputBase-input::-ms-value{
   color: var(--main-text);
 }
 
 #salvar{
-  right: 20px;
+  left: 20px;
+  background-color: var(--friendly-green);
 }
 

@@ -20,7 +20,7 @@ function Gatinhos() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [filterText, setFilterText] = useState("");
-  const [gatos, setGatinhos] = useState([]); // State variable for storing gatinhos data
+  const [gatos, setGatinhos] = useState([]);
 
   useEffect(() => {
     const verifyUser = async () => {
@@ -28,7 +28,7 @@ function Gatinhos() {
         navigate("/login");
       } else {
         const { data } = await axios.post(
-          "http://localhost:4000",
+          "http://localhost:4000/gatos",
           {},
           {
             withCredentials: true,
@@ -38,19 +38,16 @@ function Gatinhos() {
     };
     verifyUser();
 
-    // Fetch gatinhos data from MongoDB when component mounts
     getGatinhos();
   }, [cookies, navigate, removeCookie]);
 
-  // Logout Function
   const logOut = () => {
     removeCookie("jwt");
     navigate("/login");
   };
 
-  // Open Modal Function
   const abrirAddGato = () => {
-    openModal("Adicionar gato", AddGato({ closeModal }));
+    openModal("Adicionar gato", <AddGato closeModal={closeModal} />);
   };
 
   const openEditModal = (rowId) => {
@@ -60,7 +57,7 @@ function Gatinhos() {
 
   const getGatinhos = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/gatinhos", {
+      const { data } = await axios.get("http://localhost:4000/gatos", {
         withCredentials: true,
       });
       if (!data) {
@@ -94,7 +91,6 @@ function Gatinhos() {
     },
   ];
 
-  // Pagination logic
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -104,12 +100,10 @@ function Gatinhos() {
     setPage(0);
   };
 
-  // Filter logic
   const handleFilterChange = (event) => {
     setFilterText(event.target.value);
   };
 
-  // Filtered rows based on quick filter text
   const filteredRows = gatos.filter((row) => {
     return Object.values(row).some((value) =>
       String(value).toLowerCase().includes(filterText.toLowerCase())

@@ -60,16 +60,16 @@ h1 {
 
 #ModalGatos {
   width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
-    max-width: 48px;
-    max-height: 48px;
-    background-color: #00ad5a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  background-color: #00ad5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 
@@ -81,7 +81,7 @@ h1 {
   font-size: medium;
   font-weight: 400;
   border-radius: 14px;
-  width: 100%;
+  width: 96%;
   padding: 8px;
   margin-top: 10px;
 }
