@@ -10,8 +10,8 @@ const createToken = (id) => {
 
 module.exports.register = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    const user = await User.create({ email, password });
+    const { email, password, nome, adm } = req.body;
+    const user = await User.create({ email, password, nome, adm });
     const token = createToken(user._id);
 
     res.cookie("jwt", token, {
@@ -70,7 +70,8 @@ module.exports.getUserById = async (req, res) => {
 
 module.exports.updateUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const { email, password, nome, adm } = req.body;
+    const user = await User.findByIdAndUpdate(req.params.id, { email, password, nome, adm }, { new: true });
     if (user) {
       res.status(200).json(user);
     } else {
