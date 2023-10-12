@@ -11,11 +11,6 @@ const createToken = (id) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { email, password, nome, adm } = req.body;
-    const existingUser = await User.findOne({ email })
-    if (existingUser) {
-      res.status(422).json({ errors: ["E-mail já cadastrado."] })
-      return;
-    }
     const user = await User.create({ email, password, nome, adm });
     const token = createToken(user._id);
 
