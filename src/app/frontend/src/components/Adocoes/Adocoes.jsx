@@ -1,5 +1,5 @@
 // Import necessary dependencies
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { TextField } from '@mui/material';
 import { styled } from '@mui/system';
@@ -8,6 +8,7 @@ import EditModal from './AdocoesModal/AdocoesModalEdicao';
 import CreateModal from './AdocoesModal/CriarAdocaoModal';
 import { Button } from '@mui/material';  // Import Button from MUI
 import AddIcon from '@mui/icons-material/Add';
+import axios from 'axios';
 
 const StyledDataGridContainer = styled('div')({
   backgroundColor: 'white',
@@ -23,14 +24,23 @@ const Adocoes = () => {
     const [openCreateModal, setOpenCreateModal] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
     const [filterText, setFilterText] = useState('');
+    const [adocoes, setAdocoes] = useState([]); // Alteração: Estado para armazenar dados da API
 
-    // Dados fictícios para o exemplo
-    const rows = [
-        { id: 1, nomeAdotante: 'João', nomeGato: 'Frajola', nome: 'Adoção 1', dataAdocao: '13/10/2023', statusAdocao: 'Concluída' },
-        { id: 2, nomeAdotante: 'Maria', nomeGato: 'Garfield', nome: 'Adoção 2', dataAdocao: '13/10/2023', statusAdocao: 'Em andamento' },
-        { id: 3, nomeAdotante: 'Felipe', nomeGato: 'Fiona', nome: 'Adoção 2', dataAdocao: '15/10/2023', statusAdocao: 'Pendente' },
-        // Adicione mais linhas conforme necessário
-    ];
+    useEffect(() => {
+        // Função para buscar os dados da API e atualizar o estado
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get("http://localhost:4000/adocoes", {
+                    withCredentials: true,
+                });
+                setAdocoes(data); // Atualiza o estado com os dados da API
+            } catch (error) {
+                console.error('Erro ao buscar dados da API:', error);
+            }
+        };
+
+        fetchData(); // Chama a função ao montar o componente
+    }, []);
 
     const handleEdit = (rowData) => {
         setSelectedRow(rowData);
@@ -40,12 +50,14 @@ const Adocoes = () => {
     const handleCloseModal = () => {
         setOpenModal(false);
         setSelectedRow(null);
+
     };
 
 
     const handleOpenCreateModal = () => {
         setOpenCreateModal(true);
     };
+    const getRowId = (row) => row._id;
 
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
@@ -61,11 +73,12 @@ const Adocoes = () => {
     };
 
     // Filtered rows based on quick filter text
-    const filteredRows = rows.filter((row) => {
+    const filteredRows = adocoes.filter((row) => {
         return Object.values(row).some((value) =>
             String(value).toLowerCase().includes(filterText.toLowerCase())
         );
     });
+
 
     const handleFilterChange = (event) => {
         setFilterText(event.target.value);
@@ -73,10 +86,10 @@ const Adocoes = () => {
 
     // Colunas do data table
     const columns = [
-        { field: 'nomeAdotante', headerName: 'Adotante', flex: 1 },
-        { field: 'nomeGato', headerName: 'Gato', flex: 1 },
-        { field: 'nome', headerName: 'Nome', flex: 1 },
-        { field: 'dataAdocao', headerName: 'Data de Adoção', flex: 1 },
+        { field: 'adotante', headerName: 'Adotante', flex: 1 },
+        { field: 'gato', headerName: 'Gato', flex: 1 },
+        { field: 'responsavel', headerName: 'Responsável', flex: 1 },
+        { field: 'data_adocao', headerName: 'Data de Adoção', flex: 1 },
         {
             field: 'statusAdocao',
             headerName: 'Status',
@@ -89,11 +102,11 @@ const Adocoes = () => {
                             width: '12px',
                             height: '12px',
                             borderRadius: '50%',
-                            backgroundColor: getStatusColor(params.row.statusAdocao),
+                            backgroundColor: getStatusColor(params.row.status),
                             marginRight: '8px',
                         }}
                     ></div>
-                    {params.row.statusAdocao}
+                    {params.row.status}
                 </div>
             ),
         },
@@ -144,6 +157,7 @@ const Adocoes = () => {
                     components={{
                         Toolbar: GridToolbar,
                     }}
+                    getRowId={getRowId}  // Configuração do getRowId para usar a propriedade _id
                 />
             </StyledDataGridContainer>
 

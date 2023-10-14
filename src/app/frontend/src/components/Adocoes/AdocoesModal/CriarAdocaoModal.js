@@ -106,6 +106,18 @@ const CreateModal = ({ open, onClose, rowData }) => {
             });
         }
     };
+    const handleClose = () => {
+        // Limpe os estados ao fechar o modal
+        setAdotanteValue('');
+        setGatoValue('');
+        setResponsavel('');
+        setStartDate(new Date());
+        setStatusAdocao('');
+
+        // Chame a função onClose
+        onClose();
+        reloadData();
+    };
 
     const handleSave = async () => {
         try {
@@ -117,9 +129,10 @@ const CreateModal = ({ open, onClose, rowData }) => {
             }
             const selectedAdotante = adotantes.find(adotante => adotante.nome === adotanteValue);
             const selectedGato = gatos.find(gato => gato.nome === gatoValue);
+
             const formData = {
-                id_adotante: selectedAdotante.id,
-                id_gato: selectedGato.id,
+                id_adotante: selectedAdotante._id,
+                id_gato: selectedGato._id,
                 adotante: adotanteValue,
                 gato: gatoValue,
                 data_adocao: startDate,
@@ -127,7 +140,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
                 responsavel: responsavel,
 
             };
-            console.log(formData)
+
             const { data } = await axios.post("http://localhost:4000/adocoes", formData, {
                 withCredentials: true,
             });
@@ -137,9 +150,13 @@ const CreateModal = ({ open, onClose, rowData }) => {
                     theme: "dark",
                 }
             );
-            // Aqui você pode verificar a resposta, mostrar mensagens, etc.
-            console.log(data.data);
+            setAdotanteValue('');
+            setGatoValue('');
+            setResponsavel('');
+            setStartDate(new Date());
+            setStatusAdocao('');
 
+            // Chame a função onClose
             onClose();
         } catch (error) {
             console.error("Erro ao salvar os dados", error);
@@ -154,7 +171,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
             <StyledModalContent className="modal-content">
                 <TitleContainer className="title-container">
                     <Typography variant="h6">Criar adoção</Typography>
-                    <IconButton onClick={onClose}>
+                    <IconButton onClick={handleClose}>
                         <CloseIcon />
                     </IconButton>
                 </TitleContainer>
