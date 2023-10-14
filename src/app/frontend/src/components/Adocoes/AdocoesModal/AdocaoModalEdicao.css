@@ -1,0 +1,37 @@
+/* EditModal.css */
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    min-width: 646px;
+    height: 390px;
+    position: relative;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.field-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.custom-datepicker {
+    height: 38px; /* Ajuste a altura conforme necessário */
+    border-radius: 4px;
+    border-color: #828282;
+}
+/* Add more styles as needed */
