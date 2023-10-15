@@ -37,10 +37,15 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    "overrides": [
+      {
+        "files": ["**/*.test.js"],
+        "env": {
+          "jest/globals": true
+        }
+      }
     ]
+
   },
   "browserslist": {
     "production": [
