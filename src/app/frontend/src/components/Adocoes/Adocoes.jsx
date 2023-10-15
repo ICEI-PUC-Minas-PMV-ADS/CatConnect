@@ -27,22 +27,23 @@ const Adocoes = () => {
     const [selectedRow, setSelectedRow] = useState(null);
     const [filterText, setFilterText] = useState('');
     const [adocoes, setAdocoes] = useState([]); // Alteração: Estado para armazenar dados da API
+    const [dataChanged, setDataChanged] = useState(false); // Adiciona o estado para sinalizar a mudança nos dados
+
 
     useEffect(() => {
-        // Função para buscar os dados da API e atualizar o estado
         const fetchData = async () => {
             try {
                 const { data } = await axios.get("http://localhost:4000/adocoes", {
                     withCredentials: true,
                 });
-                setAdocoes(data); // Atualiza o estado com os dados da API
+                setAdocoes(data);
             } catch (error) {
                 console.error('Erro ao buscar dados da API:', error);
             }
         };
 
-        fetchData(); // Chama a função ao montar o componente
-    }, []);
+        fetchData();
+    }, [dataChanged]); // Adiciona dataChanged como dependência
 
     const handleEdit = (rowData) => {
         setSelectedRow(rowData);
@@ -52,13 +53,17 @@ const Adocoes = () => {
     const handleCloseModal = () => {
         setOpenModal(false);
         setSelectedRow(null);
-
+        setDataChanged((prev) => !prev); // Inverte o estado para sinalizar a mudança nos dados
     };
 
-
+    const handleCloseCreateModal = () => {
+        setOpenCreateModal(false);
+        setDataChanged((prev) => !prev);
+    };
     const handleOpenCreateModal = () => {
         setOpenCreateModal(true);
     };
+
     const getRowId = (row) => row._id;
 
     const getStatusColor = (status) => {
@@ -156,7 +161,7 @@ const Adocoes = () => {
                     </Button>
                 </div>
 
-                <CreateModal open={openCreateModal} onClose={() => setOpenCreateModal(false)} />
+                <CreateModal open={openCreateModal} onClose={handleCloseCreateModal} dataChanged={dataChanged} />
 
                 <DataGrid
                     rows={filteredRows}
