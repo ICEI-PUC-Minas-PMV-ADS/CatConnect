@@ -116,7 +116,6 @@ const CreateModal = ({ open, onClose, rowData }) => {
 
         // Chame a função onClose
         onClose();
-        reloadData();
     };
 
     const handleSave = async () => {
