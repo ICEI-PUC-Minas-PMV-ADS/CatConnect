@@ -9,6 +9,8 @@ import CreateModal from './AdocoesModal/CriarAdocaoModal';
 import { Button } from '@mui/material';  // Import Button from MUI
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
+import { format } from 'date-fns';
+
 
 const StyledDataGridContainer = styled('div')({
   backgroundColor: 'white',
@@ -89,7 +91,16 @@ const Adocoes = () => {
         { field: 'adotante', headerName: 'Adotante', flex: 1 },
         { field: 'gato', headerName: 'Gato', flex: 1 },
         { field: 'responsavel', headerName: 'Responsável', flex: 1 },
-        { field: 'data_adocao', headerName: 'Data de Adoção', flex: 1 },
+        { field: 'data_adocao',
+            headerName: 'Data de Adoção',
+            flex: 1,
+            renderCell: (params) => (
+                <div>
+                    {params.row.data_adocao &&
+                        format(new Date(params.row.data_adocao), 'dd/MM/yyyy')}
+                </div>
+            ),
+        },
         {
             field: 'statusAdocao',
             headerName: 'Status',

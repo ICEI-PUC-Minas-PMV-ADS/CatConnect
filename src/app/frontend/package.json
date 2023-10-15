@@ -18,6 +18,7 @@
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.0",
+    "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-data-table-component": "^7.5.4",
@@ -39,13 +40,14 @@
   "eslintConfig": {
     "overrides": [
       {
-        "files": ["**/*.test.js"],
+        "files": [
+          "**/*.test.js"
+        ],
         "env": {
           "jest/globals": true
         }
       }
     ]
-
   },
   "browserslist": {
     "production": [
