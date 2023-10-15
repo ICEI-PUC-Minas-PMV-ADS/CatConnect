@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
 const StyledModal = styled(Modal)({
 });
 
@@ -144,7 +143,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
                 withCredentials: true,
             });
             toast.success(
-                "Adoção concluida",
+                "Adoção criada",
                 {
                     theme: "dark",
                 }

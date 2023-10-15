@@ -4,12 +4,15 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { TextField } from '@mui/material';
 import { styled } from '@mui/system';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import Swal from 'sweetalert2';
 import EditModal from './AdocoesModal/AdocoesModalEdicao';
 import CreateModal from './AdocoesModal/CriarAdocaoModal';
 import { Button } from '@mui/material';  // Import Button from MUI
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import { format } from 'date-fns';
+import { toast } from 'react-toastify';
 
 
 const StyledDataGridContainer = styled('div')({
@@ -62,6 +65,35 @@ const Adocoes = () => {
     };
     const handleOpenCreateModal = () => {
         setOpenCreateModal(true);
+    };
+    const handleDelete = async (rowData) => {
+        Swal.fire({
+            title: 'Você tem certeza?',
+            text: 'Essa ação não poderá ser desfeita!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198d16',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, excluir!',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const response = await axios.delete(`http://localhost:4000/adocoes/${rowData._id}`, {
+                        withCredentials: true,
+                    });
+                        console.log(response)
+                    if (response.status === 200) {
+                        toast.success('Registro excluído com sucesso!');
+                        setDataChanged((prev) => !prev); // Atualiza os dados após a exclusão
+                    } else {
+                        toast.error('Ocorreu um erro ao excluir o registro.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao excluir:', error);
+                    toast.error('Ocorreu um erro ao excluir o registro.');
+                }
+            }
+        });
     };
 
     const getRowId = (row) => row._id;
@@ -129,10 +161,20 @@ const Adocoes = () => {
         {
             field: 'editar',
             headerName: 'Editar',
-            flex: 1,
+            flex: 0,
             renderCell: (params) => (
                 <Button onClick={() => handleEdit(params.row)}>
                     <BorderColorIcon />
+                </Button>
+            ),
+        },
+        {
+            field: 'excluir',
+            headerName: 'excluir',
+            flex: 0,
+            renderCell: (params) => (
+                <Button onClick={() => handleDelete(params.row)}>
+                    <DeleteForeverSharpIcon />
                 </Button>
             ),
         },
