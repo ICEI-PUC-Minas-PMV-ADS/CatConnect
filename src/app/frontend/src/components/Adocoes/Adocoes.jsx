@@ -63,7 +63,7 @@ const Adocoes = () => {
 
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
-            case 'concluída':
+            case 'concluido':
                 return 'green';
             case 'em andamento':
                 return 'blue';

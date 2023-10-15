@@ -44,7 +44,20 @@
           "**/*.test.js"
         ],
         "env": {
-          "jest/globals": true
+          "browser": true,
+          "es6": true,
+          "jest": true,
+          "node": true
+        },
+        "extends": [
+          "react-app",
+          "react-app/jest"
+        ],
+        "parserOptions": {
+          "ecmaVersion": 2021
+        },
+        "rules": {
+
         }
       }
     ]
@@ -64,6 +77,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "eslint": "^8.51.0",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-jest": "^27.4.2",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23"
