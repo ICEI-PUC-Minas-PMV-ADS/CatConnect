@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { routes } from "../../../utils/api/ApiRoutes";
 const StyledModal = styled(Modal)({
 });
 
@@ -42,7 +42,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
 
     const getAdotantes = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/adotantes", {
+            const { data } = await axios.get(routes.getAdotantes, {
                 withCredentials: true,
             });
             if (!data) {
@@ -63,7 +63,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
     };
     const getGatos = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/gatos", {
+            const { data } = await axios.get(routes.getGatos, {
                 withCredentials: true,
             });
             if (!data) {
@@ -84,7 +84,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
     };
     const getStatus = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/status", {
+            const { data } = await axios.get(routes.getStatus, {
                 withCredentials: true,
             });
             const statusData = data.data;
@@ -139,7 +139,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
 
             };
 
-            const { data } = await axios.post("http://localhost:4000/adocoes", formData, {
+            const { data } = await axios.post(routes.createAdocoes, formData, {
                 withCredentials: true,
             });
             toast.success(
