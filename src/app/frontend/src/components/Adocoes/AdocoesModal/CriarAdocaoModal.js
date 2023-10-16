@@ -7,8 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
-
+import { routes } from "../../../utils/api/ApiRoutes";
 const StyledModal = styled(Modal)({
 });
 
@@ -43,7 +42,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
 
     const getAdotantes = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/adotantes", {
+            const { data } = await axios.get(routes.getAdotantes, {
                 withCredentials: true,
             });
             if (!data) {
@@ -64,7 +63,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
     };
     const getGatos = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/gatos", {
+            const { data } = await axios.get(routes.getGatos, {
                 withCredentials: true,
             });
             if (!data) {
@@ -85,7 +84,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
     };
     const getStatus = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4000/status", {
+            const { data } = await axios.get(routes.getStatus, {
                 withCredentials: true,
             });
             const statusData = data.data;
@@ -106,6 +105,17 @@ const CreateModal = ({ open, onClose, rowData }) => {
             });
         }
     };
+    const handleClose = () => {
+        // Limpe os estados ao fechar o modal
+        setAdotanteValue('');
+        setGatoValue('');
+        setResponsavel('');
+        setStartDate(new Date());
+        setStatusAdocao('');
+
+        // Chame a função onClose
+        onClose();
+    };
 
     const handleSave = async () => {
         try {
@@ -117,9 +127,10 @@ const CreateModal = ({ open, onClose, rowData }) => {
             }
             const selectedAdotante = adotantes.find(adotante => adotante.nome === adotanteValue);
             const selectedGato = gatos.find(gato => gato.nome === gatoValue);
+
             const formData = {
-                id_adotante: selectedAdotante.id,
-                id_gato: selectedGato.id,
+                id_adotante: selectedAdotante._id,
+                id_gato: selectedGato._id,
                 adotante: adotanteValue,
                 gato: gatoValue,
                 data_adocao: startDate,
@@ -127,19 +138,23 @@ const CreateModal = ({ open, onClose, rowData }) => {
                 responsavel: responsavel,
 
             };
-            console.log(formData)
-            const { data } = await axios.post("http://localhost:4000/adocoes", formData, {
+
+            const { data } = await axios.post(routes.createAdocoes, formData, {
                 withCredentials: true,
             });
             toast.success(
-                "Adoção concluida",
+                "Adoção criada",
                 {
                     theme: "dark",
                 }
             );
-            // Aqui você pode verificar a resposta, mostrar mensagens, etc.
-            console.log(data.data);
+            setAdotanteValue('');
+            setGatoValue('');
+            setResponsavel('');
+            setStartDate(new Date());
+            setStatusAdocao('');
 
+            // Chame a função onClose
             onClose();
         } catch (error) {
             console.error("Erro ao salvar os dados", error);
@@ -154,7 +169,7 @@ const CreateModal = ({ open, onClose, rowData }) => {
             <StyledModalContent className="modal-content">
                 <TitleContainer className="title-container">
                     <Typography variant="h6">Criar adoção</Typography>
-                    <IconButton onClick={onClose}>
+                    <IconButton onClick={handleClose}>
                         <CloseIcon />
                     </IconButton>
                 </TitleContainer>

@@ -1,13 +1,19 @@
 // Import necessary dependencies
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { TextField } from '@mui/material';
 import { styled } from '@mui/system';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import Swal from 'sweetalert2';
 import EditModal from './AdocoesModal/AdocoesModalEdicao';
 import CreateModal from './AdocoesModal/CriarAdocaoModal';
 import { Button } from '@mui/material';  // Import Button from MUI
 import AddIcon from '@mui/icons-material/Add';
+import axios from 'axios';
+import { format } from 'date-fns';
+import { toast } from 'react-toastify';
+import { routes } from "../../utils/api/ApiRoutes";
 
 const StyledDataGridContainer = styled('div')({
   backgroundColor: 'white',
@@ -23,14 +29,24 @@ const Adocoes = () => {
     const [openCreateModal, setOpenCreateModal] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
     const [filterText, setFilterText] = useState('');
+    const [adocoes, setAdocoes] = useState([]); // Alteração: Estado para armazenar dados da API
+    const [dataChanged, setDataChanged] = useState(false); // Adiciona o estado para sinalizar a mudança nos dados
 
-    // Dados fictícios para o exemplo
-    const rows = [
-        { id: 1, nomeAdotante: 'João', nomeGato: 'Frajola', nome: 'Adoção 1', dataAdocao: '13/10/2023', statusAdocao: 'Concluída' },
-        { id: 2, nomeAdotante: 'Maria', nomeGato: 'Garfield', nome: 'Adoção 2', dataAdocao: '13/10/2023', statusAdocao: 'Em andamento' },
-        { id: 3, nomeAdotante: 'Felipe', nomeGato: 'Fiona', nome: 'Adoção 2', dataAdocao: '15/10/2023', statusAdocao: 'Pendente' },
-        // Adicione mais linhas conforme necessário
-    ];
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(routes.getAdocoes, {
+                    withCredentials: true,
+                });
+                setAdocoes(data);
+            } catch (error) {
+                console.error('Erro ao buscar dados da API:', error);
+            }
+        };
+
+        fetchData();
+    }, [dataChanged]); // Adiciona dataChanged como dependência
 
     const handleEdit = (rowData) => {
         setSelectedRow(rowData);
@@ -40,16 +56,50 @@ const Adocoes = () => {
     const handleCloseModal = () => {
         setOpenModal(false);
         setSelectedRow(null);
+        setDataChanged((prev) => !prev); // Inverte o estado para sinalizar a mudança nos dados
     };
 
-
+    const handleCloseCreateModal = () => {
+        setOpenCreateModal(false);
+        setDataChanged((prev) => !prev);
+    };
     const handleOpenCreateModal = () => {
         setOpenCreateModal(true);
     };
+    const handleDelete = async (rowData) => {
+        Swal.fire({
+            title: 'Você tem certeza?',
+            text: 'Essa ação não poderá ser desfeita!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198d16',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, excluir!',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const response = await axios.delete(routes.deleteAdocao(rowData._id), {
+                        withCredentials: true,
+                    });
+                    if (response.status === 200) {
+                        toast.success('Registro excluído com sucesso!');
+                        setDataChanged((prev) => !prev); // Atualiza os dados após a exclusão
+                    } else {
+                        toast.error('Ocorreu um erro ao excluir o registro.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao excluir:', error);
+                    toast.error('Ocorreu um erro ao excluir o registro.');
+                }
+            }
+        });
+    };
+
+    const getRowId = (row) => row._id;
 
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
-            case 'concluída':
+            case 'concluido':
                 return 'green';
             case 'em andamento':
                 return 'blue';
@@ -61,11 +111,12 @@ const Adocoes = () => {
     };
 
     // Filtered rows based on quick filter text
-    const filteredRows = rows.filter((row) => {
+    const filteredRows = adocoes.filter((row) => {
         return Object.values(row).some((value) =>
             String(value).toLowerCase().includes(filterText.toLowerCase())
         );
     });
+
 
     const handleFilterChange = (event) => {
         setFilterText(event.target.value);
@@ -73,10 +124,19 @@ const Adocoes = () => {
 
     // Colunas do data table
     const columns = [
-        { field: 'nomeAdotante', headerName: 'Adotante', flex: 1 },
-        { field: 'nomeGato', headerName: 'Gato', flex: 1 },
-        { field: 'nome', headerName: 'Nome', flex: 1 },
-        { field: 'dataAdocao', headerName: 'Data de Adoção', flex: 1 },
+        { field: 'adotante', headerName: 'Adotante', flex: 1 },
+        { field: 'gato', headerName: 'Gato', flex: 1 },
+        { field: 'responsavel', headerName: 'Responsável', flex: 1 },
+        { field: 'data_adocao',
+            headerName: 'Data de Adoção',
+            flex: 1,
+            renderCell: (params) => (
+                <div>
+                    {params.row.data_adocao &&
+                        format(new Date(params.row.data_adocao), 'dd/MM/yyyy')}
+                </div>
+            ),
+        },
         {
             field: 'statusAdocao',
             headerName: 'Status',
@@ -89,21 +149,31 @@ const Adocoes = () => {
                             width: '12px',
                             height: '12px',
                             borderRadius: '50%',
-                            backgroundColor: getStatusColor(params.row.statusAdocao),
+                            backgroundColor: getStatusColor(params.row.status),
                             marginRight: '8px',
                         }}
                     ></div>
-                    {params.row.statusAdocao}
+                    {params.row.status}
                 </div>
             ),
         },
         {
             field: 'editar',
             headerName: 'Editar',
-            flex: 1,
+            flex: 0,
             renderCell: (params) => (
                 <Button onClick={() => handleEdit(params.row)}>
                     <BorderColorIcon />
+                </Button>
+            ),
+        },
+        {
+            field: 'excluir',
+            headerName: 'excluir',
+            flex: 0,
+            renderCell: (params) => (
+                <Button onClick={() => handleDelete(params.row)}>
+                    <DeleteForeverSharpIcon />
                 </Button>
             ),
         },
@@ -132,7 +202,7 @@ const Adocoes = () => {
                     </Button>
                 </div>
 
-                <CreateModal open={openCreateModal} onClose={() => setOpenCreateModal(false)} />
+                <CreateModal open={openCreateModal} onClose={handleCloseCreateModal} dataChanged={dataChanged} />
 
                 <DataGrid
                     rows={filteredRows}
@@ -144,6 +214,7 @@ const Adocoes = () => {
                     components={{
                         Toolbar: GridToolbar,
                     }}
+                    getRowId={getRowId}  // Configuração do getRowId para usar a propriedade _id
                 />
             </StyledDataGridContainer>
 

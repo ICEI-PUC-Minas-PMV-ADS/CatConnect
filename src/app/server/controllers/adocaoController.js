@@ -61,7 +61,7 @@ const adocaoController = {
             if (!adocaoExcluida) {
                 return res.status(404).json({ error: 'Adoção não encontrada' });
             }
-            res.status(204).end();
+            res.status(200).end();
         } catch (error) {
             console.error('Erro ao excluir adoção:', error);
             res.status(500).json({ error: 'Erro interno do servidor' });
