@@ -3,11 +3,14 @@
 ## Instalação do Site
 
 ---
-
-1. Abra a pasta "app" e rode o comando:
+ 
+1. instale o docker em seu computador.
+2.  Abra o projeto na pasta "app" e rode o comando:
    
-- sudo docker-compose up
+- sudo docker-compose up  - "Se for linux ou mac"
+-  docker-compose up  - "Se for windowns "
 
+   
   Pronto seu projeto ja esta rodando.
 
   ### Caso deseje para o projeto execute:
