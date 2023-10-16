@@ -13,7 +13,7 @@ import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { toast } from 'react-toastify';
-
+import { routes } from "../../utils/api/ApiRoutes";
 
 const StyledDataGridContainer = styled('div')({
   backgroundColor: 'white',
@@ -36,7 +36,7 @@ const Adocoes = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data } = await axios.get("http://localhost:4000/adocoes", {
+                const { data } = await axios.get(routes.getAdocoes, {
                     withCredentials: true,
                 });
                 setAdocoes(data);
@@ -78,10 +78,9 @@ const Adocoes = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const response = await axios.delete(`http://localhost:4000/adocoes/${rowData._id}`, {
+                    const response = await axios.delete(routes.deleteAdocao(rowData._id), {
                         withCredentials: true,
                     });
-                        console.log(response)
                     if (response.status === 200) {
                         toast.success('Registro excluído com sucesso!');
                         setDataChanged((prev) => !prev); // Atualiza os dados após a exclusão
