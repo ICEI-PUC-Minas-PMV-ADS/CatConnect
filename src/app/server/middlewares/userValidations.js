@@ -2,7 +2,7 @@ const { body } = require("express-validator")
 
 const userCreateValidation = () => {
     return[
-        body("name")
+        body("nome")
             .isString().withMessage("O campo nome é obrigatório.")
             .isLength({ min: 3 }).withMessage("O nome deve ter no mínimo 3 caracteres."),
         body("email")
@@ -15,7 +15,7 @@ const userCreateValidation = () => {
             .isString().withMessage("A confirmação da senha é obrigatória.")
             .custom((value, { req }) => {
                 if (value != req.body.password) {
-                    throw new Error("As senhas não digitadas não são iguais.");
+                    throw new Error("As senhas digitadas não são iguais.");
                 }
                 return true;
             })

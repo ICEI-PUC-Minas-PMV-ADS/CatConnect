@@ -1,4 +1,4 @@
-const User = require("../model/authModel");
+const User = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 const { handleErrors } = require('../errors/AuthenticationError');
 const maxAge = 3 * 24 * 60 * 60;
@@ -11,6 +11,11 @@ const createToken = (id) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { email, password, nome, adm } = req.body;
+    const existingUser = await User.findOne({ email })
+    if (existingUser) {
+      return res.status(422).json({ errors: ["E-mail já cadastrado."] })
+
+    }
     const user = await User.create({ email, password, nome, adm });
     const token = createToken(user._id);
 
@@ -25,6 +30,7 @@ module.exports.register = async (req, res, next) => {
     console.log(err);
     const errors = handleErrors(err);
     res.json({ errors, created: false });
+    // return res.status(500).json({ errors, created: false });
   }
 };
 
@@ -43,17 +49,19 @@ module.exports.login = async (req, res) => {
   }
 };
 
-module.exports.getAllUsers = async (req, res) => {
+module.exports.getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find();
     res.status(200).json(users);
   } catch (err) {
-    const errors = handleErrors(err);
-    res.status(500).json({ errors });
+    // const errors = handleErrors(err);
+    // return res.status(500).json({ errors });
+    console.log(err);
+    res.status(500).json({ error: "Erro ao buscar usuários" });
   }
 };
 
-module.exports.getUserById = async (req, res) => {
+module.exports.getUserById = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
     if (user) {
@@ -68,7 +76,7 @@ module.exports.getUserById = async (req, res) => {
   }
 };
 
-module.exports.updateUser = async (req, res) => {
+module.exports.updateUser = async (req, res, next) => {
   try {
     const { email, password, nome, adm } = req.body;
     const user = await User.findByIdAndUpdate(req.params.id, { email, password, nome, adm }, { new: true });
@@ -84,7 +92,7 @@ module.exports.updateUser = async (req, res) => {
   }
 };
 
-module.exports.deleteUser = async (req, res) => {
+module.exports.deleteUser = async (req, res, next) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
     if (user) {

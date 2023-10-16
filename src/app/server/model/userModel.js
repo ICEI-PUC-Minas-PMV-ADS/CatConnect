@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     required: [true],
     default: false,
   },
-  name: {
+  nome: {
     type: String,
     required: [true],
   },
@@ -42,4 +42,4 @@ userSchema.statics.login = async function (email, password) {
   throw Error("incorrect email");
 };
 
-module.exports = mongoose.model("Users", userSchema);
+module.exports = mongoose.model("User", userSchema);

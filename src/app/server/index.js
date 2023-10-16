@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 const cookieParser = require("cookie-parser");
 const adotanteRoutes = require("./routes/adotanteRoutes");
 const gatinhosRoutes = require("./routes/gatinhosRoutes");
@@ -42,7 +42,7 @@ app.use(
 app.use(cookieParser());
 
 app.use(express.json());
-app.use("/", authRoutes);
+app.use("/", userRoutes);
 app.use("/", gatinhosRoutes);
 app.use("/", adotanteRoutes);
 app.use("/", adocaoRoutes);
