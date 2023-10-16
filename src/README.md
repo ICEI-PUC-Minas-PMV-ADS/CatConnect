@@ -10,6 +10,10 @@
 
   Pronto seu projeto ja esta rodando.
 
+  ### Caso deseje para o projeto execute:
+
+- sudo docker-compose down
+
 
 ---
 
