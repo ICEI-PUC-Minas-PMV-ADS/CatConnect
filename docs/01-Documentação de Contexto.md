@@ -87,7 +87,7 @@ O grande número de gatos abandonados no local se deve a vários fatores, não s
 
 O controle de dados destes animais se faz necessário para policiar as condições físicas desses animais, identificando seus responsáveis através da microchipagem e de outras características especiais de cada gatinho, além de possibilitar uma visão ampla do progresso da instituição contra o combate ao abandono e maus-tratos de gatos no local.
 
-Com a implementação do nosso projeto, acreditamos que será possível:
+Com a implementação do nosso projeto, acredita-se que será possível:
 
 a) O Registro digital de dados de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde, local onde geralmente habita);
 
