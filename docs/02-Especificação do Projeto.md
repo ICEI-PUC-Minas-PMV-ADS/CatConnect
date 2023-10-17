@@ -4,11 +4,14 @@ No projeto de Gerenciamento de Relacionamento com o Cliente (CRM), serão utiliz
 
 **Tecnologias Utilizadas:**
 
-1. **Node.js (Backend):** O backend será desenvolvido utilizando Node.js, que é uma plataforma de código aberto que permite a criação de aplicativos de rede escaláveis e de alto desempenho. Isso permitirá a criação de APIs RESTful para gerenciar os dados dos gatos, adoções e outros aspectos do sistema.
+1. **Node.js (Backend):** O backend será desenvolvido utilizando Node.js, que é uma plataforma de código aberto que permite a criação de aplicativos de rede escaláveis e de alto desempenho. Isso permitirá a criação de APIs RESTful (com Node.js e Express.js) para gerenciar os dados dos gatos, adoções e outros aspectos do sistema, e com foco na segurança e nas integrações flexíveis.
 
-2. **React.js (Frontend):** O frontend do sistema será construído com React.js, uma biblioteca JavaScript de código aberto para construir interfaces de usuário. O React.js permitirá a criação de uma interface intuitiva e responsiva para os usuários, enfatizando a componentização e o gerenciamento de estado.
+2. **React.js (Frontend):** O frontend do sistema será construído com React.js, uma biblioteca JavaScript de código aberto para construir interfaces de usuário. O React.js permitirá a criação de uma interface intuitiva e responsiva para os usuários, enfatizando a componentização, o gerenciamento de estado e a responsividade.
 
-3. **MongoDB (Banco de Dados):** O MongoDB, um banco de dados NoSQL, será utilizado para armazenar os dados do sistema. Sua natureza flexível permite que os dados dos gatos, adoções e outras informações sejam armazenados de forma eficiente.
+3. **MongoDB (Banco de Dados):** O MongoDB, um banco de dados NoSQL caracterizado por um esquema flexível, índices eficientes e medidas de segurança, será utilizado para armazenar os dados do sistema. Sua natureza flexível permite que os dados dos gatos, adoções e outras informações sejam armazenados de forma eficiente.
+
+Essas tecnologias modernas garantirão um sistema de CRM eficiente, escalável e seguro.
+
 
 **Técnicas a serem Aplicadas:**
 
@@ -46,19 +49,6 @@ Figura 1 - Arquitetura da Solução
 Fonte: Elaborado pelos Autores
 
 
-### 2.1.2 Tecnologias
-
-Para o projeto de Gerenciamento de Relacionamento com o Cliente (CRM), serão utilizadas as seguintes tecnologias:
-
-Node.js (Backend): Serão criadas APIs RESTful com Node.js e Express.js, com foco em segurança e integrações flexíveis.
-
-React.js (Frontend): O frontend será construído com React.js, dando ênfase à componentização, gerenciamento de estado e responsividade.
-
-MongoDB (Banco de Dados): O MongoDB será empregado como banco de dados NoSQL, caracterizado por um esquema flexível, índices eficientes e medidas de segurança.
-
-Essas tecnologias modernas garantirão um sistema de CRM eficiente, escalável e seguro.
-
-
 ## 2.2 Project Model Canvas
 
 Figura 2 - Project Model Canvas
@@ -76,7 +66,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### 2.3.1 Requisitos Funcionais
 
-Apresentamos a seguir os requisitos funcionais que o projeto deverá atender.
+Apresenta-se a seguir os requisitos funcionais que o projeto deverá atender.
 
 Quadro 1 - Requisitos Funcionais
 
@@ -92,7 +82,7 @@ Fonte: Elaborado pelos autores
 
 ### 2.3.2 Requisitos Não Funcionais
 
-Apresentamos a seguir os requisitos não funcionais que o projeto deverá atender.
+Apresenta-se a seguir os requisitos não funcionais que o projeto deverá atender.
 
 Quadro 2 - Requisitos Não Funcionais
 
@@ -111,7 +101,7 @@ Fonte: Elaborado pelos autores
 
 ## 2.4 Restrições
 
-Neste documento, apresentamos as restrições que guiarão o processo de desenvolvimento do sistema de Gerenciamento de Relacionamento com o Cliente (CRM) utilizando as tecnologias _Node.js, React.js e MongoDB_. Essas restrições garantirão a segurança, desempenho, escalabilidade e conformidade do sistema, enquanto aproveitam as vantagens dessas tecnologias modernas e poderosas.
+Neste documento, apresenta-se as restrições que guiarão o processo de desenvolvimento do sistema de Gerenciamento de Relacionamento com o Cliente (CRM) utilizando as tecnologias _Node.js, React.js e MongoDB_. Essas restrições garantirão a segurança, desempenho, escalabilidade e conformidade do sistema, enquanto aproveitam as vantagens dessas tecnologias modernas e poderosas.
 
 ### 2.4.1 _Node.js (Backend)_
 
