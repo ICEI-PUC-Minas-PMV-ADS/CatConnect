@@ -1,9 +1,3 @@
-## Project Model Cavas  
-
-- O canvas é uma representação visual que geralmente é dividida em seções, cada uma das quais aborda um aspecto fundamental do projeto. Pode acessar nosso projeto no link:
-
-https://miro.com/welcomeonboard/dEJlYnQzZHp3czBIcDgyRWROT1VDU3pnVE8wYkRzc0MzR1NwbkgxQkJha1hUZXlIQ3ZvNnREVHVEOVZ5NmJmdnwzMDc0NDU3MzY0NTE0MTIxNTUzfDI=?share_link_id=976660153489
-
 
 ## Aprensentação Do projeto  
 
@@ -11,5 +5,6 @@ https://miro.com/welcomeonboard/dEJlYnQzZHp3czBIcDgyRWROT1VDU3pnVE8wYkRzc0MzR1Nw
   
   
 https://infograph.venngage.com/pl/2Qs47z1r2a8
+
 
 # Apresentação da Solução
