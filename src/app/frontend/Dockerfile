@@ -13,5 +13,8 @@ RUN npm install
 # Copia o restante do código-fonte do contexto do build
 COPY . .
 
+# Define um volume para armazenar dados fora do contêiner
+VOLUME /usr/src/app/data
+
 # Comando para iniciar o aplicativo React.js
 CMD ["npm", "start"]

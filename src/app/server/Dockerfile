@@ -13,5 +13,8 @@ RUN npm install
 # Copia o restante do código-fonte
 COPY . .
 
+# Define um segundo volume para armazenar logs
+VOLUME /usr/src/app/logs
+
 # Comando para iniciar o servidor Node.js
 CMD ["npm", "start"]
