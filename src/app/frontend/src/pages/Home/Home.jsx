@@ -12,8 +12,6 @@ import Dashboard from "../../components/Dashboard/Dashboard";
 import Users from "../../components/Users/User";
 import Configuracoes from "../../components/Configuracoes/Configuracoes";
 import Adotantes from "../../components/Adotantes/Adotantes";
-import Loading from "../../utils/Loading/generic";
-import {data} from "autoprefixer";
 
 export default function Cards() {
   const navigate = useNavigate();
@@ -58,21 +56,9 @@ export default function Cards() {
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
-        } else {
-          setTimeout(() => {
-
-            toast(`Olá ${data.user} 🦄`, { theme: "dark" });
-          }, 3000);
-
         }
       } catch (error) {
         console.error("Erro durante a verificação do usuário", error);
-      } finally {
-        // Esconde o loading após 3 segundos
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 2000);
-
       }
     };
 
@@ -82,16 +68,12 @@ export default function Cards() {
   return (
 
       <div className="home">
-
-        {/*{loading && <Loading />} /!* Mostra o loading enquanto loading é true *!/*/}
-        {/*{!loading && (*/}
             <>
             <div className="home-container">
               <Sidebar className="sidebar" definirComponente={setComponent} />
               <div className="private">{definirComponente()}</div>
             </div>
             </>
-        {/*)}*/}
 
       </div>
   );
