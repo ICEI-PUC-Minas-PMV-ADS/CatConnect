@@ -10,6 +10,7 @@ COPY package*.json ./
 # Instala as dependências
 RUN npm install
 
+
 # Copia o restante do código-fonte do contexto do build
 COPY frontend .
 COPY server .
