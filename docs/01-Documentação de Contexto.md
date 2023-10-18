@@ -8,14 +8,14 @@ Com o crescimento da ONG, surgiu também a necessidade de um sistema de controle
 
 A intenção do grupo é construir um sistema simples e efetivo, capaz de armazenar e integrar informações importantes sobre os gatinhos e seus respectivos tutores, facilitando o processo de adoção. O registro de cada animal poderá ainda facilitar uma visão ampla sobre a problemática, possibilitando uma avaliação mais precisa sobre a quantidade de animais que se encontram hoje no parque, animais tutelados ou à espera de adoção. Para além das questões de controle, o sistema será ainda um meio seguro para o registro destas informações e facilitará a consulta dos tutores sobre dados especiais do animal tutelado.
 
-Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece nossa atenção e colaboração.
+Acredita-se ser necessário o fortalecimento de políticas públicas que envolvam animais abandonados em grandes cidades. A ONG S.O.S Gatinhos do Parque realiza um trabalho social muito importante e que merece atenção e colaboração.
 
 Espera-se assim, construir um sistema que possa agregar as atividades da organização e um ambiente capaz de fornecer uma vida digna para cada gatinho à espera de adoção.
 
 
 ## 1.1 Problema
 
-O problema que nossa aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
+O problema que a aplicação de gestão de adoção de gatos pretende resolver é a falta de visibilidade e reconhecimento, e melhorar a gestão de adoção de felinos, de uma instituição já existente que se dedica à adoção responsável de animais. 
 
 Muitas instituições que cuidam de animais resgatados enfrentam desafios para chamar a atenção do público e para destacar seu trabalho, resultando em uma adoção menos frequente e uma capacidade limitada de encontrar lares amorosos para os animaizinhos sob seus cuidados.
 
@@ -73,7 +73,7 @@ A necessidade de um sistema digitalizado se torna evidente ao considerar o grand
 
 A extensão universitária é o elo de ligação entre a universidade e a sociedade, e tem como obejtivo principal promover a troca de saberes científicos e espontâneos, de forma que os conhecimentos de todas as partes envolvidas se complementem, realizando assim mudanças positivas na sociedade em que vivemos, e construindo caminhos que irão contribuir no confronto de problemas e de questões sociais. (Wikipédia, 2023)
 
-Congênere Resende (2023), cita que diante da complexidade dos problemas socioambientais que fazem parte da nossa realidade atualmente, a extensão universitária parece sondar o impossível, motivo pelo qual o Projeto Pedagógico Institucional (PPI) da PUC Minas salienta a extensão universitária como parte do fazer acadêmico, “um dos lugares de exercício da função social da universidade”. A Política de Extensão Universitária designa que as atividades busquem “a construção de um projeto societário, que permita, de forma efetiva, concretizar uma pauta de inclusão social, a formação cidadã e humanista, na perspectiva de desenvolvimento integral do ser humano”.
+Congênere Resende (2023), cita que diante da complexidade dos problemas socioambientais que fazem parte da realidade atual, a extensão universitária parece sondar o impossível, motivo pelo qual o Projeto Pedagógico Institucional (PPI) da PUC Minas salienta a extensão universitária como parte do fazer acadêmico, “um dos lugares de exercício da função social da universidade”. A Política de Extensão Universitária designa que as atividades busquem “a construção de um projeto societário, que permita, de forma efetiva, concretizar uma pauta de inclusão social, a formação cidadã e humanista, na perspectiva de desenvolvimento integral do ser humano”.
 
 A Pró-Reitoria de Extensão (Proex) da PUC Minas possui como princípios e valores, a igualdade, a liberdade, a autonomia, a pluraridade, a solidariedade e a justiça.(PUC Minas, 2023) Articulado a isto, o curso de Tecnólogo em Análise e Desenvolvimento de Sistemas da Universidade articula ações pedagógicas, de caráter teórico e prático, planejadas e executadas de modo sistemático, de forma a garantir que sejam cumpridos todos os critérios almejados para os alunos do Eixo 5. Uma forma diferenciada de colocar em prática todo o conhecimento aprendido durante o curso e, interagir com a sociedade, fazendo realmente a diferença na história do parceiro que abraçou a ideia.
 
@@ -88,6 +88,7 @@ O grande número de gatos abandonados no local se deve a vários fatores, não s
 O controle de dados destes animais se faz necessário para policiar as condições físicas desses animais, identificando seus responsáveis através da microchipagem e de outras características especiais de cada gatinho, além de possibilitar uma visão ampla do progresso da instituição contra o combate ao abandono e maus-tratos de gatos no local.
 
 Com a implementação do nosso projeto, acredita-se que será possível:
+
 
 a) O Registro digital de dados de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde, local onde geralmente habita);
 
