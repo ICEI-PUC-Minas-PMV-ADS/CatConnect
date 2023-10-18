@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import { ModalProvider } from "./contexts/ModalContext";
 import Modal from "./utils/modal/Modal";
 
+
 ReactDOM.render(
   <React.StrictMode>
     <ModalProvider>

@@ -24,6 +24,11 @@
   grid-template-columns: 260px auto;
   grid-template-areas: "sidebar content";
 }
+.home {
+  display:flex;
+  align-items: center;
+  left: 1000px;
+}
 
 .sidebar {
   grid-area: sidebar;

@@ -2,29 +2,44 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-  nome: {
-    type: String,
-    required: [true, "Nome é obrigatório"],
-  },
   email: {
     type: String,
-    required: [true, "Email é obrigatório"],
+    required: [true, "Email is Required"],
     unique: true,
   },
-  senha: {
+  password: {
     type: String,
-    required: [true, "Senha é obrigatória"],
+    required: [true, "Password is Required"],
   },
-  isAdmin: {
+  adm: {
     type: Boolean,
+    required: [true],
     default: false,
+  },
+  nome: {
+    type: String,
+    required: [true],
   },
 });
 
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt();
-  this.senha = await bcrypt.hash(this.senha, salt);
+  this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 
-module.exports = mongoose.model("Usuario", userSchema);
+userSchema.statics.login = async function (email, password) {
+  const user = await this.findOne({ email });
+
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+
+      return user;
+    }
+    throw Error("incorrect password");
+  }
+  throw Error("incorrect email");
+};
+
+module.exports = mongoose.model("User", userSchema);

@@ -11,11 +11,13 @@ import Adocoes from "../../components/Adocoes/Adocoes";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import Users from "../../components/Users/User";
 import Configuracoes from "../../components/Configuracoes/Configuracoes";
+import Adotantes from "../../components/Adotantes/Adotantes";
 
 export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const [component, setComponent] = useState("Exemplo");
+  const [loading, setLoading] = useState(true);
 
   const definirComponente = () => {
     // Ao invés de colocar o componente no caminho (routes) , colocar o componente a ser renderizado aqui
@@ -32,38 +34,47 @@ export default function Cards() {
         return <Users />;
       case "configuracoes":
         return <Configuracoes />;
+      case "adotantes":
+        return <Adotantes />;
+      default:
+        return null;
     }
   };
 
   useEffect(() => {
     const verifyUser = async () => {
-      if (!cookies.jwt) {
-        navigate("/login");
-      } else {
+      try {
+
+        // Mostra o loading
+        setLoading(true);
+
         const { data } = await axios.post(
-          "http://localhost:4000",
-          {},
-          {
-            withCredentials: true,
-          }
+            "http://localhost:4000",
+            {},
+            { withCredentials: true }
         );
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
-        } else {
-          toast(`Olá ${data.user} 🦄`, {
-            theme: "dark",
-          });
         }
+      } catch (error) {
+        console.error("Erro durante a verificação do usuário", error);
       }
     };
+
     verifyUser();
   }, [cookies, navigate, removeCookie]);
 
   return (
-    <div className="home-container">
-      <Sidebar className="sidebar" definirComponente={setComponent} />
-      <div className="private">{definirComponente()}</div>
-    </div>
+
+      <div className="home">
+            <>
+            <div className="home-container">
+              <Sidebar className="sidebar" definirComponente={setComponent} />
+              <div className="private">{definirComponente()}</div>
+            </div>
+            </>
+
+      </div>
   );
 }

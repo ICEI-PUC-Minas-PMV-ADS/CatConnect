@@ -59,7 +59,9 @@ MongoDB (Banco de Dados): O MongoDB será empregado como banco de dados NoSQL, c
 Essas tecnologias modernas garantirão um sistema de CRM eficiente, escalável e seguro.
 
 
-## 2.2 Project Model Canvas
+## 2.2 _Project Model Canvas_
+
+O _Project Model Canvas_ é uma representação visual que geralmente é dividida em seções, cada uma das quais aborda um aspecto fundamental do projeto.
 
 Figura 2 - Project Model Canvas
 

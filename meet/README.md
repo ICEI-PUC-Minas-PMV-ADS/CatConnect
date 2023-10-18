@@ -1,4 +1,4 @@
-Você deve colocar aqui todas as atas dos encontros realizados com o parceiro.
+Todas as atas dos encontros realizados com o parceiro.
 
 **Ata de Acordo Inicial**
 

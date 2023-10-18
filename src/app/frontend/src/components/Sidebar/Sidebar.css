@@ -24,26 +24,29 @@
   background-color: var(--main-green);
   color: var(--background);
   overflow-x: hidden;
-  transition: 0.3s;
-  z-index: 1;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 30px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding: 20px 30px;
+  height: 100vh;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .btnSidebar {
   display: flex;
-  margin-top: 5rem;
-  margin: 1rem 0 0 0;
   border-radius: 24px;
   color: var(--friendly-green);
   background-color: var(--background);
@@ -51,22 +54,41 @@
   font-size: 15px;
   align-items: center;
   justify-content: center;
-  align-self: center;
-  justify-self: center;
   gap: 4px;
+  margin: 0 30px;
 }
 
 .btnSidebar2 {
   display: flex;
-  margin: 2.2rem 0 0 0;
   border-radius: 24px;
-  gap: 4px;
+  gap: 16px;
   color: #da5406;
   background-color: var(--background);
   padding: 5px, 20px, 5px, 7px;
   font-size: 15px;
-  align-items: center;
   justify-content: center;
+  text-transform: none;
+  width: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0 1rem;;
+}
+
+.btnSair {
+  display: flex;
+  border-radius: 24px;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  margin: 20px 30px;
 }
 
 .burgerContainer {
@@ -82,7 +104,10 @@
 }
 
 .contentsContainer {
-  margin: 0.7rem 0 0;
+  margin: 0 30px;
+  margin-top: 30px;
+  flex-grow: 1;
+  overflow: auto;
 }
 
 ul {
@@ -103,14 +128,4 @@ li {
   margin: 0.6rem 0;
   padding: 0.25rem 0;
   border-radius: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0 0 1rem;
 }

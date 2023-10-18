@@ -3,28 +3,20 @@
 ## Instalação do Site
 
 ---
-###  No diretório "server", siga estas etapas:
+ 
+1. instale o docker em seu computador.
+2.  Abra o projeto na pasta "app" e rode o comando:
+   
+- sudo docker-compose up  - "Se for linux ou mac"
+-  docker-compose up  - "Se for windowns "
 
+   
+  Pronto seu projeto ja esta rodando.
 
-1. Abra a pasta "server".
+  ### Caso deseje para o projeto execute:
 
-2. No arquivo index.js, substitua a URI do MongoDB pela sua URI específica.
-- Altere na `index.js` a URI do MongoDB para a sua URI específica.
-3. Execute o seguinte comando para instalar as dependências:
-- Execute `npm install`.
-- Execute `npm start`.
-4. Inicie o servidor Node.js com o seguinte comando:
-- Execute `npm start`.
----
+- sudo docker-compose down
 
-### No diretório "frontend", siga estas etapas
-1. Abra a pasta "frontend".
-2. Execute o seguinte comando para instalar as dependências:
-- Execute `npm install`.
-3. Inicialize um novo projeto Node.js com configurações padrão usando o seguinte comando (opcional, se você estiver criando um novo projeto):
-- Execute `npm init -y`.
-4. Inicie o aplicativo frontend com o seguinte comando:
-- Execute `npm start`.
 
 ---
 

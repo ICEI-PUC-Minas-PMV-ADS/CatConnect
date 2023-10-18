@@ -32,7 +32,7 @@ Muitas instituições que cuidam de animais resgatados enfrentam desafios para c
 
 O projeto tem como objetivo central a criação de um sistema sociotécnico inovador no formato de plataforma digital para adoção de gatinhos, que viabilize o gerenciamento, o registro e o acompanhamento de adoções da ONG S.O.S. Gatinhos do Parque. Através de reuniões de alinhamento realizadas pela plataforma do _Google Meet_, o grupo e a _stakeholder_ externa responsável pela interação da ONG SOS Gatinhos do Parque com o grupo, pretende-se, também, resolver o problema de visibilidade e reconhecimento da instituição, ajudando-a a encontrar lares amorosos para seus gatinhos resgatados, melhorando sua presença online e implementando estratégias de gestão eficazes.
 
-Como objetivos específicos, podemos citar:
+Como objetivos específicos, expõe-se:
 
 a) Apresentar o perfil de acesso, para melhor gestão do cadastro dos gatinhos;
 
@@ -87,7 +87,8 @@ O grande número de gatos abandonados no local se deve a vários fatores, não s
 
 O controle de dados destes animais se faz necessário para policiar as condições físicas desses animais, identificando seus responsáveis através da microchipagem e de outras características especiais de cada gatinho, além de possibilitar uma visão ampla do progresso da instituição contra o combate ao abandono e maus-tratos de gatos no local.
 
-Com a implementação do projeto, acreditamos que será possível:
+Com a implementação do nosso projeto, acredita-se que será possível:
+
 
 a) O Registro digital de dados de cada animal (cor, raça, idade, peso, tutor, CRM, ID, estado de saúde, local onde geralmente habita);
 
