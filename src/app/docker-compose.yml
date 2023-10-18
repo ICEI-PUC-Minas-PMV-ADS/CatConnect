@@ -22,8 +22,3 @@ services:
       - database
     volumes:
       - ./server/data:/usr/src/app/data
-
-  database:
-    image: mongo
-    volumes:
-      - ./mongo-data:/data/db
