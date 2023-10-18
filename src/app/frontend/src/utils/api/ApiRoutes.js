@@ -7,5 +7,6 @@ export const routes = {
     getAdotantes: `${host}/adotantes`,
     getGatos: `${host}/gatos`,
     createAdocoes: `${host}/adocoes`,
+    updateAdocoes: (id) => `${host}/adocoes/${id}`,
     deleteAdocao: (id) => `${host}/adocoes/${id}`,
 };
