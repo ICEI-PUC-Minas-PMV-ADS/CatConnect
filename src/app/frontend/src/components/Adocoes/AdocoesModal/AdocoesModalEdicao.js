@@ -1,8 +1,10 @@
 // AdocaoModalEdicao.css
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal, Box, Typography, TextField, Button, IconButton, Select, MenuItem } from '@mui/material';
 import { styled } from '@mui/system';
 import CloseIcon from '@mui/icons-material/Close';
+import { toast } from "react-toastify";
+import { routes } from "../../../utils/api/ApiRoutes";
 import './AdocaoModalEdicao.css'; // Importando o arquivo CSS
 
 const StyledModal = styled(Modal)({
@@ -25,6 +27,82 @@ const EditModal = ({ open, onClose, rowData }) => {
     const dataAdocaoValue = rowData?.dataAdocao || '';
     const estatusAdocaoValue = rowData?.estatusAdocao || '';
 
+    const [adotantes, setAdotantes] = useState([]);
+    const [gatos, setGatos] = useState([]);
+    const [status, setStatus] = useState([]);
+
+    useEffect(() => {
+        getAdotantes();
+        //getGatos();
+        //getStatus();
+    }, []);
+
+    const getAdotantes = async () => {
+        try {
+            const { data } = await axios.get(routes.getAdotantes, {
+                withCredentials: true,
+            });
+            if (!data) {
+                toast.error(
+                    data.error ? data.error : "Houve um erro ao coletar os adotantes",
+                    {
+                        theme: "dark",
+                    }
+                );
+            } else {
+                setAdotantes(data);
+            }
+        } catch {
+            toast.error("Houve um erro ao procurar dados", {
+                theme: "dark",
+            });
+        }
+    };
+    const getGatos = async () => {
+        try {
+            const { data } = await axios.get(routes.getGatos, {
+                withCredentials: true,
+            });
+            if (!data) {
+                toast.error(
+                    data.error ? data.error : "Houve um erro ao coletar os dados do gato",
+                    {
+                        theme: "dark",
+                    }
+                );
+            } else {
+                setGatos(data);
+            }
+        } catch {
+            toast.error("Houve um erro ao procurar dados", {
+                theme: "dark",
+            });
+        }
+    };
+    const getStatus = async () => {
+        try {
+            const { data } = await axios.get(routes.getStatus, {
+                withCredentials: true,
+            });
+            const statusData = data.data;
+
+            if (!data) {
+                toast.error(
+                    data.error ? data.error : "Houve um erro ao coletar os status",
+                    {
+                        theme: "dark",
+                    }
+                );
+            } else {
+                setStatus(statusData);
+            }
+        } catch {
+            toast.error("Houve um erro ao procurar dados", {
+                theme: "dark",
+            });
+        }
+    };
+
     const handleSave = () => {
         // Lógica para salvar os dados editados
         // ...
@@ -41,10 +119,17 @@ const EditModal = ({ open, onClose, rowData }) => {
                     </IconButton>
                 </TitleContainer>
                 <FieldContainer className="field-container">
-                    <Select label="Nome do Adotante" fullWidth value={adotanteValue}>
-                        <MenuItem value="adotante1">Adotante 1</MenuItem>
-                        <MenuItem value="adotante2">Adotante 2</MenuItem>
-
+                    <Select
+                        label="Nome do Adotante"
+                        fullWidth
+                        value={adotanteValue}
+                        onChange={(e) => setAdotanteValue(e.target.value)}
+                    >
+                        {adotantes.map((adotante) => (
+                            <MenuItem key={adotante.id} value={adotante.nome}>
+                                {adotante.nome}
+                            </MenuItem>
+                        ))}
                     </Select>
                     <Select label="Nome do Gato" fullWidth value={gatoValue}>
                         <MenuItem value="gato1">Gato 1</MenuItem>
