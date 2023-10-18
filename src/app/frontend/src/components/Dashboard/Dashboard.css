@@ -1,0 +1,33 @@
+:root {
+    --main-green: #1e732c;
+    --friendly-green: #00ad5a;
+    --background: #ebdfd7;
+    --background-shadows: #ffffff34;
+    --modal-background: rgba(41, 45, 50, 0.9);
+    --cold-background: #f0fff8;
+    --main-text: #292d32;
+    --lower-text: #828282;
+    --blue-text: #092c4c;
+    --eg-text: #7e92a2;
+    --button-text: #ffffff;
+    --exit-button: #7e92a2;
+    --main-red: #ee201c;
+    --background-red: #f48c89;
+    --main-orange: #e65f2b;
+    --background-orange: #f0ab90;
+  }
+  
+  h1 {
+    color: var(--friendly-green);
+    font-family: Inter;
+    font-size: 2rem;
+    margin-left: 0px;
+    /* Add margin to the left of h1 */
+  
+  }
+  
+  .ResumoBox {
+    display: flex;
+    align-items: baseline;
+  
+  }
