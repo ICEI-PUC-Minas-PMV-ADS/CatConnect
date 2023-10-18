@@ -11,10 +11,13 @@ COPY package*.json ./
 RUN npm install
 
 # Copia o restante do código-fonte do contexto do build
-COPY . .
+COPY frontend .
+COPY server .
 
 # Define um volume para armazenar dados fora do contêiner
 VOLUME /usr/src/app/data
+# Define um segundo volume para armazenar logs
+VOLUME /usr/src/app/logs
 
 # Comando para iniciar o aplicativo React.js
 CMD ["npm", "start"]
