@@ -17,10 +17,16 @@ Lei 14.064 de 29 de setembro de 2020. **Altera a Lei nº 9.605, de 12 de feverei
 
 Lei 9.605 de 12 de fevereiro de 1998. **Dispõe sobre as sanções penais e administrativas derivadas de condutas e atividades lesivas ao meio ambiente, e dá outras providências.** Disponível em: <https://www.planalto.gov.br/ccivil_03/leis/l9605.htm>. Acessado em: 07/09/2023.
 
-Resende, Carolina. **Apresentação da Extensão Universitária** Disponível em: <https://proex.pucminas.br/apresentacao/>. Acessado em: 25/09/2023.
+ICS PUC Minas (Instituto de Ciências Sociais - Pontifícia Universidade Católica de Minas Gerais). **A extensão no Instituto de Ciências Sociais.** Disponível em: <https://www.pucminas.br/ics/Paginas/extensao-universitaria.aspx>. Acessado em: 17/10/2023.
+
+Resende, Carolina. **Apresentação da Extensão Universitária.** Disponível em: <https://proex.pucminas.br/apresentacao/>. Acessado em: 25/09/2023.
+
+Revista PUC Minas | ISSN 2525-4731X. **Extensão Universitária na PUC Minas.** Edição número 15. Primeiro Semestre de 2017. Disponível em: <https://revista.pucminas.br/revista/materia/extensao-universitaria-na-puc-minas/>. Acessado em: 17/10/2023.
 
 SOS Gatinhos do Parque. **A História da ONG SOS Gatinhos do Parque.** Disponível em: <https://sosgatinhosdoparque.com.br/site/index.php/home/pagina-historia/>. Acessado em: 01/09/2023.
 
+UFES (Universidade Federal do Espírito Santo). **O que é extensão universitária.** Disponível em: <https://proex.ufes.br/o-que-e-extensao-universitaria>. Acessado em: 17/10/2023.
+
 Wikepédia. **Diagrama de caso de uso.** Junho de 2020. Disponível em: <https://pt.wikipedia.org/wiki/Diagrama_de_caso_de_uso>. Acessado em: 31/08/2023.
 
-Wikipédia. **Extensão Universitária** Janeiro de 2023. Disponível em: <https://pt.wikipedia.org/wiki/Extens%C3%A3o_universit%C3%A1ria>. Acessado em: 25/09/2023.
+

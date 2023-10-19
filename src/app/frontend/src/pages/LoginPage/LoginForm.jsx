@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
 import "./Login.css";
+import Swal from 'sweetalert2';
 
 function LoginForm({ toggleRegister }) {
   const [cookies] = useCookies([]);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (cookies.jwt) {
       navigate("/");
@@ -35,7 +38,15 @@ function LoginForm({ toggleRegister }) {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          navigate("/");
+          Swal.fire({
+            title: "Sucesso",
+            icon: "success",
+            timer: 3000,
+            timerProgressBar: true,
+          }).then(() => {
+
+            navigate("/");
+          });
         }
       }
     } catch (ex) {

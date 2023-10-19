@@ -1,0 +1,24 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT_URI=http://localhost:3000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./server
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGODB_URI=mongodb+srv://CatConnect:catConnect2023@bancocatconnect.qqj0z5w.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
+      - PORT_SERVER=4000
+    depends_on:
+      - database
+    volumes:
+      - ./server/data:/usr/src/app/data

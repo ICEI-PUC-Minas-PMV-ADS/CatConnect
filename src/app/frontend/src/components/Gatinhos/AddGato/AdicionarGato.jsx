@@ -1,16 +1,39 @@
 import React from "react";
+import { useState } from "react";
 import { TextField, Button, Grid, Typography, FormLabel, FormControl } from "@mui/material";
 import "./AdicionarGato.css";
 
 function AddGato({ closeModal }) {
+  const [gato, setGato] = useState({
+    nome: "",
+    chip: "",
+    data: "",
+    local: "",
+    cor: "",
+    pelagem: "",
+    idade: "",
+    sexo: "",
+    castracao: "",
+    vacina: "",
+    fiv: "",
+    felv: "",
+    saude: "",
+    info: "",
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Gato adicionado com sucesso!");
+    console.log("Gato adicionado com sucesso!", gato);
     closeModal();
   };
 
-  const gato = {
-
+  // Define a handler function to update the gato state
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setGato({
+      ...gato,
+      [name]: value,
+    });
   };
 
   return (
@@ -20,33 +43,32 @@ function AddGato({ closeModal }) {
           <Grid item xs={12}>
             <Typography id="secao">Informações do Gato</Typography>
           </Grid>
-          
+
           <Grid item xs={12}>
             <FormControl fullWidth>
-            <FormLabel>Nome do gato</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="nome"
-              placeholder="Digite o nome do gato"
-              disabled={gato}
-              value={gato?.nome}
-            />
+              <FormLabel>Nome do gato</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="nome"
+                placeholder="Digite o nome do gato"
+                value={gato?.nome}
+                onChange={handleInputChange}
+              />
             </FormControl>
           </Grid>
 
           <Grid item xs={12}>
             <FormControl fullWidth>
-          <FormLabel>Chip</FormLabel>
-            <TextField
-              fullWidth
-              type="number"
-              variant="outlined"
-              name="chip"
-              placeholder="32705000"
-              disabled={gato}
-              value={gato?.chip}
-            />
+              <FormLabel>Chip</FormLabel>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  name="chip"
+                  placeholder="32705000"
+                  value={gato?.chip}
+                  onChange={handleInputChange}
+                />
             </FormControl>
           </Grid>
 
@@ -56,6 +78,8 @@ function AddGato({ closeModal }) {
             <TextField
               type="date"
               name="data"
+              value={gato?.data}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -65,12 +89,11 @@ function AddGato({ closeModal }) {
           <FormLabel>Local de encontro</FormLabel>
             <TextField
               fullWidth
-              label="Local de Encontro"
               variant="outlined"
               name="local"
               placeholder="Escolha o local"
-              disabled={gato}
               value={gato?.local}
+              onChange={handleInputChange}
             />
              </FormControl>
           </Grid>
@@ -84,8 +107,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="cor"
               placeholder="Digite a cor"
-              disabled={gato}
               value={gato?.cor}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -98,8 +121,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="pelagem"
               placeholder="Escolha a pelagem"
-              disabled={gato}
               value={gato?.pelagem}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -113,8 +136,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="idade"
               placeholder="Digite a idade"
-              disabled={gato}
               value={gato?.idade}
+              onChange={handleInputChange}
             />
           </FormControl>
           </Grid>
@@ -127,8 +150,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="sexo"
               placeholder="Escolha o sexo"
-              disabled={gato}
               value={gato?.sexo}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -141,8 +164,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="castracao"
               placeholder="Castrado?"
-              disabled={gato}
               value={gato?.castracao}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -156,8 +179,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="vacina"
               placeholder="Escolha a vacina"
-              disabled={gato}
               value={gato?.vacina}
+              onChange={handleInputChange}
             />
           </FormControl>
           </Grid>
@@ -170,8 +193,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="fiv"
               placeholder="Status FIV"
-              disabled={gato}
               value={gato?.fiv}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -184,8 +207,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="felv"
               placeholder="Status FeLV"
-              disabled={gato}
               value={gato?.felv}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>
@@ -199,8 +222,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="saude"
               placeholder="Problemas de saúde"
-              disabled={gato}
               value={gato?.saude}
+              onChange={handleInputChange}
             />
           </FormControl>
           </Grid>
@@ -214,8 +237,8 @@ function AddGato({ closeModal }) {
               variant="outlined"
               name="info"
               placeholder="Informações adicionais"
-              disabled={gato}
               value={gato?.info}
+              onChange={handleInputChange}
             />
             </FormControl>
           </Grid>

@@ -33,52 +33,57 @@ h1 {
   margin-left: 10px; /* Add margin to the left of h1 */
 }
 
-#ModalGatos {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: #00AD5A;
-  margin-right: 10px;
-  right: 30px;
-  align-self: flex-end;
-  z-index: 100;
-  top: 20px;
+.user-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.user-dados {
+  padding: 1rem;
+}
+
+.user-linha {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#ModalGatos > span {
-  font-size: 12px;
-  color: white;
-  line-height: 1;
+.space-between {
+  justify-content: space-between;
 }
 
-#tableElements {
+.titulo {
+  position: unset;
+}
+
+#ModalGatos {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  background-color: #00ad5a;
   display: flex;
-  flex-direction: column; /* Change to column layout */
-  width: 78%;
-  margin-left: 180px; /* Add margin to the left */
-  margin-top: 80px;
-  background: #F0FFF880;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
+
+#tableElements {
+  background: #f0fff880;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: Inter;
   font-size: medium;
   font-weight: 400;
-  padding: 10px; /* Add padding to the container */
+  border-radius: 14px;
+  width: 96%;
+  padding: 8px;
+  margin-top: 10px;
 }
 
-.TextField {
-  position: relative; /* Change to relative positioning */
-  margin-bottom: 10px; /* Add margin to the bottom */
-}
 
-#tableElements > div {
-  flex: 1;
-  width: 100%;
-}
-
-.DataGrid{
-  width: 80%;
-}

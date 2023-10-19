@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const authRoutes = require("./routes/authRoutes");
-const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes");
+const cookieParser = require("cookie-parser");
 const adotanteRoutes = require("./routes/adotanteRoutes");
+const gatinhosRoutes = require("./routes/gatinhosRoutes");
+const adocaoRoutes = require("./routes/adocaoRoutes");
+const status = require("./routes/statusRoutes");
+
 require('dotenv').config();
 
 const app = express();
@@ -13,7 +16,7 @@ app.listen(process.env.PORT_SERVER, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("Server Started Successfully.");
+      console.log(`Server Started Successfully on port ${process.env.PORT_SERVER}.`);
   }
 });
 
@@ -39,8 +42,12 @@ app.use(
 app.use(cookieParser());
 
 app.use(express.json());
-app.use("/", authRoutes);
 app.use("/", userRoutes);
+app.use("/", gatinhosRoutes);
+app.use("/", adotanteRoutes);
+app.use("/", adocaoRoutes);
+app.use("/", status);
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Algo deu errado!");

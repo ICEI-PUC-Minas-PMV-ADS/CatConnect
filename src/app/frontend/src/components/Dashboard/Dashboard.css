@@ -1,0 +1,79 @@
+:root {
+    --main-green: #1e732c;
+    --friendly-green: #00ad5a;
+    --background: #ebdfd7;
+    --background-shadows: #ffffff34;
+    --modal-background: rgba(41, 45, 50, 0.9);
+    --cold-background: #f0fff8;
+    --main-text: #292d32;
+    --lower-text: #828282;
+    --blue-text: #092c4c;
+    --eg-text: #7e92a2;
+    --button-text: #ffffff;
+    --exit-button: #7e92a2;
+    --main-red: #ee201c;
+    --background-red: #f48c89;
+    --main-orange: #e65f2b;
+    --background-orange: #f0ab90;
+}
+
+h1 {
+    color: var(--friendly-green);
+    font-family: Inter;
+    font-size: 2rem;
+    margin-left: 0px;
+}
+
+.ResumoBox {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.subtitulo {
+    font-family: Inter;
+    font-size: 15px;
+    color: #000;
+}
+
+.btnFiltro {
+    display: flex;
+    border-radius: 24px;
+    color: black;
+    align-items: center;
+    background-color: var(--button-text);
+    margin: 0.5px 200px;
+    font-size: 10px;
+}
+
+.div1,
+.div2 {
+    background-color: #f6eee8;
+    border-radius: 0.7rem;
+    color: black;
+    font-size: 12px;
+    padding: 30px;
+    margin: 30px;
+    display: grid;
+}
+
+.divs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards {
+    background-color: #f6eee8;
+    justify-content: baseline;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card {
+    font-size: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+
+}
