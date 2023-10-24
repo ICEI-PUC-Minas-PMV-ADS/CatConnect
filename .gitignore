@@ -8,3 +8,4 @@ src/app/server/yarn.lock
 src/app/frontend/node_modules
 src/app/frontend/package-lock.json
 src/app/frontend/yarn.lock
+*.lock

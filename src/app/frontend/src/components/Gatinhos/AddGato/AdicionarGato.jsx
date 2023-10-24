@@ -1,6 +1,13 @@
-import React from "react";
-import { useState } from "react";
-import { TextField, Button, Grid, Typography, FormLabel, FormControl } from "@mui/material";
+import React, { useState } from "react";
+import {
+  TextField,
+  Button,
+  Grid,
+  Typography,
+  FormLabel,
+  FormControl,
+} from "@mui/material";
+import axios from "axios";
 import "./AdicionarGato.css";
 
 function AddGato({ closeModal }) {
@@ -21,19 +28,28 @@ function AddGato({ closeModal }) {
     info: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Gato adicionado com sucesso!", gato);
-    closeModal();
+    try {
+      const response = await axios.post("http://localhost:3000/gatos", gato); // Ajuste a URL conforme necessário.
+      if (response.status === 201) {
+        console.log("Gato adicionado com sucesso!", gato);
+        closeModal();
+      } else {
+        console.error("Falha ao adicionar gato.");
+      }
+    } catch (error) {
+      console.error("Erro ao adicionar gato:", error);
+    }
   };
 
-  // Define a handler function to update the gato state
+  // Defina uma função de tratamento para atualizar o estado do gato
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setGato({
-      ...gato,
+    setGato((prevGato) => ({
+      ...prevGato,
       [name]: value,
-    });
+    }));
   };
 
   return (
@@ -52,7 +68,7 @@ function AddGato({ closeModal }) {
                 variant="outlined"
                 name="nome"
                 placeholder="Digite o nome do gato"
-                value={gato?.nome}
+                value={gato.nome}
                 onChange={handleInputChange}
               />
             </FormControl>
