@@ -1,26 +1,36 @@
-import React from "react";
-import { TextField, Button, Grid, Typography, FormLabel, FormControl } from "@mui/material";
+import React, { useState } from "react";
 import "./EditarGato.css";
+import { TextField, Button, Grid, FormControl, FormLabel } from "@mui/material";
 
-function AddGato({ closeModal }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Gato adicionado com sucesso!");
-    closeModal();
+function EditGato({ closeModal, gato }) {
+  const [editedGato, seteditedGato] = useState({
+    chip: gato.chip,
+    idade: gato.idade,
+    nome: gato.nome,
+    cor: gato.cor,
+    local: gato.local,
+    castracao: gato.castracao,
+    vacina: gato.vacina,
+    fiv: gato.fiv,
+    felv: gato.felv,
+    pelagem: gato.pelagem,
+    info: gato.info,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    seteditedGato({
+      ...editedGato,
+      [name]: value,
+    });
   };
 
-  const gato = {
-    chip: "32405000",
-    idade: "10 anos",
-    nome: "Fifi",
-    cor: "Laranja",
-    local: "Coreto",
-    castracao:"Não",
-    vacina:"Não",
-    fiv: "negativo",
-    felv: "negativo",
-    pelagem: "Longa",
-    info: "Tímida"
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Gato editado com sucesso!");
+    closeModal();
+    // Pass the editedGato object to your update function
+    // updateGatoInformation(editedGato);
   };
 
   return (
@@ -28,208 +38,191 @@ function AddGato({ closeModal }) {
       <form onSubmit={handleSubmit} className="gato-dados">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography id="secao">Informações do Gato</Typography>
-          </Grid>
-          
-          <Grid item xs={12}>
-            <FormControl fullWidth>
-            <FormLabel>Nome do gato</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="nome"
-              placeholder="Digite o nome do gato"
-              disabled={gato}
-              value={gato?.nome}
-            />
-            </FormControl>
+            <FormLabel>Informações do Gato</FormLabel>
           </Grid>
 
+          {/* Create similar sections for other fields in your gato object */}
           <Grid item xs={12}>
             <FormControl fullWidth>
-          <FormLabel>Chip</FormLabel>
-            <TextField
-              fullWidth
-              type="number"
-              variant="outlined"
-              name="chip"
-              placeholder="32705000"
-              disabled={gato}
-              value={gato?.chip}
-            />
+              <FormLabel>Nome do gato</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="nome"
+                placeholder="Digite o nome do gato"
+                value={editedGato.nome}
+                onChange={handleInputChange}
+              />
             </FormControl>
           </Grid>
-
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <FormLabel>Chip</FormLabel>
+              <TextField
+                fullWidth
+                type="text"
+                variant="outlined"
+                name="chip"
+                placeholder="32705000"
+                value={editedGato.chip}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
           <Grid item xs={5}>
             <FormControl fullWidth>
-          <FormLabel>Data de registro</FormLabel>
-            <TextField
-              type="date"
-              name="data"
-            />
+              <FormLabel>Data de registro</FormLabel>
+              <TextField
+                type="date"
+                name="data"
+                value={editedGato.data}
+              />
             </FormControl>
           </Grid>
-
           <Grid item xs={5}>
-          <FormControl fullWidth>
-          <FormLabel>Local de encontro</FormLabel>
-            <TextField
-              fullWidth
-              label="Local de Encontro"
-              variant="outlined"
-              name="local"
-              placeholder="Escolha o local"
-              disabled={gato}
-              value={gato?.local}
-            />
-             </FormControl>
-          </Grid>
-
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Cor</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="cor"
-              placeholder="Digite a cor"
-              disabled={gato}
-              value={gato?.cor}
-            />
-            </FormControl>
-          </Grid>
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Pelagem</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="pelagem"
-              placeholder="Escolha a pelagem"
-              disabled={gato}
-              value={gato?.pelagem}
-            />
-            </FormControl>
-          </Grid>
-
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Idade Estimada</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="idade"
-              placeholder="Digite a idade"
-              disabled={gato}
-              value={gato?.idade}
-            />
-          </FormControl>
-          </Grid>
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Sexo</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="sexo"
-              placeholder="Escolha o sexo"
-              disabled={gato}
-              value={gato?.sexo}
-            />
-            </FormControl>
-          </Grid>
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Castração</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="castracao"
-              placeholder="Castrado?"
-              disabled={gato}
-              value={gato?.castracao}
-            />
-            </FormControl>
-          </Grid>
-
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Vacina</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="vacina"
-              placeholder="Escolha a vacina"
-              disabled={gato}
-              value={gato?.vacina}
-            />
-          </FormControl>
-          </Grid>
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>FIV</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="fiv"
-              placeholder="Status FIV"
-              disabled={gato}
-              value={gato?.fiv}
-            />
-            </FormControl>
-          </Grid>
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>FeLV</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="felv"
-              placeholder="Status FeLV"
-              disabled={gato}
-              value={gato?.felv}
-            />
-            </FormControl>
-          </Grid>
-
-
-          <Grid item xs={3}>
-          <FormControl fullWidth>
-          <FormLabel>Saúde</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="saude"
-              placeholder="Problemas de saúde"
-              disabled={gato}
-              value={gato?.saude}
-            />
-          </FormControl>
-          </Grid>
-
-          <Grid item xs={12}>
-
             <FormControl fullWidth>
-            <FormLabel>Informações adicionais</FormLabel>
-            <TextField
-              fullWidth
-              variant="outlined"
-              name="info"
-              placeholder="Informações adicionais"
-              disabled={gato}
-              value={gato?.info}
-            />
+              <FormLabel>Local de encontro</FormLabel>
+              <TextField
+                fullWidth
+                label="Local de Encontro"
+                variant="outlined"
+                name="local"
+                placeholder="Escolha o local"
+                value={editedGato.local}
+                onChange={handleInputChange}
+              />
             </FormControl>
           </Grid>
-          
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Cor</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="cor"
+                placeholder="Digite a cor"
+                value={editedGato.cor}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Pelagem</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="pelagem"
+                placeholder="Escolha a pelagem"
+                value={editedGato.pelagem}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Idade Estimada</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="idade"
+                placeholder="Digite a idade"
+                value={editedGato.idade}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Sexo</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="sexo"
+                placeholder="Escolha o sexo"
+                value={editedGato.sexo}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Castração</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="castracao"
+                placeholder="Castrado?"
+                value={editedGato.castracao}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Vacina</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="vacina"
+                placeholder="Escolha a vacina"
+                value={editedGato.vacina}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>FIV</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="fiv"
+                placeholder="Status FIV"
+                value={editedGato.fiv}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>FeLV</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="felv"
+                placeholder="Status FeLV"
+                value={editedGato.felv}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={3}>
+            <FormControl fullWidth>
+              <FormLabel>Saúde</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="saude"
+                placeholder="Problemas de saúde"
+                value={editedGato.saude}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <FormLabel>Informações adicionais</FormLabel>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="info"
+                placeholder="Informações adicionais"
+                value={editedGato.info}
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
           <Grid item xs={12}>
             <Button
               type="submit"
@@ -237,7 +230,7 @@ function AddGato({ closeModal }) {
               color="primary"
               fullWidth
             >
-              Adicionar
+              Editar
             </Button>
           </Grid>
         </Grid>
@@ -246,4 +239,4 @@ function AddGato({ closeModal }) {
   );
 }
 
-export default AddGato;
+export default EditGato;

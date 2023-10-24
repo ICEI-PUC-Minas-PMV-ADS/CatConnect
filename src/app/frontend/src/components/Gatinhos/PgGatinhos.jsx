@@ -23,37 +23,8 @@ function Gatinhos() {
   const [gatos, setGatinhos] = useState([]);
 
   useEffect(() => {
-    const verifyUser = async () => {
-      if (!cookies.jwt) {
-        navigate("/login");
-      } else {
-        const { data } = await axios.post(
-          "http://localhost:4000/gatos",
-          {},
-          {
-            withCredentials: true,
-          }
-        );
-      }
-    };
-    verifyUser();
-
     getGatinhos();
-  }, [cookies, navigate, removeCookie]);
-
-  const logOut = () => {
-    removeCookie("jwt");
-    navigate("/login");
-  };
-
-  const abrirAddGato = () => {
-    openModal("Adicionar gato", <AddGato closeModal={closeModal} />);
-  };
-
-  const openEditModal = (rowId) => {
-    const editedRow = gatos.find((row) => row.id === rowId);
-    openModal("Editar gato", EditGato({ closeModal }));
-  };
+  }, []);
 
   const getGatinhos = async () => {
     try {
@@ -61,13 +32,120 @@ function Gatinhos() {
         withCredentials: true,
       });
       if (!data) {
-        console.error("Failed to fetch gatinhos data");
+        toast.error(
+          data.error ? data.error : "Houve um erro ao coletar os gatinhos!",
+          {
+            theme: "dark",
+          }
+        );
       } else {
         setGatinhos(data);
       }
-    } catch (error) {
-      console.error("Error fetching gatinhos data:", error);
+    } catch {
+      toast.error("Houve um erro ao adicionar um novo gato", {
+        theme: "dark",
+      });
     }
+  };
+
+  const handleAddGatinho = async (newGato) => {
+    delete newGato["_id"];
+    try {
+      const { data } = await axios.post(
+        "http://localhost:4000/gatos",
+        newGato,
+        {
+          withCredentials: true,
+        }
+      );
+      if (!data.created) {
+        toast.error(
+          data.error
+            ? data.error
+            : "Houve um erro ao adicionar um novo gatinho",
+          {
+            theme: "dark",
+          }
+        );
+        closeModal();
+      } else {
+        toast(`Gatinho adicionado com sucesso!`, {
+          theme: "dark",
+        });
+        getGatinhos();
+        closeModal();
+      }
+    } catch {
+      toast.error("Houve um erro ao adicionar um novo gato", {
+        theme: "dark",
+      });
+      closeModal();
+    }
+  };
+
+  const handleEditGatinho = async (editedGato) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:4000/gatos/${editedGato._id}`,
+        editedGato,
+        {
+          withCredentials: true,
+        }
+      );
+      if (!data.updated) {
+        toast.error(
+          data.error ? data.error : "Houve um erro ao editar um gatinho",
+          {
+            theme: "dark",
+          }
+        );
+        closeModal();
+      } else {
+        toast(`Gatinho editado com sucesso!`, {
+          theme: "dark",
+        });
+        getGatinhos();
+        closeModal();
+      }
+    } catch {
+      toast.error("Houve um erro ao editar um gatinho", {
+        theme: "dark",
+      });
+      closeModal();
+    }
+  };
+
+  const handleViewGatinho = () => {
+    closeModal();
+  };
+
+  const abrirAddGato = () => {
+    openModal("Adicionar gato", <AddGato handleSubmitFunction={handleAddGatinho} edit={true} />);
+  };
+
+  const openEditModal = (rowId, e) => {
+    e.stopPropagation();
+    let editedRow = gatos.find((row) => row._id === rowId);
+    openModal(
+      "Editar gatinho",
+      <EditGato
+        handleSubmitFunction={handleEditGatinho}
+        gato={editedRow}
+        edit={true}
+      />
+    );
+  };
+
+  const openViewModal = (rowId) => {
+    let editedRow = gatos.find((row) => row._id === rowId);
+    console.log("editedRow", editedRow);
+    openModal(
+      "Visualizar gatinho",
+      <EditGato
+        handleSubmitFunction={handleViewGatinho}
+        gato={editedRow}
+      />
+    );
   };
 
   const columns = [
@@ -78,11 +156,11 @@ function Gatinhos() {
     {
       field: "editar",
       headerName: "Editar",
-      width: 100,
+      width: 80,
       renderCell: (params) => (
         <IconButton
           color="primary"
-          onClick={() => openEditModal(params.row.id)}
+          onClick={(event) => openEditModal(params.row._id, event)}
           style={{ backgroundColor: "#FFFFFF", borderRadius: "50%" }}
         >
           <MoreVertIcon style={{ color: "#292D32" }} />
@@ -113,7 +191,7 @@ function Gatinhos() {
   return (
     <>
       <h1>Gatinhos</h1>
-      <Button id="ModalGatos" onClick={abrirAddGato}>
+      <Button id="ModalGatos" onClick={() => abrirAddGato()}> 
         <span style={{ fontSize: "24px", color: "white" }}>+</span>
       </Button>
 
@@ -140,6 +218,7 @@ function Gatinhos() {
               setRowsPerPage(pageSize);
               setPage(0);
             }}
+            onRowClick={(params) => openViewModal(params.row._id)}
             components={{
               Toolbar: GridToolbar,
             }}
