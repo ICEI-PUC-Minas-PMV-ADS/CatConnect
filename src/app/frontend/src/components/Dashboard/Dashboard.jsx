@@ -4,10 +4,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { BsListCheck, BsBarChart, BsChevronDown } from "react-icons/bs";
 import gatinho1 from "../../images/gatinho1.png";
+import { Avatar } from '@mui/material';
+import DashboardAdocoesCount from './DashboardAdocoesCount';
 
 
-
-const Dashboard = () => {
+const Dashboard = ({ adocoesCount }) => {
   return (
     <Box>
       <h1> Dashboard</h1>
@@ -32,28 +33,34 @@ const Dashboard = () => {
             </div>
             <div className="divs">
               <div className="div1">
-                < BsBarChart
-                  size={23}
-                  style={{
-                    color: "#ffffff",
-                    backgroundColor: "#910470",
-                    borderRadius: "0.7rem",
-                  }} />
+                <Avatar style={{
+                  backgroundColor: "#910470"
+                }}>
+                  < BsBarChart
+                    size={23}
+                    style={{
+                      color: "#ffffff",
+                      borderRadius: "0.2rem",
+                    }} />
+                </Avatar>
                 <span>Novos gatos registrados</span>
                 <span>8</span>
                 <span>12% de aumento</span>
               </div>
 
               <div className="div2">
+              <Avatar style={{
+                  backgroundColor: "#E65F2B"
+                }}>
                 <BsListCheck
                   size={23}
                   style={{
                     color: "#ffffff",
-                    backgroundColor: "#E65F2B",
-                    borderRadius: "0.7rem",
+                    borderRadius: "0.2rem",
                   }} />
+                  </Avatar>
                 <span>Adoções em acompanhamento</span>
-                <span>10</span>
+                <DashboardAdocoesCount count={adocoesCount} />
               </div>
             </div>
           </Grid>
