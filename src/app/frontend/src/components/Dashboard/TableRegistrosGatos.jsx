@@ -17,6 +17,7 @@ const rows = [
 ];
 
 export default function TableRegistros() {
+    const getRowId = (row) => row.id;
     return (
         <div className="boxGrid">
             <h2>Últimos registros</h2>
