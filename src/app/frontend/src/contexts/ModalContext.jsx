@@ -5,7 +5,7 @@ const ModalContext = createContext();
 
 // Create a provider component to wrap your entire app
 export function ModalProvider({ children }) {
-  const [modalState, setModalState] = useState({ isOpen: false, content: null, title: null });
+  const [modalState, setModalState] = useState({ isOpen: false, content: null, title: null, errorMessage: undefined });
 
   // Function to open the modal
   const openModal = (title, content) => {

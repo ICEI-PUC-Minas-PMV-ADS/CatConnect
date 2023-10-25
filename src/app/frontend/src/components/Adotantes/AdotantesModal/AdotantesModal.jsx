@@ -1,8 +1,59 @@
 import React, { useState, memo } from "react";
 import "./AdotantesModal.css";
 import TextField from "@mui/material/TextField";
+import InputMask from "react-input-mask";
+import TextMask from "react-text-mask";
 
 function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
+  const cepMask = [/\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/];
+  const cpfMask = [
+    /\d/,
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+    "-",
+    /\d/,
+    /\d/,
+  ];
+  const phoneMask = [
+    "(",
+    /\d/,
+    /\d/,
+    ")",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    "-",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+  ];
+  const rgMask = [
+    /[A-Za-z]/,
+    /[A-Za-z]/,
+    "-",
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+  ];
+
   const [adotanteEdition, setAdotanteEdition] = useState({
     _id: adotante ? adotante._id : "",
     bairro: adotante ? adotante.bairro : "",
@@ -16,6 +67,14 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
     telefone: adotante ? adotante.telefone : "",
     email: adotante ? adotante.email : "",
   });
+
+  const [error, setError] = useState(false);
+
+  const cpfError = adotanteEdition.cpf?.length !== cpfMask.length;
+  const phoneError = adotanteEdition.telefone?.length !== phoneMask.length;
+  const rgError = adotanteEdition.rg?.length !== rgMask.length;
+  const cepError = adotanteEdition.cep?.length !== cepMask.length;
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setAdotanteEdition((prevAdotante) => ({
@@ -26,7 +85,15 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSubmitFunction(adotanteEdition);
+
+    // console.log("Logica", cpfError || rgError || cepError || phoneError)
+
+    if(cpfError || rgError || cepError || phoneError) {
+      setError(true);
+    } else {
+      setError(false)
+      handleSubmitFunction(adotanteEdition);
+    }
   };
 
   return (
@@ -74,7 +141,14 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               variant="standard"
               InputProps={{
                 readOnly: !edit,
+                inputComponent: TextMask,
               }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ mask: rgMask, guide: false }}
+              helperText={error && rgError ? "RG inválido" : ""}
+              error={error && rgError}
             />
           </div>
           <div className="adotante-coluna">
@@ -88,7 +162,14 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               variant="standard"
               InputProps={{
                 readOnly: !edit,
+                inputComponent: TextMask,
               }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ mask: cpfMask, guide: false }}
+              helperText={error && cpfError ? "CPF inválido" : ""}
+              error={error && cpfError}
             />
           </div>
         </div>
@@ -97,14 +178,21 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             <label>Telefone</label>
             <TextField
               type="telefone"
-              placeholder="Ex: (31)912345678"
+              placeholder="Ex: (31)91234-5678"
               name="telefone"
               value={adotanteEdition?.telefone}
               onChange={handleInputChange}
               variant="standard"
               InputProps={{
                 readOnly: !edit,
+                inputComponent: TextMask,
               }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ mask: phoneMask, guide: false }}
+              helperText={error && phoneError ? "Telefone inválido" : ""}
+              error={error && phoneError}
             />
           </div>
           <div className="adotante-coluna">
@@ -176,6 +264,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             <label>CEP</label>
             <TextField
               type="cep"
+              mask="99999-999"
               placeholder="Ex: 30130-000"
               name="cep"
               value={adotanteEdition?.cep}
@@ -183,7 +272,14 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               variant="standard"
               InputProps={{
                 readOnly: !edit,
+                inputComponent: TextMask,
               }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ mask: cepMask, guide: false }}
+              helperText={error && cepError ? "CEP inválido" : ""}
+              error={error && cepError}
             />
           </div>
         </div>
