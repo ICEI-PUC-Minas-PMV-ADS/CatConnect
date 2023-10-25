@@ -6,6 +6,8 @@ import { BsListCheck, BsBarChart, BsChevronDown } from "react-icons/bs";
 import gatinho1 from "../../images/gatinho1.png";
 import { Avatar } from '@mui/material';
 import DashboardAdocoesCount from './DashboardAdocoesCount';
+import TableRegistrosGatos from "./TableRegistrosGatos.jsx";
+import TableRegistrosAdocoes from "./TableRegistrosAdocoes";
 
 
 const Dashboard = ({ adocoesCount }) => {
@@ -108,11 +110,11 @@ const Dashboard = ({ adocoesCount }) => {
           </Grid>
 
           <Grid item xs={8}>
-            <p>Grid3</p>
+          <TableRegistrosAdocoes />
           </Grid>
 
           <Grid item xs={4}>
-            <p>Grid4</p>
+          <TableRegistrosGatos />
           </Grid>
         </Grid>
       </Box>
