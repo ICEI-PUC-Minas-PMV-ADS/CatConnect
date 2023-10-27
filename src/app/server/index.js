@@ -9,6 +9,7 @@ const adocaoRoutes = require("./routes/adocaoRoutes");
 const status = require("./routes/statusRoutes");
 const bodyParser = require('body-parser');
 const sendEmailRoutes = require('./routes/sendEmailRoutes');
+const sendCepRoutes = require('./routes/sendCepRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -50,6 +51,7 @@ app.use("/", adotanteRoutes);
 app.use("/", adocaoRoutes);
 app.use("/", status);
 app.use("/", sendEmailRoutes);
+app.use("/api/buscacep", sendCepRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

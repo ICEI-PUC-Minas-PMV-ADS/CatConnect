@@ -1,12 +1,12 @@
-FROM node:16
+FROM node:12
+
 WORKDIR /usr/src/app
 
-COPY /server .
+COPY /frontend .
 
 # Instala as dependências para server
 RUN npm install
 
-EXPOSE 4000
+EXPOSE 3000
 # Comando para iniciar o aplicativo React.js
 CMD ["npm", "start"]
-

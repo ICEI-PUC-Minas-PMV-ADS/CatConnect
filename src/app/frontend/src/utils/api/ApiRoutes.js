@@ -7,6 +7,10 @@ export const routes = {
     getAdotantes: `${host}/adotantes`,
     getGatos: `${host}/gatos`,
     createAdocoes: `${host}/adocoes`,
+    getResponsavel: `${host}/users`,
+    createAdotante: `${host}/adotantes`,
+    getAdotanteCpf: (cpf)=>`${host}/adotantes/${cpf}`,
     updateAdocoes: (id) => `${host}/adocoes/${id}`,
     deleteAdocao: (id) => `${host}/adocoes/${id}`,
+    getCep: (cep) => `${host}/api/buscacep/${cep}`,
 };

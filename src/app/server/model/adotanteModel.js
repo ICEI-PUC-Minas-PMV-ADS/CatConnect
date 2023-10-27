@@ -15,7 +15,7 @@ const adotanteSchema = new mongoose.Schema({
   },
   rg: {
     type: String,
-    required: [true, "RG é obrigatório"],
+    // required: [true, "RG é obrigatório"],
   },
   instagram: {
     type: String,
