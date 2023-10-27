@@ -124,9 +124,9 @@ const Adocoes = () => {
 
     // Colunas do data table
     const columns = [
-        { field: 'adotante', headerName: 'Adotante', flex: 1 },
-        { field: 'gato', headerName: 'Gato', flex: 1 },
-        { field: 'responsavel', headerName: 'Responsável', flex: 1 },
+        { field: 'adotante', headerName: 'Nome do Adotante', flex: 1 },
+        { field: 'gato', headerName: 'Nome do Gato', flex: 1 },
+        { field: 'responsavel', headerName: 'Responsável pelo cadastro', flex: 1 },
         { field: 'data_adocao',
             headerName: 'Data de Adoção',
             flex: 1,

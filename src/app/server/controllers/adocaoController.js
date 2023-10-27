@@ -7,10 +7,12 @@ const adocaoController = {
             const novaAdocao = await Adocao.create(req.body);
             res.status(201).json(novaAdocao);
         } catch (error) {
+
             console.error('Erro ao criar adoção:', error);
             res.status(500).json({ error: 'Erro interno do servidor' });
         }
     },
+
 
     // Obter todas as adoções
     obterTodasAdocoes: async (req, res) => {
