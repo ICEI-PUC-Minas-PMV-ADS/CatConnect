@@ -1,8 +1,9 @@
-import React, { useState, memo } from "react";
+import React, { useState, memo, useEffect } from "react";
 import "./AdotantesModal.css";
 import TextField from "@mui/material/TextField";
-import InputMask from "react-input-mask";
 import TextMask from "react-text-mask";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
   const cepMask = [/\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/];
@@ -75,6 +76,65 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
   const rgError = adotanteEdition.rg?.length !== rgMask.length;
   const cepError = adotanteEdition.cep?.length !== cepMask.length;
 
+  const handleEditAdotante = async (editedAdotante) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:4000/adotantes/${editedAdotante._id}`,
+        editedAdotante,
+        {
+          withCredentials: true,
+        }
+      );
+      if (!data.updated) {
+        toast.error(
+          data.error ? data.error : "Houve um erro ao editar um adotante",
+          {
+            theme: "dark",
+          }
+        );
+        closeModal();
+      } else {
+        toast(`Adotante editado com sucesso!`, {
+          theme: "dark",
+        });
+        getAdotantes();
+        closeModal();
+      }
+    } catch {
+      toast.error("Houve um erro ao editar um adotante", {
+        theme: "dark",
+      });
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    const buscarCep = async () => {
+      if (adotanteEdition.cep?.length === cepMask.length) {
+        const cepApi = adotanteEdition.cep.replace(/-/g, "");
+
+        try {
+          const { data } = await axios.get(
+            `https://viacep.com.br/ws/${cepApi}/json/`
+          );
+
+          setAdotanteEdition((prevAdotante) => ({
+            ...prevAdotante,
+            rua: data.logradouro,
+            bairro: data.bairro,
+            cidade: data.localidade,
+          }));
+        } catch (err) {
+          console.log(err)
+          toast.error("Houve um erro ao buscar o CEP informado", {
+            theme: "dark",
+          });
+        }
+      }
+    };
+    buscarCep();
+  }, [adotanteEdition.cep]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setAdotanteEdition((prevAdotante) => ({
@@ -86,12 +146,10 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // console.log("Logica", cpfError || rgError || cepError || phoneError)
-
-    if(cpfError || rgError || cepError || phoneError) {
+    if (cpfError || rgError || cepError || phoneError) {
       setError(true);
     } else {
-      setError(false)
+      setError(false);
       handleSubmitFunction(adotanteEdition);
     }
   };
@@ -134,7 +192,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             <label>RG</label>
             <TextField
               type="rg"
-              placeholder="Ex: MG12123123"
+              placeholder="Ex: MG-12.123.123"
               name="rg"
               value={adotanteEdition?.rg}
               onChange={handleInputChange}
@@ -155,7 +213,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             <label>CPF</label>
             <TextField
               type="cpf"
-              placeholder="Ex: 1212312312"
+              placeholder="Ex: 121.231.231-12"
               name="cpf"
               value={adotanteEdition?.cpf}
               onChange={handleInputChange}
@@ -217,6 +275,28 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
         </div>
         <div className="adotante-linha">
           <div className="adotante-coluna">
+            <label>CEP</label>
+            <TextField
+              type="cep"
+              mask="99999-999"
+              placeholder="Ex: 30130-000"
+              name="cep"
+              value={adotanteEdition?.cep}
+              onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+                inputComponent: TextMask,
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ mask: cepMask, guide: false }}
+              helperText={error && cepError ? "CEP inválido" : ""}
+              error={error && cepError}
+            />
+          </div>
+          <div className="adotante-coluna">
             <label>Rua</label>
             <TextField
               type="rua"
@@ -258,28 +338,6 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               InputProps={{
                 readOnly: !edit,
               }}
-            />
-          </div>
-          <div className="adotante-coluna">
-            <label>CEP</label>
-            <TextField
-              type="cep"
-              mask="99999-999"
-              placeholder="Ex: 30130-000"
-              name="cep"
-              value={adotanteEdition?.cep}
-              onChange={handleInputChange}
-              variant="standard"
-              InputProps={{
-                readOnly: !edit,
-                inputComponent: TextMask,
-              }}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              inputProps={{ mask: cepMask, guide: false }}
-              helperText={error && cepError ? "CEP inválido" : ""}
-              error={error && cepError}
             />
           </div>
         </div>
