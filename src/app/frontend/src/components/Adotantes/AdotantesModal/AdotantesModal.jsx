@@ -67,6 +67,8 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
     rua: adotante ? adotante.rua : "",
     telefone: adotante ? adotante.telefone : "",
     email: adotante ? adotante.email : "",
+    complemento: adotante ? adotante.complemento : "",
+    ruaNumero: adotante ? adotante.ruaNumero : "",
   });
 
   const [error, setError] = useState(false);
@@ -303,6 +305,36 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
               placeholder="Ex: Av. Afonso Pena, 1377"
               name="rua"
               value={adotanteEdition?.rua}
+              onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
+            />
+          </div>
+        </div>
+        <div className="adotante-linha">
+          <div className="adotante-coluna">
+            <label>Número</label>
+            <TextField
+              type="ruaNumero"
+              placeholder="Ex: 99"
+              name="ruaNumero"
+              value={adotanteEdition?.ruaNumero}
+              onChange={handleInputChange}
+              variant="standard"
+              InputProps={{
+                readOnly: !edit,
+              }}
+            />
+          </div>
+          <div className="adotante-coluna">
+            <label>Complemento</label>
+            <TextField
+              type="complemento"
+              placeholder="Ex: Bloco A, Apto 999"
+              name="complemento"
+              value={adotanteEdition?.complemento}
               onChange={handleInputChange}
               variant="standard"
               InputProps={{
