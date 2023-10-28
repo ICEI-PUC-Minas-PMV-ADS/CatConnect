@@ -5,12 +5,12 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useModal } from "../../contexts/ModalContext";
 import UsuariosModal from "./UsuariosModal/UsuariosModal";
-import { MdVolunteerActivism } from "react-icons/md";
+import { TiGroupOutline } from "react-icons/ti";
 import axios from "axios";
 import { toast } from "react-toastify";
+import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -178,7 +178,7 @@ const Usuarios = () => {
     );
   };
 
-    const columns = [
+  const columns = [
     { field: "nome", headerName: "Nome", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
     {
@@ -202,7 +202,7 @@ const Usuarios = () => {
       width: 100,
       renderCell: (params) => (
         <IconButton
-          color="secondary"
+          color="primary"
           onClick={(event) => {
             event.stopPropagation();
             if (window.confirm("Tem certeza que deseja excluir este usuário?")) {
@@ -211,7 +211,7 @@ const Usuarios = () => {
           }}
           style={{ borderRadius: "50%" }}
         >
-          <DeleteOutlineIcon style={{ color: "#FF0000" }} />
+          <DeleteForeverSharpIcon />
         </IconButton>
       ),
     },
@@ -236,7 +236,9 @@ const Usuarios = () => {
       <div className="user-dados">
         <div className="user-linha space-between">
           <div className="user-linha">
-            <MdVolunteerActivism />
+            <div style={{ marginLeft: '20px', marginRight: '20px' }}>
+              <TiGroupOutline />
+            </div>
             <h1 className="titulo">Usuários</h1>
           </div>
           <Button id="add-user" onClick={() => abrirAddUsuario()}>
