@@ -33,12 +33,12 @@ Quadro 6 - Plano de Testes
 | Passos                | aaaaa |
 | Critério de Êxito     | - Confirmação da edição das informações |
 
-| Caso de Teste         | CT 04 - Relatório |
+| Caso de Teste         | CT 04 - Relatórios |
 |-----------------------|-------|
-| Requisitos Associados | RF 004 - Relatório |
+| Requisitos Associados | RF 004 - Relatórios |
 | Objetivo do Teste     | - Disponibilizar no dashboard um botão para emissão de relatório em formato Excel para auxílio e controle de adoção dos gatos. |
 | Passos                | aaaaa |
-| Critério de Êxito     | - Apresntar o relatório |
+| Critério de Êxito     | - Apresentar o relatório |
 
 Fonte: Elaborado pelos autores
 
@@ -53,12 +53,12 @@ Relatório com os resultados obtidos nos teste de _software_ realizados na aplic
 
 Quadro 7 - Registro dos Testes
 
-| Caso de Teste | Ação  | Resultado Esperado | Resultado Obtido |
-|---------------|-------|--------------------|------------------|
-| CT 01         | xxxxx | xxxxxxxxxxxxxxxxx  | xxxxxxxxxxxxxxxx |
-| CT 02         | xxxxx | xxxxxxxxxxxxxxxxx  | xxxxxxxxxxxxxxxx |
-| CT 03         | xxxxx | xxxxxxxxxxxxxxxxx  | xxxxxxxxxxxxxxxx |
-| CT 04         | xxxxx | xxxxxxxxxxxxxxxxx  | xxxxxxxxxxxxxxxx |
+| Caso de Teste | Ação                  | Resultado Esperado | Resultado Obtido |
+|---------------|-----------------------|--------------------|------------------|
+| CT 01         | Registro de Gatos     | Permitir que o usuário registre os gatos conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 02         | Registro de Adoção    | Permitir que o usuário registre as adoções conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 03         | Edição de Informações | Permitir que o usuário edite as informações conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 04         | Relatórios            | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 
 Fonte: Elaborado pelos autores
 
@@ -67,11 +67,11 @@ Fonte: Elaborado pelos autores
 
 Quadro 8 - Resultado
 
-| Caso de Teste | Ação  | Relatório |
-|---------------|-------|-----------|
-| CT 01         | xxxxx | xxxxxxxxx |
-| CT 02         | xxxxx | xxxxxxxxx |
-| CT 03         | xxxxx | xxxxxxxxx |
-| CT 04         | xxxxx | xxxxxxxxx |
+| Caso de Teste | Ação                  | Relatório                  |
+|---------------|-----------------------|----------------------------|
+| CT 01         | Registro de Gatos     | Sistema em desenvolvimento |
+| CT 02         | Registro de Adoção    | Sistema em desenvolvimento |
+| CT 03         | Edição de Informações | Sistema em desenvolvimento |
+| CT 04         | Relatórios            | Sistema em desenvolvimento |
 
 Fonte: Elaborado pelos autores
