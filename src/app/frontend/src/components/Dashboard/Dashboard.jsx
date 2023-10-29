@@ -13,7 +13,9 @@ import TableRegistrosAdocoes from "./TableRegistrosAdocoes";
 const Dashboard = ({ adocoesCount }) => {
   return (
     <Box>
+
       <h1> Dashboard</h1>
+
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={4}>
           <Grid item xs={8}>
@@ -51,29 +53,28 @@ const Dashboard = ({ adocoesCount }) => {
               </div>
 
               <div className="div2">
-              <Avatar style={{
+                <Avatar style={{
                   backgroundColor: "#E65F2B"
                 }}>
-                <BsListCheck
-                  size={23}
-                  style={{
-                    color: "#ffffff",
-                    borderRadius: "0.2rem",
-                  }} />
-                  </Avatar>
-                <span>Adoções em acompanhamento</span>
+                  <BsListCheck
+                    size={23}
+                    style={{
+                      color: "#ffffff",
+                      borderRadius: "0.2rem",
+                    }} />
+                </Avatar>
+
                 <DashboardAdocoesCount count={adocoesCount} />
               </div>
             </div>
           </Grid>
 
           <Grid item xs={8}>
-            <div className="cards">
-              <div>
-                <div className="subtitulo">
-                  <span>Últimos registros</span>
-                </div>
-                <div>
+            <div className="boxGrid">
+
+              <div className="user-linha space-between">
+                <h2>Últimos registros</h2>
+                <div className="btn">
                   <button className="btnFiltro" >
                     <p>Local de encontro</p>
                     <BsChevronDown
@@ -94,31 +95,33 @@ const Dashboard = ({ adocoesCount }) => {
                   </button>
                 </div>
               </div>
-              <div className="card">
-                <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
-                <p>Sôsô</p>
-              </div>
-              <div className="card">
-                <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
-                <p>Barbie</p>
-              </div>
-              <div className="card">
-                <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
-                <p>Áries</p>
+              <div className="cards">
+                <div className="card">
+                  <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
+                  <p>Sôsô</p>
+                </div>
+                <div className="card">
+                  <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
+                  <p>Barbie</p>
+                </div>
+                <div className="card">
+                  <img src={gatinho1} alt="gatinho1" width="120px" height="120px" />
+                  <p>Áries</p>
+                </div>
               </div>
             </div>
           </Grid>
 
           <Grid item xs={8}>
-          <TableRegistrosAdocoes />
+            <TableRegistrosAdocoes />
           </Grid>
 
           <Grid item xs={4}>
-          <TableRegistrosGatos />
+            <TableRegistrosGatos />
           </Grid>
         </Grid>
-      </Box>
-    </Box>
+      </Box >
+    </Box >
   )
 };
 
