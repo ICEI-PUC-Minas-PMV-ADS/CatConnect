@@ -64,7 +64,7 @@ Quadro 7 - Registro dos Testes
 |---------------|-----------------------|--------------------|------------------|
 | CT 01         | Registro de Gatos     | Permitir que o usuário registre os gatos conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 | CT 02         | Registro de Adotantes    | Permitir que o usuário registre os adotantes conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
-| CT 03         | Registro de Adoção    | Permitir que o usuário registre as adoções conforme objetivos estabelecidos. | Sistema está editando confrome desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
+| CT 03         | Registro de Adoção    | Permitir que o usuário registre as adoções, excluaos cadastros e crie cadastros. conforme objetivos estabelecidos. | Sistema está editando confrome desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
 | CT 04         | Edição de Informações | Permitir que o usuário edite as informações conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 | CT 05         | Relatórios            | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 
