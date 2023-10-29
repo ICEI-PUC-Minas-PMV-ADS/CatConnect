@@ -17,14 +17,14 @@ Quadro 6 - Plano de Testes
 | Requisitos Associados | RF 001 - Registro de Gatos / RF 003 - Edição de Gatos / RF 011- Relatorio
 | Objetivo do Teste     | - Permitir o cadastro do chip do gato, incluindo um número único para identificação. <br> - Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. <br> - Registrar a data de entrada do gato no sistema. <br> - Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado. |
 | Passos                | aaaaa |
-| Critério de Êxito     | - Confirmação do cadastro |
+| Critério de Êxito     |  - Confirmação do registro e edição sem erro.|
 
 | Caso de Teste         | CT 02 - Adotantes |
 |-----------------------|-------|
 | Requisitos Associados | RF 006 - Registro de Adotantes / RF 007 - Edição de Adotantes / RF 011  - Relatorio|
 | Objetivo do Teste     | - Registrar a data de adoção do gato. <br> - Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. <br> - Associar o gato ao adotante correspondente. <br> - Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente). |
 | Passos                | Efetue o login / clique em adotantes no menu lateral esquerd o/ agora edite ou crie um novo adotante  |
-| Critério de Êxito     | - Confirmação do registro 
+| Critério de Êxito     | - Confirmação do registro e edição sem erro.
 
 | Caso de Teste         | CT 03 - Adoção |
 |-----------------------|-------|
