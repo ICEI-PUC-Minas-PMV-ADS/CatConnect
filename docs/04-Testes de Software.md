@@ -30,7 +30,7 @@ Quadro 6 - Plano de Testes
 |-----------------------|-------|
 | Requisitos Associados | RF 002 - Registro de Adoção |
 | Objetivo do Teste     | - Registrar a data de adoção do gato. <br> - Capturar informações da adoção, incluindo Nome do Adotante e gato, data, status e reponsável. <br> - Associa o gato ao adotante correspondente. <br> - Registrar o status do acompanhamento com o adotante (pendente, em andamento, concluido). |
-| Passos                |Efetue o login/ clique em adoção no menu lateral esquerdo/ agora edite/ exclua ou crie uma nova adoção |
+| Passos                |Efetue o login/ clique em adoção no menu lateral esquerdo/ agora edite, exclua ou crie uma nova adoção |
 | Critério de Êxito     | - Confirmação do registro |
 
 | Caso de Teste         | CT 04 - Edição de Informações |
