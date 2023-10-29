@@ -12,33 +12,34 @@ Requisitos para realização dos testes:
 
 Quadro 6 - Plano de Testes
 
-| Caso de Teste         | CT 01 - Registro de Gatos |
+| Caso de Teste         | CT 01 - Gatos |
 |-----------------------|-------|
-| Requisitos Associados | RF 001 - Registro de Gatos |
+| Requisitos Associados | RF 001 - Registro de Gatos / RF 003 - Edição de Gatos / RF 011- Relatorio
 | Objetivo do Teste     | - Permitir o cadastro do chip do gato, incluindo um número único para identificação. <br> - Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. <br> - Registrar a data de entrada do gato no sistema. <br> - Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado. |
 | Passos                | aaaaa |
 | Critério de Êxito     | - Confirmação do cadastro |
 
-| Caso de Teste         | CT 02 - Registro de Adotantes |
+| Caso de Teste         | CT 02 - Adotantes |
 |-----------------------|-------|
-| Requisitos Associados | RF 002 - Registro de Adotantes |
+| Requisitos Associados | RF 006 - Registro de Adotantes / RF 007 - Edição de Adotantes / RF 011  - Relatorio|
 | Objetivo do Teste     | - Registrar a data de adoção do gato. <br> - Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. <br> - Associar o gato ao adotante correspondente. <br> - Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente). |
 | Passos                | Efetue o login / clique em adotantes no menu lateral esquerd o/ agora edite ou crie um novo adotante  |
 | Critério de Êxito     | - Confirmação do registro 
 
-| Caso de Teste         | CT 03 - Registro de Adoção |
+| Caso de Teste         | CT 03 - Adoção |
 |-----------------------|-------|
-| Requisitos Associados | RF 002 - Registro de Adoção |
+| Requisitos Associados | RF 002 - Registro de Adoção / RF 006 - Edição de Adoção / RF 006 - Exclusão de Adoção / RF 011 - Relatorio |
 | Objetivo do Teste     | - Registrar a data de adoção do gato. <br> - Capturar informações da adoção, incluindo Nome do Adotante e gato, data, status e reponsável. <br> - Associa o gato ao adotante correspondente. <br> - Registrar o status do acompanhamento com o adotante (pendente, em andamento, concluido). |
 | Passos                |Efetue o login/ clique em adoção no menu lateral esquerdo/ agora edite, exclua ou crie uma nova adoção |
 | Critério de Êxito     | - Confirmação do registro, exclusão e edição sem retornos de erro. |
 
-| Caso de Teste         | CT 04 - Edição de Informações |
+| Caso de Teste         | CT 04 - Usuario |
 |-----------------------|-------|
-| Requisitos Associados | RF 004 - Edição de Informações |
-| Objetivo do Teste     | - Possibilitar a edição de todas as informações do gato, incluindo Nome do Animal, Raça, Idade, Espécie (Canina/Felina), Cor da Pelagem, Sexo, Vacinado, Porte (indicar somente caninos), Castrado, Vermifugado nos últimos 3 meses, Observações, e Endereço onde ficará o animal. <br> - Permitir a atualização dos dados do adotante, como telefone, endereço e e-mail. |
-| Passos                | aaaaa |
-| Critério de Êxito     | - Confirmação da edição das informações |
+| Requisitos Associados | RF 008 - Registro de Usuario / RF 009 - Edição de Usuario / RF 010 - Exclusão de Usuario / RF 011 - Relatorio |
+| Objetivo do Teste     | - Registrar a data do usuario <br> - Excluir usuarios <br> - Editar usuarios <br> |
+| Passos                | Efetue o login/ clique em usuario  no menu lateral esquerdo / agora edite, exclua ou crie um novo usuario |
+| Critério de Êxito     | - Confirmação do registro, exclusão e edição sem retornos de erro. |
+
 
 | Caso de Teste         | CT 05 - Relatórios |
 |-----------------------|-------|
@@ -62,10 +63,10 @@ Quadro 7 - Registro dos Testes
 
 | Caso de Teste | Ação                  | Resultado Esperado | Resultado Obtido |
 |---------------|-----------------------|--------------------|------------------|
-| CT 01         | Registro de Gatos     | Permitir que o usuário registre os gatos conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
-| CT 02         | Registro de Adotantes    | Permitir que o usuário registre os adotantes  e os edite. | Sistema está editando conforme desejado e criando registros sem erros. ([Gravação de tela de 29-10-2023 15:27:07.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/54693192-97c7-4460-b579-3cebc5ccfe1a) |
-| CT 03         | Registro de Adoção    | Permitir que o usuário registre as adoções, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
-| CT 04         | Edição de Informações | Permitir que o usuário edite as informações conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 01         | Registro/edição /  Gatos     | Permitir que o usuário registre os gatos conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 02         |  Registro/edição / de  de Adotantes    | Permitir que o usuário registre os adotantes  e os edite. | Sistema está editando conforme desejado e criando registros sem erros. ([Gravação de tela de 29-10-2023 15:27:07.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/54693192-97c7-4460-b579-3cebc5ccfe1a) |
+| CT 03         |  Registro/edição/Exclusão de Adoção    | Permitir que o usuário registre as adoções, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
+| CT 04         | Registro/edição/Exclusão de  Usuarios | Permitir que o usuário registre nos usuarios, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo os usuarios e criando registros sem erros. |  |
 | CT 05         | Relatórios            | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 
 Fonte: Elaborado pelos autores
