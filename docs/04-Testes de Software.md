@@ -1,8 +1,6 @@
 # 4. Planos de Testes de _Software_
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
-
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
+São apresentados os cenários de testes utilizados na realização dos testes da aplicação, que demonstram os requisitos sendo satisfeitos. São detalhadas quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
 
 Os testes funcionais a serem realizados na aplicação são descritos abaixo.
 
