@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const adotanteSchema = new mongoose.Schema({
+
   nome: {
     type: String,
     required: [true, "Nome é obrigatório"],
@@ -15,7 +16,7 @@ const adotanteSchema = new mongoose.Schema({
   },
   rg: {
     type: String,
-    required: [true, "RG é obrigatório"],
+    // required: [true, "RG é obrigatório"],
   },
   instagram: {
     type: String,
@@ -35,6 +36,12 @@ const adotanteSchema = new mongoose.Schema({
   cep: {
     type: String,
   },
+  ruaNumero: {
+    type: String,
+  },
+  complemento: {
+    type: String,
+  }
 });
 
 module.exports = mongoose.model("Adotante", adotanteSchema);

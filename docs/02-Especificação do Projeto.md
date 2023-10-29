@@ -2,15 +2,19 @@
 
 No projeto de Gerenciamento de Relacionamento com o Cliente (CRM), serão utilizadas tecnologias específicas para criar a solução. Além disso, serão aplicadas técnicas relevantes para garantir que o sistema atenda às necessidades dos usuários. Aqui estão as tecnologias e técnicas:
 
-**Tecnologias Utilizadas:**
 
-1. **Node.js (Backend):** O backend será desenvolvido utilizando Node.js, que é uma plataforma de código aberto que permite a criação de aplicativos de rede escaláveis e de alto desempenho. Isso permitirá a criação de APIs RESTful para gerenciar os dados dos gatos, adoções e outros aspectos do sistema.
+## 2.1 Tecnologias Utilizadas
 
-2. **React.js (Frontend):** O frontend do sistema será construído com React.js, uma biblioteca JavaScript de código aberto para construir interfaces de usuário. O React.js permitirá a criação de uma interface intuitiva e responsiva para os usuários, enfatizando a componentização e o gerenciamento de estado.
+1. **Node.js (Backend):** O backend será desenvolvido utilizando Node.js, que é uma plataforma de código aberto que permite a criação de aplicativos de rede escaláveis e de alto desempenho. Isso permitirá a criação de APIs RESTful (com Node.js e Express.js) para gerenciar os dados dos gatos, adoções e outros aspectos do sistema, e com foco na segurança e nas integrações flexíveis.
 
-3. **MongoDB (Banco de Dados):** O MongoDB, um banco de dados NoSQL, será utilizado para armazenar os dados do sistema. Sua natureza flexível permite que os dados dos gatos, adoções e outras informações sejam armazenados de forma eficiente.
+2. **React.js (Frontend):** O frontend do sistema será construído com React.js, uma biblioteca JavaScript de código aberto para construir interfaces de usuário. O React.js permitirá a criação de uma interface intuitiva e responsiva para os usuários, enfatizando a componentização, o gerenciamento de estado e a responsividade.
 
-**Técnicas a serem Aplicadas:**
+3. **MongoDB (Banco de Dados):** O MongoDB, um banco de dados NoSQL caracterizado por um esquema flexível, índices eficientes e medidas de segurança, será utilizado para armazenar os dados do sistema. Sua natureza flexível permite que os dados dos gatos, adoções e outras informações sejam armazenados de forma eficiente.
+
+Essas tecnologias modernas garantirão um sistema de CRM eficiente, escalável e seguro.
+
+
+## 2.2 Técnicas a serem Aplicadas
 
 1. **APIs RESTful:** Para o desenvolvimento do backend, serão implementadas APIs RESTful, que seguirão princípios de arquitetura REST para facilitar a interação entre o frontend e o banco de dados. Isso proporcionará uma comunicação eficaz e padronizada.
 
@@ -31,11 +35,11 @@ No projeto de Gerenciamento de Relacionamento com o Cliente (CRM), serão utiliz
 Essas tecnologias e técnicas serão fundamentais para o desenvolvimento e o sucesso do projeto de Gerenciamento de Relacionamento com o Cliente (CRM), proporcionando uma solução eficiente, segura e adaptável às necessidades dos usuários e do mercado.
 
 
-## 2.1 Arquitetura e Tecnologias
+## 2.3 Arquitetura
 
 A arquitetura de solução apresenta como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação. Seguem abaixo os principais elementos relacionados a esse tópico.
 
-### 2.1.1 Diagrama de Componentes
+### 2.3.1 Diagrama de Componentes
 
 Compreendemos nessa seção os componentes que fazem parte da arquitetura da solução, consoante figura adiante.
 
@@ -46,20 +50,7 @@ Figura 1 - Arquitetura da Solução
 Fonte: Elaborado pelos Autores
 
 
-### 2.1.2 Tecnologias
-
-Para o projeto de Gerenciamento de Relacionamento com o Cliente (CRM), serão utilizadas as seguintes tecnologias:
-
-Node.js (Backend): Serão criadas APIs RESTful com Node.js e Express.js, com foco em segurança e integrações flexíveis.
-
-React.js (Frontend): O frontend será construído com React.js, dando ênfase à componentização, gerenciamento de estado e responsividade.
-
-MongoDB (Banco de Dados): O MongoDB será empregado como banco de dados NoSQL, caracterizado por um esquema flexível, índices eficientes e medidas de segurança.
-
-Essas tecnologias modernas garantirão um sistema de CRM eficiente, escalável e seguro.
-
-
-## 2.2 _Project Model Canvas_
+## 2.4 _Project Model Canvas_
 
 O _Project Model Canvas_ é uma representação visual que geralmente é dividida em seções, cada uma das quais aborda um aspecto fundamental do projeto.
 
@@ -70,31 +61,41 @@ Figura 2 - Project Model Canvas
 Fonte: Elaborado pelos Autores
 
 
-## 2.3 Requisitos para o Sistema de Gerenciamento de Adoção de Gatos
+## 2.5 Requisitos para o Sistema de Gerenciamento de Adoção de Gatos
 
 Neste documento, são apresentados os requisitos funcionais e não funcionais para o desenvolvimento do Sistema de Gerenciamento de Adoção de Gatos. O sistema tem como objetivo facilitar o registro, acompanhamento e gerenciamento de adoções de gatos, fornecendo uma plataforma eficaz e segura para conectar adotantes a gatos disponíveis para adoção. Os requisitos foram divididos em categorias de funcionalidades e características para garantir que o sistema atenda às necessidades dos usuários de maneira abrangente e eficiente.
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto, para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
 
-### 2.3.1 Requisitos Funcionais
+### 2.5.1 Requisitos Funcionais
 
-Apresentamos a seguir os requisitos funcionais que o projeto deverá atender.
+Apresenta-se a seguir os requisitos funcionais que o projeto deverá atender.
 
 Quadro 1 - Requisitos Funcionais
 
-| ID     | Descrição do Requisito                                                                                                                                                                                                                                                                                                                                                                                                                              | Prioridade |
-|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| RF-001 | Registro de Gatos: Permitir o cadastro do chip do gato, incluindo um número único para identificação. Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. Registrar a data de entrada do gato no sistema. Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado.                                                                    | ALTA      | 
-| RF-002 | Registro de Adoção: Registrar a data de adoção do gato. Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. Associar o gato ao adotante correspondente. Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente). | ALTA      |
-| RF-003 | Edição de Informações: Possibilitar a edição de todas as informações do gato, incluindo Nome do Animal, Raça, Idade, Espécie (Canina/Felina), Cor da Pelagem, Sexo, Vacinado, Porte (indicar somente caninos), Castrado, Vermifugado nos últimos 3 meses, Observações, e Endereço onde ficará o animal. Permitir a atualização dos dados do adotante, como telefone, endereço e e-mail.                                                             | ALTA      | 
-| RF-004 | Relatório: Disponibilizar no dashboard um botão para emissão de relatório em Excel para auxílio e controle de adoção dos gatos.                                                                                                                                                                                                                                                                                                                     |MÉDIA      | 
+| ID     | Descrição do Requisito    | Prioridade |
+|--------|---------------------------|-----------|
+| RF-001 | Registro de Gatos: Adicionar dados referente ao cadastro do gato e demais informações para identificação do felino.| ALTA | 
+| RF-002 | Registro de Adoção: Registrar as informações referentes à adoção, assim como associar o gato ao adotante correspondente. | ALTA |
+| RF-003 | Edição do Gato: Possibilitar a edição de todas as informações do gato. | ALTA | 
+| RF-004 | Edição da Adoção: Editar todos os dados da adoção.  | ALTA | 
+| RF-005 | Excluir Adoção: Exclui adoção de forma facil e sempre perguntar se tem certeza antes de excluir. | MÉDIA | 
+| RF-006 | Registro de Adotantes:  Registar todos os dados do adotante       | MÉDIA | 
+| RF-007 | Editar Adotantes:  Editar todos os dados do adotante. | MÉDIA | 
+| RF-008 | Registro de Usuários :  Registar todos os dados do usuario. | ALTA | 
+| RF-009 | Editar Usuários:  Editar todos os dados do usuario. | MÉDIA | 
+| RF-010 | Excluir Usuários:  Excluir usuarios. | MÉDIA | 
+| RF-011 | Relatorio: Gerar relatorios em todos os data grids | MÉDIA | 
+| RF-012 | _Login_: Permitir o acesso à aplicação. | ALTA |
+| RF-013 | Excluir Gato: Permitir excluir os gatos cadastrados. | MÉDIA |
+| RF-014 | Excluir Adotantes: Permitir excluir os adotantes. | MÉDIA |
 
 Fonte: Elaborado pelos autores
 
 
-### 2.3.2 Requisitos Não Funcionais
+### 2.5.2 Requisitos Não Funcionais
 
-Apresentamos a seguir os requisitos não funcionais que o projeto deverá atender.
+Apresenta-se a seguir os requisitos não funcionais que o projeto deverá atender.
 
 Quadro 2 - Requisitos Não Funcionais
 
@@ -111,11 +112,11 @@ Quadro 2 - Requisitos Não Funcionais
 Fonte: Elaborado pelos autores
 
 
-## 2.4 Restrições
+## 2.6 Restrições
 
-Neste documento, apresentamos as restrições que guiarão o processo de desenvolvimento do sistema de Gerenciamento de Relacionamento com o Cliente (CRM) utilizando as tecnologias _Node.js, React.js e MongoDB_. Essas restrições garantirão a segurança, desempenho, escalabilidade e conformidade do sistema, enquanto aproveitam as vantagens dessas tecnologias modernas e poderosas.
+Neste documento, apresenta-se as restrições que guiarão o processo de desenvolvimento do sistema de Gerenciamento de Relacionamento com o Cliente (CRM) utilizando as tecnologias _Node.js, React.js e MongoDB_. Essas restrições garantirão a segurança, desempenho, escalabilidade e conformidade do sistema, enquanto aproveitam as vantagens dessas tecnologias modernas e poderosas.
 
-### 2.4.1 _Node.js (Backend)_
+### 2.6.1 _Node.js (Backend)_
 
 Quadro 3 - _Node.js_
 
@@ -129,7 +130,7 @@ Quadro 3 - _Node.js_
 Fonte: Elaborado pelos autores
 
 
-### 2.4.2 _React.js (Frontend)_
+### 2.6.2 _React.js (Frontend)_
 
 Quadro 4 - _React.js_
 
@@ -144,7 +145,7 @@ Quadro 4 - _React.js_
 Fonte: Elaborado pelos autores
 
 
-### 2.4.3 _MongoDB_ (Banco de Dados)
+### 2.6.3 _MongoDB_ (Banco de Dados)
 
 Quadro 5 - _MongoDB_
 
@@ -160,7 +161,7 @@ Quadro 5 - _MongoDB_
 Fonte: Elaborado pelos autores
 
 
-## 2.5 Diagrama de Casos de Uso
+## 2.7 Diagrama de Casos de Uso
 
 O diagrama de caso de uso, comumente oriundo da especificação dos requisitos funcionais do sistema, descreve as principais funcionalidades do sistema que será projetado pelo grupo e sua interação com os possíveis usuários (DevMedia, 2022). Segundo Ivar Jacobson, podemos dizer que um caso de uso é um "documento narrativo que descreve a sequência de eventos de um ator que usa um sistema para completar um processo" (Wikipédia, 2020).
 
@@ -175,7 +176,7 @@ Figura 3 - Diagrama de Casos de Uso
 Fonte: Elaborado pelos autores
 
 
-## 2.6 Modelo de Dados
+## 2.8 Modelo de Dados
 
 O Modelo de dados escolhido foi o NoSQL do tipo documento. Esse modelo foi definido pensando no grande volume de dados demandados pela aplicação. Segue abaixo a representação do Modelo:
 

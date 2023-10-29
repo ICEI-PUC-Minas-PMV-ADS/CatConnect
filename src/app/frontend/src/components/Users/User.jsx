@@ -5,12 +5,13 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useModal } from "../../contexts/ModalContext";
 import UsuariosModal from "./UsuariosModal/UsuariosModal";
-import { MdVolunteerActivism } from "react-icons/md";
+import { TiGroupOutline } from "react-icons/ti";
 import axios from "axios";
 import { toast } from "react-toastify";
+import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import Swal from 'sweetalert2';
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -178,7 +179,7 @@ const Usuarios = () => {
     );
   };
 
-    const columns = [
+  const columns = [
     { field: "nome", headerName: "Nome", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
     {
@@ -202,19 +203,30 @@ const Usuarios = () => {
       width: 100,
       renderCell: (params) => (
         <IconButton
-          color="secondary"
+          color="primary"
           onClick={(event) => {
             event.stopPropagation();
-            if (window.confirm("Tem certeza que deseja excluir este usuário?")) {
-              handleDeleteUsuario(params.row._id);
-            }
+            Swal.fire({
+              title: 'Você tem certeza?',
+              text: 'Essa ação não poderá ser desfeita!',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#198d16',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Sim, excluir!',
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                handleDeleteUsuario(params.row._id);
+              }
+            });
           }}
           style={{ borderRadius: "50%" }}
         >
-          <DeleteOutlineIcon style={{ color: "#FF0000" }} />
+          <DeleteForeverSharpIcon />
         </IconButton>
       ),
     },
+
   ];
 
   const handleChangePage = (event, newPage) => {
@@ -236,25 +248,35 @@ const Usuarios = () => {
       <div className="user-dados">
         <div className="user-linha space-between">
           <div className="user-linha">
-            <MdVolunteerActivism />
+            <div style={{ marginLeft: '20px', marginRight: '20px' }}>
+              <TiGroupOutline />
+            </div>
             <h1 className="titulo">Usuários</h1>
           </div>
-          <Button id="add-user" onClick={() => abrirAddUsuario()}>
-            <span style={{ fontSize: "24px", color: "white" }}>+</span>
-          </Button>
+
         </div>
         <div className="user-linha">
           <div id="user-table">
-            <div style={{ margin: "10px" }}>
-              <TextField
-                label="Filtro rápido"
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={filterText}
-                onChange={handleFilterChange}
-              />
+
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ margin: "10px" }}>
+                <TextField
+                  label="Filtro rápido"
+                  variant="outlined"
+                  size="small"
+                  // fullWidth
+                  value={filterText}
+                  onChange={handleFilterChange}
+                />
+              </div>
+              <div style={{ marginLeft: "auto", marginRight: "10px" }}>
+                <Button id="add-user" onClick={() => abrirAddUsuario()}>
+                  <span style={{ fontSize: "24px", color: "white" }}>+</span>
+                </Button>
+              </div>
             </div>
+
+
             <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
               <DataGrid
                 sx={{

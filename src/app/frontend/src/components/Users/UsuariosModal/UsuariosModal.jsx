@@ -9,8 +9,8 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
     _id: usuario ? usuario._id : "",
     nome: usuario ? usuario.nome : "",
     email: usuario ? usuario.email : "",
-    password: "", // Adicionei um campo de senha vazio
-    adm: usuario ? usuario.adm : false, // Adicionei o campo de administrador
+    password: "", 
+    adm: usuario ? usuario.adm : false, 
   });
 
   const handleInputChange = (e) => {
@@ -47,7 +47,7 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
             onChange={handleInputChange}
             variant="standard"
             fullWidth
-            required
+            //required
           />
         </div>
         <div className="usuario-coluna">
@@ -60,7 +60,7 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
             onChange={handleInputChange}
             variant="standard"
             fullWidth
-            required
+            //required
           />
         </div>
         <div className="usuario-coluna">
@@ -73,7 +73,7 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
             onChange={handleInputChange}
             variant="standard"
             fullWidth
-            required={!edit} // Senha é obrigatória ao adicionar um novo usuário, mas não ao editar
+            //required={!edit} // Senha é obrigatória ao adicionar um novo usuário, mas não ao editar
           />
         </div>
         <div className="usuario-coluna">

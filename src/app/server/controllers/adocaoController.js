@@ -1,4 +1,5 @@
 const Adocao = require('../model/adocaoModel'); // Ajuste o caminho com base na estrutura do seu projeto
+const Adotante = require("../model/adotanteModel");
 
 const adocaoController = {
     // Criar uma nova adoção
@@ -7,10 +8,55 @@ const adocaoController = {
             const novaAdocao = await Adocao.create(req.body);
             res.status(201).json(novaAdocao);
         } catch (error) {
-            console.error('Erro ao criar adoção:', error);
+
+            console.error('Erro ao criar adoção nova:', error);
             res.status(500).json({ error: 'Erro interno do servidor' });
         }
     },
+    criarAdocaoComAdotante: async (req, res) => {
+        try {
+            const data = req.body;
+            const formattedCPF = data.cpf.replace(/[-.()]/g, '');
+            const formattedTelefone = data.telefone.replace(/[-() ]/g, '');
+            const formattedCEP = data.cep.replace(/[-.() ]/g, '');
+
+            if (!data.id_adotante) {
+                const adotanteData = {
+                    nome: data.adotante,
+                    cpf: formattedCPF,
+                    telefone: formattedTelefone,
+                    cep: formattedCEP,
+                    rua: data.rua,
+                    bairro: data.bairro,
+                    cidade: data.cidade,
+                    email: data.email
+                };
+                const adotante = await Adotante.create(adotanteData);
+
+                data.id_adotante = adotante._id.toString();
+                const camposParaRemover = [
+                    "cep", "bairro", "rua", "cpf", "cidade", "telefone", "email"
+                ];
+                camposParaRemover.forEach(campo => {
+                    if (data[campo]) {
+                        delete data[campo];
+                    }
+                });
+
+                const novaAdocao = await Adocao.create(data);
+                res.status(201).json(novaAdocao);
+            } else {
+                const novaAdocao = await Adocao.create(data);
+                res.status(201).json(novaAdocao);
+            }
+        } catch (error) {
+            console.error('Erro ao criar adoção e adotante', error);
+            res.status(500).json({ error: 'Erro interno do servidor' });
+        }
+    },
+
+
+
 
     // Obter todas as adoções
     obterTodasAdocoes: async (req, res) => {

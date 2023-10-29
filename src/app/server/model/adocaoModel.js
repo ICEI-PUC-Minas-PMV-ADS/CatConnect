@@ -12,7 +12,7 @@ const adocoesSchema = new mongoose.Schema({
     },
     adotante: {
         type: String,
-        required: [true, "Nome do atotante é obrigatório"],
+        required: [true, "Nome do adotante é obrigatório"],
     },
     gato: {
         type: String,
@@ -20,15 +20,15 @@ const adocoesSchema = new mongoose.Schema({
     },
     data_adocao: {
         type: String,
-        required: [true, "data é obrigatório"],
+        required: [true, "Data é obrigatório"],
     },
     status: {
         type: String,
-        required: [true, "status é obrigatório"],
+        required: [true, "Status é obrigatório"],
     },
     responsavel: {
         type: String,
-        required: [true, "responsavel é obrigatório"],
+        required: [true, "Responsável é obrigatório"],
     },
 
 });

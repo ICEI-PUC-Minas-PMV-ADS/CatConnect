@@ -1,62 +1,55 @@
 // Import necessary dependencies
-import React, { useEffect, useState } from 'react';
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { TextField } from '@mui/material';
-import { styled } from '@mui/system';
+import React, {useEffect, useState} from 'react';
+import {DataGrid, GridToolbar} from '@mui/x-data-grid';
+import {TextField} from '@mui/material';
+import {styled} from '@mui/system';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import Swal from 'sweetalert2';
-import EditModal from './AdocoesModal/AdocoesModalEdicao';
-import CreateModal from './AdocoesModal/CriarAdocaoModal';
-import { Button } from '@mui/material';  // Import Button from MUI
+import CreateModal from './AdocoesModal/AdocaoModal';
+import {Button} from '@mui/material';  // Import Button from MUI
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
-import { format } from 'date-fns';
-import { toast } from 'react-toastify';
-import { routes } from "../../utils/api/ApiRoutes";
+import {format} from 'date-fns';
+import {toast} from 'react-toastify';
+import {routes} from "../../utils/api/ApiRoutes";
 
 const StyledDataGridContainer = styled('div')({
-  backgroundColor: 'white',
-  borderRadius: '8px',
-  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-  padding: '42px',
-  width: '90%',  // Ajusta a largura para 100%
-  height: '700px',  // Ajusta a altura conforme necessário
+    backgroundColor: 'white',
+    borderRadius: '8px',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+    padding: '42px',
+    width: '90%',  // Ajusta a largura para 100%
+    height: '700px',  // Ajusta a altura conforme necessário
 });
 
 const Adocoes = () => {
-    const [openModal, setOpenModal] = useState(false);
     const [openCreateModal, setOpenCreateModal] = useState(false);
-    const [selectedRow, setSelectedRow] = useState(null);
     const [filterText, setFilterText] = useState('');
-    const [adocoes, setAdocoes] = useState([]); // Alteração: Estado para armazenar dados da API
-    const [dataChanged, setDataChanged] = useState(false); // Adiciona o estado para sinalizar a mudança nos dados
+    const [adocoes, setAdocoes] = useState([]);
+    const [dataChanged, setDataChanged] = useState(false);
+    const [adocaoIdValor, setAdocaoIdValor] = useState('')
+
 
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const { data } = await axios.get(routes.getAdocoes, {
-                    withCredentials: true,
-                });
-                setAdocoes(data);
-            } catch (error) {
-                console.error('Erro ao buscar dados da API:', error);
-            }
-        };
 
         fetchData();
-    }, [dataChanged]); // Adiciona dataChanged como dependência
-
-    const handleEdit = (rowData) => {
-        setSelectedRow(rowData);
-        setOpenModal(true);
+    }, [dataChanged]);
+    const fetchData = async () => {
+        try {
+            const {data} = await axios.get(routes.getAdocoes, {
+                withCredentials: true,
+            });
+            setAdocoes(data);
+        } catch (error) {
+            console.error('Erro ao buscar dados da API:', error);
+        }
     };
 
-    const handleCloseModal = () => {
-        setOpenModal(false);
-        setSelectedRow(null);
-        setDataChanged((prev) => !prev); // Inverte o estado para sinalizar a mudança nos dados
+    const handleEdit = (rowDataId) => {
+        setAdocaoIdValor(rowDataId)
+        setOpenCreateModal(true);
     };
 
     const handleCloseCreateModal = () => {
@@ -83,7 +76,7 @@ const Adocoes = () => {
                     });
                     if (response.status === 200) {
                         toast.success('Registro excluído com sucesso!');
-                        setDataChanged((prev) => !prev); // Atualiza os dados após a exclusão
+                        setDataChanged((prev) => !prev);
                     } else {
                         toast.error('Ocorreu um erro ao excluir o registro.');
                     }
@@ -100,11 +93,11 @@ const Adocoes = () => {
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
             case 'concluido':
-                return 'green';
+                return '#1A932E';
             case 'em andamento':
-                return 'blue';
+                return '#DFA510';
             case 'pendente':
-                return 'red';
+                return '#EE201C';
             default:
                 return 'black';
         }
@@ -124,10 +117,11 @@ const Adocoes = () => {
 
     // Colunas do data table
     const columns = [
-        { field: 'adotante', headerName: 'Adotante', flex: 1 },
-        { field: 'gato', headerName: 'Gato', flex: 1 },
-        { field: 'responsavel', headerName: 'Responsável', flex: 1 },
-        { field: 'data_adocao',
+        {field: 'adotante', headerName: 'Adotante', flex: 1},
+        {field: 'gato', headerName: 'Nome do Gato', flex: 1},
+        {field: 'responsavel', headerName: 'Responsável', flex: 1},
+        {
+            field: 'data_adocao',
             headerName: 'Data de Adoção',
             flex: 1,
             renderCell: (params) => (
@@ -142,7 +136,7 @@ const Adocoes = () => {
             headerName: 'Status',
             flex: 1,
             renderCell: (params) => (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <div
                         className="status-circle"
                         style={{
@@ -157,13 +151,14 @@ const Adocoes = () => {
                 </div>
             ),
         },
+
         {
             field: 'editar',
             headerName: 'Editar',
             flex: 0,
             renderCell: (params) => (
-                <Button onClick={() => handleEdit(params.row)}>
-                    <BorderColorIcon />
+                <Button onClick={(event) => handleEdit(params.row._id)}>
+                    <BorderColorIcon/>
                 </Button>
             ),
         },
@@ -173,7 +168,7 @@ const Adocoes = () => {
             flex: 0,
             renderCell: (params) => (
                 <Button onClick={() => handleDelete(params.row)}>
-                    <DeleteForeverSharpIcon />
+                    <DeleteForeverSharpIcon/>
                 </Button>
             ),
         },
@@ -182,7 +177,7 @@ const Adocoes = () => {
     return (
         <>
             <StyledDataGridContainer>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '10px'}}>
                     <h1>Lista de adoções</h1>
                     <TextField
                         label="Filtro Rápido"
@@ -194,15 +189,16 @@ const Adocoes = () => {
 
                     <Button
                         variant="contained"
-                        color="success"  // Assuming 'success' represents the green color
+                        color="success"
                         onClick={handleOpenCreateModal}
-                        startIcon={<AddIcon style={{ color: 'white' }} />}
+                        startIcon={<AddIcon style={{color: 'white'}}/>}
                     >
                         Adicionar
                     </Button>
                 </div>
 
-                <CreateModal open={openCreateModal} onClose={handleCloseCreateModal} dataChanged={dataChanged} />
+                <CreateModal open={openCreateModal} dados={adocaoIdValor} onClose={handleCloseCreateModal}
+                             dataChanged={dataChanged}/>
 
                 <DataGrid
                     rows={filteredRows}
@@ -214,15 +210,11 @@ const Adocoes = () => {
                     components={{
                         Toolbar: GridToolbar,
                     }}
-                    getRowId={getRowId}  // Configuração do getRowId para usar a propriedade _id
+                    getRowId={getRowId}
                 />
             </StyledDataGridContainer>
 
-            <EditModal
-                open={openModal}
-                onClose={handleCloseModal}
-                rowData={selectedRow}
-            />
+
         </>
     );
 };
