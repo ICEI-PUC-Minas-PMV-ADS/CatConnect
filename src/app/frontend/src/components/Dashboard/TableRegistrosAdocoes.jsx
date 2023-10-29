@@ -1,26 +1,104 @@
-import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import "../Dashboard/Dashboard.css";
 import { BsChevronDown } from "react-icons/bs";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { toast } from "react-toastify";
 
 
-const columns = [
-    { field: 'nome', headerName: 'Nome', flex: 1 },
-    { field: 'observacoes', headerName: 'Observações', flex: 1 },
-    { field: 'data_adocao', headerName: 'Data de Adoção', flex: 1 },
-    { field: 'status', headerName: 'Status', flex: 1 },
-];
+const TableRegistrosAdocoes = () => {
+    const [adocoes, setAdocoes] = useState([]);
 
-const rows = [
-    { id: 1, nome: 'morgana', observacoes: 'Filhote', data_adocao: '10/01/2023', status: 'Em adoção' },
-    { id: 2, nome: 'nina', observacoes: 'Filhote', data_adocao: '10/01/2023', status: 'Adotado' },
-    { id: 3, nome: 'nero', observacoes: 'Adulto', data_adocao: '10/01/2023', status: 'Adotado' },
-    { id: 4, nome: 'cat', observacoes: 'Adulto FIV', data_adocao: '10/01/2023', status: 'Adotado' },
+    useEffect(() => {
+        getAdocoes();
+    }, []);
 
-];
+        const getAdocoes = async () => {
+            try {
+                const { data } = await axios.get(
+                    "http://localhost:4000/adocao",
+                    {
+                        withCredentials: true,
+                    }
+                );
+                if (!data) {
+                    toast.error(
+                        data.error ? data.error : "Houve um erro ao coletar as adoções",
+                        {
+                            theme: "dark",
+                        }
+                    );
+                } else {
+                    setAdocoes(data);
+                }
+            } catch {
+                toast.error("Houve um erro ao carregar as adoções", {
+                    theme: "dark",
+                });
+            }
+          
+        };
 
-export default function TableRegistros() {
-    const getRowId = (row) => row.id;
+    const getStatusColor = (status) => {
+        switch (status.toLowerCase()) {
+            case 'concluido':
+                return 'green';
+            case 'em andamento':
+                return 'blue';
+            case 'pendente':
+                return 'red';
+            default:
+                return 'black';
+        }
+    };
+
+    const filteredRows = adocoes.filter((row) => {
+        return Object.values(row).some((value) =>
+            String(value).toLowerCase().includes(filterText.toLowerCase())
+        );
+    });
+
+    const getRowId = (row) => row._id;
+
+    const columns = [
+        { field: 'adotante', headerName: 'Adotante', flex: 1 },
+        { field: 'gato', headerName: 'Gato', flex: 1 },
+
+        //{ field: 'observacoes', headerName: 'Observações', flex: 1 },
+        {
+            field: 'data_adocao',
+            headerName: 'Data de Adoção',
+            flex: 1,
+            renderCell: (params) => (
+                <div>
+                    {params.row.data_adocao &&
+                        format(new Date(params.row.data_adocao), 'dd/MM/yyyy')}
+                </div>
+            ),
+        },
+        {
+            field: 'status',
+            headerName: 'Status',
+            flex: 1,
+            renderCell: (params) => (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div
+                        className="status-circle"
+                        style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            backgroundColor: getStatusColor(params.row.status),
+                            marginRight: '8px',
+                        }}
+                    ></div>
+                    {params.row.status}
+                </div>
+            ),
+        },
+
+    ];
+
     return (
         <div className="boxGrid">
             <div className="user-linha space-between">
@@ -57,7 +135,7 @@ export default function TableRegistros() {
             </div>
             <div className="grid">
                 <DataGrid
-                    rows={rows}
+                    rows={filteredRows}
                     columns={columns}
                     getRowId={getRowId}
                     initialState={{
@@ -74,4 +152,6 @@ export default function TableRegistros() {
         </div>
     );
 
-}
+};
+
+export default TableRegistrosAdocoes;
