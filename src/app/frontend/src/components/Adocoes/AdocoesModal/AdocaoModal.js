@@ -2,19 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {Modal, Box, Typography, TextField, Button, IconButton, Select, MenuItem} from '@mui/material';
 import {styled} from '@mui/system';
 import CloseIcon from '@mui/icons-material/Close';
-import './AdocaoModalEdicao.css';
+import './AdocaoModal.css';
 import axios from "axios";
 import {toast} from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
 import {routes} from "../../../utils/api/ApiRoutes";
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import Grid from '@mui/material/Grid';
-import {DemoContainer} from '@mui/x-date-pickers/internals/demo';
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
-import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
-import {DatePicker} from '@mui/x-date-pickers/DatePicker';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import moment from 'moment';
+import DatePicker from "react-datepicker";
+
 
 const StyledModal = styled(Modal)({});
 
@@ -38,38 +36,88 @@ const formatCep = (value) => {
     const formattedCep = cleanedValue.replace(/(\d{5})(\d{3})/, '$1-$2');
     return formattedCep;
 };
-const CreateModal = ({open, onClose, rowData}) => {
-    const [adotantes, setAdotantes] = useState([]);
-    const [adotanteValue, setAdotanteValue] = useState(rowData?.adotante || '');
-    const [gatos, setGatos] = useState([]);
-    const [gatoId, setGatoId] = useState(rowData?.id_gato || '');
-    const [adotanteId, setAdotanteId] = useState(rowData?.id_adotante || '');
-    const [usuario, setUsuario] = useState([]);
-    const [usuarioId, setUsuarioId] = useState([]);
-    const [gatoValue, setGatoValue] = useState(rowData?.gato || '');
-    const [responsavel, setResponsavel] = useState(rowData?.responsavel || '');
-    const [cpf, setCpf] = useState(rowData?.cpf || '');
+const CreateModal = ({open, onClose, dados}) => {
+
+    const [edicao, setEdicao] = useState(false)
+    // Dados do Adotante
+    const [adotanteValue, setAdotanteValue] = useState('');
+    const [adotanteId, setAdotanteId] = useState('');
+    const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [startDate, setStartDate] = useState(new Date());
-    const [status, setStatus] = useState([]);
-    const [statusAdocao, setStatusAdocao] = useState(rowData?.statusAdocao || '');
+
+    // Dados do Gato
+    const [gatos, setGatos] = useState([]);
+    const [gatoValue, setGatoValue] = useState('');
+
+    // Dados do Responsável pelo Cadastro
+    const [usuario, setUsuario] = useState([]);
+    const [responsavel, setResponsavel] = useState('');
+    const [responsavelError, setResponsavelError] = useState(false);
+
+    // Dados de Endereço
     const [cep, setCep] = useState('');
     const [rua, setRua] = useState('');
     const [cidade, setCidade] = useState('');
     const [bairro, setBairro] = useState('');
+
+    // Dados de Adoção
+    const [adocaoId, setAdocaoId] = useState('')
+    const [dataValue, setDataValue] = useState(new Date());
+    const [status, setStatus] = useState([]);
+    const [statusAdocao, setStatusAdocao] = useState('');
+
+    // Erros
     const [cpfError, setCpfError] = useState(false);
     const [adotanteError, setAdotanteError] = useState(false);
     const [gatoError, setGatoError] = useState(false);
-    const [responsavelError, setResponsavelError] = useState(false);
-    const [statusAdocaoError, setStatusAdocaoError] = useState(false);
 
 
     useEffect(() => {
+
+        const getAdotante = async () => {
+            try {
+                if (dados) {
+                    const {data} = await axios.get(routes.getDetalhesAdotanteAdocao(dados), {
+                        withCredentials: true,
+                    });
+                    if (!data) {
+                        toast.error(
+                            data.error ? data.error : "Houve um erro ao verifcar adoção",
+                            {
+                                theme: "dark",
+                            }
+                        );
+                    }
+
+                    setCpf(formatCPF(data.adotante.cpf))
+                    setEmail(data.adotante.email)
+                    setCep(formatCep(data.adotante.cep))
+                    setRua(data.adotante.rua)
+                    setBairro(data.adotante.bairro)
+                    setCidade(data.adotante.cidade)
+                    setTelefone(formatTelefone(data.adotante.telefone))
+                    setAdotanteValue(data.adotante.nome)
+                    setGatoValue(data.adocao.gato)
+                    setResponsavel(data.adocao.responsavel)
+                    setStatusAdocao(data.adocao.status)
+                    const dataAdocao = moment(data.adocao.data_adocao);
+                    setDataValue(new Date(dataAdocao));
+                    setEdicao(true)
+                    setAdocaoId(data.adocao._id)
+
+
+                }
+
+            } catch (error) {
+                console.error('Erro ao buscar dados da API:', error);
+            }
+        };
+        getAdotante();
         getGatos();
         getStatus();
         getResponsavel();
-    }, []);
+    }, [dados]);
 
 
     const handleCpfChange = (e) => {
@@ -115,6 +163,7 @@ const CreateModal = ({open, onClose, rowData}) => {
     }
     const getAdotante = async (formattedCpf) => {
         try {
+            setEdicao(false)
             const cpfWithoutSpecialChars = formattedCpf.replace(/[.-]/g, '');
 
             const {data} = await axios.get(routes.getAdotanteCpf(cpfWithoutSpecialChars), {
@@ -210,11 +259,13 @@ const CreateModal = ({open, onClose, rowData}) => {
         }
     };
     const handleClose = () => {
-        // Limpe os estados ao fechar o modal
+
+        setAdotanteId('')
+        setGatoValue('')
         setAdotanteValue('');
         setGatoValue('');
         setResponsavel('');
-        setStartDate(new Date());
+        setDataValue('');
         setStatusAdocao('');
         setTelefone('');
         setEmail('');
@@ -223,8 +274,9 @@ const CreateModal = ({open, onClose, rowData}) => {
         setRua('');
         setCidade('');
         setBairro('');
+        setEdicao(false)
 
-        // Chame a função onClose
+
         onClose();
     };
     const handleChangeCep = (e) => {
@@ -261,45 +313,43 @@ const CreateModal = ({open, onClose, rowData}) => {
             }
             const selectedGato = gatos.find(gato => gato.nome === gatoValue);
 
-            if (adotanteId === '') {
-                const formDataAdotante = {
-                    nome: adotanteValue,
-                    email: email,
-                    cpf: cpf,
-                    rg: "",
-                    telefone: telefone,
-                    instagram: "",
-                    rua: rua,
-                    bairro: bairro,
-                    cidade: cidade,
-                    cep: cep,
-                };
-                console.log(formDataAdotante)
-                const {data} = await axios.post(routes.createAdotante, formDataAdotante, {
-                    withCredentials: true,
-                });
-                setAdotanteId(data.adotante._id)
-
-            }
             const formData = {
                 id_adotante: adotanteId ,
                 id_gato: selectedGato._id,
                 adotante: adotanteValue,
                 gato: gatoValue,
-                data_adocao: startDate,
+                data_adocao: dataValue,
                 status: statusAdocao,
                 responsavel: responsavel,
+                cep:cep,
+                bairro:bairro,
+                rua:rua,
+                cpf:cpf,
+                cidade:cidade,
+                telefone:telefone,
+                email:email,
 
             };
-            const {data} = await axios.post(routes.createAdocoes, formData, {
-                withCredentials: true,
-            });
-            toast.success(
-                "Adoção criada",
-                {
-                    theme: "dark",
-                }
-            );
+            if(edicao){
+                const {data} = await axios.put(routes.updateAdocoes(adocaoId), formData, {
+                    withCredentials: true,
+                });
+                toast.success(
+                    "Adoção editada",
+                    {
+                        theme: "dark",
+                    });
+            }else{
+                const {data} = await axios.post(routes.createAdocoesComAdotante, formData, {
+                    withCredentials: true,
+                });
+                toast.success(
+                    "Adoção criada",
+                    {
+                        theme: "dark",
+                    }
+                );
+            }
             handleClose()
         } catch (error) {
             console.error("Erro ao salvar os dados", error);
@@ -310,11 +360,15 @@ const CreateModal = ({open, onClose, rowData}) => {
     };
 
     return (
-        <StyledModal open={open} onClose={onClose} className="modal">
+
+        <StyledModal open={open} onClose={onClose} disableBackdropClick={true} className="modal">
             <StyledModalContent className="modal-content">
                 <TitleContainer className="title-container">
                     <BorderColorIcon/>
-                    <Typography variant="h6">Criar adoção</Typography>
+                    <Typography variant="h6">
+                        Adoção
+
+                    </Typography>
                     <IconButton onClick={handleClose}>
                         <CloseIcon/>
                     </IconButton>
@@ -436,15 +490,16 @@ const CreateModal = ({open, onClose, rowData}) => {
                     </FormControl>
 
                 </FieldContainer>
-                <Grid container spacing={2}>
-                    <Grid item xs={6} style={{marginTop: '-8px'}}>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={['DatePicker']}>
-                                <DatePicker label="Data de adoção"/>
-                            </DemoContainer>
-                        </LocalizationProvider>
-                    </Grid>
-                    <Grid item xs={6}>
+                <FieldContainer className="field-container">
+                    <div className="input-container">
+                        <DatePicker
+                            label="Selecione a data"
+                            selected={dataValue}
+                            onChange={(date) => setDataValue(date)}
+                            dateFormat="dd/MM/yyyy"
+                            className="custom-datepicker" // Adicione esta classe
+                        />
+                    </div>
                         <FormControl fullWidth>
                             <InputLabel id="nome-status-label">Status de Adoção</InputLabel>
                             <Select
@@ -458,12 +513,9 @@ const CreateModal = ({open, onClose, rowData}) => {
                                         {statusAdocao.nome}
                                     </MenuItem>
                                 ))}
-                                error={statusAdocaoError}
                             </Select>
                         </FormControl>
-                    </Grid>
-                </Grid>
-
+                </FieldContainer>
 
                 <Button
                     variant="contained"
