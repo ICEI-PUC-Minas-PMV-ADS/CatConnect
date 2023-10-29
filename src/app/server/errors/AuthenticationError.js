@@ -14,10 +14,14 @@ const handleErrors = (err) => {
         errors.password = "Senha está incorreta!";
     }
 
-    if (err.code === 11000) {
-        errors.email = "Email já registrado!";
+    // if (err.code === 11000) {
+    //     errors.email = "Email já registrado!";
+    //     return errors;
+    // }
+    if (err.code === 11000 && err.keyPattern && err.keyPattern.email) {
+        errors.email = "E-mail já cadastrado!";
         return errors;
-    }
+      }
 
     if (err.message.includes("Users validation failed")) {
         Object.values(err.errors).forEach(({ properties }) => {

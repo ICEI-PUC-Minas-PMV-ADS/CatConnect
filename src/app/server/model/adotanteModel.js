@@ -36,6 +36,12 @@ const adotanteSchema = new mongoose.Schema({
   cep: {
     type: String,
   },
+  ruaNumero: {
+    type: String,
+  },
+  complemento: {
+    type: String,
+  }
 });
 
 module.exports = mongoose.model("Adotante", adotanteSchema);

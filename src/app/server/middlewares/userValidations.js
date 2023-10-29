@@ -10,15 +10,7 @@ const userCreateValidation = () => {
             .isEmail().withMessage("Insira um email válido."),
         body("password")
             .isString().withMessage("O campo senha é obrigatório.")
-            .isLength({ min: 6 }).withMessage("A sua senha deve ter no mínimo 6 caracteres."),
-        body("matchpassword")
-            .isString().withMessage("A confirmação da senha é obrigatória.")
-            .custom((value, { req }) => {
-                if (value != req.body.password) {
-                    throw new Error("As senhas digitadas não são iguais.");
-                }
-                return true;
-            })
+            .isLength({ min: 6 }).withMessage("A sua senha deve ter no mínimo 6 caracteres.")
     ];
 };
 

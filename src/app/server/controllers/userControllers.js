@@ -11,14 +11,8 @@ const createToken = (id) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { email, password, nome, adm } = req.body;
-    const existingUser = await User.findOne({ email })
-    if (existingUser) {
-      return res.status(422).json({ errors: ["E-mail já cadastrado."] })
-
-    }
     const user = await User.create({ email, password, nome, adm });
     const token = createToken(user._id);
-
     res.cookie("jwt", token, {
       withCredentials: true,
       httpOnly: false,
@@ -27,10 +21,13 @@ module.exports.register = async (req, res, next) => {
 
     res.status(201).json({ user: user._id, created: true });
   } catch (err) {
-    console.log(err);
-    const errors = handleErrors(err);
-    res.json({ errors, created: false });
-    // return res.status(500).json({ errors, created: false });
+    if (err.email === "ValidationError") {
+      const errors = handleErrors(err);
+      return res.status(422).json({ errors, created: false });
+    } else {
+      console.error(err);
+      return res.status(500).json({ errors: ["Erro interno do servidor"], created: false });
+    }
   }
 };
 
@@ -76,7 +73,7 @@ module.exports.getUserById = async (req, res, next) => {
 
 module.exports.updateUser = async (req, res, next) => {
   const userId = req.params.id;
-  const { nome, email, adm } = req.body; 
+  const { nome, email, adm } = req.body;
   try {
     const user = await User.findByIdAndUpdate(userId, { nome, email, adm }, { new: true });
 

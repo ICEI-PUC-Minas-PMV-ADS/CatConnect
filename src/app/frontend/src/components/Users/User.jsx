@@ -11,6 +11,7 @@ import { TiGroupOutline } from "react-icons/ti";
 import axios from "axios";
 import { toast } from "react-toastify";
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import Swal from 'sweetalert2';
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -205,9 +206,19 @@ const Usuarios = () => {
           color="primary"
           onClick={(event) => {
             event.stopPropagation();
-            if (window.confirm("Tem certeza que deseja excluir este usuário?")) {
-              handleDeleteUsuario(params.row._id);
-            }
+            Swal.fire({
+              title: 'Você tem certeza?',
+              text: 'Essa ação não poderá ser desfeita!',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#198d16',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Sim, excluir!',
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                handleDeleteUsuario(params.row._id);
+              }
+            });
           }}
           style={{ borderRadius: "50%" }}
         >
@@ -215,6 +226,7 @@ const Usuarios = () => {
         </IconButton>
       ),
     },
+
   ];
 
   const handleChangePage = (event, newPage) => {
@@ -241,22 +253,30 @@ const Usuarios = () => {
             </div>
             <h1 className="titulo">Usuários</h1>
           </div>
-          <Button id="add-user" onClick={() => abrirAddUsuario()}>
-            <span style={{ fontSize: "24px", color: "white" }}>+</span>
-          </Button>
+
         </div>
         <div className="user-linha">
           <div id="user-table">
-            <div style={{ margin: "10px" }}>
-              <TextField
-                label="Filtro rápido"
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={filterText}
-                onChange={handleFilterChange}
-              />
+
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ margin: "10px" }}>
+                <TextField
+                  label="Filtro rápido"
+                  variant="outlined"
+                  size="small"
+                  // fullWidth
+                  value={filterText}
+                  onChange={handleFilterChange}
+                />
+              </div>
+              <div style={{ marginLeft: "auto", marginRight: "10px" }}>
+                <Button id="add-user" onClick={() => abrirAddUsuario()}>
+                  <span style={{ fontSize: "24px", color: "white" }}>+</span>
+                </Button>
+              </div>
             </div>
+
+
             <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
               <DataGrid
                 sx={{
