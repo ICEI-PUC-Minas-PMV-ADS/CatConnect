@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Home.css";
 import Exemplo from "../../components/Exemplo/Exemplo";
-import Gatinhos from "../../components/Gatinhos/PgGatinhos";
+import Gatinhos from "../../components/Gatinhos/Gatinhos";
 import Adocoes from "../../components/Adocoes/Adocoes";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import Users from "../../components/Users/User";

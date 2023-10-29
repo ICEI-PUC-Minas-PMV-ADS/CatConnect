@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const gatinhosSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   data: Date,
   adicional: String,
   castracao: String,
@@ -22,7 +21,6 @@ const gatinhosSchema = new mongoose.Schema({
   saude: String,
   sexo: String,
   vacina: String,
-  id: String
 });
 
 module.exports = mongoose.model("gatos", gatinhosSchema);

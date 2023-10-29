@@ -59,3 +59,6 @@ h2{
   font-size: 1rem;
 }
 
+#mui-component-select-felv, #mui-component-select-fiv, #mui-component-select-castracao, #mui-component-select-vacina {
+  padding-right: 0;
+}
