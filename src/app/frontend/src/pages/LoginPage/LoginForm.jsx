@@ -54,40 +54,43 @@ function LoginForm({ toggleRegister }) {
     }
   };
   return (
-    <div className="container">
-      <h2>Login</h2>
-      <p className="sub-text">
-        Sistema de acompanhamento de gatos e adoções exclusivo para voluntários
-        da SOS Gatinhos do Parque
-      </p>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite seu Email"
-            onChange={(e) =>
-              setValues({ ...values, [e.target.name]: e.target.value })
-            }
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Digite sua Senha"
-            name="password"
-            onChange={(e) =>
-              setValues({ ...values, [e.target.name]: e.target.value })
-            }
-          />
-        </div>
-        <button type="submit">Entrar</button>
-        {/*<span>*/}
-        {/*  Não possui um conta ?*/}
-        {/*  <a onClick={() => toggleRegister()}> Registrar</a>*/}
-        {/*</span>*/}
-      </form>
-    </div>
+      <div className="container">
+        <div className="nomePrincipal">  Cat Connect</div>
+
+
+
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="inputContainer">
+            <input
+                type="email"
+                name="email"
+                className="largeInput"
+                placeholder="Digite seu Email"
+                onChange={(e) =>
+                    setValues({ ...values, [e.target.name]: e.target.value })
+                }
+            />
+          </div>
+          <div className="inputContainer">
+            <input
+                type="password"
+                className="largeInput"
+                placeholder="Digite sua Senha"
+                name="password"
+                onChange={(e) =>
+                    setValues({ ...values, [e.target.name]: e.target.value })
+                }
+            />
+          </div>
+          <button type="submit" className="smallButton">
+            Entrar
+          </button>
+          {/*<span>*/}
+          {/*  Não possui um conta ?*/}
+          {/*  <a onClick={() => toggleRegister()}> Registrar</a>*/}
+          {/*</span>*/}
+        </form>
+      </div>
   );
 }
 
