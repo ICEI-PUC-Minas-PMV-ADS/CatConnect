@@ -93,11 +93,11 @@ const Adocoes = () => {
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
             case 'concluido':
-                return 'green';
+                return '#1A932E';
             case 'em andamento':
-                return 'blue';
+                return '#DFA510';
             case 'pendente':
-                return 'red';
+                return '#EE201C';
             default:
                 return 'black';
         }
