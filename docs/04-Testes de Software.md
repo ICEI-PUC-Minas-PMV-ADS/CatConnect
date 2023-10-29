@@ -63,8 +63,8 @@ Quadro 7 - Registro dos Testes
 | Caso de Teste | Ação                  | Resultado Esperado | Resultado Obtido |
 |---------------|-----------------------|--------------------|------------------|
 | CT 01         | Registro de Gatos     | Permitir que o usuário registre os gatos conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
-| CT 02         | Registro de Adotantes    | Permitir que o usuário registre os adotantes conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
-| CT 03         | Registro de Adoção    | Permitir que o usuário registre as adoções, excluaos cadastros e crie cadastros. conforme objetivos estabelecidos. | Sistema está editando confrome desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
+| CT 02         | Registro de Adotantes    | Permitir que o usuário registre os adotantes  e os edite. | Sistema está editando conforme desejado e criando registros sem erros. ([Gravação de tela de 29-10-2023 15:27:07.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/54693192-97c7-4460-b579-3cebc5ccfe1a) |
+| CT 03         | Registro de Adoção    | Permitir que o usuário registre as adoções, excluaos cadastros e crie cadastros. conforme objetivos estabelecidos. | Sistema está editando conforme desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
 | CT 04         | Edição de Informações | Permitir que o usuário edite as informações conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 | CT 05         | Relatórios            | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
 
@@ -78,7 +78,7 @@ Quadro 8 - Resultado
 | Caso de Teste | Ação                  | Relatório                  |
 |---------------|-----------------------|----------------------------|
 | CT 01         | Registro de Gatos     | Sistema em desenvolvimento |
-| CT 02         | Registro de Adotantes   | Sistema em desenvolvimento |
+| CT 02         | Registro e edição deAdotantes   | Sistema cria e editar os adotantes sem retorno de erros ou demora. |
 | CT 03         | Registro, exclusão e edição de adoções. | Sistema cria adoções, cria adotante caso cpf não exista, exlui e edita. |
 | CT 04         | Edição de Informações | Sistema em desenvolvimento |
 | CT 05         | Relatórios            | Sistema em desenvolvimento |
