@@ -197,25 +197,6 @@ const Usuarios = () => {
       ),
     },
 
-    // {
-    //   field: "excluir",
-    //   headerName: "Excluir",
-    //   width: 100,
-    //   renderCell: (params) => (
-    //     <IconButton
-    //       color="primary"
-    //       onClick={(event) => {
-    //         event.stopPropagation();
-    //         if (window.confirm("Tem certeza que deseja excluir este usuário?")) {
-    //           handleDeleteUsuario(params.row._id);
-    //         }
-    //       }}
-    //       style={{ borderRadius: "50%" }}
-    //     >
-    //       <DeleteForeverSharpIcon />
-    //     </IconButton>
-    //   ),
-    // },
     {
       field: "excluir",
       headerName: "Excluir",
@@ -245,7 +226,6 @@ const Usuarios = () => {
         </IconButton>
       ),
     },
-    
 
   ];
 
@@ -273,22 +253,30 @@ const Usuarios = () => {
             </div>
             <h1 className="titulo">Usuários</h1>
           </div>
-          <Button id="add-user" onClick={() => abrirAddUsuario()}>
-            <span style={{ fontSize: "24px", color: "white" }}>+</span>
-          </Button>
+
         </div>
         <div className="user-linha">
           <div id="user-table">
-            <div style={{ margin: "10px" }}>
-              <TextField
-                label="Filtro rápido"
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={filterText}
-                onChange={handleFilterChange}
-              />
+
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ margin: "10px" }}>
+                <TextField
+                  label="Filtro rápido"
+                  variant="outlined"
+                  size="small"
+                  // fullWidth
+                  value={filterText}
+                  onChange={handleFilterChange}
+                />
+              </div>
+              <div style={{ marginLeft: "auto", marginRight: "10px" }}>
+                <Button id="add-user" onClick={() => abrirAddUsuario()}>
+                  <span style={{ fontSize: "24px", color: "white" }}>+</span>
+                </Button>
+              </div>
             </div>
+
+
             <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
               <DataGrid
                 sx={{
