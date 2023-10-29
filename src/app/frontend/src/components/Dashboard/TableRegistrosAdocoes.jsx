@@ -4,10 +4,12 @@ import { BsChevronDown } from "react-icons/bs";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from "react-toastify";
+import { format } from 'date-fns';
 
 
 const TableRegistrosAdocoes = () => {
     const [adocoes, setAdocoes] = useState([]);
+    const [filterText, setFilterText] = useState("");
 
     useEffect(() => {
         getAdocoes();
@@ -16,7 +18,7 @@ const TableRegistrosAdocoes = () => {
         const getAdocoes = async () => {
             try {
                 const { data } = await axios.get(
-                    "http://localhost:4000/adocao",
+                    "http://localhost:4000/adocoes",
                     {
                         withCredentials: true,
                     }
