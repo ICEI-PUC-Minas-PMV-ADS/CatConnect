@@ -43,12 +43,12 @@ Quadro 6 - Plano de Testes
 | Passos                | aaaaa |
 | Critério de Êxito     | - Apresentar o relatório |
 
-| Caso de Teste         | CT 06 - _Login_ |
+| Caso de Teste         | CT 06 - Login |
 |-----------------------|-------|
-| Requisitos Associados | RF 012 - _Login_ |
+| Requisitos Associados | RF 012 - Login |
 | Objetivo do Teste     | - Disponibilizar o acesso à aplicação através do _login_. |
 | Passos                | 01- Acessar a aplicação <br> 02- Preencher E-mail e senha para acesso. |
-| Critério de Êxito     | - Efetivar o _login_ <br> - Mensagem de "Sucesso" |
+| Critério de Êxito     | - Efetivar o  login <br> - Mensagem de "Sucesso" |
 
 Fonte: Elaborado pelos autores
 
@@ -68,7 +68,8 @@ Quadro 7 - Registro dos Testes
 | CT 03         |  Registro/edição/Exclusão de Adoção    | Permitir que o usuário registre as adoções, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
 | CT 04         | Registro/edição/Exclusão de  Usuarios | Permitir que o usuário registre nos usuarios, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo os usuarios e criando registros sem erros. [Gravação de tela de 29-10-2023 16:38:02.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/fb0830b9-07f2-4681-a4e9-8609f17a94bd) |
 | CT 05         | Relatórios            | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
-| CT 06         | _Login_          | Disponibilizar o acesso à aplicação através do _login_. | (inserir vídeo) |
+| CT 06         | Login          | Disponibilizar o acesso à aplicação através do _login_. |LOgin esta verificando os campos, validando conta e  acessando com exito. [Gravação de tela de 29-10-2023 17:54:21.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/42b9ead1-7fb2-4d02-8e1f-c3c96c3a29d2)
+ |
 
 Fonte: Elaborado pelos autores
 
