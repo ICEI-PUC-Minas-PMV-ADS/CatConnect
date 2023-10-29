@@ -23,37 +23,37 @@ export default function TableRegistros() {
     const getRowId = (row) => row.id;
     return (
         <div className="boxGrid">
-            <h2>Adoções</h2>
-            <div className="btn">
-
-                <button className="btnFiltro" >
-                    <p>Nome</p>
-                    <BsChevronDown
-                        size={12}
-                        style={{
-                            color: "black",
-                        }}
-                    />
-                </button>
-                <button className="btnFiltro" >
-                    <p>Data de adoção</p>
-                    <BsChevronDown
-                        size={12}
-                        style={{
-                            color: "black",
-                        }}
-                    />
-                </button>
-                <button className="btnFiltro" >
-                    <p>Status</p>
-                    <BsChevronDown
-                        size={12}
-                        style={{
-                            color: "black",
-                        }}
-                    />
-                </button>
-
+            <div className="user-linha space-between">
+                <h2>Adoções</h2>
+                <div className="btn">
+                    <button className="btnFiltro" >
+                        <p>Nome</p>
+                        <BsChevronDown
+                            size={12}
+                            style={{
+                                color: "black",
+                            }}
+                        />
+                    </button>
+                    <button className="btnFiltro" >
+                        <p>Data de adoção</p>
+                        <BsChevronDown
+                            size={12}
+                            style={{
+                                color: "black",
+                            }}
+                        />
+                    </button>
+                    <button className="btnFiltro" >
+                        <p>Status</p>
+                        <BsChevronDown
+                            size={12}
+                            style={{
+                                color: "black",
+                            }}
+                        />
+                    </button>
+                </div>
             </div>
             <div className="grid">
                 <DataGrid

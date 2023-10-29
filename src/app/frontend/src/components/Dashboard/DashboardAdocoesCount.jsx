@@ -4,7 +4,7 @@ import "../Dashboard/Dashboard.css";
 const DashboardAdocoesCount = ({ count }) => {
     return (
         <div>
-        <h2> Contagem de Adoções: {count} </h2>
+        <h2> Adoções em acompanhamento {count} </h2>
         </div>
 
     );
