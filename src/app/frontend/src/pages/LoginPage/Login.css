@@ -18,8 +18,10 @@
 }
 
 .container {
-  left: calc(50% - 183px);
-  top: calc(50% - 219px);
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
 }
 
@@ -82,6 +84,7 @@ form div {
 }
 
 input {
+  height: 10%;
   padding: 0.5rem;
   font-size: 1.1rem;
 }
@@ -127,3 +130,40 @@ span a {
 a {
   cursor: pointer;
 }
+.titleLogin {
+  padding-bottom: 10%;
+  font-size: 15px; /* Tamanho grande */
+  font-weight: bold; /* Letras mais largas */
+  color: #9ed59e; /* Cor verde */
+  text-align: center; /* Centralizar texto */
+}
+.inputContainer {
+  opacity: 0.8;
+  margin-bottom: 15px; /* Espaçamento entre os inputs */
+}
+
+.largeInput {
+
+  border-radius: 0.5rem;
+  width: 500px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.smallButton {
+  width: auto;
+  padding: 8px 16px;
+}
+.nomePrincipal{
+  color: #00ad5a;
+  padding-bottom: 20%;
+  align-items: center;
+  font-family: fantasy;
+  bottom: 100px;
+  font-size: 5rem;
+}
+
+
+
+
+

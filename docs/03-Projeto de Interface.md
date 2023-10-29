@@ -96,8 +96,7 @@ Congênere link, apresenta-se o _wireframe_ interativo confeccionado no Figma, c
 
 ## 3.3 _Wireframe_ Estático
 
-Com o objetivo de apresentar de forma estática as telas da aplicação criada pelo grupo, apresenta-se o _print_ das mesmas, de acordo com as seções abaixo:
-
+Alusivo às funcionalidades do sistema, apresenta-se o _print_ das telas da aplicação desenvolvidas pelo grupo, assim como os requisitos atendidos, congênere seções abaixo:
 
 ### 3.3.1 Telas Iniciais
 
