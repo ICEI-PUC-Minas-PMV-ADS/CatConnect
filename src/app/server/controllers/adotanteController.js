@@ -1,6 +1,6 @@
 const Adotante = require("../model/adotanteModel");
 const crypto = require("crypto");
-const Adocao = require("../model/adocaoModel");
+const Adocao = require('../model/adocaoModel');
 
 module.exports.createAdotante = async (req, res, next) => {
   try {
@@ -21,7 +21,7 @@ module.exports.obterAdotantesPorCpf  = async (req, res) => {
     const adotante = await Adotante.findOne({ cpf: cpf });
 
     if (!adotante) {
-      return res.status(404).json({ error: 'Adoção não encontrada' });
+      return res.status(404).json({ error: 'cpf não encontrado' });
     }
 
     res.status(200).json(adotante);
@@ -29,7 +29,46 @@ module.exports.obterAdotantesPorCpf  = async (req, res) => {
     console.error('Erro ao obter adoção por CPF:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
-},
+};
+module.exports.obterAdotantesPorId  = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Ajuste a lógica de consulta para usar o campo de CPF
+    const adotante = await Adotante.findById(id);
+
+
+    if (!adotante) {
+      return res.status(404).json({ error: 'id não encontrado' });
+    }
+
+    res.status(200).json(adotante);
+  } catch (error) {
+    console.error('Erro ao obter adoção por id:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+};
+module.exports.detalhesAdotanteAdocao  = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const adocao = await Adocao.findById(id);
+    const adotante = await Adotante.findById(adocao.id_adotante);
+
+    const data = {
+      adocao: adocao.toObject(),
+      adotante: adotante.toObject()
+    };
+    if (!data) {
+      return res.status(404).json({ error: 'id não encontrado' });
+    }
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error('Erro ao obter adoção por id:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+};
+
+
 module.exports.getAdotante = async (req, res, next) => {
   try {
     const adotantes = await Adotante.find();

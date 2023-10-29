@@ -7094,6 +7094,11 @@
   dependencies:
     "minimist" "^1.2.6"
 
+"moment@^2.29.4":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
+
 "ms@^2.1.1", "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -8288,10 +8293,10 @@
   dependencies:
     "deepmerge" "^4.2.2"
 
-"react-datepicker@^4.20.0":
-  "integrity" "sha512-I29yHN9SabUDSy7Xq3P8+E8E+D2vyeuYAYYWWjeMisGGtsatltV4CSHodyA7W9z0BuGycc/bhSClDbizx4gZHA=="
-  "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.20.0.tgz"
-  "version" "4.20.0"
+"react-datepicker@^4.21.0":
+  "integrity" "sha512-z0DtuRrKMz9i7dcTusW29VacbM9pn08g1yw0cG+Y5GpodJDxSWv7zUMxl3IwKN9Ap/AMphiepvmT5P+iNCgEiA=="
+  "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.21.0.tgz"
+  "version" "4.21.0"
   dependencies:
     "@popperjs/core" "^2.11.8"
     "classnames" "^2.2.6"
