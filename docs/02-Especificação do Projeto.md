@@ -83,7 +83,7 @@ Quadro 1 - Requisitos Funcionais
 | RF-006 | Registro de Adotantes:  Registar todos os dados do adotante       |MÉDIA      | 
 | RF-007 | Editar Adotantes:  Editar todos os dados do adotante       |MÉDIA      | 
 | RF-008 | Registro de usuarios :  Registar todos os dados do usuario          |Alta      | 
-| RF-009 | Editar usuarios:  Editar todos os dados do adotante       |MÉDIA      | 
+| RF-009 | Editar usuarios:  Editar todos os dados do usuario       |MÉDIA      | 
 | RF-010 | Excluir usuarios:  Excluir usuarios     |MÉDIA      | 
 | RF-011 | Relatorio: Gerar relatorios em todos os data grids    |MÉDIA      | 
 
