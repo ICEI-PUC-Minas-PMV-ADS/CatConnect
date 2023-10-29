@@ -73,19 +73,22 @@ Apresenta-se a seguir os requisitos funcionais que o projeto deverá atender.
 
 Quadro 1 - Requisitos Funcionais
 
-| ID     | Descrição do Requisito                                                                                                                                                                                                                                                                                                                                                                                                                              | Prioridade |
-|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| RF-001 | Registro de Gatos: Permitir o cadastro do chip do gato, incluindo um número único para identificação. Capturar informações como nome, foto, status FIV, status FeLV, status da castração e características físicas e comportamentais do gato. Registrar a data de entrada do gato no sistema. Disponibilizar campo para adicionar em qual ponto do parque o gato foi localizado.                                                                    | ALTA      | 
-| RF-002 | Registro de Adoção: Registrar a data de adoção do gato. Capturar informações do adotante, incluindo Nome do Adotante, Endereço Residencial, Bairro, Cidade/Estado, CEP, RG, CPF, Profissão, Estado Civil, Fone Fixo, Fone Celular, e-mail obrigatório do adotante. Associar o gato ao adotante correspondente. Registrar o status do acompanhamento com o adotante (a fazer, contato feito, foto enviada, foto não enviada/enviada incorretamente). | ALTA      |
-| RF-003 | Edição do gato: Possibilitar a edição de todas as informações do gato, incluindo Nome do Animal, Raça, Idade, Espécie (Canina/Felina), Cor da Pelagem, Sexo, Vacinado, Porte (indicar somente caninos), Castrado, Vermifugado nos últimos 3 meses, Observações, e Endereço onde ficará o animal. Permitir a atualização dos dados do adotante, como telefone, endereço e e-mail.                                                             | ALTA      | 
-| RF-004 | Edição da adoção: Editar todos os dados da adoção.    |ALTA      | 
-| RF-005 | Excluir Adoção: Exclui adoção de forma facil e sempre perguntar se tem certeza antes de excluir. | MÉDIA      | 
-| RF-006 | Registro de Adotantes:  Registar todos os dados do adotante       |MÉDIA      | 
-| RF-007 | Editar Adotantes:  Editar todos os dados do adotante       |MÉDIA      | 
-| RF-008 | Registro de usuarios :  Registar todos os dados do usuario          |Alta      | 
-| RF-009 | Editar usuarios:  Editar todos os dados do usuario       |MÉDIA      | 
-| RF-010 | Excluir usuarios:  Excluir usuarios     |MÉDIA      | 
-| RF-011 | Relatorio: Gerar relatorios em todos os data grids    |MÉDIA      | 
+| ID     | Descrição do Requisito    | Prioridade |
+|--------|---------------------------|-----------|
+| RF-001 | Registro de Gatos: Adicionar dados referente ao cadastro do gato e demais informações para identificação do felino.| ALTA | 
+| RF-002 | Registro de Adoção: Registrar as informações referentes à adoção, assim como associar o gato ao adotante correspondente. | ALTA |
+| RF-003 | Edição do Gato: Possibilitar a edição de todas as informações do gato. | ALTA | 
+| RF-004 | Edição da Adoção: Editar todos os dados da adoção.  | ALTA | 
+| RF-005 | Excluir Adoção: Exclui adoção de forma facil e sempre perguntar se tem certeza antes de excluir. | MÉDIA | 
+| RF-006 | Registro de Adotantes:  Registar todos os dados do adotante       | MÉDIA | 
+| RF-007 | Editar Adotantes:  Editar todos os dados do adotante. | MÉDIA | 
+| RF-008 | Registro de Usuários :  Registar todos os dados do usuario. | ALTA | 
+| RF-009 | Editar Usuários:  Editar todos os dados do usuario. | MÉDIA | 
+| RF-010 | Excluir Usuários:  Excluir usuarios. | MÉDIA | 
+| RF-011 | Relatorio: Gerar relatorios em todos os data grids | MÉDIA | 
+| RF-012 | _Login_: Permitir o acesso à aplicação. | ALTA |
+| RF-013 | Excluir Gato: Permitir excluir os gatos cadastrados. | MÉDIA |
+| RF-014 | Excluir Adotantes: Permitir excluir os adotantes. | MÉDIA |
 
 Fonte: Elaborado pelos autores
 
