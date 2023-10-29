@@ -11,14 +11,8 @@ const createToken = (id) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { email, password, nome, adm } = req.body;
-    const existingUser = await User.findOne({ email })
-    if (existingUser) {
-      return res.status(422).json({ errors: ["E-mail já cadastrado."] })
-
-    }
     const user = await User.create({ email, password, nome, adm });
     const token = createToken(user._id);
-
     res.cookie("jwt", token, {
       withCredentials: true,
       httpOnly: false,
@@ -27,10 +21,13 @@ module.exports.register = async (req, res, next) => {
 
     res.status(201).json({ user: user._id, created: true });
   } catch (err) {
-    console.log(err);
-    const errors = handleErrors(err);
-    res.json({ errors, created: false });
-    // return res.status(500).json({ errors, created: false });
+    if (err.email === "ValidationError") {
+      const errors = handleErrors(err);
+      return res.status(422).json({ errors, created: false });
+    } else {
+      console.error(err);
+      return res.status(500).json({ errors: ["Erro interno do servidor"], created: false });
+    }
   }
 };
 
@@ -54,8 +51,6 @@ module.exports.getAllUsers = async (req, res, next) => {
     const users = await User.find();
     res.status(200).json(users);
   } catch (err) {
-    // const errors = handleErrors(err);
-    // return res.status(500).json({ errors });
     console.log(err);
     res.status(500).json({ error: "Erro ao buscar usuários" });
   }
@@ -77,32 +72,33 @@ module.exports.getUserById = async (req, res, next) => {
 };
 
 module.exports.updateUser = async (req, res, next) => {
+  const userId = req.params.id;
+  const { nome, email, adm } = req.body;
   try {
-    const { email, password, nome, adm } = req.body;
-    const user = await User.findByIdAndUpdate(req.params.id, { email, password, nome, adm }, { new: true });
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      const errors = handleErrors(new Error("User not found"));
-      res.status(404).json({ errors });
+    const user = await User.findByIdAndUpdate(userId, { nome, email, adm }, { new: true });
+
+    if (!user) {
+      return res.status(404).json({ error: 'Usuário não encontrado', updated: false });
     }
-  } catch (error) {
-    const errors = handleErrors(err);
-    res.status(400).json({ errors });
+
+    res.status(200).json({ user, updated: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: 'Erro ao editar usuário', updated: false });
   }
 };
 
 module.exports.deleteUser = async (req, res, next) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
-    if (user) {
-      res.status(200).json({ message: "Usuário excluído com sucesso!" });
-    } else {
-      const errors = handleErrors(new Error("User not found"));
-      res.status(404).json({ errors });
+
+    if (!user) {
+      return res.status(404).json({ error: 'Usuário não encontrado', deleted: false });
     }
-  } catch (error) {
-    const errors = handleErrors(err);
-    res.status(500).json({ errors });
+
+    res.status(200).json({ message: 'Usuário excluído com sucesso!', deleted: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: 'Erro ao excluir usuário', deleted: false });
   }
 };

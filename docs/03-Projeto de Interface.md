@@ -96,7 +96,7 @@ Congênere link, apresenta-se o _wireframe_ interativo confeccionado no Figma, c
 
 ## 3.3 _Wireframe_ Estático
 
-Com o objetivo de apresentar de forma estática as telas da aplicação criada pelo grupo, apresenta-se o _print_ das mesmas, de acordo com as seções abaixo:
+Alusivo às funcionalidades do sistema, apresenta-se o _print_ das telas da aplicação desenvolvidas pelo grupo, assim como os requisitos atendidos, congênere seções abaixo:
 
 ### 3.3.1 Telas Iniciais
 
@@ -114,6 +114,7 @@ Figura 15
 
 Fonte: Elaborado pelos autores
 
+
 ### 3.3.2 Registros
 
 Figura 16
@@ -127,6 +128,7 @@ Figura 16
 
 Fonte: Elaborado pelos autores
 
+
 ### 3.3.3 Adoções
 
 Figura 17
@@ -139,6 +141,7 @@ Figura 17
 ![14Editar - sucesso](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/89549220/fbff3f27-72f3-4940-8a75-82643ee6218d)
 
 Fonte: Elaborado pelos autores
+
 
 ### 3.3.4 Usuários
 

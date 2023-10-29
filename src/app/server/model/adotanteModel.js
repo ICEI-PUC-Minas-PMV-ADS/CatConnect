@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const adotanteSchema = new mongoose.Schema({
+
   nome: {
     type: String,
     required: [true, "Nome é obrigatório"],
@@ -15,7 +16,7 @@ const adotanteSchema = new mongoose.Schema({
   },
   rg: {
     type: String,
-    required: [true, "RG é obrigatório"],
+    // required: [true, "RG é obrigatório"],
   },
   instagram: {
     type: String,
