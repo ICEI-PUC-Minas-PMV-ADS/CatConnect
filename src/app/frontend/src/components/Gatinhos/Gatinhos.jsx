@@ -1,56 +1,56 @@
 import React, { useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
-import "./Adotantes.css";
+import "./Gatinhos.css";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
 import { useModal } from "../../contexts/ModalContext";
-import AdotantesModal from "./AdotantesModal/AdotantesModal";
-import { MdVolunteerActivism } from "react-icons/md";
+import GatinhosModal from "./GatinhosModal/GatinhosModal";
+import { MdPets } from "react-icons/md";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const Adotantes = () => {
+const Gatinhos = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [filterText, setFilterText] = useState("");
-  const [adotantes, setAdotantes] = useState([]);
+  const [gatinhos, setGatinhos] = useState([]);
   const { openModal, closeModal } = useModal();
 
   useEffect(() => {
-    getAdotantes();
+    getGatinhos();
   }, []);
 
-  const getAdotantes = async () => {
+  const getGatinhos = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/adotantes", {
+      const { data } = await axios.get("http://localhost:4000/gatos", {
         withCredentials: true,
       });
       if (!data) {
         toast.error(
-          data.error ? data.error : "Houve um erro ao coletar os adotantes",
+          data.error ? data.error : "Houve um erro ao coletar os gatinhos 😿",
           {
             theme: "dark",
           }
         );
       } else {
-        setAdotantes(data);
+        setGatinhos(data);
       }
     } catch {
-      toast.error("Houve um erro ao adicionar um novo adotante", {
+      toast.error("Houve um erro ao adicionar um novo gatinho 😿", {
         theme: "dark",
       });
     }
   };
 
-  const handleAddAdotante = async (newAdotante) => {
-    delete newAdotante["_id"];
+  const handleAddGato = async (newGato) => {
+    delete newGato["_id"];
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/adotantes",
-        newAdotante,
+        "http://localhost:4000/gatos",
+        newGato,
         {
           withCredentials: true,
         }
@@ -59,99 +59,98 @@ const Adotantes = () => {
         toast.error(
           data.error
             ? data.error
-            : "Houve um erro ao adicionar um novo adotante",
+            : "Houve um erro ao adicionar um novo gato 😿",
           {
             theme: "dark",
           }
         );
         closeModal();
       } else {
-        toast(`Adotante adicionado com sucesso!`, {
+        toast(`Gatinho adicionado com sucesso! 😽`, {
           theme: "dark",
         });
-        getAdotantes();
+        getGatinhos();
         closeModal();
       }
     } catch {
-      toast.error("Houve um erro ao adicionar um novo adotante", {
+      toast.error("Houve um erro ao adicionar um novo gato", {
         theme: "dark",
       });
       closeModal();
     }
   };
 
-  const handleEditAdotante = async (editedAdotante) => {
+  const handleEditGato = async (editedGato) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/adotantes/${editedAdotante._id}`,
-        editedAdotante,
+        `http://localhost:4000/gatos/${editedGato._id}`,
+        editedGato,
         {
           withCredentials: true,
         }
       );
       if (!data.updated) {
         toast.error(
-          data.error ? data.error : "Houve um erro ao editar um adotante",
+          data.error ? data.error : "Houve um erro ao editar um gato 😿",
           {
             theme: "dark",
           }
         );
         closeModal();
       } else {
-        toast(`Adotante editado com sucesso!`, {
+        toast(`Gato editado com sucesso! 😽`, {
           theme: "dark",
         });
-        getAdotantes();
+        getGatinhos();
         closeModal();
       }
     } catch {
-      toast.error("Houve um erro ao editar um adotante", {
+      toast.error("Houve um erro ao editar um gato 😿", {
         theme: "dark",
       });
       closeModal();
     }
   };
 
-  const handleViewAdotante = () => {
+  const handleViewGato = () => {
     closeModal();
   };
 
-  const abrirAddAdotante = () => {
+  const abrirAddGato = () => {
     openModal(
-      "Adicionar adotante",
-      <AdotantesModal handleSubmitFunction={handleAddAdotante} edit={true} />
+      "Adicionar gato",
+      <GatinhosModal handleSubmitFunction={handleAddGato} edit={true} />
     );
   };
 
   const openEditModal = (rowId, e) => {
     e.stopPropagation();
-    let editedRow = adotantes.find((row) => row._id === rowId);
+    let editedRow = gatinhos.find((row) => row._id === rowId);
     openModal(
-      "Editar adotante",
-      <AdotantesModal
-        handleSubmitFunction={handleEditAdotante}
-        adotante={editedRow}
+      "Editar gato",
+      <GatinhosModal
+        handleSubmitFunction={handleEditGato}
+        gatinho={editedRow}
         edit={true}
       />
     );
   };
 
   const openViewModal = (rowId) => {
-    let editedRow = adotantes.find((row) => row._id === rowId);
+    let editedRow = gatinhos.find((row) => row._id === rowId);
     openModal(
-      "Visualizar adotante",
-      <AdotantesModal
-        handleSubmitFunction={handleViewAdotante}
-        adotante={editedRow}
+      "Visualizar gato",
+      <GatinhosModal
+        handleSubmitFunction={handleViewGato}
+        gatinho={editedRow}
       />
     );
   };
   // Columns definition, including the "editar" column with a button
   const columns = [
     { field: "nome", headerName: "Nome", flex: 1 },
-    { field: "email", headerName: "Email", flex: 1 },
-    { field: "instagram", headerName: "Instagram", flex: 1 },
-    { field: "telefone", headerName: "Telefone", flex: 1 },
+    { field: "local", headerName: "Local", flex: 1 },
+    { field: "saude", headerName: "Saúde", flex: 1 },
     {
       field: "editar",
       headerName: "Editar",
@@ -179,7 +178,7 @@ const Adotantes = () => {
   };
 
   // Filtered rows based on quick filter text
-  const filteredRows = adotantes.filter((row) => {
+  const filteredRows = gatinhos.filter((row) => {
     return Object.values(row).some((value) =>
       String(value).toLowerCase().includes(filterText.toLowerCase())
     );
@@ -190,10 +189,10 @@ const Adotantes = () => {
       <div className="user-dados">
         <div className="user-linha space-between">
           <div className="user-linha">
-            <MdVolunteerActivism />
-            <h1 className="titulo">Adotantes</h1>
+            <MdPets />
+            <h1 className="titulo">Gatinhos</h1>
           </div>
-          <Button id="add-user" onClick={() => abrirAddAdotante()}>
+          <Button id="add-user" onClick={() => abrirAddGato()}>
             <span style={{ fontSize: "24px", color: "white" }}>+</span>
           </Button>
         </div>
@@ -241,4 +240,4 @@ const Adotantes = () => {
   );
 };
 
-export default Adotantes;
+export default Gatinhos;

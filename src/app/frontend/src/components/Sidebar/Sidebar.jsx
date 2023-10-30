@@ -10,13 +10,57 @@ import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import GatinhosModal from "../Gatinhos/GatinhosModal/GatinhosModal";
+import { useModal } from "../../contexts/ModalContext";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Sidebar({ definirComponente, componenteAtivo }) {
   const [cookies, setCookie, removeCookie] = useCookies([]);
+  const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
   const logOut = () => {
     removeCookie("jwt");
     navigate("/login");
+  };
+  const handleAddGato = async (newGato) => {
+    delete newGato["_id"];
+    try {
+      const { data } = await axios.post(
+        "http://localhost:4000/gatos",
+        newGato,
+        {
+          withCredentials: true,
+        }
+      );
+      if (!data.created) {
+        toast.error(
+          data.error
+            ? data.error
+            : "Houve um erro ao adicionar um novo gato 😿",
+          {
+            theme: "dark",
+          }
+        );
+        closeModal();
+      } else {
+        toast(`Gatinho adicionado com sucesso! 😽`, {
+          theme: "dark",
+        });
+        closeModal();
+      }
+    } catch {
+      toast.error("Houve um erro ao adicionar um novo gato", {
+        theme: "dark",
+      });
+      closeModal();
+    }
+  };
+  const abrirAddGato = () => {
+    openModal(
+      "Adicionar gato",
+      <GatinhosModal handleSubmitFunction={handleAddGato} edit={true} />
+    );
   };
 
   return (
@@ -28,7 +72,7 @@ function Sidebar({ definirComponente, componenteAtivo }) {
         <div className="botoes">
           <button
             className="btnSidebar"
-            onClick={() => definirComponente("gatinhos")}
+            onClick={abrirAddGato}
           >
             <MdAddCircle
               size={23}

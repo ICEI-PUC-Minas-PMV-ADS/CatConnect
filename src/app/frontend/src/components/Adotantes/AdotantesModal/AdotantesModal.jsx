@@ -126,8 +126,7 @@ function AdotantesModal({ handleSubmitFunction, adotante, edit }) {
             bairro: data.bairro,
             cidade: data.localidade,
           }));
-        } catch (err) {
-          console.log(err)
+        } catch {
           toast.error("Houve um erro ao buscar o CEP informado", {
             theme: "dark",
           });
