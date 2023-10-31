@@ -89,9 +89,22 @@ const adocaoController = {
         const { id } = req.params;
         try {
             const adocaoAtualizada = await Adocao.findByIdAndUpdate(id, req.body, { new: true });
-            if (!adocaoAtualizada) {
+
+            const dadosAdotante = {
+                nome:  req.body.nome,
+                cpf:  req.body.cep,
+                telefone:  req.body.cep,
+                cep:  req.body.cep,
+                rua: req.body.rua,
+                bairro:  req.body.bairro,
+                cidade:  req.body.cidade,
+                email: req.body.email
+            };
+            const adotante = await Adotante.findByIdAndUpdate(req.body.id_adotante, dadosAdotante);
+            if (!adocaoAtualizada || !adotante) {
                 return res.status(404).json({ error: 'Adoção não encontrada' });
             }
+
             res.status(200).json(adocaoAtualizada);
         } catch (error) {
             console.error('Erro ao atualizar adoção:', error);
