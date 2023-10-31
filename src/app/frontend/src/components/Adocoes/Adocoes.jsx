@@ -28,7 +28,8 @@ const Adocoes = () => {
     const [filterText, setFilterText] = useState('');
     const [adocoes, setAdocoes] = useState([]);
     const [dataChanged, setDataChanged] = useState(false);
-    const [adocaoIdValor, setAdocaoIdValor] = useState('')
+    const [dadosAdocao, setDadosAdocao] = useState('')
+
 
 
 
@@ -47,9 +48,12 @@ const Adocoes = () => {
         }
     };
 
+
     const handleEdit = (rowDataId) => {
-        setAdocaoIdValor(rowDataId)
         setOpenCreateModal(true);
+        getAdotante(rowDataId)
+
+
     };
 
     const handleCloseCreateModal = () => {
@@ -58,6 +62,28 @@ const Adocoes = () => {
     };
     const handleOpenCreateModal = () => {
         setOpenCreateModal(true);
+    };
+    const getAdotante = async (rowDataId) => {
+        try {
+            if (rowDataId) {
+                const {data} = await axios.get(routes.getDetalhesAdotanteAdocao(rowDataId), {
+                    withCredentials: true,
+                });
+                if (!data) {
+                    toast.error(
+                        data.error ? data.error : "Houve um erro ao verifcar adoção",
+                        {
+                            theme: "dark",
+                        }
+                    );
+                }
+                setDadosAdocao(data)
+            }
+
+            rowDataId = null
+        } catch (error) {
+            console.error('Erro ao buscar dados da API:', error);
+        }
     };
     const handleDelete = async (rowData) => {
         Swal.fire({
@@ -157,7 +183,7 @@ const Adocoes = () => {
             headerName: 'Editar',
             flex: 0,
             renderCell: (params) => (
-                <Button onClick={(event) => handleEdit(params.row._id)}>
+                <Button  key={params.row._id} onClick={(event) => handleEdit(params.row._id)}>
                     <BorderColorIcon/>
                 </Button>
             ),
@@ -197,7 +223,7 @@ const Adocoes = () => {
                     </Button>
                 </div>
 
-                <CreateModal open={openCreateModal} dados={adocaoIdValor} onClose={handleCloseCreateModal}
+                <CreateModal open={openCreateModal} dados={dadosAdocao} onClose={handleCloseCreateModal}
                              dataChanged={dataChanged}/>
 
                 <DataGrid
