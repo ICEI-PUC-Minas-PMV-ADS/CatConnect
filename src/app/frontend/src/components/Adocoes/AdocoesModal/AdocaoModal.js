@@ -10,7 +10,7 @@ import {routes} from "../../../utils/api/ApiRoutes";
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import moment from 'moment';
+import { format } from 'date-fns';
 import DatePicker from "react-datepicker";
 
 
@@ -75,54 +75,51 @@ const CreateModal = ({open, onClose, dados}) => {
 
     useEffect(() => {
 
-        const getAdotante = async () => {
-            try {
-                if (dados) {
-                    const {data} = await axios.get(routes.getDetalhesAdotanteAdocao(dados), {
-                        withCredentials: true,
-                    });
-                    if (!data) {
-                        toast.error(
-                            data.error ? data.error : "Houve um erro ao verifcar adoção",
-                            {
-                                theme: "dark",
-                            }
-                        );
-                    }
-
-                    setCpf(formatCPF(data.adotante.cpf))
-                    setEmail(data.adotante.email)
-                    setCep(formatCep(data.adotante.cep))
-                    setRua(data.adotante.rua)
-                    setBairro(data.adotante.bairro)
-                    setCidade(data.adotante.cidade)
-                    setTelefone(formatTelefone(data.adotante.telefone))
-                    setAdotanteValue(data.adotante.nome)
-                    setGatoValue(data.adocao.gato)
-                    setResponsavel(data.adocao.responsavel)
-                    setStatusAdocao(data.adocao.status)
-                    const dataAdocao = moment(data.adocao.data_adocao);
-                    setDataValue(new Date(dataAdocao));
-                    setEdicao(true)
-                    setAdocaoId(data.adocao._id)
-
-
-                }
-
-            } catch (error) {
-                console.error('Erro ao buscar dados da API:', error);
-            }
-        };
-        getAdotante();
+        if(!edicao){
+            setAdotanteId('')
+            setGatoValue('')
+            setAdotanteValue('');
+            setGatoValue('');
+            setResponsavel('');
+            setDataValue('');
+            setStatusAdocao('');
+            setTelefone('');
+            setEmail('');
+            setCpf('');
+            setCep('');
+            setRua('');
+            setCidade('');
+            setBairro('');
+        }
+        getAdocoes(dados)
         getGatos();
         getStatus();
         getResponsavel();
     }, [dados]);
 
+    const getAdocoes = (dados) =>
+    {
 
+        if (dados) {
+            setAdotanteId(dados.adotante._id)
+            setCpf(formatCPF(dados.adotante.cpf))
+            setEmail(dados.adotante.email)
+            setCep(formatCep(dados.adotante.cep))
+            setRua(dados.adotante.rua)
+            setBairro(dados.adotante.bairro)
+            setCidade(dados.adotante.cidade)
+            setTelefone(formatTelefone(dados.adotante.telefone))
+            setAdotanteValue(dados.adotante.nome)
+            setGatoValue(dados.adocao.gato)
+            setResponsavel(dados.adocao.responsavel)
+            setStatusAdocao(dados.adocao.status)
+            setDataValue(new Date(dados.adocao.data_adocao));
+            setAdocaoId(dados.adocao._id)
+            setEdicao(true)
+        }
+    }
     const handleCpfChange = (e) => {
         const inputValue = e.target.value;
-
 
         // Limite o CPF a 11 dígitos
         const limitedCpf = inputValue.slice(0, 11);
@@ -153,11 +150,15 @@ const CreateModal = ({open, onClose, dados}) => {
                     }
                 );
             } else {
+                toast.success("Cep encontrado!", {});
                 setRua(data.logradouro)
                 setBairro(data.bairro)
                 setCidade(data.localidade)
             }
         } catch {
+            setRua('')
+            setBairro('')
+            setCidade('')
             toast.error("Cep não encontrado!");
         }
     }
@@ -312,43 +313,36 @@ const CreateModal = ({open, onClose, dados}) => {
                 return;
             }
             const selectedGato = gatos.find(gato => gato.nome === gatoValue);
-
             const formData = {
-                id_adotante: adotanteId ,
+                id_adotante: adotanteId,
                 id_gato: selectedGato._id,
                 adotante: adotanteValue,
                 gato: gatoValue,
                 data_adocao: dataValue,
                 status: statusAdocao,
                 responsavel: responsavel,
-                cep:cep,
-                bairro:bairro,
-                rua:rua,
-                cpf:cpf,
-                cidade:cidade,
-                telefone:telefone,
-                email:email,
+                cep: cep,
+                bairro: bairro,
+                rua: rua,
+                cpf: cpf,
+                cidade: cidade,
+                telefone: telefone,
+                email: email,
 
             };
-            if(edicao){
+            if (edicao) {
+                console.log(edicao)
                 const {data} = await axios.put(routes.updateAdocoes(adocaoId), formData, {
                     withCredentials: true,
                 });
                 toast.success(
-                    "Adoção editada",
-                    {
-                        theme: "dark",
-                    });
-            }else{
+                    "Adoção editada");
+            } else {
                 const {data} = await axios.post(routes.createAdocoesComAdotante, formData, {
                     withCredentials: true,
                 });
                 toast.success(
-                    "Adoção criada",
-                    {
-                        theme: "dark",
-                    }
-                );
+                    "Adoção criada");
             }
             handleClose()
         } catch (error) {
@@ -361,7 +355,7 @@ const CreateModal = ({open, onClose, dados}) => {
 
     return (
 
-        <StyledModal open={open} onClose={onClose} disableBackdropClick={true} className="modal">
+        <StyledModal open={open} onClose={onClose}  className="modal">
             <StyledModalContent className="modal-content">
                 <TitleContainer className="title-container">
                     <BorderColorIcon/>
@@ -500,21 +494,21 @@ const CreateModal = ({open, onClose, dados}) => {
                             className="custom-datepicker" // Adicione esta classe
                         />
                     </div>
-                        <FormControl fullWidth>
-                            <InputLabel id="nome-status-label">Status de Adoção</InputLabel>
-                            <Select
-                                label="Status de Adoção"
-                                fullWidth
-                                value={statusAdocao}
-                                onChange={(e) => setStatusAdocao(e.target.value)}
-                            >
-                                {status.map((statusAdocao) => (
-                                    <MenuItem key={statusAdocao._id} value={statusAdocao.nome}>
-                                        {statusAdocao.nome}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel id="nome-status-label">Status de Adoção</InputLabel>
+                        <Select
+                            label="Status de Adoção"
+                            fullWidth
+                            value={statusAdocao}
+                            onChange={(e) => setStatusAdocao(e.target.value)}
+                        >
+                            {status.map((statusAdocao) => (
+                                <MenuItem key={statusAdocao._id} value={statusAdocao.nome}>
+                                    {statusAdocao.nome}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
                 </FieldContainer>
 
                 <Button
