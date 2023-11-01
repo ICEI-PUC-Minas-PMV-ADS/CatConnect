@@ -1,12 +1,16 @@
 // src/services/sendEmailService.js
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 class SendEmailService {
+
     constructor() {
         this.transporter = nodemailer.createTransport({
-            service: 'hotmail',
+            host: 'smtp.live.com',
+            port: 587,
+            secure: false,
             auth: {
-                    user: process.env.EMAIL,
+                user: process.env.EMAIL,
                 pass: process.env.PASSWORD,
             },
         });
