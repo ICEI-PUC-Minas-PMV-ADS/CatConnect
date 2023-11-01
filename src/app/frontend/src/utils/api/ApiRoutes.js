@@ -1,4 +1,4 @@
-export const host = "http://localhost:4000";
+export const host = "http://15.228.46.82:4000";
 
 export const routes = {
     getAdocoes: `${host}/adocoes`,
