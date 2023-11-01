@@ -11,7 +11,8 @@ COPY frontend /usr/src/app/frontend
 
 # Instale as dependências do frontend
 WORKDIR /usr/src/app/frontend
-RUN npm install
+RUN npm install --save-dev react-scripts
+
 
 # Exponha a porta para o frontend
 EXPOSE 3000
@@ -27,7 +28,8 @@ COPY server /usr/src/app/server
 
 # Instale as dependências do servidor
 WORKDIR /usr/src/app/server
-RUN npm install
+RUN npm install --save-dev nodemon
+
 
 # Exponha a porta para o servidor
 EXPOSE 4000
