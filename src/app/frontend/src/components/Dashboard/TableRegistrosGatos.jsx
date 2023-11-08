@@ -50,14 +50,13 @@ const TableRegistrosGatos = () => {
     const columns = [
         { field: 'nome', headerName: 'Gato', flex: 1 },
         { field: 'local', headerName: 'Local', flex: 1 },
-        { field: 'status', headerName: 'Situação', flex: 1},
+        { field: 'saude', headerName: 'Saúde', flex: 1},
     ];
 
 
     return (
         <div className="boxGrid">
-            <h2>Últimos registros</h2>
-            <div className="grid">
+            <div className="grid-gatos">
                 <DataGrid
                     rows={filteredRows}
                     columns={columns}
@@ -65,13 +64,13 @@ const TableRegistrosGatos = () => {
                     initialState={{
                         pagination: {
                             paginationModel: {
-                                pageSize: 5,
+                                pageSize: 9,
                             },
                         },
                     }}
-                    pageSizeOptions={[5]}
-                    checkboxSelection
+                    pageSizeOptions={[9]}
                     disableRowSelectionOnClick
+                    headerClassName="custom-header"
                 />
             </div>
         </div>

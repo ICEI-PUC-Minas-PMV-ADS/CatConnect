@@ -16,7 +16,7 @@ import Adotantes from "../../components/Adotantes/Adotantes";
 export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
-  const [component, setComponent] = useState("Exemplo");
+  const [component, setComponent] = useState("dashboard");
   const [loading, setLoading] = useState(true);
 
   const definirComponente = () => {
