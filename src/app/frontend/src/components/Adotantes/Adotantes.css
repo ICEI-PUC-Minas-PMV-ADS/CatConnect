@@ -55,7 +55,7 @@
     border-radius: 50%;
   }
   
-  #user-table {
+  .user-table {
     background: #f0fff880;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Inter;

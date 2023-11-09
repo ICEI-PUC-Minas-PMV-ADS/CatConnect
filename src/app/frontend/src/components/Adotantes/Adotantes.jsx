@@ -193,21 +193,31 @@ const Adotantes = () => {
             <MdVolunteerActivism />
             <h1 className="titulo">Adotantes</h1>
           </div>
-          <Button id="add-user" onClick={() => abrirAddAdotante()}>
-            <span style={{ fontSize: "24px", color: "white" }}>+</span>
-          </Button>
+
         </div>
         <div className="user-linha">
-          <div id="user-table">
-            <div style={{ margin: "10px" }}>
-              <TextField
-                label="Filtro rápido"
-                variant="outlined"
-                size="small"
-                fullWidth
-                value={filterText}
-                onChange={handleFilterChange}
-              />
+          <div className="user-table">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ margin: "10px" }}>
+                <TextField
+                  label="Filtro rápido"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  value={filterText}
+                  onChange={handleFilterChange}
+                />
+              </div>
+              <div style={{ marginLeft: "auto", marginRight: "10px" }}>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={abrirAddAdotante}
+                  startIcon={<AddIcon style={{ color: 'white' }} />}
+                >
+                  Adicionar
+                </Button>
+              </div>
             </div>
             <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
               <DataGrid

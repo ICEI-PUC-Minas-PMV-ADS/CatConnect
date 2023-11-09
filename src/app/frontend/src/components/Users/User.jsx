@@ -249,9 +249,7 @@ const Usuarios = () => {
       <div className="user-dados">
         <div className="user-linha space-between">
           <div className="user-linha">
-            <div style={{ marginLeft: '20px', marginRight: '20px' }}>
               <TiGroupOutline />
-            </div>
             <h1 className="titulo">Usuários</h1>
           </div>
 
