@@ -55,8 +55,8 @@
     border-radius: 50%;
   }
   
-  #user-table {
-    background: #f8fbfa80;
+  .user-table {
+    background-color: #f0fff8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Inter;
     font-size: medium;
