@@ -97,7 +97,7 @@ Quadro 8 - Resultado
 |---------------|-----------------------------------------|----------------------------|
 | CT 01         | Registro de Gatos                       | Sistema cria registros dos gatos, sem retorno de erros ou demora. |
 | CT 02         | Registro e edição de Adotantes          | Sistema cria e editar os adotantes sem retorno de erros ou demora. |
-| CT 03         | Registro, exclusão e edição de adoções. | Sistema cria adoções, cria adotante caso cpf não exista, exlui e edita. |
+| CT 03         | Registro, exclusão e edição de adoções. | Sistema cria adoções, cria adotante caso o CPF não exista, exclui e edita. |
 | CT 04         | Edição de Informações                   | Sistema em desenvolvimento |
 | CT 05         | Relatórios                              | Sistema em desenvolvimento |
 | CT 06         | _Login_                                 | Usuário preenche e-mail e senha e é informado "sucesso" ao entrar. |
