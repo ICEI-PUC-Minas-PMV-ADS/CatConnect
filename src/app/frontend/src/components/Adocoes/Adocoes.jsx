@@ -1,36 +1,30 @@
 // Import necessary dependencies
 import React, {useEffect, useState} from 'react';
 import {DataGrid, GridToolbar} from '@mui/x-data-grid';
-import {TextField} from '@mui/material';
+import TextField from "@mui/material/TextField";
 import {styled} from '@mui/system';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
-import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import Edit from "@mui/icons-material/Edit";
 import Swal from 'sweetalert2';
 import CreateModal from './AdocoesModal/AdocaoModal';
-import {Button} from '@mui/material';  // Import Button from MUI
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import {format} from 'date-fns';
 import {toast} from 'react-toastify';
 import {routes} from "../../utils/api/ApiRoutes";
+import { LiaCatSolid } from "react-icons/lia";
+import "./Adocoes.css";
 
-const StyledDataGridContainer = styled('div')({
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-    padding: '42px',
-    width: '90%',  // Ajusta a largura para 100%
-    height: '700px',  // Ajusta a altura conforme necessário
-});
 
 const Adocoes = () => {
     const [openCreateModal, setOpenCreateModal] = useState(false);
+    const [page, setPage] = useState(0);
     const [filterText, setFilterText] = useState('');
+    const [rowsPerPage, setRowsPerPage] = useState(5);
     const [adocoes, setAdocoes] = useState([]);
     const [dataChanged, setDataChanged] = useState(false);
     const [dadosAdocao, setDadosAdocao] = useState('')
-
-
 
 
     useEffect(() => {
@@ -55,6 +49,12 @@ const Adocoes = () => {
 
 
     };
+
+    // Pagination logic
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
 
     const handleCloseCreateModal = () => {
         setOpenCreateModal(false);
@@ -129,6 +129,32 @@ const Adocoes = () => {
         }
     };
 
+      // Columns definition, including the "editar" column with a button
+  const columns = [
+    { field: "adotante", headerName: "Adotante", flex: 1 },
+    { field: "gato", headerName: "Gato", flex: 1 },
+    { field: "status", headerName: "Status", flex: 1 },
+    { field: "data_adocao", headerName: "Data da adoção", flex: 1 },
+    {
+      field: "editar",
+      headerName: "Editar",
+      width: 60,
+      renderCell: (params) => (
+        <IconButton
+          color="primary"
+          onClick={(event) => openEditModal(params.row._id, event)}
+          style={{ borderRadius: "50%" }}
+        >
+          <Edit style={{ color: "#292D32" }} />
+        </IconButton>
+        ),
+        },
+    ];
+
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+};
+
     // Filtered rows based on quick filter text
     const filteredRows = adocoes.filter((row) => {
         return Object.values(row).some((value) =>
@@ -137,112 +163,72 @@ const Adocoes = () => {
     });
 
 
-    const handleFilterChange = (event) => {
-        setFilterText(event.target.value);
-    };
-
-    // Colunas do data table
-    const columns = [
-        {field: 'adotante', headerName: 'Adotante', flex: 1},
-        {field: 'gato', headerName: 'Nome do Gato', flex: 1},
-        {field: 'responsavel', headerName: 'Responsável', flex: 1},
-        {
-            field: 'data_adocao',
-            headerName: 'Data de Adoção',
-            flex: 1,
-            renderCell: (params) => (
-                <div>
-                    {params.row.data_adocao &&
-                        format(new Date(params.row.data_adocao), 'dd/MM/yyyy')}
-                </div>
-            ),
-        },
-        {
-            field: 'statusAdocao',
-            headerName: 'Status',
-            flex: 1,
-            renderCell: (params) => (
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                    <div
-                        className="status-circle"
-                        style={{
-                            width: '12px',
-                            height: '12px',
-                            borderRadius: '50%',
-                            backgroundColor: getStatusColor(params.row.status),
-                            marginRight: '8px',
-                        }}
-                    ></div>
-                    {params.row.status}
-                </div>
-            ),
-        },
-
-        {
-            field: 'editar',
-            headerName: 'Editar',
-            flex: 0,
-            renderCell: (params) => (
-                <Button  key={params.row._id} onClick={(event) => handleEdit(params.row._id)}>
-                    <BorderColorIcon/>
-                </Button>
-            ),
-        },
-        {
-            field: 'excluir',
-            headerName: 'excluir',
-            flex: 0,
-            renderCell: (params) => (
-                <Button onClick={() => handleDelete(params.row)}>
-                    <DeleteForeverSharpIcon/>
-                </Button>
-            ),
-        },
-    ];
 
     return (
-        <>
-            <StyledDataGridContainer>
-                <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '10px'}}>
-                    <h1>Lista de adoções</h1>
+        <div className="user-container">
+          <div className="user-dados">
+            <div className="user-linha space-between">
+              <div className="user-linha">
+                <LiaCatSolid />
+                <h1 className="titulo">Adoções</h1>
+              </div>
+    
+            </div>
+            <div className="user-linha">
+              <div className="user-table">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ margin: "10px" }}>
                     <TextField
-                        label="Filtro Rápido"
-                        variant="outlined"
-                        size="small"
-                        value={filterText}
-                        onChange={handleFilterChange}
+                      label="Filtro rápido"
+                      variant="outlined"
+                      size="small"
+                      fullWidth
+                      value={filterText}
+                      onChange={handleFilterChange}
                     />
-
+                  </div>
+                  <div style={{ marginLeft: "auto", marginRight: "10px" }}>
                     <Button
-                        variant="contained"
-                        color="success"
-                        onClick={handleOpenCreateModal}
-                        startIcon={<AddIcon style={{color: 'white'}}/>}
+                      variant="contained"
+                      color="success"
+                      onClick={handleOpenCreateModal}
+                      startIcon={<AddIcon style={{ color: 'white' }} />}
                     >
-                        Adicionar
+                      Adicionar
                     </Button>
+                  </div>
                 </div>
-
-                <CreateModal open={openCreateModal} dados={dadosAdocao} onClose={handleCloseCreateModal}
-                             dataChanged={dataChanged}/>
-
-                <DataGrid
+                <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
+                  <DataGrid
+                    sx={{
+                      // pointer cursor on ALL rows
+                      "& .MuiDataGrid-row:hover": {
+                        cursor: "pointer",
+                      },
+                    }}
+                    getRowId={(row) => row?._id}
                     rows={filteredRows}
                     columns={columns}
-                    pageSize={5}
-                    rowsPerPageOptions={[5, 10, 20]}
-                    checkboxSelection
-                    disableSelectionOnClick
-                    components={{
-                        Toolbar: GridToolbar,
+                    pageSize={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    rowsPerPageOptions={[5, 10, 25]}
+                    onPageSizeChange={(pageSize) => {
+                      setRowsPerPage(pageSize);
+                      setPage(0);
                     }}
-                    getRowId={getRowId}
-                />
-            </StyledDataGridContainer>
+                    onRowClick={(params) => openViewModal(params.row._id)}
+                    components={{
+                      Toolbar: GridToolbar,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
 
-
-        </>
-    );
 };
 
 export default Adocoes;
