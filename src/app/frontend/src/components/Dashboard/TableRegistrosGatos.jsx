@@ -64,11 +64,11 @@ const TableRegistrosGatos = () => {
                     initialState={{
                         pagination: {
                             paginationModel: {
-                                pageSize: 9,
+                                pageSize: 3,
                             },
                         },
                     }}
-                    pageSizeOptions={[9]}
+                    pageSizeOptions={[3]}
                     disableRowSelectionOnClick
                     headerClassName="custom-header"
                 />

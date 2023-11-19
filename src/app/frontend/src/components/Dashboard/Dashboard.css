@@ -1,16 +1,23 @@
+.flex-column {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-around;
+}
+
 .adoces {
     align-items: start;
     background-color: #ffffff57;
     border-radius: 14px;
-    display: inline;
+    display: flex;
     flex-direction: column;
-    height: 380px;
-    padding: 18px 18px 10px;
-    position: absolute;
-    top:60%;
-    width: 50%;
-    left: 290px;
-
 }
 
 .adoces .frame {
@@ -20,15 +27,6 @@
     flex-direction: column;
     gap: 24px;
     position: relative;
-
-}
-
-.adoces .div {
-    left: 10px;
-    width: 99%;
-}
-.adocoes-gato .div-gatos {
-    width:98%;
 }
 
 .adoces .text-wrapper {
@@ -39,9 +37,6 @@
     font-weight: 400;
     letter-spacing: 0.16px;
     line-height: normal;
-    margin-left: -1px;
-    position: relative;
-    width: fit-content;
 }
 
 .adoces .frame-2 {
@@ -72,18 +67,6 @@
     position: relative;
 }
 
-.adoces .text-wrapper-2 {
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    margin-top: -1px;
-    position: relative;
-    width: fit-content;
-}
-
 .adoces .icons-instance {
     height: 14px !important;
     position: relative !important;
@@ -104,76 +87,6 @@
     margin-right: -10px;
     position: relative;
     width: 664px;
-}
-
-.adoces .text-wrapper-3 {
-    -webkit-text-stroke: 0.5px #060606;
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
-    left: -1px;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    position: absolute;
-    top: 0;
-}
-
-.adoces .text-wrapper-4 {
-    -webkit-text-stroke: 0.5px #060606;
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
-    left: 240px;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    position: absolute;
-    top: 0;
-}
-
-.adoces .text-wrapper-5 {
-    -webkit-text-stroke: 0.5px #060606;
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
-    left: 362px;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    position: absolute;
-    top: -1px;
-}
-
-.adoces .text-wrapper-6 {
-    -webkit-text-stroke: 0.5px #060606;
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
-    left: 490px;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    position: absolute;
-    top: 0;
-}
-
-.adoces .text-wrapper-7 {
-    -webkit-text-stroke: 0.5px #060606;
-    color: #060606;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
-    left: 582px;
-    letter-spacing: 0.14px;
-    line-height: normal;
-    position: absolute;
-    top: 0;
 }
 
 .adoces .vector {
@@ -507,19 +420,13 @@
 
 }
 .grid-gatos{
-    width: 102%;
-    height: 580px;
-    padding-top: 50px;
+    padding-top: 8px;
 }
 .adocoes-gato {
-    top:69px;
-    left: 800px;
     background-color: #ffffff57;
     border-radius: 14px;
-    height: 650px;
-    position: relative;
-    padding: 18px 18px 10px;
-    width: 570px;
+    margin: 16px 16px 8px;
+    padding: 16px 16px 8px;
 }
 
 .adocoes-gato .text-wrapper {
@@ -639,13 +546,11 @@
 
 
 .frame-resumo {
-    bottom: 30px;
-    right: 300px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-    width: 95%;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
 }
 
 .frame-resumo .div {
@@ -710,10 +615,10 @@
 
 .frame-resumo .div-3 {
     align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 62px;
+    display: flex;
     position: relative;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .frame-resumo .div-4 {
@@ -849,9 +754,6 @@
 .grafico-resumo{
     background-color: #ffffff57;
     border-radius: 14px;
-    padding: 18px 18px 10px;
-    position: absolute;
-    top: 350px;
-    left: 295px;
-    width: 50%;
+    display: flex;
+    margin: 8px;
 }
