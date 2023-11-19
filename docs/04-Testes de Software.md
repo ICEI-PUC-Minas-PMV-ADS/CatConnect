@@ -39,7 +39,7 @@ Quadro 6 - Plano de Testes
 | Caso de Teste         | CT 05 - Relatórios |
 |-----------------------|--------------------|
 | Requisitos Associados | RF 005 - Relatórios |
-| Objetivo do Teste     | - Disponibilizar no dashboard um botão para emissão de relatório em formato Excel para auxílio e controle de adoção dos gatos. |
+| Objetivo do Teste     | - Disponibilizar no dashboard e nos grids específicos, um botão para emissão de relatório para auxílio e controle de adoção dos gatos. |
 | Passos                | 01- Efetue o login <br> 02- Selecione no menu lateral esquerdo a opção que deseja emitir o relatório <br> 03- Clique em exportar <br> 04- Selecione o formato <br> 05- Clique em salvar |
 | Critério de Êxito     | - Apresentar o relatório |
 
@@ -95,13 +95,13 @@ Quadro 8 - Resultado
 
 | Caso de Teste | Ação                                    | Relatório                  |
 |---------------|-----------------------------------------|----------------------------|
-| CT 01         | Registro de Gatos                       | Sistema cria registros dos gatos, sem retorno de erros ou demora. |
-| CT 02         | Registro e edição de Adotantes          | Sistema cria e editar os adotantes sem retorno de erros ou demora. |
-| CT 03         | Registro, exclusão e edição de adoções. | Sistema cria adoções, cria adotante caso o CPF não exista, exclui e edita. |
-| CT 04         | Edição de Informações                   | Sistema em desenvolvimento |
-| CT 05         | Relatórios                              | Sistema em desenvolvimento |
+| CT 01         | Gatos                                   | Sistema cria registros dos gatos, sem retorno de erros ou demora. |
+| CT 02         | Adotantes                               | Sistema cria e editar os adotantes sem retorno de erros ou demora. |
+| CT 03         | Adoção                                  | Sistema cria adoções, cria adotante caso o CPF não exista, exclui e edita. |
+| CT 04         | Usuário                                 | Sistema cria, edita e exclui as informações dos usuários. |
+| CT 05         | Relatórios                              | Sistema exporta o relatório, sem erros. |
 | CT 06         | _Login_                                 | Usuário preenche e-mail e senha e é informado "sucesso" ao entrar. |
-| CT 07         | _Dashboard_                             | Sistema em desenvolvimento |
+| CT 07         | _Dashboard_                             | Usuário é encaminhado ao _dashboard_, sem retorno de erros ou demora. |
 | CT 08         | Resete de Senha                         | Sistema em desenvolvimento |
 
 Fonte: Elaborado pelos autores
