@@ -67,7 +67,7 @@ const Graphics = () => {
                 <BarChart
                     xAxis={[{ scaleType: 'band', data: chartData.categories }]}
                     series={chartData.series}
-                    width={1000}
+                    width={900}
                     height={200}
                 />
             )}
