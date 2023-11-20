@@ -62,7 +62,7 @@ Quadro 6 - Plano de Testes
 | Requisitos Associados | RF 016 - Resetar Senha |
 | Objetivo do Teste     | - Disponibilizar ao usuário a opção de reiniciar sua senha. |
 | Passos                | 01- Clique em "esqueceu a senha" |
-| Critério de Êxito     | (inserir) |
+| Critério de Êxito     | - Usuário irá receber e-mail de confirmação para alterar a senha. |
 
 Fonte: Elaborado pelos autores
 
