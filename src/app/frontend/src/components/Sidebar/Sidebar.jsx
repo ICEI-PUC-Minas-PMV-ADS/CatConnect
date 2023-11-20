@@ -5,7 +5,7 @@ import { MdAddCircle } from "react-icons/md";
 import { MdPets } from "react-icons/md";
 import { MdVolunteerActivism } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
-import { AiOutlineSetting, AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineLeft } from "react-icons/ai";
 import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
