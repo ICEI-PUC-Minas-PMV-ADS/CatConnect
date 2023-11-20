@@ -54,9 +54,6 @@ const CardsResumo = () => {
 
     return (
         <div className="frame-resumo">
-            <div className="div">
-                <div className="text-wrapper">Resumo</div>
-            </div>
             <div className="div-3">
                 <div className="div-4">
                     <div className="div-5">

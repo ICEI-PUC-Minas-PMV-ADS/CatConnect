@@ -1,0 +1,69 @@
+:root {
+    --main-green: #1e732c;
+    --friendly-green: #00ad5a;
+    --background: #ebdfd7;
+    --background-shadows: #ffffff34;
+    --cold-background: #f0fff8;
+    --main-text: #292d32;
+    --lower-text: #828282;
+    --blue-text: #092c4c;
+    --eg-text: #7e92a2;
+    --button-text: #ffffff;
+    --exit-button: #7e92a2;
+    --main-red: #ee201c;
+    --background-red: #f48c89;
+    --main-orange: #e65f2b;
+    --background-orange: #f0ab90;
+  }
+  
+  .user-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .user-dados {
+    padding: 1rem;
+  }
+  
+  .user-linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .space-between {
+    justify-content: space-between;
+  }
+  
+  .titulo {
+    position: unset;
+  }
+  
+  #add-user {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    background-color: #00ad5a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .user-table {
+    background: #f0fff880;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Inter;
+    font-size: medium;
+    font-weight: 400;
+    border-radius: 14px;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+  }
+  
