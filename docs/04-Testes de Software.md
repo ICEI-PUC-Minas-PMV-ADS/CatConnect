@@ -81,9 +81,9 @@ Quadro 7 - Registro dos Testes
 | CT 02         |  Registro/edição  de Adotantes         | Permitir que o usuário registre os adotantes  e os edite. | Sistema está editando conforme desejado e criando registros sem erros. ([Gravação de tela de 29-10-2023 15:27:07.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/54693192-97c7-4460-b579-3cebc5ccfe1a) |
 | CT 03         |  Registro/edição/Exclusão de Adoção    | Permitir que o usuário registre as adoções, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo as adoções e criando registros sem erros. ([Gravação de tela de 29-10-2023 14:57:55.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/04f01423-1ffc-4273-9c2c-ef7da3e75e73)) |
 | CT 04         | Registro/edição/Exclusão de  Usuarios  | Permitir que o usuário registre nos usuarios, exclua os cadastros e crie novos cadastros.| Sistema está editando conforme desejado, excluindo os usuarios e criando registros sem erros. [Gravação de tela de 29-10-2023 16:38:02.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/fb0830b9-07f2-4681-a4e9-8609f17a94bd) |
-| CT 05         | Relatórios                             | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema em desenvolvimento (quando finalizado, inserir vídeo) |
+| CT 05         | Relatórios                             | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema disponibiliza os dados atualizados dos gatos e das adoções. [Gravação-de-tela-de-19-11-2023_2_.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/91228798/e8302219-04e8-43df-a4ac-9a2f02d33931)|
 | CT 06         | Login                                  | Disponibilizar o acesso à aplicação através do _login_. | Login esta verificando os campos, validando conta e  acessando com exito. [Gravação de tela de 29-10-2023 17:54:21.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/42b9ead1-7fb2-4d02-8e1f-c3c96c3a29d2) |
-| CT 07         | _Dashboard_                            | Fornecer visualizações rápidas dos principais registros já cadastrados. | (inserir) |
+| CT 07         | _Dashboard_                            | Fornecer visualizações rápidas dos principais registros já cadastrados. | O Dashbord está apresentando os dados atualizados dos principais registros de gatos e de adoções. [Gravação de tela de 19-11-2023.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/91228798/5e5f4640-ecb9-4364-80f5-f1d2a631db55)|
 | CT 08         | Resete de Senha                        | Permitir ao usuário reiniciar sua senha. | (inserir) |
 
 Fonte: Elaborado pelos autores
@@ -98,10 +98,10 @@ Quadro 8 - Resultado
 | CT 01         | Registro de Gatos                       | Sistema cria registros dos gatos, sem retorno de erros ou demora. |
 | CT 02         | Registro e edição de Adotantes          | Sistema cria e editar os adotantes sem retorno de erros ou demora. |
 | CT 03         | Registro, exclusão e edição de adoções. | Sistema cria adoções, cria adotante caso cpf não exista, exlui e edita. |
-| CT 04         | Edição de Informações                   | Sistema em desenvolvimento |
-| CT 05         | Relatórios                              | Sistema em desenvolvimento |
+| CT 04         | Edição de Informações                   | Sistema cria e editar os usuários sem retorno de erros ou demora. |
+| CT 05         | Relatórios                              | Sistema exporta o relatório, sem erros. |
 | CT 06         | _Login_                                 | Usuário preenche e-mail e senha e é informado "sucesso" ao entrar. |
-| CT 07         | _Dashboard_                             | Sistema em desenvolvimento |
+| CT 07         | _Dashboard_                             | Usuário é encaminhado ao _dashboard_, sem retorno de erros ou demora. |
 | CT 08         | Resete de Senha                         | Sistema em desenvolvimento |
 
 Fonte: Elaborado pelos autores
