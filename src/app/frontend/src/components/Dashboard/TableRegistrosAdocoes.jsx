@@ -1,10 +1,10 @@
 import { DataGrid } from '@mui/x-data-grid';
 import "../Dashboard/Dashboard.css";
-import { BsChevronDown } from "react-icons/bs";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from "react-toastify";
 import { format } from 'date-fns';
+import {routes} from "../../utils/api/ApiRoutes";
 
 
 const TableRegistrosAdocoes = () => {
@@ -18,7 +18,7 @@ const TableRegistrosAdocoes = () => {
         const getAdocoes = async () => {
             try {
                 const { data } = await axios.get(
-                    "http://localhost:4000/adocoes",
+                    routes.getAdocoes,
                     {
                         withCredentials: true,
                     }
@@ -46,7 +46,7 @@ const TableRegistrosAdocoes = () => {
             case 'concluido':
                 return 'green';
             case 'em andamento':
-                return 'blue';
+                return 'orange';
             case 'pendente':
                 return 'red';
             default:
@@ -63,7 +63,7 @@ const TableRegistrosAdocoes = () => {
     const getRowId = (row) => row._id;
 
     const columns = [
-        { field: 'adotante', headerName: 'Adotante', flex: 1 },
+        { field: 'adotante', headerName: 'Adotante', flex: 1, headerClassName:  'custom-header'},
         { field: 'gato', headerName: 'Gato', flex: 1 },
 
         //{ field: 'observacoes', headerName: 'Observações', flex: 1 },
@@ -103,39 +103,7 @@ const TableRegistrosAdocoes = () => {
 
     return (
         <div className="boxGrid">
-            <div className="user-linha space-between">
-                <h2>Adoções</h2>
-                <div className="btn">
-                    <button className="btnFiltro" >
-                        <p>Nome</p>
-                        <BsChevronDown
-                            size={12}
-                            style={{
-                                color: "black",
-                            }}
-                        />
-                    </button>
-                    <button className="btnFiltro" >
-                        <p>Data de adoção</p>
-                        <BsChevronDown
-                            size={12}
-                            style={{
-                                color: "black",
-                            }}
-                        />
-                    </button>
-                    <button className="btnFiltro" >
-                        <p>Status</p>
-                        <BsChevronDown
-                            size={12}
-                            style={{
-                                color: "black",
-                            }}
-                        />
-                    </button>
-                </div>
-            </div>
-            <div className="grid">
+            <div className="grid-gatos">
                 <DataGrid
                     rows={filteredRows}
                     columns={columns}
@@ -143,12 +111,13 @@ const TableRegistrosAdocoes = () => {
                     initialState={{
                         pagination: {
                             paginationModel: {
-                                pageSize: 5,
+                                pageSize: 3,
                             },
                         },
                     }}
-                    pageSizeOptions={[5]}
+                    pageSizeOptions={[3]}
                     disableRowSelectionOnClick
+                    headerClassName="custom-header"
                 />
             </div>
         </div>

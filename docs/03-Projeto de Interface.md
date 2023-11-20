@@ -91,7 +91,7 @@ Fonte: Elaborado pelos autores
 
 Congênere link, apresenta-se o _wireframe_ interativo confeccionado no Figma, cujo objetivo é detalhar a interatividade com a aplicação.
 
-(inserir link)
+[_Wireframe_ Interativo](https://www.figma.com/proto/lXEXuwRUcqne4Y4OrtCTUw/SOS-CRM-(Copy)?node-id=127-2385&starting-point-node-id=127%3A2694)
 
 
 ## 3.3 _Wireframe_ Estático

@@ -12,6 +12,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import Swal from 'sweetalert2';
+import AddIcon from '@mui/icons-material/Add';
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -248,15 +249,13 @@ const Usuarios = () => {
       <div className="user-dados">
         <div className="user-linha space-between">
           <div className="user-linha">
-            <div style={{ marginLeft: '20px', marginRight: '20px' }}>
               <TiGroupOutline />
-            </div>
             <h1 className="titulo">Usuários</h1>
           </div>
 
         </div>
         <div className="user-linha">
-          <div id="user-table">
+          <div className="user-table">
 
             <div style={{ display: "flex", alignItems: "center" }}>
               <div style={{ margin: "10px" }}>
@@ -270,9 +269,14 @@ const Usuarios = () => {
                 />
               </div>
               <div style={{ marginLeft: "auto", marginRight: "10px" }}>
-                <Button id="add-user" onClick={() => abrirAddUsuario()}>
-                  <span style={{ fontSize: "24px", color: "white" }}>+</span>
-                </Button>
+              <Button
+                        variant="contained"
+                        color="success"
+                        onClick={abrirAddUsuario}
+                        startIcon={<AddIcon style={{color: 'white'}}/>}
+                    >
+                        Adicionar
+                    </Button>
               </div>
             </div>
 

@@ -10,13 +10,12 @@ import Gatinhos from "../../components/Gatinhos/Gatinhos";
 import Adocoes from "../../components/Adocoes/Adocoes";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import Users from "../../components/Users/User";
-import Configuracoes from "../../components/Configuracoes/Configuracoes";
 import Adotantes from "../../components/Adotantes/Adotantes";
 
 export default function Cards() {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]);
-  const [component, setComponent] = useState("Exemplo");
+  const [component, setComponent] = useState("dashboard");
   const [loading, setLoading] = useState(true);
 
   const definirComponente = () => {
@@ -32,8 +31,6 @@ export default function Cards() {
         return <Dashboard />;
       case "users":
         return <Users />;
-      case "configuracoes":
-        return <Configuracoes />;
       case "adotantes":
         return <Adotantes />;
       default:
