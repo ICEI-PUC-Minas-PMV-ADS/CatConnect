@@ -22,19 +22,31 @@ const TitleContainer = styled(Box)({});
 
 const FieldContainer = styled(Box)({});
 const formatCPF = (value) => {
-    const cleanedValue = value.replace(/\D/g, '');
-    const formattedValue = cleanedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-    return formattedValue;
+  if (!value) {
+    return ''; // or handle the case when value is undefined or empty
+  }
+
+  const cleanedValue = value.replace(/\D/g, '');
+  const formattedValue = cleanedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  return formattedValue;
 };
+
 const formatTelefone = (value) => {
-    const cleanedValue = value.replace(/\D/g, '');
-    const formattedTelefone = cleanedValue.replace(/(\d{2})(\d{5})(\d{4})/, '($1)$2-$3');
-    return formattedTelefone;
+  if (!value) {
+      return ''; // or handle accordingly if necessary
+  }
+  const cleanedValue = value.replace(/\D/g, '');
+  const formattedTelefone = cleanedValue.replace(/(\d{2})(\d{5})(\d{4})/, '($1)$2-$3');
+  return formattedTelefone;
 };
+
 const formatCep = (value) => {
-    const cleanedValue = value.replace(/\D/g, '');
-    const formattedCep = cleanedValue.replace(/(\d{5})(\d{3})/, '$1-$2');
-    return formattedCep;
+  if (!value) {
+      return ''; // or handle accordingly if necessary
+  }
+  const cleanedValue = value.replace(/\D/g, '');
+  const formattedCep = cleanedValue.replace(/(\d{5})(\d{3})/, '$1-$2');
+  return formattedCep;
 };
 const CreateModal = ({open, onClose, dados}) => {
 
@@ -42,9 +54,10 @@ const CreateModal = ({open, onClose, dados}) => {
     // Dados do Adotante
     const [adotanteValue, setAdotanteValue] = useState('');
     const [adotanteId, setAdotanteId] = useState('');
-    const [cpf, setCpf] = useState('');
+    const [cpf, setCpf] = useState(formatCPF(''));
+    const [telefone, setTelefone] = useState(formatTelefone(''));
+    const [cep, setCep] = useState(formatCep(''));
     const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
 
     // Dados do Gato
     const [gatos, setGatos] = useState([]);
@@ -56,7 +69,6 @@ const CreateModal = ({open, onClose, dados}) => {
     const [responsavelError, setResponsavelError] = useState(false);
 
     // Dados de Endereço
-    const [cep, setCep] = useState('');
     const [rua, setRua] = useState('');
     const [cidade, setCidade] = useState('');
     const [bairro, setBairro] = useState('');
@@ -97,38 +109,44 @@ const CreateModal = ({open, onClose, dados}) => {
         getResponsavel();
     }, [dados]);
 
-    const getAdocoes = (dados) =>
-    {
+    const getAdocoes = (dados) => {
+    if (dados) {
+        setAdotanteId(dados.adotante?._id || '');  // Use optional chaining to handle undefined
+        setCpf(formatCPF(dados.adotante?.cpf || ''));  // Use optional chaining to handle undefined
+        setEmail(dados.adotante?.email || '');  // Use optional chaining to handle undefined
+        setCep(formatCep(dados.adotante?.cep || ''));  // Use optional chaining to handle undefined
+        setRua(dados.adotante?.rua || '');  // Use optional chaining to handle undefined
+        setBairro(dados.adotante?.bairro || '');  // Use optional chaining to handle undefined
+        setCidade(dados.adotante?.cidade || '');  // Use optional chaining to handle undefined
+        setTelefone(formatTelefone(dados.adotante?.telefone || ''));  // Use optional chaining to handle undefined
+        setAdotanteValue(dados.adotante?.nome || '');  // Use optional chaining to handle undefined
 
-        if (dados) {
-            setAdotanteId(dados.adotante._id)
-            setCpf(formatCPF(dados.adotante.cpf))
-            setEmail(dados.adotante.email)
-            setCep(formatCep(dados.adotante.cep))
-            setRua(dados.adotante.rua)
-            setBairro(dados.adotante.bairro)
-            setCidade(dados.adotante.cidade)
-            setTelefone(formatTelefone(dados.adotante.telefone))
-            setAdotanteValue(dados.adotante.nome)
-            setGatoValue(dados.adocao.gato)
-            setResponsavel(dados.adocao.responsavel)
-            setStatusAdocao(dados.adocao.status)
-            setDataValue(new Date(dados.adocao.data_adocao));
-            setAdocaoId(dados.adocao._id)
-            setEdicao(true)
+        if (dados.adocao) {
+            setGatoValue(dados.adocao.gato || '');  // Check if 'adocao' exists before accessing 'gato'
+            setResponsavel(dados.adocao.responsavel || '');  // Check if 'adocao' exists before accessing 'responsavel'
+            setStatusAdocao(dados.adocao.status || '');  // Check if 'adocao' exists before accessing 'status'
+            setDataValue(new Date(dados.adocao.data_adocao) || new Date());  // Check if 'adocao' exists before accessing 'data_adocao'
+            setAdocaoId(dados.adocao._id || '');  // Check if 'adocao' exists before accessing '_id'
+            setEdicao(true);
+        } else {
+            setEdicao(false);
         }
     }
-    const handleCpfChange = (e) => {
-        const inputValue = e.target.value;
+};
 
-        // Limite o CPF a 11 dígitos
-        const limitedCpf = inputValue.slice(0, 11);
-        const formattedCpf = formatCPF(limitedCpf);
-        setCpf(formattedCpf);
-        if (inputValue.length === 11) {
-            getAdotante(formattedCpf);
-        }
+    const handleCpfChange = (e) => {
+      const inputValue = e.target.value;
+    
+      // Limite o CPF a 11 dígitos
+      const limitedCpf = inputValue.slice(0, 11);
+      const formattedCpf = formatCPF(limitedCpf);
+      setCpf(formattedCpf);
+    
+      if (limitedCpf.length === 11) {
+        getAdotante(formattedCpf);
+      }
     };
+    
     const handleTelefoneChange = (e) => {
         const inputValue = e.target.value;
         // Limite o telefone a 11 dígitos
