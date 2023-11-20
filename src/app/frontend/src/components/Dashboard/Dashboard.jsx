@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <div className="flex-column">
       <CardsResumo />
-      {/* <Graphics /> */}
+      <Graphics />
         <div className="adocoes-gato">
           <div className="text-wrapper">Ultimos Registros de Adoções</div>
           <div className="div-gatos">
