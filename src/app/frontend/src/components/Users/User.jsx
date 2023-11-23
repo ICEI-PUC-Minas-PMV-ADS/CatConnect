@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import Swal from 'sweetalert2';
 import AddIcon from '@mui/icons-material/Add';
+import EditarUsuariosModal from "./UsuariosModal/EditarUsuariosModal";
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -160,7 +161,7 @@ const Usuarios = () => {
     let editedRow = users.find((row) => row._id === rowId);
     openModal(
       "Editar usuário",
-      <UsuariosModal
+      <EditarUsuariosModal
         handleSubmitFunction={handleEditUsuario}
         usuario={editedRow}
         edit={true}
