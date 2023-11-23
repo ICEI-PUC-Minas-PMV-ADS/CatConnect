@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import "./User.css";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar, ptBR } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
@@ -303,6 +303,7 @@ const Usuarios = () => {
                 components={{
                   Toolbar: GridToolbar,
                 }}
+                localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
               />
             </div>
           </div>
