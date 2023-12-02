@@ -175,24 +175,24 @@ function Sidebar({ definirComponente, componenteAtivo }) {
                 </button>
               )}
             </li>
-            <li>
-              {componenteAtivo !== "configuracoes" ? (
-                <>
-                  <AiOutlineSetting />
-                  <a onClick={() => definirComponente("configuracoes")}>
-                  Configurações
-                  </a>
-                </>
-              ) : (
-                <button
-                  className="btnSidebar2"
-                  onClick={() => definirComponente("configuracoes")}
-                >
-                  <AiOutlineSetting size={19} />
-                  <span>Configurações</span>
-                </button>
-              )}
-            </li>
+            {/*<li>*/}
+            {/*  {componenteAtivo !== "configuracoes" ? (*/}
+            {/*    <>*/}
+            {/*      <AiOutlineSetting />*/}
+            {/*      <a onClick={() => definirComponente("configuracoes")}>*/}
+            {/*      Configurações*/}
+            {/*      </a>*/}
+            {/*    </>*/}
+            {/*  ) : (*/}
+            {/*    <button*/}
+            {/*      className="btnSidebar2"*/}
+            {/*      onClick={() => definirComponente("configuracoes")}*/}
+            {/*    >*/}
+            {/*      <AiOutlineSetting size={19} />*/}
+            {/*      <span>Configurações</span>*/}
+            {/*    </button>*/}
+            {/*  )}*/}
+            {/*</li>*/}
           </ul>
         </div>
         <button className="btnSair" onClick={logOut}>

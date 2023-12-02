@@ -19,8 +19,8 @@ const StyledDataGridContainer = styled('div')({
     borderRadius: '8px',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
     padding: '42px',
-    width: '90%',  // Ajusta a largura para 100%
-    height: '700px',  // Ajusta a altura conforme necessário
+    width: '80%',  // Ajusta a largura para 100%
+    height: '60%',  // Ajusta a altura conforme necessário
 });
 
 const Adocoes = () => {

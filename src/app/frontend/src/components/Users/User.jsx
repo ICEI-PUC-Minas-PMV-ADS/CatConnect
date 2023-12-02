@@ -77,11 +77,10 @@ const Usuarios = () => {
         getUsuarios();
         closeModal();
       }
-    } catch {
+    } catch (e ){
       toast.error("Houve um erro ao adicionar um novo usuário", {
         theme: "dark",
       });
-      closeModal();
     }
   };
 

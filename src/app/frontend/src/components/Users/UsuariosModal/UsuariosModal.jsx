@@ -8,17 +8,36 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
   const [usuarioEdition, setUsuarioEdition] = useState({
     _id: usuario ? usuario._id : "",
     nome: usuario ? usuario.nome : "",
+    celular: usuario ? usuario.celular : "",
     email: usuario ? usuario.email : "",
     password: "", 
     adm: usuario ? usuario.adm : false, 
   });
+  const formatarCelular = (numero) => {
+    // Remove caracteres não numéricos
+    numero = numero.replace(/\D/g, "");
+
+    // Formata para o padrão brasileiro (XX) XXXXX-XXXX
+    if (numero.length <= 11) {
+      numero = numero.replace(/^(\d{2})(\d{1,5})?(\d{1,4})?$/, "($1) $2-$3");
+    }
+
+    return numero;
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setUsuarioEdition((prevUsuario) => ({
-      ...prevUsuario,
-      [name]: value,
-    }));
+    if (name === "celular") {
+      setUsuarioEdition(prevUsuario => ({
+        ...prevUsuario,
+        [name]: formatarCelular(value),
+      }));
+    } else {
+      setUsuarioEdition(prevUsuario => ({
+        ...prevUsuario,
+        [name]: value,
+      }));
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -28,6 +47,7 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
       [name]: checked,
     }));
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,6 +71,21 @@ function UsuariosModal({ handleSubmitFunction, usuario, edit }) {
           />
         </div>
         <div className="usuario-coluna">
+
+          <label>Celular</label>
+          <TextField
+              type="celular"
+              name="celular"
+              placeholder="Digite o celular"
+              value={usuarioEdition?.celular}
+              onChange={handleInputChange}
+              variant="standard"
+              fullWidth
+              //required
+          />
+        </div>
+        <div className="usuario-coluna">
+
           <label>Email</label>
           <TextField
             type="email"
