@@ -2,6 +2,9 @@ export const host = "http://localhost:4000";
 
 export const routes = {
     getAdocoes: `${host}/adocoes`,
+    getUsuario: (phoneNumber) => `${host}/user/celular/${phoneNumber}`,
+    putSenha: (id) => `${host}/resetaSenha/${id}`,
+    sendSms: `${host}/api/sms`,
     sendEmail: `${host}/send-email`,
     getStatus: `${host}/status`,
     getAdotantes: `${host}/adotantes`,

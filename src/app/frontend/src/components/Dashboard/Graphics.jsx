@@ -1,100 +1,97 @@
-import React, { useEffect, useState } from "react";
-import { BarChart } from "@mui/x-charts/BarChart";
-import axios from "axios";
-import { routes } from "../../utils/api/ApiRoutes";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { routes } from '../../utils/api/ApiRoutes';
+import { BarPlot, LinePlot, ChartContainer, ChartsXAxis, ChartsYAxis } from '@mui/x-charts';
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const Graphics = () => {
-  const [gatos, setGatos] = useState([]);
-  const [adocoes, setAdocoes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [gatos, setGatos] = useState([]);
+    const [adocoes, setAdocoes] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchChartData();
-  }, []);
+    useEffect(() => {
+        fetchChartData();
+    }, []);
 
-  const fetchChartData = async () => {
-    let countGatos = 0;
-    let countAdocoesPendentes = 0;
-    let countAdocoesConcluidas = 0;
-    let countGatosEmAndamento = 0;
-    try {
-      await axios
-        .get(routes.getGatos, {
-          withCredentials: true,
-        })
-        .then((data) => {
-          setGatos(data.data);
-          countGatos = data.data.length;
-        });
+    const fetchChartData = async () => {
+        try {
+            const gatosData = await axios.get(routes.getGatos, { withCredentials: true });
+            setGatos(gatosData.data);
 
-      await axios
-        .get(routes.getAdocoes, {
-          withCredentials: true,
-        })
-        .then((data) => {
-          setAdocoes(data.data);
-          countAdocoesPendentes = data.data.filter(
-            (adocao) => adocao.status === "pendente"
-          ).length;
-          countAdocoesConcluidas = data.data.filter(
-            (adocao) => adocao.status === "concluido"
-          ).length;
-          countGatosEmAndamento = data.data.filter(
-            (adocao) => adocao.status === "em andamento"
-          ).length;
-        });
+            const adocoesData = await axios.get(routes.getAdocoes, { withCredentials: true });
+            setAdocoes(adocoesData.data);
 
-      setChartData((prevChartData) => ({
-        ...prevChartData,
-        series: [
-          { name: "Gatos Cadastrados", data: [countGatos, 0, 0, 0] },
-          {
-            name: "Adoções Concluídas",
-            data: [0, countAdocoesConcluidas, 0, 0],
-          },
-          { name: "Adoções Pendentes", data: [0, 0, countAdocoesPendentes, 0] },
-          {
-            name: "Adoções em Andamento",
-            data: [0, 0, 0, countGatosEmAndamento],
-          },
-        ],
-      }));
-      setLoading(false);
-    } catch (error) {
-      setError("Erro ao buscar dados da API");
-      console.error("Erro ao buscar dados da API:", error);
-    }
-  };
+            setLoading(false);
+        } catch (error) {
+            setError('Erro ao buscar dados da API');
+            console.error('Erro ao buscar dados da API:', error);
+        }
+    };
 
-  const [chartData, setChartData] = useState({
-    categories: [
-      "Gatos Cadastrados",
-      "Adoções Concluídas",
-      "Adoções Pendentes",
-      "Adoções em Andamento",
-    ],
-    series: [
-      { name: "Gatos Cadastrados", data: [0, 0, 0, 0] },
-      { name: "Adoções Concluídas", data: [0, 0, 0, 0] },
-      { name: "Adoções Pendentes", data: [0, 0, 0, 0] },
-      { name: "Adoções em Andamento", data: [0, 0, 0, 0] },
-    ],
-  });
+    const prepareChartData = () => {
+        return [
+            {
+                type: 'bar',
+                yAxisKey: 'adocoes',
+                data: [countAdocoesPendentes(), countAdocoesConcluidas(), countGatosEmAndamento(), 0], // Adiciona 0 para 'Gatos Cadastrados'
+            },
+            {
+                type: 'bar',
+                yAxisKey: 'gatos',
+                data: [0, 0, 0, countGatos()], // 'Gatos Cadastrados' será agora uma barra
+            }
+        ];
+    };
 
-  return (
-    <div className="grafico-resumo">
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
-      {!loading && !error && (
-        <BarChart
-          xAxis={[{ scaleType: "band", data: chartData.categories }]}
-          series={chartData.series}
-          width={900}
-          height={200}
-        />
-      )}
-    </div>
-  );
+    const countGatos = () => gatos.length;
+    const countAdocoesPendentes = () => adocoes.filter(adocao => adocao.status === "pendente").length;
+    const countAdocoesConcluidas = () => adocoes.filter(adocao => adocao.status === "concluido").length;
+    const countGatosEmAndamento = () => adocoes.filter(adocao => adocao.status === "em andamento").length;
+
+    return (
+        <>
+
+            <h1 className="text-wrapper" style={{ fontSize: '50px', color: 'rgba(31,177,60,0.87)' }}> <BarChartIcon/>Resumo</h1>
+        <div className="grafico-resumo">
+            {loading && <p>Carregando...</p>}
+            {error && <p>{error}</p>}
+            {!loading && !error && (
+                <ChartContainer
+                    series={prepareChartData()}
+                    width={950}
+                    height={300}
+                    xAxis={[
+                        {
+                            id: 'categories',
+                            data: ['Adoções Pendentes', 'Adoções Concluídas', 'Adoções em Andamento', 'Gatos Cadastrados'],
+                            scaleType: 'band',
+                            valueFormatter: (value) => value.toString(),
+                        },
+                    ]}
+                    yAxis={[
+                        {
+                            id: 'adocoes',
+                            scaleType: 'linear',
+                            domain: 'auto',
+                        },
+                        {
+                            id: 'gatos',
+                            scaleType: 'linear',
+                            domain: 'auto',
+                        },
+                    ]}
+                >
+                    <BarPlot />
+                    <LinePlot />
+                    <ChartsXAxis label="Categorias" position="bottom" axisId="categories" />
+                    <ChartsYAxis label="Quantidade" position="left" axisId="adocoes" />
+                    <ChartsYAxis label="Quantidade de Gatos" position="right" axisId="gatos" />
+                </ChartContainer>
+            )}
+        </div>
+        </>
+    );
 };
+
 export default Graphics;

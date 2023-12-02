@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import "./Gatinhos.css";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar, ptBR } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
@@ -241,6 +241,7 @@ const Gatinhos = () => {
                 components={{
                   Toolbar: GridToolbar,
                 }}
+                localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
               />
             </div>
           </div>

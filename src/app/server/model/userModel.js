@@ -7,6 +7,11 @@ const userSchema = new mongoose.Schema({
     required: [true, "Email is Required"],
     unique: true,
   },
+  celular: {
+    type: String,
+    required: [true, "celular is Required"],
+    unique: true,
+  },
   password: {
     type: String,
     required: [true, "Password is Required"],
@@ -39,6 +44,7 @@ userSchema.statics.login = async function (email, password) {
     }
     throw Error("incorrect password");
   }
+
   throw Error("incorrect email");
 };
 

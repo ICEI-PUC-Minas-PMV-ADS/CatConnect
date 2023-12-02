@@ -103,7 +103,8 @@ const TableRegistrosAdocoes = () => {
 
     return (
         <div className="boxGrid">
-            <div className="grid-gatos">
+            <div className="text-wrapper">Ultimos Registros  de Adoções</div>
+            <div className="grid">
                 <DataGrid
                     rows={filteredRows}
                     columns={columns}
