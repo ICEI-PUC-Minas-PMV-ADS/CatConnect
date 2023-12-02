@@ -89,6 +89,8 @@ Quadro 1 - Requisitos Funcionais
 | RF-012 | _Login_: Permitir o acesso à aplicação. | ALTA |
 | RF-013 | Excluir Gato: Permitir excluir os gatos cadastrados. | MÉDIA |
 | RF-014 | Excluir Adotantes: Permitir excluir os adotantes. | MÉDIA |
+| RF-015 | _Dashboard_: Fornecer visualizações rápidas dos principais registros já cadastrados. | MÉDIA |
+| RF-016 | Resetar Senha: Permitir ao usuário reiniciar sua senha. | MÉDIA |
 
 Fonte: Elaborado pelos autores
 

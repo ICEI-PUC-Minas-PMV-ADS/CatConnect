@@ -13,3 +13,13 @@ Todas as atas dos encontros realizados com o parceiro.
 
 [ADS - Ata Reunião Etapa 2.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/files/12778782/ADS.-.Ata.Reuniao.Etapa.2.pdf)
 
+
+**Ata Reunião Etapa 3**
+
+[ADS - Ata Reunião Etapa 3.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/files/13403315/ADS.-.Ata.Reuniao.Etapa.3.pdf)
+
+
+**Ata Reunião Etapa 4**
+
+[ADS - Ata Reunião Etapa 4.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/files/13403311/ADS.-.Ata.Reuniao.Etapa.4.pdf)
+
