@@ -1,6 +1,6 @@
 // Import necessary dependencies
 import React, {useEffect, useState} from 'react';
-import {DataGrid, GridToolbar} from '@mui/x-data-grid';
+import {DataGrid, GridToolbar, ptBR} from '@mui/x-data-grid';
 import {TextField} from '@mui/material';
 import {styled} from '@mui/system';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
@@ -237,6 +237,7 @@ const Adocoes = () => {
                         Toolbar: GridToolbar,
                     }}
                     getRowId={getRowId}
+                    localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
                 />
             </StyledDataGridContainer>
 

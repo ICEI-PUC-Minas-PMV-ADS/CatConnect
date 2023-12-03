@@ -180,13 +180,27 @@ const Usuarios = () => {
     );
   };
 
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
+
+  const filteredRows = users.filter((row) => {
+    return Object.values(row).some((value) =>
+      String(value).toLowerCase().includes(filterText.toLowerCase())
+    );
+  });
+
   const columns = [
     { field: "nome", headerName: "Nome", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
     {
       field: "editar",
       headerName: "Editar",
-      width: 60,
+      flex: 1,
       renderCell: (params) => (
         <IconButton
           color="primary"
@@ -229,20 +243,6 @@ const Usuarios = () => {
     },
 
   ];
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleFilterChange = (event) => {
-    setFilterText(event.target.value);
-  };
-
-  const filteredRows = users.filter((row) => {
-    return Object.values(row).some((value) =>
-      String(value).toLowerCase().includes(filterText.toLowerCase())
-    );
-  });
 
   return (
     <div className="user-container">

@@ -1,4 +1,4 @@
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, ptBR } from '@mui/x-data-grid';
 import "../Dashboard/Dashboard.css";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -119,6 +119,7 @@ const TableRegistrosAdocoes = () => {
                     pageSizeOptions={[3]}
                     disableRowSelectionOnClick
                     headerClassName="custom-header"
+                    localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
                 />
             </div>
         </div>
