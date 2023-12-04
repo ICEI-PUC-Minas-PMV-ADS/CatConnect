@@ -61,8 +61,8 @@ Quadro 6 - Plano de Testes
 |-----------------------|-------------------------|
 | Requisitos Associados | RF 016 - Resetar Senha |
 | Objetivo do Teste     | - Disponibilizar ao usuário a opção de reiniciar sua senha. |
-| Passos                | 01- Clique em "esqueceu a senha" |
-| Critério de Êxito     | - Usuário irá receber e-mail de confirmação para alterar a senha. |
+| Passos                | 01- Clique em "esqueceu a senha" <br> 02- Digitar o código de verificação recebido no e-mail cadastrado <br> 03- Criar a nova senha <br> 04- Receber mensagem de confirmação de senha criada com sucesso. |
+| Critério de Êxito     | - Usuário irá receber mensagem de confirmação de "senha criada com sucesso". |
 
 Fonte: Elaborado pelos autores
 
@@ -102,6 +102,6 @@ Quadro 8 - Resultado
 | CT 05         | Relatórios                              | Sistema exporta o relatório, sem erros. |
 | CT 06         | _Login_                                 | Usuário preenche e-mail e senha e é informado "sucesso" ao entrar. |
 | CT 07         | _Dashboard_                             | Usuário é encaminhado ao _dashboard_, sem retorno de erros ou demora. |
-| CT 08         | Resete de Senha                         | Sistema em desenvolvimento |
+| CT 08         | Resete de Senha                         | Sistema busca no banco de dados o cadastro do usuário, envia código de verificação e cria a nova senha, sem apresentar erros ou lentidão no processo. |
 
 Fonte: Elaborado pelos autores
