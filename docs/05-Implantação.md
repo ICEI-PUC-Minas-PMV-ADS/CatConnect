@@ -1,8 +1,28 @@
 # 5. Implantação do Software
 
-•	Apresentar o planejamento da implantação: descrever tecnologias e processo de implantação.
+## 5.1 Planejamento da Implantação
 
-•	Apresentar o planejamento de evolução da aplicação.
+A aplicação será instalada localmente na máquina da cliente, por serem uma ONG e não possuírem, atualmente, recurso próprio para arcar com as despesas de hospedagem.
+O banco de dados será hospedado através do MongoDB, utilizando sua versão gratuita.
+O _frontend_ será implantado no navegador de escolha da cliente.
+
+### 5.1.1 Tecnologias Utilizadas
+
+- _Frontend_: Navegador
+- _Backend_: Server
+- Banco de Dados: MongoDB
+
+## 5.2 Planejamento de Evolução da Aplicação.
+
+Será executado conforme as etapas descritas a seguir:
+
+a) Reuniões periódicas de planejamento e _feedback_: serão realizadas reuniões periódicas com a stakeholder no intuito de mostrar os protótipos e/ou definir as alterações/adaptações a serem executadas na aplicação.
+
+b) _GitHub Projects_: criação de _backlog_ com as principais atividades a serem realizadas pelos desenvolvedores.
+
+c) Testes: testes de funcionalidades executados antes de cada implantação, e antes de cada _merge_ para a _main_ principal.
+
+d) Implantação: implantação das funcionalidades na máquina da cliente.
 
 
 # 6. Referências Bibliográficas
