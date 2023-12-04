@@ -2,24 +2,20 @@ version: '3.8'
 
 services:
   frontend:
-    image: node:16
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
     container_name: frontend
-    working_dir: /app/frontend
-    command: npm start
-    volumes:
-      - ./frontend:/app/frontend
     ports:
       - "3000:3000"
     networks:
       - project-rede
 
   backend:
-    image: node:16
-    container_name: server
-    working_dir: /app/server
-    command: npm start
-    volumes:
-      - ./server:/app/server
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    container_name: backend
     ports:
       - "4000:4000"
     networks:

@@ -9,11 +9,21 @@ const Graphics = () => {
     const [adocoes, setAdocoes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [chartWidth, setChartWidth] = useState(window.innerWidth * 0.4); // Inicia com 80% da largura da janela
+    const [chartHeith, setChartHeith] = useState(window.innerHeight * 0.3); // Inicia com 80% da largura da janela
+
 
     useEffect(() => {
         fetchChartData();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
-
+    const handleResize = () => {
+        setChartWidth(window.innerWidth * 0.4); // Atualiza a largura para 80% da nova largura da janela
+        setChartHeith(window.innerWidth * 0.1); // Atualiza a largura para 80% da nova largura da janela
+    };
     const fetchChartData = async () => {
         try {
             const gatosData = await axios.get(routes.getGatos, { withCredentials: true });
@@ -59,8 +69,8 @@ const Graphics = () => {
             {!loading && !error && (
                 <ChartContainer
                     series={prepareChartData()}
-                    width={950}
-                    height={300}
+                    width={chartWidth}
+                    height={chartHeith}
                     xAxis={[
                         {
                             id: 'categories',
@@ -85,8 +95,8 @@ const Graphics = () => {
                     <BarPlot />
                     <LinePlot />
                     <ChartsXAxis label="Categorias" position="bottom" axisId="categories" />
-                    <ChartsYAxis label="Quantidade" position="left" axisId="adocoes" />
-                    <ChartsYAxis label="Quantidade de Gatos" position="right" axisId="gatos" />
+                    <ChartsYAxis label="Quant Adoções" position="left" axisId="adocoes" />
+                    <ChartsYAxis label="Quant Gatos" position="right" axisId="gatos" />
                 </ChartContainer>
             )}
         </div>
