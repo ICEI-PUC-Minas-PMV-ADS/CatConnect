@@ -1,8 +1,32 @@
 # 5. Implantação do Software
 
-•	Apresentar o planejamento da implantação: descrever tecnologias e processo de implantação.
+## 5.1 Planejamento da Implantação
 
-•	Apresentar o planejamento de evolução da aplicação.
+A aplicação será instalada localmente na máquina da cliente, por serem uma ONG e não possuírem, atualmente, recurso próprio para arcar com as despesas de hospedagem.
+
+O banco de dados será hospedado através do MongoDB, utilizando sua versão gratuita.
+
+O _frontend_ será implantado no navegador de escolha da cliente.
+
+Utiliza-se o _Docker_ para conteinerizar os componentes da aplicação. O _Docker_ é um _software_ de código aberto usado para implantar aplicativos dentro de _containers_ virtuais. A conteinerização permite que vários aplicativos funcionem em diferentes ambientes complexos. Por exemplo: o Docker permite executar o WordPress em sistemas Windows, Linux e macOS, sem problemas (Hostinger, 2023).
+
+### 5.1.1 Tecnologias Utilizadas
+
+- _Frontend_: Navegador
+- _Backend_: SQL Server e _Docker_
+- Banco de Dados: MongoDB
+
+## 5.2 Planejamento de Evolução da Aplicação.
+
+Será executado conforme as etapas descritas a seguir:
+
+a) Reuniões periódicas de planejamento e _feedback_: serão realizadas reuniões periódicas com a stakeholder no intuito de mostrar os protótipos e/ou definir as alterações/adaptações a serem executadas na aplicação.
+
+b) _GitHub Projects_: criação de _backlog_ com as principais atividades a serem realizadas pelos desenvolvedores.
+
+c) Testes: testes de funcionalidades executados antes de cada implantação, e antes de cada _merge_ para a _main_ principal.
+
+d) Implantação: implantação das funcionalidades na máquina da cliente.
 
 
 # 6. Referências Bibliográficas
@@ -10,6 +34,8 @@
 DevMedia. **Introdução ao MongoDb**. Disponível em: <https://www.devmedia.com.br/introducao-ao-mongodb/30792>. Acessado em: 29/09/2023.
 
 DevMedia. **O que é UML e Diagramas de Caso de Uso: Introdução Prática à UML.** Disponível em: <https://www.devmedia.com.br/o-que-e-uml-e-diagramas-de-caso-de-uso-introducao-pratica-a-uml/23408>. Acessado em: 31/08/2023.
+
+Hostinger. **O Que é Docker e Como Ele Funciona? – Docker Explicado.** Disponível em: <https://www.hostinger.com.br/tutoriais/o-que-e-docker>. Acessado em: 04/12/2023.
 
 IBM. **O que é MongoDb**. Disponível em: <https://www.ibm.com/br-pt/topics/mongodb#:~:text=O%20MongoDB%20faz%20facilmente%20a,em%20v%C3%A1rios%20ambientes%20de%20desenvolvimento.>. Acessado em: 29/09/2023.
 

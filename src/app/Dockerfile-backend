@@ -1,0 +1,19 @@
+# Use uma imagem base do Node.js 16
+FROM node:16
+
+
+# Volte para o diretório principal do aplicativo
+WORKDIR /usr/src/app
+
+# Copie os arquivos do servidor
+COPY server/package*.json ./
+
+
+RUN npm install
+
+COPY server .
+# Exponha a porta para o servidor
+EXPOSE 4000
+
+# Comando para iniciar o servidor
+CMD ["npm", "start"]

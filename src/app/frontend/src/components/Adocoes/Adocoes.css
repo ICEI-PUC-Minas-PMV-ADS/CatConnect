@@ -14,34 +14,34 @@
     --background-red: #f48c89;
     --main-orange: #e65f2b;
     --background-orange: #f0ab90;
-  }
-  
-  .user-container {
+}
+
+.user-container {
     display: flex;
     height: 100%;
     width: 100%;
     flex-direction: column;
-  }
-  
-  .user-dados {
+}
+
+.user-dados {
     padding: 1rem;
-  }
-  
-  .user-linha {
+}
+
+.user-linha {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .space-between {
+}
+
+.space-between {
     justify-content: space-between;
-  }
-  
-  .titulo {
+}
+
+.titulo {
     position: unset;
-  }
-  
-  #add-user {
+}
+
+#add-user {
     width: 48px;
     height: 48px;
     min-width: 48px;
@@ -53,9 +53,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-  }
-  
-  .user-table {
+}
+
+.user-table {
     background: #f0fff880;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Inter;
@@ -65,5 +65,4 @@
     width: 100%;
     padding: 8px;
     margin-top: 10px;
-  }
-  
+}

@@ -1,6 +1,6 @@
 // Import necessary dependencies
 import React, {useEffect, useState} from 'react';
-import {DataGrid, GridToolbar} from '@mui/x-data-grid';
+import {DataGrid, GridToolbar, ptBR} from '@mui/x-data-grid';
 import {TextField} from '@mui/material';
 import {styled} from '@mui/system';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
@@ -13,15 +13,10 @@ import axios from 'axios';
 import {format} from 'date-fns';
 import {toast} from 'react-toastify';
 import {routes} from "../../utils/api/ApiRoutes";
+import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
+import './Adocoes.css';
+import {MdVolunteerActivism} from "react-icons/md";
 
-const StyledDataGridContainer = styled('div')({
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-    padding: '42px',
-    width: '80%',  // Ajusta a largura para 100%
-    height: '60%',  // Ajusta a altura conforme necessário
-});
 
 const Adocoes = () => {
     const [openCreateModal, setOpenCreateModal] = useState(false);
@@ -184,7 +179,7 @@ const Adocoes = () => {
             flex: 0,
             renderCell: (params) => (
                 <Button  key={params.row._id} onClick={(event) => handleEdit(params.row._id)}>
-                    <BorderColorIcon/>
+                    <BorderColorIcon style={{color:'black'}}/>
                 </Button>
             ),
         },
@@ -194,54 +189,71 @@ const Adocoes = () => {
             flex: 0,
             renderCell: (params) => (
                 <Button onClick={() => handleDelete(params.row)}>
-                    <DeleteForeverSharpIcon/>
+                    <DeleteForeverSharpIcon style={{color:'black'}}/>
                 </Button>
             ),
         },
     ];
 
     return (
-        <>
-            <StyledDataGridContainer>
-                <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '10px'}}>
-                    <h1>Lista de adoções</h1>
-                    <TextField
-                        label="Filtro Rápido"
-                        variant="outlined"
-                        size="small"
-                        value={filterText}
-                        onChange={handleFilterChange}
-                    />
+        <div className="user-container">
+            <div className="user-dados">
+                <div className="user-linha space-between">
+                    <div className="user-linha">
+                        <MdVolunteerActivism />
+                        <h1 className="titulo">Adoções</h1>
+                    </div>
 
-                    <Button
-                        variant="contained"
-                        color="success"
-                        onClick={handleOpenCreateModal}
-                        startIcon={<AddIcon style={{color: 'white'}}/>}
-                    >
-                        Adicionar
-                    </Button>
                 </div>
+                <div className="user-linha">
+                    <div className="user-table">
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <div style={{ margin: "10px" }}>
+                                <TextField
+                                    label="Filtro rápido"
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    value={filterText}
+                                    onChange={handleFilterChange}
+                                />
+                            </div>
+                            <div style={{ marginLeft: "auto", marginRight: "10px" }}>
+                                <Button
+                                    variant="contained"
+                                    color="success"
+                                    onClick={handleOpenCreateModal}
+                                    startIcon={<AddIcon style={{color: 'white'}}/>}
+                                >
+                                    Adicionar
+                                </Button>
+                                <CreateModal open={openCreateModal} dados={dadosAdocao} onClose={handleCloseCreateModal}
+                                             dataChanged={dataChanged}/>
+                            </div>
+                        </div>
+                        <div style={{ height: "calc(100vh - 170px)", width: "100%" }}>
+                            <DataGrid
+                                sx={{
+                                    "& .MuiDataGrid-row:hover": {
+                                        cursor: "pointer",
+                                    },
+                                }}
+                                rows={filteredRows}
+                                columns={columns}
+                                pageSize={5}
+                                rowsPerPageOptions={[5, 10, 25]}
+                                getRowId={getRowId}
+                                components={{
+                                    Toolbar: GridToolbar,
+                                }}
+                                localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <CreateModal open={openCreateModal} dados={dadosAdocao} onClose={handleCloseCreateModal}
-                             dataChanged={dataChanged}/>
-
-                <DataGrid
-                    rows={filteredRows}
-                    columns={columns}
-                    pageSize={5}
-                    rowsPerPageOptions={[5, 10, 20]}
-                    checkboxSelection
-                    disableSelectionOnClick
-                    components={{
-                        Toolbar: GridToolbar,
-                    }}
-                    getRowId={getRowId}
-                />
-            </StyledDataGridContainer>
-
-
-        </>
     );
 };
 
