@@ -309,24 +309,8 @@ const CreateModal = ({open, onClose, dados}) => {
 
     const handleSave = async () => {
         try {
-            if (!adotanteValue) {
-                setAdotanteError(true);
-            }
-            if (!gatoValue) {
-                setGatoError(true);
-            }
-            if (!responsavel) {
-                setResponsavelError(true);
-            }
-            if (!statusAdocao) {
-                setStatusAdocaoError(true);
-            }
-            if (!cpf) {
-                setCpfError(true);
-            }
-            if (!adotanteValue || !gatoValue || !responsavel || !statusAdocao) {
+            if (adotanteValue == '' || gatoValue == '' || responsavel  == '' || statusAdocao  == '') {
                 toast.error("Por favor, preencha todos os campos antes de salvar.", {
-                    theme: "dark",
                 });
                 return;
             }
@@ -402,7 +386,6 @@ const CreateModal = ({open, onClose, dados}) => {
                         fullWidth
                         value={adotanteValue}
                         onChange={(e) => setAdotanteValue(e.target.value)}
-                        error={adotanteError}
                     >
 
                     </TextField>
@@ -481,7 +464,6 @@ const CreateModal = ({open, onClose, dados}) => {
                                     {gato.nome}
                                 </MenuItem>
                             ))}
-                            error={gatoError}
                         </Select>
                     </FormControl>
                     <FormControl fullWidth>
@@ -497,7 +479,6 @@ const CreateModal = ({open, onClose, dados}) => {
                                     {usuarios.nome}
                                 </MenuItem>
                             ))}
-                            error={responsavelError}
                         </Select>
                     </FormControl>
 

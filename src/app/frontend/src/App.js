@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import ResetForm from "./pages/LoginPage/ResetForm";
 import Home from "./pages/Home/Home";
 import "react-toastify/dist/ReactToastify.css";
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -19,6 +20,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/reset-password" element={<ResetForm />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>

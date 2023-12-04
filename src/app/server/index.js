@@ -10,19 +10,23 @@ const status = require("./routes/statusRoutes");
 const bodyParser = require('body-parser');
 const sendEmailRoutes = require('./routes/sendEmailRoutes');
 const sendCepRoutes = require('./routes/sendCepRoutes');
+const smsRoutes = require('./routes/smsRoutes');
+
 require('dotenv').config();
 
 const app = express();
+
+// Ordem dos middlewares atualizada
+app.use(cors({
+    origin: [process.env.PORT_URI],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-app.listen(process.env.PORT_SERVER, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-      console.log(`Server Started Successfully on port ${process.env.PORT_SERVER}.`);
-  }
-});
-
+// Conexão com o MongoDB
 mongoose
     .connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
@@ -35,16 +39,7 @@ mongoose
         console.log(err.message);
     });
 
-app.use(
-  cors({
-    origin: [process.env.PORT_URI],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-app.use(cookieParser());
-
-app.use(express.json());
+// Definição das rotas
 app.use("/", userRoutes);
 app.use("/", gatinhosRoutes);
 app.use("/", adotanteRoutes);
@@ -52,8 +47,17 @@ app.use("/", adocaoRoutes);
 app.use("/", status);
 app.use("/", sendEmailRoutes);
 app.use("/api/buscacep", sendCepRoutes);
+app.use("/api/sms", smsRoutes);
+
+app.listen(process.env.PORT_SERVER, (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(`Server Started Successfully on port ${process.env.PORT_SERVER}.`);
+    }
+});
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Algo deu errado!");
+    console.error(err.stack);
+    res.status(500).send("Algo deu errado!");
 });

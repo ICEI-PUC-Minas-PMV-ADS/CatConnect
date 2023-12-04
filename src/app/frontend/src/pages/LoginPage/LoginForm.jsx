@@ -5,8 +5,9 @@ import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
 import "./Login.css";
 import Swal from 'sweetalert2';
+import {textAlign} from "@mui/system";
 
-function LoginForm({ toggleRegister }) {
+function LoginForm({ toggleReset }) {
   const [cookies] = useCookies([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -23,6 +24,7 @@ function LoginForm({ toggleRegister }) {
       position: "bottom-right",
     });
   const handleSubmit = async (event) => {
+
     event.preventDefault();
     try {
       const { data } = await axios.post(
@@ -33,20 +35,24 @@ function LoginForm({ toggleRegister }) {
         { withCredentials: true }
       );
       if (data) {
+        if(values.email === '' && values.password === '' ){
+          toast.error("Por favor! Digite o email e a senha.");
+          return
+        }
+        if (values.email === '' || values.password === '') {
+          const valor = values.email === '' ? 'o email.' : 'a senha.';
+          toast.error(`Por favor! Digite ${valor}`);
+          return;
+        }
+
+
         if (data.errors) {
           const { email, password } = data.errors;
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          Swal.fire({
-            title: "Sucesso",
-            icon: "success",
-            timer: 3000,
-            timerProgressBar: true,
-          }).then(() => {
-
+          toast.success(`Olá, ${data.nome}! Seja bem vindo(a) de volta.`);
             navigate("/");
-          });
         }
       }
     } catch (ex) {
@@ -56,8 +62,6 @@ function LoginForm({ toggleRegister }) {
   return (
       <div className="container">
         <div className="nomePrincipal">  Cat Connect</div>
-
-
 
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="inputContainer">
@@ -85,10 +89,12 @@ function LoginForm({ toggleRegister }) {
           <button type="submit" className="smallButton">
             Entrar
           </button>
-          {/*<span>*/}
-          {/*  Não possui um conta ?*/}
-          {/*  <a onClick={() => toggleRegister()}> Registrar</a>*/}
-          {/*</span>*/}
+          <div style={{ textAlign: 'right', paddingTop: '10px' }}>
+            <a style={{ color: 'black', fontSize: '0.8rem' }} onClick={() => navigate("/reset-password")}>
+              Esqueceu sua senha? Recuperar
+            </a>
+          </div>
+
         </form>
       </div>
   );

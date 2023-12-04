@@ -5,7 +5,7 @@ import { MdAddCircle } from "react-icons/md";
 import { MdPets } from "react-icons/md";
 import { MdVolunteerActivism } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
-import { AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineLeft } from "react-icons/ai";
 import { BsListCheck } from "react-icons/bs";
 import { TiGroupOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
@@ -175,6 +175,24 @@ function Sidebar({ definirComponente, componenteAtivo }) {
                 </button>
               )}
             </li>
+            {/*<li>*/}
+            {/*  {componenteAtivo !== "configuracoes" ? (*/}
+            {/*    <>*/}
+            {/*      <AiOutlineSetting />*/}
+            {/*      <a onClick={() => definirComponente("configuracoes")}>*/}
+            {/*      Configurações*/}
+            {/*      </a>*/}
+            {/*    </>*/}
+            {/*  ) : (*/}
+            {/*    <button*/}
+            {/*      className="btnSidebar2"*/}
+            {/*      onClick={() => definirComponente("configuracoes")}*/}
+            {/*    >*/}
+            {/*      <AiOutlineSetting size={19} />*/}
+            {/*      <span>Configurações</span>*/}
+            {/*    </button>*/}
+            {/*  )}*/}
+            {/*</li>*/}
           </ul>
         </div>
         <button className="btnSair" onClick={logOut}>

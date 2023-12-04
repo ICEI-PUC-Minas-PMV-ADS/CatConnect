@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import "./User.css";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar, ptBR } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Edit from "@mui/icons-material/Edit";
@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
 import Swal from 'sweetalert2';
 import AddIcon from '@mui/icons-material/Add';
+import EditarUsuariosModal from "./UsuariosModal/EditarUsuariosModal";
 
 const Usuarios = () => {
   const [page, setPage] = useState(0);
@@ -77,11 +78,10 @@ const Usuarios = () => {
         getUsuarios();
         closeModal();
       }
-    } catch {
+    } catch (e ){
       toast.error("Houve um erro ao adicionar um novo usuário", {
         theme: "dark",
       });
-      closeModal();
     }
   };
 
@@ -160,7 +160,7 @@ const Usuarios = () => {
     let editedRow = users.find((row) => row._id === rowId);
     openModal(
       "Editar usuário",
-      <UsuariosModal
+      <EditarUsuariosModal
         handleSubmitFunction={handleEditUsuario}
         usuario={editedRow}
         edit={true}
@@ -303,6 +303,7 @@ const Usuarios = () => {
                 components={{
                   Toolbar: GridToolbar,
                 }}
+                localeText={ptBR.components.MuiDataGrid.defaultProps.localeText}
               />
             </div>
           </div>
