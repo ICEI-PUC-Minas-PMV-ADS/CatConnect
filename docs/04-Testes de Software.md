@@ -84,7 +84,7 @@ Quadro 7 - Registro dos Testes
 | CT 05         | Relatórios                             | Permitir que ao usuário emitir os relatórios conforme objetivos estabelecidos. | Sistema disponibiliza os dados atualizados dos gatos e das adoções. [Gravação-de-tela-de-19-11-2023_2_.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/91228798/e8302219-04e8-43df-a4ac-9a2f02d33931)|
 | CT 06         | Login                                  | Disponibilizar o acesso à aplicação através do _login_. | Login esta verificando os campos, validando conta e  acessando com exito. [Gravação de tela de 29-10-2023 17:54:21.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/42b9ead1-7fb2-4d02-8e1f-c3c96c3a29d2) |
 | CT 07         | _Dashboard_                            | Fornecer visualizações rápidas dos principais registros já cadastrados. | O Dashbord está apresentando os dados atualizados dos principais registros de gatos e de adoções. [Gravação de tela de 19-11-2023.webm](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/91228798/5e5f4640-ecb9-4364-80f5-f1d2a631db55)|
-| CT 08         | Resete de Senha                        | Permitir ao usuário reiniciar sua senha. | (inserir) |
+| CT 08         | Resete de Senha                        | Permitir ao usuário reiniciar sua senha. | Sistema esta enviando sms e editando senha de usuario de forma rapida e correta. https://youtu.be/bKykh25Xlvo |
 
 Fonte: Elaborado pelos autores
 
