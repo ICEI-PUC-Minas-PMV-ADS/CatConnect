@@ -19,6 +19,6 @@ https://infograph.venngage.com/pl/2Qs47z1r2a8
 <ol>
 
 </ol>
- <p> Clique na capa do projeto abaixo para acessar o video da aprenteção final:</p>
+ <p> Clique na capa do projeto abaixo para acessar o video da apresentação final:</p>
  
 [![Filmes e TV 04_12_2023 18_48_32](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/assets/75712250/ef9dea8e-c0ea-47cd-b705-8e6ef0ec30a6)](https://youtu.be/xRu1M3dnx8c)
