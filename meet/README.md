@@ -8,6 +8,9 @@ Todas as atas dos encontros realizados com o parceiro.
 
 [ADS - Reunião Etapa 1.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/files/12778781/ADS.-.Reuniao.Etapa.1.pdf)
 
+- Nova Ata
+[AtaAcordo-ComClienteExterno-NOVA_assinado_final.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/CatConnect/files/13628986/AtaAcordo-ComClienteExterno-NOVA_assinado_final.pdf)
+
 
 **Ata Reunião Etapa 2**
 
